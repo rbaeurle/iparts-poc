@@ -216,6 +216,10 @@ downloadLicenses {
     dependencyConfiguration = "runtimeClasspath"
 }
 
+tasks.compileJava {
+    options.encoding = "utf-8"
+}
+
 tasks.register("00_generateTranslations") {
     group = "translations"
     description = "Generates new translation properties from the source code."
