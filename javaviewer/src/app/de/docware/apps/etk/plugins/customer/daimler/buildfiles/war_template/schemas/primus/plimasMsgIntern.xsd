@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xml:lang="en" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:jxb="http://java.sun.com/xml/ns/jaxb" jxb:version="1.0">
+
+  <!-- This file is controlled by DCCS SVN and must not be changed otherwise.
+       Usage of attributes preferred over use of tags.
+
+       The XSD is an example XSD for an unspecified receiver.
+
+       Created by DCCS GmbH. on behalf of Daimler AG.
+       Copyright 2012 Daimler AG and DCCS GmbH.
+
+       Author:       Peter.Stuecklschwaiger@DCCS.at
+       Responsible:  Tomislav.Jerkovic@Daimler.com, Swen.Koelbel@Daimler.com -->
+
+  <xs:annotation>
+    <xs:documentation>Copyright 2012 Daimler AG and DCCS GmbH.</xs:documentation></xs:annotation>
+
+  <!-- include common definitions... -->
+  <!--
+  <xs:include schemaLocation="./plimasmsg/PACECommonDefinitions.xsd"/>
+
+  <xs:include schemaLocation="./plimasmsg/PACE-GlobusContract.xsd"/>
+  <xs:include schemaLocation="./plimasmsg/PACE-Part.xsd"/>
+  <xs:include schemaLocation="./plimasmsg/PACE-Plant.xsd"/>
+  <xs:include schemaLocation="./plimasmsg/PACE-Supplier.xsd"/>
+  -->
+
+  <!-- include logistic type definitions... -->
+  <!--xs:include schemaLocation="../PACE-Definitions/PACE-.xsd"/-->
+
+  <!-- define the root element for a logistics message -->
+  <xs:element name="PACEMessage">
+    <xs:annotation><xs:documentation>The definition of a PACE message for &lt;undefined&gt; business partner.
+    </xs:documentation></xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="part" type="partType"/>
+        <xs:choice>
+          <xs:sequence>
+            <xs:element name="update" minOccurs="1" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:choice>
+                  <xs:sequence>
+                    <xs:element name="contractInformation" type="contractInformationType"/> 
+                  </xs:sequence>
+                  <xs:sequence>
+                    <xs:element name="ctimeInformation" type="ctimeInformationType"/>
+                  </xs:sequence>
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:sequence>
+            <xs:element name="remove" minOccurs="1" maxOccurs="unbounded" type="removalInformationType"/>
+          </xs:sequence>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attributeGroup ref="interior"/>
+      <xs:attributeGroup ref="foreign"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="contractInformationType">
+    <xs:sequence>
+      <xs:element name="plant" type="plantType"/>
+      <xs:element name="supplier" type="supplierType"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="contractValidity"/>
+  </xs:complexType>
+
+  <xs:complexType name="ctimeInformationType">
+    <xs:sequence>
+      <xs:element name="plant" type="plantType"/>
+      <xs:element name="supplier" type="supplierType"/>
+    </xs:sequence>
+    <xs:attribute name="lastModified" use="required" type="xs:date"/>
+  </xs:complexType>
+
+  <xs:complexType name="removalInformationType">
+    <xs:sequence>
+      <xs:element name="supplier" type="supplierType"/>
+      <xs:element name="plant" minOccurs="0" type="plantType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The plant the supplier is no longer
+          valid for. If missing, the supplier is not valid any longer for any plant.
+      </jxb:javadoc></jxb:property></xs:appinfo> </xs:annotation></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="partType">
+    <xs:annotation><xs:documentation xml:lang="en"><![CDATA[ The elements of a part.<br>
+        The number, the names (in different languages), the supplementary
+        codes 1 and 2 and the directed information.]]></xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="names" type="partNamesType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+
+    <!-- the direct attributes of the part ... -->
+    <xs:attribute name="number" type="partNumberType" use="required">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The part number in input format
+          without supplementary codes.</jxb:javadoc></jxb:property></xs:appinfo></xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="format" type="partNumberFormatType" default="INPUT">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The format of the part number
+          (attribute number).</jxb:javadoc></jxb:property></xs:appinfo></xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="sc1" type="partScType" use="optional">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The supplementary code for materials.
+          </jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="sc2" type="partScType" use="optional">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The supplementary code for colors.
+          </jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="ZGS" type="xs:nonNegativeInteger" use="optional">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The version of the technical drawing
+          of the part.</jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="directed" type="xs:boolean" use="optional">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The flag for directed parts.
+          </jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="containsDirected" type="xs:boolean" use="optional">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The flag for at least one directed
+          part within the assembled part.</jxb:javadoc></jxb:property></xs:appinfo>
+          </xs:annotation></xs:attribute>
+    <xs:attribute name="tcrStatus" type="tcrStatusType" use="optional">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The task-responsibility-competence
+          matrix of the part.</jxb:javadoc></jxb:property></xs:appinfo>
+          </xs:annotation></xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="partNamesType">
+    <xs:annotation><xs:documentation>The name of a part in various languages.
+        </xs:documentation></xs:annotation>
+    <xs:attribute name="name" type="partNameType" use="required">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The name of the part.
+          </jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="language" type="xs:language" use="required">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The language of the name of the part.
+          </jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+  </xs:complexType>
+
+  <xs:simpleType name="partNameType">
+    <xs:annotation><xs:documentation>The part name type. Allowing text between 1 and 50 characters.
+        </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value=".{1,50}"/></xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="partNumberType">
+    <xs:annotation><xs:documentation>Content of part numbers - not including
+        supplementary code 1 or 2.</xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z0-9 ]{10,16}"/></xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="partNumberFormatType">
+    <xs:annotation><xs:documentation>Usable formats for part numbers.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="INPUT">
+        <xs:annotation><xs:documentation>Part number in input format following EDS V9998004
+            for DAG vehicle development.
+            e.g.: A111222334455</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="PRINT">
+        <xs:annotation><xs:documentation>Part number in print format following EDS V9998004
+            for DAG vehicle development.
+            e.g.: A 111 222 33 44 55</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="SAVE">
+        <xs:annotation><xs:documentation>Part number in save format following EDS V9998004
+            for DAG vehicle development.
+            e.g.: 06A222445511133A
+        </xs:documentation></xs:annotation></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="partScType">
+    <xs:annotation><xs:documentation>Format of the supplementary codes 1 and 2</xs:documentation>
+        </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z0-9]{4}"/></xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tcrStatusType">
+    <xs:annotation><xs:documentation>The TCR matrix values for a part.
+        </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="A"/>
+      <xs:enumeration value="B"/>
+      <xs:enumeration value="C"/>
+      <xs:enumeration value="F"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="plantType">
+    <xs:attribute name="number" use="required" type="plantNumberType"/>
+  </xs:complexType>
+
+  <xs:simpleType name="plantNumberType">
+    <xs:restriction base="xs:string">
+      <xs:annotation>
+        <xs:documentation xml:lang="de">Erlaubt sind Werte von 0000 bis 9999. Verwendet werden sollten nur FAB Werkskennziffern.</xs:documentation>
+        <xs:documentation xml:lang="en">Allowed are values from 0000 to 9999. Only FAB plant numbers should be used.</xs:documentation>
+      </xs:annotation>
+      <xs:pattern value="[0-9]{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="supplierType">
+    <xs:attribute name="UID" use="optional" type="uniqueIdType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The global, DAG unique identifier of
+          the supplier resp. corporate group. Supported from SDB (when available).
+          Should be mandatory, but is kept optional until SDB interface is established.
+          </jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+    <xs:attribute name="number" use="required" type="supplierNumberType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The number of a supplier is used for
+          its unique identification and known/used in other applications. It's based on GLOBUS
+          (not yet SDB - supplier database).</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+    <xs:attribute name="index" use="optional" type="supplierIndexType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The index of a supplier is used for
+          the unique identification of a specific subsidiary or location of a supplier.
+          It extends the number of a supplier.</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+    <xs:attribute name="name" use="optional" type="supplierNameType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The name of a supplier.
+          Should usually only be needed for DAG external systems resp. interface partners as all
+          DAG internal interface partners should get their information from the data owner (SDB).
+      </jxb:javadoc></jxb:property></xs:appinfo> </xs:annotation></xs:attribute>
+    <xs:attribute name="short" use="optional" type="supplierShortNameType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The short name of a supplier.
+          See remarks for "name" attribute.</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+    <xs:attribute name="parentUID" use="optional" type="uniqueIdType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The uid of of a suppliers parent.
+          See remarks for "name" attribute.</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+  </xs:complexType>
+
+  <xs:simpleType name="uniqueIdType">
+    <xs:annotation><xs:documentation>Not really needed as type, but easily allows later finer
+        grained specification, if needed.</xs:documentation></xs:annotation>
+    <xs:restriction base="xs:positiveInteger"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="supplierNumberType">
+    <xs:annotation><xs:documentation>SupplierNumberType may not contain alphanumeric values (as of SDB).
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string"><xs:pattern value="[0-9]{1,8}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="supplierIndexType">
+    <xs:annotation><xs:documentation>SupplierIndexType may contain alphanumeric values.
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string"><xs:pattern value="[A-Z0-9]{1}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="supplierNameType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="80"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="supplierShortNameType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="globusContractType">
+    <xs:annotation><xs:documentation xml:lang="en"><![CDATA[The contents of a Globus contract.<br>
+        Like Contract validity, suppliers, buyers, ....]]></xs:documentation></xs:annotation>
+    <xs:attribute name="contractNumber" use="required" type="xs:positiveInteger">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The number of the Globus contract.
+          Part one of four of the Globus contract key.</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+    <xs:attribute name="contractPosition" use="required" type="xs:positiveInteger">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The position of the Globus contract.
+          Part two of four of the Globus contract key.</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+    <xs:attribute name="contractAmountPos" use="required" type="xs:positiveInteger">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The amount position of the Globus contract.
+          Part three of four of the Globus contract key.</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+    <xs:attribute name="contractPricePos" use="required" type="xs:positiveInteger">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The price postition of the Globus contract.
+          Part four of four of the Globus contract key.</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+    <xs:attribute name="status" type="globusStatusType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The (validity) status of the Globus
+          contract.</jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="created" type="xs:date">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The creation date of the Globus contract.
+          </jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attributeGroup ref="contractValidity"/>
+    <xs:attribute name="incoTerm" use="required" type="incoTermType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The inco terms (freight terms) of the
+          Globus contract.</jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="incoTermName" use="required" type="incoTermNameType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The short description of the inco terms
+          of the Globus contract.</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+    <xs:attribute name="priceBase" use="required" type="xs:decimal">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The base price (without most shares)
+          of the part for the purchase unit.</jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="priceFull" use="required" type="xs:decimal">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The full price (with all shares) of
+          the part for the purchase unit.</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+  </xs:complexType>
+
+  <xs:simpleType name="globusStatusType">
+    <xs:annotation>
+      <xs:documentation>Allows sensible enums for Globus contract status.</xs:documentation>
+      <xs:appinfo><jxb:typesafeEnumClass name="GlobusStatusType"/></xs:appinfo></xs:annotation>
+    <xs:restriction base="xs:byte">
+      <xs:enumeration value="10">
+        <xs:annotation><xs:appinfo><jxb:typesafeEnumMember name="created"/>
+        </xs:appinfo></xs:annotation></xs:enumeration>
+      <xs:enumeration value="35">
+        <xs:annotation><xs:appinfo><jxb:typesafeEnumMember name="forApproval"/>
+        </xs:appinfo></xs:annotation></xs:enumeration>
+      <xs:enumeration value="40">
+        <xs:annotation><xs:appinfo><jxb:typesafeEnumMember name="approved"/>
+        </xs:appinfo></xs:annotation></xs:enumeration>
+      <xs:enumeration value="45">
+        <xs:annotation><xs:appinfo><jxb:typesafeEnumMember name="disapproved"/>
+        </xs:appinfo></xs:annotation></xs:enumeration>
+      <xs:enumeration value="60">
+        <xs:annotation><xs:appinfo><jxb:typesafeEnumMember name="effective"/>
+        </xs:appinfo></xs:annotation></xs:enumeration>
+      <xs:enumeration value="75">
+        <xs:annotation><xs:appinfo><jxb:typesafeEnumMember name="reminded"/>
+        </xs:appinfo></xs:annotation></xs:enumeration>
+      <xs:enumeration value="90">
+        <xs:annotation><xs:appinfo><jxb:typesafeEnumMember name="cancelled"/>
+        </xs:appinfo></xs:annotation></xs:enumeration>
+      <xs:enumeration value="95">
+        <xs:annotation><xs:appinfo><jxb:typesafeEnumMember name="cancelledWithReplacement"/>
+        </xs:appinfo></xs:annotation></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:attributeGroup name="contractValidity">
+    <xs:attribute name="validFrom" use="required" type="xs:date">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The start of the validity of the
+          Globus contract.</jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="validTill" use="required" type="xs:date">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The end of the validity of the
+          Globus contract.</jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="invalidSince" use="optional" type="xs:date">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The first day of invalidity of the
+          Globus contract, when status is 90 or 95!</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+  </xs:attributeGroup>
+
+  <xs:simpleType name="incoTermType">
+    <xs:restriction base="xs:string"><xs:pattern value=".{1,5}"/></xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="incoTermNameType">
+    <xs:restriction base="xs:string"><xs:pattern value=".{3,15}"/></xs:restriction>
+  </xs:simpleType>
+  
+
+  <xs:simpleType name="InterfaceType">
+    <xs:annotation><xs:documentation>Defines unique value for different interface types.
+        Used to distinguish messages in an easy manner. Details on messages are available
+        with the specific message types.</xs:documentation></xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ANY">
+        <xs:annotation><xs:documentation>Messages not related to any specific PACE application.
+        </xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="CTIME">
+        <xs:annotation><xs:documentation>Messages related to ctime.</xs:documentation>
+        </xs:annotation></xs:enumeration>
+      <xs:enumeration value="EINSTEIN">
+        <xs:annotation><xs:documentation>Messages related to Einstein.</xs:documentation>
+        </xs:annotation></xs:enumeration>
+      <xs:enumeration value="FERRET">
+        <xs:annotation><xs:documentation>Messages related to FERRET.</xs:documentation>
+        </xs:annotation></xs:enumeration>
+      <xs:enumeration value="KODABA">
+        <xs:annotation><xs:documentation>Messages related to KoDaBa.</xs:documentation>
+        </xs:annotation></xs:enumeration>
+      <xs:enumeration value="SAFE">
+        <xs:annotation><xs:documentation>Messages related to SaFE.</xs:documentation>
+        </xs:annotation></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SystemType">
+    <xs:annotation><xs:documentation>Defines unique value for different systems.
+        Used to distinguish messages and partners in an easy manner.
+        IMPORTANT: only registered systems can be used!</xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AMSupply">
+        <xs:annotation><xs:documentation>Automotive Supply - e.g. start</xs:documentation>
+        </xs:annotation></xs:enumeration>
+      <xs:enumeration value="eDocs">
+        <xs:annotation><xs:documentation>The documentation system.</xs:documentation>
+        </xs:annotation></xs:enumeration>
+      <xs:enumeration value="GSP">
+        <xs:annotation><xs:documentation>PACE - the mother of ctime, SaFE, Einstein and KoDaBa.
+        </xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="PACE">
+        <xs:annotation><xs:documentation>PACE - the mother of ctime, SaFE, Einstein and KoDaBa.
+        </xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Primus">
+        <xs:annotation><xs:documentation>The supplier document system.</xs:documentation>
+        </xs:annotation></xs:enumeration>
+      <xs:enumeration value="SQMS">
+        <xs:annotation><xs:documentation>A quality system.</xs:documentation>
+        </xs:annotation></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="VersionType">
+    <xs:annotation><xs:documentation>Defines a common format to use for version numbers (nn-nn-nn).
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,2}\.[0-9]{1,2}\.[0-9]{1,2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="EnvironmentType">
+    <xs:annotation><xs:documentation>Defines the runtime environments of the interface.
+        e.g. develop, test, maintenance, production
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="DEVELOP"/>
+      <xs:enumeration value="UAT">
+        <xs:annotation><xs:documentation>The environment for User Acceptance Tests.</xs:documentation>
+        </xs:annotation></xs:enumeration>
+      <xs:enumeration value="MAINTENANCE"/>
+      <xs:enumeration value="PRODUCTION"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:attributeGroup name="interior">
+    <xs:annotation><xs:documentation>The attributes needed for the description of the
+        interior (that is: PACE) system.</xs:documentation></xs:annotation>
+    <xs:attribute name="interiorSystem" type="SystemType" fixed="PACE"/>
+    <xs:attribute name="interiorInterface" type="InterfaceType" use="required"/>
+    <xs:attribute name="interiorEnvironment" type="EnvironmentType" use="required"/>
+    <xs:attribute name="interiorVersion" type="VersionType" use="required"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="foreign">
+    <xs:annotation><xs:documentation>The attributes needed for the description of the
+        foreign system.</xs:documentation></xs:annotation>
+    <xs:attribute name="foreignSystem" type="SystemType" use="required"/>
+    <xs:attribute name="foreignEnvironment" type="EnvironmentType" use="required"/>
+    <xs:attribute name="foreignVersion" type="VersionType" use="required"/>
+  </xs:attributeGroup>
+  
+</xs:schema>

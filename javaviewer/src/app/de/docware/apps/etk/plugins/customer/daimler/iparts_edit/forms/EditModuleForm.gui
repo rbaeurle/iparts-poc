@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2020 Docware GmbH
+  -->
+
+<gui>
+  <panel id="editModulePanel" minimumHeight="100" minimumWidth="100" title="Module">
+    <invisible />
+    <layout_gridbag />
+    <tabbedpane id="modulesTabbedPane" minimumHeight="10" minimumWidth="10">
+      <tabentry id="loadModuleTabEntry" minimumHeight="10" minimumWidth="10" title="+ ">
+        <panel id="loadModuleTabEntryContent">
+          <invisible/>
+          <layout_gridbag centered="false"/>
+          <button actionPerformedEvent="onLoadModule" id="loadModuleButton" minimumHeight="10" minimumWidth="100" mnemonicEnabled="true" text="!!Modul laden">
+            <constraints_gridbag anchor="w" fill="h" insetsBottom="8" insetsLeft="8" insetsRight="8" insetsTop="8"/>
+          </button>
+          <button actionPerformedEvent="onCreateModule" id="createModulButton" minimumHeight="10" minimumWidth="100" mnemonicEnabled="true" text="!!Modul anlegen">
+            <constraints_gridbag anchor="w" fill="h" gridy="1" insetsBottom="8" insetsLeft="8" insetsRight="8" insetsTop="8"/>
+          </button>
+          <button actionPerformedEvent="onCreateSA" id="createSAButton" minimumHeight="10" minimumWidth="100" mnemonicEnabled="true" text="!!Freie SA anlegen">
+            <constraints_gridbag anchor="w" fill="h" gridy="2" insetsBottom="8" insetsLeft="8" insetsRight="8" insetsTop="8"/>
+          </button>
+        </panel>
+      </tabentry>
+      <constraints_gridbag fill="b" weightx="100.0" weighty="100.0" />
+    </tabbedpane>
+  </panel>
+  <panel id="panelTabbed">
+    <invisible />
+    <layout_gridbag />
+    <panel id="panelHeader" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <label id="headerLabel" minimumHeight="10" minimumWidth="10" text="Platzhalter für den Header">
+        <constraints_border position="west" />
+      </label>
+      <constraints_gridbag anchor="n" fill="h" insetsBottom="8" insetsLeft="8" insetsRight="8" weightx="100.0" />
+    </panel>
+    <separator id="separatorHeader">
+      <constraints_gridbag fill="h" gridy="1" weightx="100.0" />
+    </separator>
+    <panel id="panelCenter" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <splitpane dividerPosition="100" dividerSize="10" horizontal="false" id="moduleSplitPane" minimumHeight="100" minimumWidth="10">
+        <panel id="imagePanel" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_border />
+          <label horizontalalignment="CENTER" id="imageLabel" minimumHeight="10" minimumWidth="10" text="Platzhalter für das Bild" verticalAlignment="TOP">
+            <constraints_border />
+          </label>
+        </panel>
+        <panel id="partListPanel" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_border />
+          <label horizontalalignment="CENTER" id="partListLabel" minimumHeight="10" minimumWidth="10" text="Platzhalter für die Stückliste" verticalAlignment="TOP">
+            <constraints_border />
+          </label>
+        </panel>
+        <constraints_border />
+      </splitpane>
+      <constraints_gridbag fill="b" gridy="2" weightx="100.0" weighty="100.0" />
+    </panel>
+    <separator id="separatorFooter">
+      <constraints_gridbag fill="h" gridy="3" weightx="100.0" />
+    </separator>
+    <panel id="panelFooter" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <label id="footerLabel" minimumHeight="10" minimumWidth="10" text="Platzhalter für den Footer">
+        <constraints_border position="west" />
+      </label>
+      <constraints_gridbag anchor="s" fill="h" gridy="4" insetsBottom="8" insetsLeft="8" insetsRight="8" insetsTop="8" weightx="100.0" />
+    </panel>
+  </panel>
+  <panel id="panelTabbedTwo">
+    <invisible />
+    <layout_gridbag />
+    <splitpane dividerPosition="755" dividerSize="10" id="splitpaneMaster" minimumHeight="10" minimumWidth="10">
+      <panel id="splitpaneMaster_firstChild_1" minimumWidth="0">
+        <invisible />
+        <layout_gridbag />
+        <panel id="panelHeader_2" minimumHeight="10" minimumWidth="10">
+          <invisible />
+          <layout_border />
+          <constraints_gridbag anchor="n" fill="h" weightx="100.0" />
+        </panel>
+        <separator id="separator_Header_2">
+          <constraints_gridbag fill="h" gridy="1" weightx="100.0" />
+        </separator>
+        <panel id="panelCenter_2" minimumHeight="10" minimumWidth="10">
+          <invisible />
+          <layout_border />
+          <splitpane dividerPosition="133" dividerSize="10" horizontal="false" id="module_Splitpane_2" minimumHeight="10" minimumWidth="10">
+            <dockingpanel arrowStart="false" backgroundColor="clWhite" bgColor="clDesignButtonDisabledBackgroundGradient1" dockPos="NORTH" fgColor="clDesignButtonBorderSelected" fill="true" foregroundColor="clBlack" id="imageDockingpanel" imageHide="@imgDesignDockingPanelSouth" imageShow="@imgDesignDockingPanelNorth" minimumHeight="10" minimumWidth="10" textHide="!!Bildtafeln" textShow="!!Bildtafeln anzeigen">
+              <invisible />
+              <panel id="imagePanel_2" minimumHeight="10" minimumWidth="10">
+                <invisible />
+                <layout_border />
+                <constraints_border />
+              </panel>
+            </dockingpanel>
+            <dockingpanel arrowStart="false" backgroundColor="clWhite" bgColor="clDesignButtonDisabledBackgroundGradient1" dockPos="NORTH" fgColor="clDesignButtonBorderSelected" fill="true" foregroundColor="clBlack" id="partlistDockingpanel" imageHide="@imgDesignDockingPanelSouth" imageShow="@imgDesignDockingPanelNorth" minimumHeight="18" minimumWidth="10" textHide="!!Stückliste" textShow="!!Stückliste anzeigen">
+              <invisible />
+              <panel id="partListPanel_2" minimumHeight="0" minimumWidth="10">
+                <invisible />
+                <layout_border />
+                <constraints_border />
+              </panel>
+            </dockingpanel>
+            <constraints_border />
+          </splitpane>
+          <constraints_gridbag fill="b" gridy="2" weightx="100.0" weighty="100.0" />
+        </panel>
+      </panel>
+      <dockingpanel backgroundColor="clWhite" bgColor="clDesignButtonDisabledBackgroundGradient1" fgColor="clDesignButtonBorderSelected" fill="true" foregroundColor="clBlack" id="dockingpanelMaster_secondChild" minimumHeight="18" minimumWidth="10" textHide="!!Extras" textShow="!!Extras anzeigen">
+        <invisible />
+        <tabbedpane id="tabbedpaneExtras" minimumHeight="10" minimumWidth="0">
+          <tabentry id="tabbedpaneentryMaterial" minimumHeight="10" minimumWidth="10" title="!!Auswahl Material">
+            <panel id="tabbedpaneentryMaterialContent">
+              <invisible />
+              <layout_border />
+            </panel>
+          </tabentry>
+          <tabentry id="tabbedpaneentryModule" minimumHeight="10" minimumWidth="10" title="!!Auswahl Modul">
+            <panel id="tabbedpaneentryModuleContent">
+              <invisible />
+              <layout_border />
+            </panel>
+          </tabentry>
+          <constraints_border />
+        </tabbedpane>
+      </dockingpanel>
+      <constraints_gridbag fill="b" weightx="100.0" weighty="100.0" />
+    </splitpane>
+  </panel>
+</gui>
+

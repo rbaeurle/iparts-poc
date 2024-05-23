@@ -1,0 +1,2 @@
+drop table if exists da_primus_ww_part;
+create table da_primus_ww_part (PWP_ID varchar(50) COLLATE "en-US-x-icu" not null DEFAULT '',PWP_PART_NO varchar(50) COLLATE "en-US-x-icu" not null DEFAULT '',PWP_WW_PART_NO varchar(50) COLLATE "en-US-x-icu" not null DEFAULT '',PWP_WW_TYPE varchar(50) COLLATE "en-US-x-icu" not null DEFAULT '',PWP_TIMESTAMP varchar(24) COLLATE "en-US-x-icu" not null DEFAULT '',T_STAMP varchar(8) COLLATE "en-US-x-icu" not null DEFAULT '', primary key(pwp_part_no,pwp_id,pwp_ww_part_no));

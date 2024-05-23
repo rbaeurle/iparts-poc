@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window height="700" id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag />
+      <panel id="panelZusatz" minimumHeight="80" minimumWidth="10">
+        <invisible />
+        <layout_gridbag />
+        <label horizontalalignment="RIGHT" id="labelName" minimumHeight="10" minimumWidth="10" text="!!Zusatzgrafik Name">
+          <constraints_gridbag anchor="e" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="4" />
+        </label>
+        <textfield id="textfieldName" minimumHeight="10" minimumWidth="200" onChangeEvent="onNameChangedEvent">
+          <constraints_gridbag fill="h" gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" weightx="100.0" />
+        </textfield>
+        <label horizontalalignment="RIGHT" id="labelZusatz" minimumHeight="10" minimumWidth="10" text="!!Zusatzgrafik Hinweis">
+          <constraints_gridbag anchor="e" gridy="1" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="4" />
+        </label>
+        <multiedit backgroundColor="clTransparent" id="multilangeditZusatz" minimumHeight="10" minimumWidth="10">
+          <invisible />
+          <layout_gridbag />
+          <constraints_gridbag fill="h" gridx="1" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" weightx="100.0" />
+        </multiedit>
+        <constraints_gridbag anchor="n" fill="h" weightx="100.0" />
+      </panel>
+      <splitpane dividerPosition="700" horizontal="false" id="splitpane_0" minimumHeight="10" minimumWidth="10" resizeWeight="1.0">
+        <panel id="splitpane_0_firstChild_Graphic" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_border />
+          <separator id="separatorGraphic">
+            <constraints_border position="north" />
+          </separator>
+          <panel id="panelGraphic" minimumHeight="10" minimumWidth="10">
+            <invisible />
+            <layout_gridbag />
+            <label id="labelGraphicText" minimumHeight="10" minimumWidth="10" text="!!Grafik">
+              <constraints_gridbag fill="h" gridwidth="2" insetsBottom="4" insetsLeft="8" insetsTop="4" weightx="100.0" />
+            </label>
+            <panel id="panelGraphicPreview" minimumHeight="10" minimumWidth="10" paddingBottom="4" paddingLeft="8" paddingRight="4" paddingTop="4">
+              <invisible />
+              <layout_border />
+              <label fontSize="14" fontStyle="1" horizontalalignment="CENTER" id="labelNoGraphic" minimumHeight="10" minimumWidth="10" paddingTop="8" text="!!Keine Zusatzgrafik">
+                <constraints_border />
+              </label>
+              <constraints_gridbag anchor="w" fill="b" gridy="1" weightx="100.0" weighty="100.0" />
+            </panel>
+            <panel id="panelGraphicButtons" minimumHeight="10" minimumWidth="100">
+              <invisible />
+              <layout_gridbag />
+              <button actionPerformedEvent="loadGraphicEvent" id="buttonGraphicAdd" minimumHeight="10" minimumWidth="100" mnemonicEnabled="true" text="!!Grafik laden...">
+                <constraints_gridbag fill="h" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+              </button>
+              <button actionPerformedEvent="deleteGraphicEvent" id="buttonGraphicDelete" minimumHeight="10" minimumWidth="100" mnemonicEnabled="true" text="!!Grafik entfernen">
+                <constraints_gridbag fill="h" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+              </button>
+              <checkbox id="checkboxGraphicTransparent" minimumHeight="10" minimumWidth="10" text="!!Transparent" visible="false">
+                <constraints_gridbag fill="h" gridy="2" insetsLeft="4" insetsRight="4" insetsTop="4" weightx="100.0" />
+              </checkbox>
+              <label id="label_0" minimumHeight="10" minimumWidth="10">
+                <constraints_gridbag gridy="3" weighty="100.0" />
+              </label>
+              <constraints_gridbag fill="b" gridx="1" gridy="1" weighty="100.0" />
+            </panel>
+            <constraints_border />
+          </panel>
+        </panel>
+        <panel id="splitpane_0_secondChild_Print" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_border />
+          <separator id="separatorPrint">
+            <constraints_border position="north" />
+          </separator>
+          <panel id="panelPrint" minimumHeight="10" minimumWidth="10">
+            <invisible />
+            <layout_gridbag />
+            <label id="labelPrintText" minimumHeight="10" minimumWidth="10" text="!!Grafik mit höherer Auflösung für den Ausdruck">
+              <constraints_gridbag anchor="w" fill="b" insetsBottom="4" insetsLeft="8" insetsTop="4" weightx="100.0" />
+            </label>
+            <panel id="panelPrintPreview" minimumHeight="10" minimumWidth="10" paddingBottom="4" paddingLeft="8" paddingRight="4" paddingTop="4">
+              <invisible />
+              <layout_border />
+              <label fontSize="14" fontStyle="1" horizontalalignment="CENTER" id="labelNoPrint" minimumHeight="10" minimumWidth="10" paddingTop="8" text="!!Keine Zusatzgrafik">
+                <constraints_border />
+              </label>
+              <constraints_gridbag anchor="w" fill="b" gridy="1" weightx="100.0" weighty="100.0" />
+            </panel>
+            <panel id="panelPrintButtons" minimumHeight="10" minimumWidth="100">
+              <invisible />
+              <layout_gridbag />
+              <button actionPerformedEvent="loadPrintEvent" id="buttonPrintAdd" minimumHeight="10" minimumWidth="100" mnemonicEnabled="true" text="!!Grafik laden...">
+                <constraints_gridbag fill="h" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+              </button>
+              <button actionPerformedEvent="deletePrintEvent" id="buttonPrintDelete" minimumHeight="10" minimumWidth="100" mnemonicEnabled="true" text="!!Grafik entfernen">
+                <constraints_gridbag fill="h" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+              </button>
+              <checkbox id="checkboxPrintTransparent" minimumHeight="10" minimumWidth="10" text="!!Transparent" visible="false">
+                <constraints_gridbag fill="h" gridy="2" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+              </checkbox>
+              <label id="label_1" minimumHeight="10" minimumWidth="10">
+                <constraints_gridbag gridy="3" weighty="100.0" />
+              </label>
+              <constraints_gridbag fill="b" gridx="1" gridy="1" weighty="100.0" />
+            </panel>
+            <constraints_border />
+          </panel>
+        </panel>
+        <constraints_gridbag fill="b" gridy="1" weightx="100.0" weighty="100.0" />
+      </splitpane>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonOKActionPerformedEvent="buttonOKEvent" id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

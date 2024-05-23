@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><!--   #==============================================================================  #  #  AS-PLM  #  #  $HeadURL: http://10.201.252.1/svn/asplmdev/trunk/testing/integration/MediaService/operations/MS_CreateMcAttachments_Testflow/custom_data/testcases/tc_cma_001.xml $  #  $LastChangedRevision: 3598 $  #  $LastChangedDate: 2016-02-12 18:35:02 +0100 (Fr, 12 Feb 2016) $  #  $LastChangedBy: a545948 $  #  #  Author: Andreas Saremba, Atos  #  Purpose: Sample message for the AS-PLM Media Service (AMS): Operation CreateMcAttachments (Request)  #           Expected result: Success, all attachments are attached successfully  #  #           This test case exercises all file types supported by CreateMcAttachments.  #           Create a new MediaContainer with CreateMediaOrder, then put the itemId / itemRevId  #              into attributes mcItemId / mcItemRevId of this request.  #           This way, you can be sure that the container exists and that it contains (after execution  #              of CreateMcAttachments) exactly the attachments from this request.  #  #============================================================================== -->
+<Message xmlns="http://asplm.daimler.com/MediaService/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://asplm.daimler.com/MediaService/v1 ../asplm_message_flat.xsd">
+    <Request from="iParts" to="ASPLM" requestId="req_s01">
+        <Requestor userId="migimport"/>
+        <Operation>
+            <CreateMcAttachments mcItemId="MC000.010.000.133" mcItemRevId="001">
+                <Attachment id="id1" name="TestNameCMA">
+                    <TextFile><![CDATA[Umlaute in UTF-8: ä ü ö ß]]></TextFile>
+                </Attachment>
+            </CreateMcAttachments>
+        </Operation>
+    </Request>
+</Message>

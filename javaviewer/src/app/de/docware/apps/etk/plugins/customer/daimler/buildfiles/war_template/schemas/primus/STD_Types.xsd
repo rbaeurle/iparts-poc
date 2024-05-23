@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="DMType.xsd"/>
+	<!-- ################################################################################################ STANDARD TYPES STRING-->
+	<xsd:complexType name="STD_String1">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String1Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String1Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String2">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String2Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String2Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String3">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String3Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String3Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String4">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String4Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String4Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String5">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String5Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String5Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="5"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String6">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String6Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String6Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String7">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String7Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String7Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="7"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String8">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String8Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String8Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="8"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String9">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String9Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String9Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String10">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String10Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String10Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String11">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String11Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String11Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="11"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String12">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String12Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String12Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="12"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String13">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String13Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String13Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="13"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String15">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String15Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String15Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="15"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String19">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String19Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String19Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="19"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String20">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String20Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String20Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String21">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String21Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String21Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="21"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String22">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String22Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String22Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="22"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String24">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String24Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String24Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="24"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String25">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String25Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String25Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="25"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String28">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String28Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String28Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="28"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String30">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String30Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String30Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="30"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String32">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String32Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String32Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="32"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String36">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String36Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String36Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="36"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String40">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String40Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String40Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String50">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String50Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String50Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_String60">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String60Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String60Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="60"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="STD_String100">
+    <xsd:simpleContent>
+      <xsd:extension base="STD_String100Type">
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="STD_String100Type">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="100"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+	
+	<xsd:complexType name="STD_String200">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String200Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String200Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="200"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="STD_String300">
+    <xsd:simpleContent>
+      <xsd:extension base="STD_String300Type">
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="STD_String300Type">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="300"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+	
+	<xsd:complexType name="STD_String500">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_String500Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_String500Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="500"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="STD_String2000">
+    <xsd:simpleContent>
+      <xsd:extension base="STD_String2000Type">
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="STD_String2000Type">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="2000"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+	<!-- ################################################################################################ STANDARD TYPES INTEGER-->
+	<xsd:complexType name="STD_PositiveInteger1">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_PositiveInteger1Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_PositiveInteger1Type">
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:totalDigits value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_PositiveInteger2">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_PositiveInteger2Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_PositiveInteger2Type">
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:totalDigits value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_PositiveInteger3">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_PositiveInteger3Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_PositiveInteger3Type">
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:totalDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_PositiveInteger4">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_PositiveInteger4Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_PositiveInteger4Type">
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:totalDigits value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_PositiveInteger5">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_PositiveInteger5Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_PositiveInteger5Type">
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:totalDigits value="5"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_PositiveInteger6">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_PositiveInteger6Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_PositiveInteger6Type">
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:totalDigits value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_PositiveInteger7">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_PositiveInteger7Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_PositiveInteger7Type">
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:totalDigits value="7"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_PositiveInteger8">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_PositiveInteger8Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_PositiveInteger8Type">
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:totalDigits value="8"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_PositiveInteger9">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_PositiveInteger9Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_PositiveInteger9Type">
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:totalDigits value="9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- ################################################################################################-->
+	<xsd:complexType name="STD_Integer1">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Integer1Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Integer1Type">
+		<xsd:restriction base="xsd:integer">
+			<xsd:totalDigits value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Integer2">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Integer2Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Integer2Type">
+		<xsd:restriction base="xsd:integer">
+			<xsd:totalDigits value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Integer3">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Integer3Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Integer3Type">
+		<xsd:restriction base="xsd:integer">
+			<xsd:totalDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Integer4">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Integer4Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Integer4Type">
+		<xsd:restriction base="xsd:integer">
+			<xsd:totalDigits value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Integer5">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Integer5Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Integer5Type">
+		<xsd:restriction base="xsd:integer">
+			<xsd:totalDigits value="5"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Integer6">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Integer6Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Integer6Type">
+		<xsd:restriction base="xsd:integer">
+			<xsd:totalDigits value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Integer7">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Integer7Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Integer7Type">
+		<xsd:restriction base="xsd:integer">
+			<xsd:totalDigits value="7"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Integer8">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Integer8Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Integer8Type">
+		<xsd:restriction base="xsd:integer">
+			<xsd:totalDigits value="8"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Integer9">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Integer9Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Integer9Type">
+		<xsd:restriction base="xsd:integer">
+			<xsd:totalDigits value="9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Integer11">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Integer11Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Integer11Type">
+		<xsd:restriction base="xsd:integer">
+			<xsd:totalDigits value="11"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Integer12">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Integer12Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Integer12Type">
+		<xsd:restriction base="xsd:integer">
+			<xsd:totalDigits value="12"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Integer18">
+    <xsd:simpleContent>
+      <xsd:extension base="STD_Integer18Type">
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="STD_Integer18Type">
+    <xsd:restriction base="xsd:integer">
+      <xsd:totalDigits value="18"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+	<xsd:complexType name="STD_Decimal10_2">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Decimal10_2Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Decimal10_2Type">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxExclusive value="100000000"/>
+			<xsd:fractionDigits value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Decimal7_3">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Decimal7_3Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Decimal7_3Type">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxExclusive value="10000"/>
+			<xsd:fractionDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Decimal8_3">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Decimal8_3Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Decimal8_3Type">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxExclusive value="100000"/>
+			<xsd:fractionDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Decimal3_1">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Decimal3_1Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Decimal3_1Type">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxExclusive value="100"/>
+			<xsd:fractionDigits value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Decimal5_2">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Decimal5_2Type">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Decimal5_2Type">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxExclusive value="1000"/>
+			<xsd:fractionDigits value="2" fixed="true"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Decimal3_0XSD">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Decimal3_0XSDType">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Decimal3_0XSDType">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:totalDigits value="3"/>
+			<xsd:fractionDigits value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Decimal3_1XSD">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Decimal3_1XSDType">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Decimal3_1XSDType">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:totalDigits value="3"/>
+			<xsd:fractionDigits value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Decimal7_2XSD">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Decimal7_2XSDType">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Decimal7_2XSDType">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:totalDigits value="7"/>
+			<xsd:fractionDigits value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Decimal9_2XSD">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Decimal9_2XSDType">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Decimal9_2XSDType">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:totalDigits value="9"/>
+			<xsd:fractionDigits value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Decimal5_2XSD">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Decimal5_2XSDType">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Decimal5_2XSDType">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:totalDigits value="5"/>
+			<xsd:fractionDigits value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Decimal5_3XSD">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Decimal5_3XSDType">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Decimal5_3XSDType">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:totalDigits value="5"/>
+			<xsd:fractionDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Decimal12_3XSD">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Decimal12_3XSDType">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Decimal12_3XSDType">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:totalDigits value="12"/>
+			<xsd:fractionDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Decimal13_4XSD">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Decimal13_4XSDType">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Decimal13_4XSDType">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:totalDigits value="13"/>
+			<xsd:fractionDigits value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Decimal11_2XSD">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_Decimal11_2XSDType">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_Decimal11_2XSDType">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+			<xsd:totalDigits value="11"/>
+			<xsd:fractionDigits value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="STD_Decimal14_3XSD">
+    <xsd:simpleContent>
+      <xsd:extension base="STD_Decimal14_3XSDType">
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="STD_Decimal14_3XSDType">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0"/>
+      <xsd:totalDigits value="14"/>
+      <xsd:fractionDigits value="3"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="STD_Decimal15_4XSD">
+    <xsd:simpleContent>
+      <xsd:extension base="STD_Decimal15_4XSDType">
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="STD_Decimal15_4XSDType">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0"/>
+      <xsd:totalDigits value="15"/>
+      <xsd:fractionDigits value="4"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+	<xsd:complexType name="STD_DateTime">
+		<xsd:simpleContent>
+			<xsd:extension base="STD_DateTimeType">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="STD_DateTimeType">
+		<xsd:restriction base="xsd:dateTime"/>
+	</xsd:simpleType>
+</xsd:schema>

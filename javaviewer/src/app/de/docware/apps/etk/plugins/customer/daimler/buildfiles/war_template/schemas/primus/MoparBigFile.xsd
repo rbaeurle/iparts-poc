@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<xs:element name="MoparBigfile" type="MoparBigfile"/>
+	<xs:complexType name="MoparBigfile">
+		<xs:annotation>
+			<xs:documentation>Konfigurationsdaten fuer MoparBigFile.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="user" type="user" maxOccurs="unbounded"/>
+			<xs:element name="administrator" type="administrator" maxOccurs="unbounded"/>
+			<xs:element name="moparAttribute" type="moparAttribute" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="user">
+		<xs:sequence>
+			<xs:element name="userName" type="xs:string"/>
+			<xs:element name="userEmail" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="administrator">
+		<xs:sequence>
+			<xs:element name="adminName" type="xs:string"/>
+			<xs:element name="adminEmail" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="moparAttribute">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="sequence" type="xs:integer"/>
+			<xs:element name="start" type="xs:integer"/>
+			<xs:element name="end" type="xs:integer"/>
+			<xs:element name="responsible" type="xs:string"/>
+			<xs:element name="email" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

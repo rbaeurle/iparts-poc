@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" title="!!iParts Jobs" visible="false">
+    <invisible>
+      <contextmenu id="runningJobsContextMenu" menuName="runningJobsContextMenu" minimumHeight="10" minimumWidth="10">
+        <menuitem iconfilename="@imgApp_javaviewer_Save" id="downloadRunningJobLogMenuItem" menuItemEvent="downloadJobLog" mnemonicEnabled="true" text="!!Log-Datei herunterladen..." />
+        <menuitem iconfilename="@imgApp_javaviewer_ToolbarRefresh" id="refreshLogContentMenuItem" menuItemEvent="refreshLogContent" mnemonicEnabled="true" text="!!Log aktualisieren" />
+        <separator id="separatorForError" />
+        <menuitem id="markJobAsErrorMenuItem" menuItemEvent="markJobAsError" mnemonicEnabled="true" text="!!Job als fehlerhaft markieren" />
+      </contextmenu>
+      <contextmenu id="finishedJobsContextMenu" menuName="runningJobsContextMenu" minimumHeight="10" minimumWidth="10">
+        <menuitem iconfilename="@imgApp_javaviewer_Save" id="downloadFinishedJobLogMenuItem" menuItemEvent="downloadJobLog" mnemonicEnabled="true" text="!!Log-Datei herunterladen..." />
+        <separator id="separatorForArchive" />
+        <menuitem id="archiveJobLogMenuItem" menuItemEvent="archiveJobLog" mnemonicEnabled="true" text="!!Log-Datei archivieren" />
+        <menuitem id="archiveAllJobLogsMenuItem" menuItemEvent="archiveAllJobLogs" mnemonicEnabled="true" text="!!Alle Log-Dateien archivieren" />
+      </contextmenu>
+    </invisible>
+    <layout_border />
+    <menubar id="menuBar" minimumHeight="10" minimumWidth="10">
+      <menubarentry id="testMenu" minimumHeight="10" minimumWidth="10" mnemonicEnabled="true" text="!!Test">
+        <menuitem id="mqTestMenuItem" menuItemEvent="showMQTestDialog" mnemonicEnabled="true" text="!!MQ Test..." />
+        <menuitem id="testSpecialCharactersInFileNamesMenuItem" menuItemEvent="testSpecialCharactersInFileNames" mnemonicEnabled="true" text="!!Teste Umlaute in Dateinamen..." />
+        <menuitem id="sqlPerformanceTestsMenuItem" menuItemEvent="executeSQLPerformanceTests" mnemonicEnabled="true" text="!!SQL Performance Tests..." />
+        <menuitem id="deleteCachesMenuItem" menuItemEvent="deleteAllCaches" mnemonicEnabled="true" text="!!Caches löschen" />
+        <menuitem id="testInterAppComMenuItem" menuItemEvent="showInterAppComStatus" mnemonicEnabled="true" text="!!Kommunikation zwischen WebApps..." />
+      </menubarentry>
+      <menubarentry id="importMenu" minimumHeight="10" minimumWidth="10" mnemonicEnabled="true" text="!!&amp;Import">
+        <menuitem id="menuItemAutoImportSettings" menuItemEvent="changeAutoImportSettingsEvent" mnemonicEnabled="true" text="!!Einstellungen für automatische Importe..." />
+      </menubarentry>
+      <menubarentry id="helpMenu" minimumHeight="10" minimumWidth="10" mnemonicEnabled="true" text="!!&amp;Hilfe">
+        <menuitem id="aboutMenuItem" menuItemEvent="showAboutDialog" mnemonicEnabled="true" text="!!Info &amp;über..." />
+      </menubarentry>
+      <constraints_border position="north" />
+    </menubar>
+    <panel id="centerPanel" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <title backgroundColor="clWhite" iconfilename="@imgPlugin_iParts_JobsButton" id="title" minimumHeight="50" minimumWidth="10" title="!!iParts Jobs">
+        <constraints_border position="north" />
+      </title>
+      <panel id="mainPanel" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <splitpane dividerPosition="500" id="logsSplitPane" minimumHeight="10" minimumWidth="10">
+          <panel id="logJobsPanel" minimumHeight="10" minimumWidth="10">
+            <invisible />
+            <layout_border />
+            <splitpane dividerPosition="97" horizontal="false" id="topJobsSplitPane" minimumHeight="10" minimumWidth="10">
+              <dockingpanel backgroundColor="clDesignButtonEnabledBackgroundGradient1" bgColor="clDesignButtonDisabledBackgroundGradient1" dockPos="NORTH" fgColor="clDesignButtonBorderSelected" fill="true" foregroundColor="clWhite" id="runningJobsDockingPanel" imageHide="@imgDesignDockingPanelNorth" imageShow="@imgDesignDockingPanelSouth" minimumHeight="19" minimumWidth="180" textHide="!!Laufende Jobs" textShow="!!Laufende Jobs">
+                <invisible />
+                <scrollpane id="runningJobsScrollPane" minimumHeight="0" minimumWidth="10">
+                  <table htmlPageSplitMode="NO_SPLIT" id="runningJobsTable" minimumHeight="10" minimumWidth="10" tableSelectionEvent="runningJobLogSelected">
+                    <constraints_border />
+                  </table>
+                  <constraints_border />
+                </scrollpane>
+                <constraints_border />
+              </dockingpanel>
+              <splitpane dividerPosition="336" horizontal="false" id="bottomJobsSplitPane" minimumHeight="10" minimumWidth="10">
+                <dockingpanel backgroundColor="clDesignButtonEnabledBackgroundGradient1" bgColor="clDesignButtonDisabledBackgroundGradient1" dockPos="NORTH" fgColor="clDesignButtonBorderSelected" fill="true" foregroundColor="clWhite" id="processedJobsDockingPanel" imageHide="@imgDesignDockingPanelNorth" imageShow="@imgDesignDockingPanelSouth" minimumHeight="21" minimumWidth="124">
+                  <invisible />
+                  <scrollpane id="processedJobsScrollPane" minimumHeight="0" minimumWidth="10">
+                    <table id="processedJobsTable" minimumHeight="10" minimumWidth="10" tableSelectionEvent="processedJobLogSelected">
+                      <constraints_border />
+                    </table>
+                    <constraints_border />
+                  </scrollpane>
+                  <constraints_border />
+                </dockingpanel>
+                <dockingpanel backgroundColor="clDesignButtonEnabledBackgroundGradient1" bgColor="clDesignButtonDisabledBackgroundGradient1" dockPos="NORTH" fgColor="clDesignButtonBorderSelected" fill="true" foregroundColor="clBlack" id="errorJobsDockingPanel" imageHide="@imgDesignDockingPanelNorth" imageShow="@imgDesignDockingPanelSouth" minimumHeight="19" minimumWidth="191">
+                  <invisible />
+                  <scrollpane id="errorJobsScrollPane" minimumHeight="0" minimumWidth="10">
+                    <table id="errorJobsTable" minimumHeight="10" minimumWidth="10" tableSelectionEvent="errorJobLogSelected">
+                      <constraints_border />
+                    </table>
+                    <constraints_border />
+                  </scrollpane>
+                  <constraints_border />
+                </dockingpanel>
+              </splitpane>
+              <constraints_border />
+            </splitpane>
+          </panel>
+          <panel id="logContentPanel" minimumWidth="0">
+            <invisible />
+            <layout_border />
+            <scrollpane borderColor="clDesignTextFieldBorder" borderWidth="1" id="logContentScrollPane" minimumHeight="10" minimumWidth="10">
+              <textarea borderColor="clTransparent" borderWidth="4" id="logContentTextArea" isEditable="false" minimumHeight="100" minimumWidth="200" text="Kein Job ausgewählt.">
+                <constraints_border />
+              </textarea>
+              <constraints_border />
+            </scrollpane>
+          </panel>
+          <constraints_border />
+        </splitpane>
+        <toolbar backgroundImage="@imgDesignToolbarBigBackground" buttonLayout="IMAGE_WEST" id="logJobsToolbar" minimumHeight="10" minimumWidth="10">
+          <toolButton actionPerformedEvent="refreshJobLogs" backgroundColor="clTransparent" glyph="@imgApp_javaviewer_ToolbarRefresh" id="refreshJobLogsButton" minimumHeight="10" minimumWidth="10" text="!!Jobs aktualisieren">
+            <constraints_gridbag anchor="w" fill="v" insetsBottom="2" insetsLeft="2" insetsRight="2" insetsTop="2" weighty="100.0" />
+          </toolButton>
+          <toolButton backgroundColor="clTransparent" buttonType="SEPARATOR" id="toolbarSeparator" minimumHeight="10" minimumWidth="10">
+            <constraints_gridbag anchor="w" fill="v" gridx="1" insetsBottom="2" insetsLeft="2" insetsRight="2" insetsTop="2" weighty="100.0" />
+          </toolButton>
+          <toolButton actionPerformedEvent="downloadJobLog" backgroundColor="clTransparent" enabled="false" glyph="@imgApp_javaviewer_Save" id="downloadJobLogButton" minimumHeight="10" minimumWidth="10" text="!!Log-Datei herunterladen...">
+            <constraints_gridbag anchor="w" fill="v" gridx="2" insetsBottom="2" insetsLeft="2" insetsRight="2" insetsTop="2" weighty="100.0" />
+          </toolButton>
+          <toolButton actionPerformedEvent="refreshLogContent" backgroundColor="clTransparent" enabled="false" glyph="@imgApp_javaviewer_ToolbarRefresh" id="refreshLogContentButton" minimumHeight="10" minimumWidth="10" text="!!Log aktualisieren">
+            <constraints_gridbag anchor="w" fill="v" gridx="3" insetsBottom="2" insetsLeft="2" insetsRight="2" insetsTop="2" weighty="100.0" />
+          </toolButton>
+          <constraints_border position="north" />
+        </toolbar>
+        <constraints_border />
+      </panel>
+      <constraints_border />
+    </panel>
+  </window>
+</gui>
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_flow />
+  </window>
+  <panel id="panelMain">
+    <invisible>
+      <contextmenu id="contextmenuTable" menuName="contextmenuTable" minimumHeight="10" minimumWidth="10" />
+    </invisible>
+    <layout_border />
+    <label id="labelTableTitle" minimumHeight="10" minimumWidth="10" paddingBottom="4" paddingLeft="8" paddingRight="8" paddingTop="4" text="!!Zugeordnete Bildaufträge">
+      <constraints_border position="north" />
+    </label>
+    <panel id="panelTableGrid" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <constraints_border />
+    </panel>
+  </panel>
+</gui>
+

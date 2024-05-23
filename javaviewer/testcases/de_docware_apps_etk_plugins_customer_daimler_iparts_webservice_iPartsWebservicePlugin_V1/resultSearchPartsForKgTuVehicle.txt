@@ -1,0 +1,1 @@
+{"searchResults":[{"name":"FILTERPATRONE","navContext":[{"id":"47","label":"KRAFTSTOFFANLAGE","type":"cg_group"},{"id":"175","label":"KRAFTSTOFFVORFILTER,WASSERABSCHEIDER","partsAvailable":true,"type":"cg_subgroup"}],"partNo":"A9604770003","partNoFormatted":"A 960 477 00 03","pictureAvailable":true}]}

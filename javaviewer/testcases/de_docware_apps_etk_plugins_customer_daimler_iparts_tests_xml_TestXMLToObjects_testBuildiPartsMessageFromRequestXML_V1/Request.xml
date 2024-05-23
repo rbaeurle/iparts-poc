@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ #==============================================================================
+ #
+ #  AS-PLM
+ #
+ #  $HeadURL: https://dev-dynplm.it-solutions.atos.net/svn/asplmdev/cust_root_dir/integration/prototypes/was/services/MediaService_BO/xml/samples/CreateMediaOrder_req_s01.xml $
+ #  $LastChangedRevision: 1040 $
+ #  $LastChangedDate: 2015-05-28 15:21:34 +0200 (Do, 28 Mai 2015) $
+ #  $LastChangedBy: a424518 $
+ #
+ #  Author: Andreas Saremba, Atos
+ #  Purpose: Sample message for the AS-PLM Media Service (AMS): Operation CreateMediaOrder (Request)
+ #           Expected result: Success, MediaContainer is created
+ #
+ #==============================================================================
+-->
+<Message xmlns="http://asplm.daimler.com/MediaService/v0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://asplm.daimler.com/MediaService/v0 asplm_message_flat.xsd">
+    <Request from="iParts" to="ASPLM" requestId="req_s01">
+        <Requestor userId="markovic"/>
+        <Operation>
+            <CreateMediaOrder>
+                <Name>Proposed Name</Name>
+                <Description>Make a nice picture!</Description>
+                <Realization>Strichbild</Realization>
+                <DateDue>2015-06-30</DateDue>
+                <EinPAS mainGroup="20" group="16" technicalScope="00">Luftfederung</EinPAS>
+                <Usage><ModelSeries>204</ModelSeries></Usage>
+            </CreateMediaOrder>
+        </Operation>
+    </Request>
+</Message>

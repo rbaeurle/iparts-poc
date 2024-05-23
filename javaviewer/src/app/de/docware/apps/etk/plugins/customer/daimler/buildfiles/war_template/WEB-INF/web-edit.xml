@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2015 Docware GmbH
+  -->
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" metadata-complete="true" version="2.4" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+  <context-param>
+    <param-name>mainClass</param-name>
+    <param-value>de.docware.apps.etk.plugins.customer.daimler.iparts.application.iPartsFrameworkMain</param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>de.docware.framework.modules.gui.output.j2ee.J2EEServlet</listener-class>
+  </listener>
+
+  <servlet>
+    <servlet-name>J2EEServlet</servlet-name>
+    <servlet-class>de.docware.framework.modules.gui.output.j2ee.J2EEServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>J2EEServlet</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
+
+  <session-config>
+    <session-timeout>10</session-timeout>
+  </session-config>
+
+<resource-ref>
+    <description>Resource reference to JMS ConnectionFactory</description>
+    <res-ref-name>jms/MQConnectionFactory</res-ref-name>
+    <res-type>javax.jms.ConnectionFactory</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+</resource-ref>
+
+<resource-ref>
+    <description>Resource reference to Media JMS Queue (from iParts to ASPLM)</description>
+    <res-ref-name>jms/MediaQueueOut</res-ref-name>
+    <res-type>javax.jms.Queue</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+</resource-ref>
+
+<resource-ref>
+    <description>Resource reference to Media JMS Queue (from ASPLM to iParts)</description>
+    <res-ref-name>jms/MediaQueueIn</res-ref-name>
+    <res-type>javax.jms.Queue</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+</resource-ref>
+
+<resource-ref>
+    <description>Resource reference to DIALOG JMS Queue (from iParts to ASPLM)</description>
+    <res-ref-name>jms/DIALOGQueueOut</res-ref-name>
+    <res-type>javax.jms.Queue</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+</resource-ref>
+
+<resource-ref>
+    <description>Resource reference to DIALOG JMS Queue (from ASPLM to iParts)</description>
+    <res-ref-name>jms/DIALOGQueueIn</res-ref-name>
+    <res-type>javax.jms.Queue</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+</resource-ref>
+
+<resource-ref>
+    <description>Resource reference to DIALOG DELTA JMS Queue (from iParts to ASPLM)</description>
+    <res-ref-name>jms/DIALOGDeltaQueueOut</res-ref-name>
+    <res-type>javax.jms.Queue</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+</resource-ref>
+
+<resource-ref>
+    <description>Resource reference to DIALOG DELTA JMS Queue (from ASPLM to iParts)</description>
+    <res-ref-name>jms/DIALOGDeltaQueueIn</res-ref-name>
+    <res-type>javax.jms.Queue</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+</resource-ref>
+
+<resource-ref>
+    <description>Resource reference to EDS JMS Queue (from iParts to ASPLM)</description>
+    <res-ref-name>jms/EDSQueueOut</res-ref-name>
+    <res-type>javax.jms.Queue</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+</resource-ref>
+
+<resource-ref>
+    <description>Resource reference to EDS JMS Queue (from ASPLM to iParts)</description>
+    <res-ref-name>jms/EDSQueueIn</res-ref-name>
+    <res-type>javax.jms.Queue</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+</resource-ref>
+
+<resource-ref>
+    <description>Resource reference to PRIMUS JMS Queue (from iParts to ASPLM)</description>
+    <res-ref-name>jms/PRIMUSQueueOut</res-ref-name>
+    <res-type>javax.jms.Queue</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+</resource-ref>
+
+<resource-ref>
+    <description>Resource reference to PRIMUS JMS Queue (from ASPLM to iParts)</description>
+    <res-ref-name>jms/PRIMUSQueueIn</res-ref-name>
+    <res-type>javax.jms.Queue</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+</resource-ref>
+
+<resource-ref>
+    <description>Resource reference to SRM JMS Queue (from iParts to SRM)</description>
+    <res-ref-name>jms/SRMQueueOut</res-ref-name>
+    <res-type>javax.jms.Queue</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+</resource-ref>
+
+<resource-ref>
+    <description>Resource reference to SRM JMS Queue (from SRM to iParts)</description>
+    <res-ref-name>jms/SRMQueueIn</res-ref-name>
+    <res-type>javax.jms.Queue</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+</resource-ref>
+
+<resource-ref>
+    <description>Resource reference to DIALOG Direct JMS Queue (from iParts to DIALOG)</description>
+    <res-ref-name>jms/DIALOGDirectQueueOut</res-ref-name>
+    <res-type>javax.jms.Queue</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+</resource-ref>
+
+<resource-ref>
+    <description>Resource reference to DIALOG Direct JMS Queue (from DIALOG to iParts)</description>
+    <res-ref-name>jms/DIALOGDirectQueueIn</res-ref-name>
+    <res-type>javax.jms.Queue</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+</resource-ref>
+
+<resource-ref>
+    <description>Resource reference to DIALOG Direct Delta JMS Queue (from iParts to DIALOG)</description>
+    <res-ref-name>jms/DIALOGDirectDeltaQueueOut</res-ref-name>
+    <res-type>javax.jms.Queue</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+</resource-ref>
+
+<resource-ref>
+    <description>Resource reference to DIALOG Direct Delta JMS Queue (from DIALOG to iParts)</description>
+    <res-ref-name>jms/DIALOGDirectDeltaQueueIn</res-ref-name>
+    <res-type>javax.jms.Queue</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+</resource-ref>
+
+</web-app>
+

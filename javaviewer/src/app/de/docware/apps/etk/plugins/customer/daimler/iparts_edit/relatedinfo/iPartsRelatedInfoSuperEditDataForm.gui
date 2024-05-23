@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <panel id="panelTop" minimumHeight="80" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <constraints_border position="north" />
+      </panel>
+      <splitpane dividerPosition="286" dividerSize="8" horizontal="false" id="splitpaneElements" minimumHeight="10" minimumWidth="10">
+        <dockingpanel backgroundColor="clWhite" dockPos="NORTH" fill="true" foregroundColor="clBlack" id="dockingpanelPartListEntry" imageHide="@imgDesignDockingPanelNorth" imageShow="@imgDesignDockingPanelSouth" minimumHeight="10" minimumWidth="10" textHide="!!Stücklistendaten verbergen" textShow="!!Stücklistendaten anzeigen">
+          <invisible />
+          <panel id="panelPartListEntry" minimumHeight="75" minimumWidth="10">
+            <invisible />
+            <layout_border />
+            <constraints_border />
+          </panel>
+        </dockingpanel>
+        <panel id="splitpaneElements_secondChild" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_border />
+          <scrollpane id="scrollpane_secondChild" minimumHeight="10" minimumWidth="10">
+            <panel id="panel_secondChild" minimumHeight="10" minimumWidth="10">
+              <invisible />
+              <layout_gridbag />
+              <separator id="separator_FN" minimumHeight="6">
+                <constraints_gridbag fill="h" />
+              </separator>
+              <panel id="panel_Footnotes" minimumHeight="10" minimumWidth="10">
+                <invisible />
+                <layout_border />
+                <dockingpanel backgroundColor="clWhite" dockPos="NORTH" fill="true" foregroundColor="clBlack" id="dockingpanel_FootNotes" imageHide="@imgDesignDockingPanelNorth" imageShow="@imgDesignDockingPanelSouth" minimumHeight="10" minimumWidth="10" textHide="!!Fußnoten verbergen" textShow="!!Fußnoten anzeigen">
+                  <invisible />
+                  <panel id="panel_Docking_FootNotes" minimumHeight="50" minimumWidth="10">
+                    <invisible />
+                    <layout_border />
+                    <constraints_border />
+                  </panel>
+                  <constraints_border />
+                </dockingpanel>
+                <constraints_gridbag fill="h" gridy="1" />
+              </panel>
+              <separator id="separator_FN_WWParts" minimumHeight="6">
+                <constraints_gridbag fill="h" gridy="2" />
+              </separator>
+              <panel id="panel_WW_Parts" minimumHeight="10" minimumWidth="10">
+                <invisible />
+                <layout_border />
+                <dockingpanel backgroundColor="clWhite" dockPos="NORTH" fill="true" foregroundColor="clBlack" id="dockingpanel_WWParts" imageHide="@imgDesignDockingPanelNorth" imageShow="@imgDesignDockingPanelSouth" minimumHeight="10" minimumWidth="10" textHide="!!Wahlweise-Teile verbergen" textShow="!!Wahlweise-Teile anzeigen">
+                  <invisible />
+                  <panel id="panel_Docking_WWParts" minimumHeight="50" minimumWidth="10">
+                    <invisible />
+                    <layout_border />
+                    <constraints_border />
+                  </panel>
+                  <constraints_border />
+                </dockingpanel>
+                <constraints_gridbag fill="h" gridy="3" />
+              </panel>
+              <separator id="separator_WWParts_Replace" minimumHeight="6">
+                <constraints_gridbag fill="h" gridy="4" />
+              </separator>
+              <panel id="panel_ReplaceParts" minimumHeight="10" minimumWidth="10">
+                <invisible />
+                <layout_border />
+                <dockingpanel backgroundColor="clWhite" dockPos="NORTH" fill="true" foregroundColor="clBlack" id="dockingpanel_Replace" imageHide="@imgDesignDockingPanelNorth" imageShow="@imgDesignDockingPanelSouth" minimumHeight="10" minimumWidth="10" textHide="!!Ersetzungen verbergen" textShow="!!Ersetzungen anzeigen">
+                  <invisible />
+                  <panel id="panel_Docking_Replace" minimumHeight="50" minimumWidth="10">
+                    <invisible />
+                    <layout_border />
+                    <constraints_border />
+                  </panel>
+                  <constraints_border />
+                </dockingpanel>
+                <constraints_gridbag fill="h" gridy="5" />
+              </panel>
+              <separator id="separator_Replace_Factory" minimumHeight="6">
+                <constraints_gridbag fill="h" gridy="6" />
+              </separator>
+              <panel id="panel_Factory" minimumHeight="10" minimumWidth="10">
+                <invisible />
+                <layout_border />
+                <dockingpanel backgroundColor="clWhite" dockPos="NORTH" fill="true" foregroundColor="clBlack" id="dockingpanel_Factory" imageHide="@imgDesignDockingPanelNorth" imageShow="@imgDesignDockingPanelSouth" minimumHeight="10" minimumWidth="10" textHide="!!Werkseinsatzdaten verbergen" textShow="!!Werkseinsatzdaten anzeigen">
+                  <invisible />
+                  <panel id="panel_Docking_Factory" minimumHeight="50" minimumWidth="10">
+                    <invisible />
+                    <layout_border />
+                    <constraints_border />
+                  </panel>
+                  <constraints_border />
+                </dockingpanel>
+                <constraints_gridbag fill="h" gridy="7" />
+              </panel>
+              <label id="label_0" minimumHeight="10" minimumWidth="10">
+                <constraints_gridbag gridy="8" weightx="100.0" weighty="100.0" />
+              </label>
+              <constraints_border />
+            </panel>
+            <constraints_border />
+          </scrollpane>
+        </panel>
+        <constraints_border />
+      </splitpane>
+      <panel id="panel_0" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_gridbag />
+        <constraints_border position="south" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

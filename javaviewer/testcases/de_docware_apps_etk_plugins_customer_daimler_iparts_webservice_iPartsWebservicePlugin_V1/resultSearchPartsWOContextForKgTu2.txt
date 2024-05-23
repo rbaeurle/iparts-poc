@@ -1,0 +1,1 @@
+{"searchResults":[{"modelTypes":[{"modelTypeId":"D274","productClassIds":["L","P"]},{"modelTypeId":"D651","productClassIds":["P"]},{"modelTypeId":"D934","productClassIds":["E","F","L","M","O","S","T","U"]},{"modelTypeId":"D936","productClassIds":["E","F","M","O","S"]}],"name":"","partNo":"N910105010016","partNoFormatted":"N 910105 010016"}]}

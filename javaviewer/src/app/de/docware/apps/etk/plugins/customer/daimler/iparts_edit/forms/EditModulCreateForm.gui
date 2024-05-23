@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window height="460" id="mainWindow" visible="false" width="600">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10" paddingBottom="8" paddingLeft="8" paddingRight="8" paddingTop="8">
+      <invisible />
+      <layout_gridbag />
+      <panel id="panelProduct" minimumHeight="10" minimumWidth="10" title="!!Produkt">
+        <invisible />
+        <layout_gridbag />
+        <constraints_gridbag fill="h" insetsBottom="4" weightx="100.0" />
+      </panel>
+      <panel id="panel_Modul" minimumHeight="10" minimumWidth="10" title="!!Modul">
+        <invisible />
+        <layout_gridbag centered="false" />
+        <label horizontalalignment="RIGHT" id="label_ModulTyp" minimumHeight="10" minimumWidth="10" text="!!Modul-Typ">
+          <constraints_gridbag anchor="e" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="8" />
+        </label>
+        <combobox genericType="de.docware.apps.etk.plugins.customer.daimler.iparts.config.iPartsModuleTypes" id="combobox_ModulTyp" minimumHeight="10" minimumWidth="10" onChangeEvent="onChangeEvent">
+          <constraints_gridbag fill="h" gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="8" weightx="100.0" />
+        </combobox>
+        <label horizontalalignment="RIGHT" id="label_ModulNo" minimumHeight="10" minimumWidth="110" text="!!Modulnummer">
+          <constraints_gridbag anchor="e" gridy="1" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="4" />
+        </label>
+        <textfield id="textfield_ModulNo" minimumHeight="10" minimumWidth="200" onChangeEvent="onChangeEvent">
+          <constraints_gridbag fill="h" gridx="1" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" weightx="100.0" />
+        </textfield>
+        <label horizontalalignment="RIGHT" id="label_Name" minimumHeight="10" minimumWidth="10" text="!!Benennung">
+          <constraints_gridbag anchor="e" gridy="2" insetsBottom="8" insetsLeft="8" insetsRight="4" insetsTop="4" />
+        </label>
+        <multiedit backgroundColor="clTransparent" extendToFullHeight="true" id="multilangedit_Name" minimumHeight="10" minimumWidth="10" onChangeEvent="onChangeEvent" readOnly="true">
+          <invisible />
+          <layout_gridbag />
+          <constraints_gridbag fill="h" gridx="1" gridy="2" insetsBottom="8" insetsLeft="4" insetsRight="8" insetsTop="4" weightx="100.0" />
+        </multiedit>
+        <constraints_gridbag fill="h" gridy="2" insetsTop="4" />
+      </panel>
+      <panel id="panel_EinPAS" minimumHeight="120" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <constraints_gridbag fill="h" gridy="1" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonCancelActionPerformedEvent="onCancelClick" buttonOKActionPerformedEvent="onOKClick" id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window closingEvent="closeWindow" id="mainWindow" minimumHeight="500" minimumWidth="400" title="!!Neue Zeichnung importieren" visible="false">
+    <invisible />
+    <layout_gridbag centered="false" />
+    <title backgroundColor="clWhite" iconfilename="@imgPlugin_iParts_ImportFiles" id="title" minimumHeight="50" minimumWidth="10" title="!!Zeichnung auswählen">
+      <constraints_gridbag fill="h" weightx="100.0" />
+    </title>
+    <label id="imageFileLabel" minimumHeight="10" minimumWidth="10" text="!!Zeichnungsdatei und optionale (X-)SEN-Datei für die Hotspots:">
+      <constraints_gridbag anchor="w" fill="h" gridy="1" insetsLeft="8" insetsRight="8" insetsTop="8" />
+    </label>
+    <filechoosertextfield approveButtonText="!!Zeichnung auswählen" id="imageFileChooser" isEditable="false" minimumHeight="10" minimumWidth="10" multiSelectionMode="true" onChangeEvent="imageFileChanged" serverMode="false">
+      <tooltip>
+        <label id="" text="!!Zeichnungsdatei und optionale (X-)SEN-Datei mit identischem Dateinamen für die Hotspots" />
+      </tooltip>
+      <constraints_gridbag anchor="w" fill="h" gridy="2" insetsLeft="8" insetsRight="8" insetsTop="4" />
+    </filechoosertextfield>
+    <panel id="imageDataPanel" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag />
+      <label horizontalalignment="RIGHT" id="imageNumberLabel" minimumHeight="10" minimumWidth="10" text="Zeichnungsnummer:">
+        <constraints_gridbag anchor="e" insetsLeft="8" insetsTop="8" />
+      </label>
+      <textfield id="imageNumberTextfield" minimumHeight="10" minimumWidth="300" onChangeEvent="nameChanged">
+        <constraints_gridbag anchor="w" fill="h" gridx="1" insetsLeft="8" insetsRight="8" insetsTop="8" weightx="100.0" />
+      </textfield>
+      <label horizontalalignment="RIGHT" id="usageLabel" minimumHeight="10" minimumWidth="10" text="!!Verwendung:">
+        <constraints_gridbag anchor="e" gridy="1" insetsLeft="8" insetsTop="8" />
+      </label>
+      <combobox genericType="de.docware.apps.etk.base.project.mechanic.drawing.ImageVariant" id="usageComboBox" minimumHeight="10" minimumWidth="100">
+        <constraints_gridbag anchor="w" gridx="1" gridy="1" insetsLeft="8" insetsRight="8" insetsTop="8" />
+      </combobox>
+      <constraints_gridbag anchor="n" fill="h" gridy="3" />
+    </panel>
+    <panel id="previewPanel" minimumHeight="400" minimumWidth="600" title="!!Vorschau">
+      <invisible />
+      <layout_border />
+      <label fontSize="14" fontStyle="BOLD" horizontalalignment="CENTER" id="noImageLabel" minimumHeight="10" minimumWidth="10" paddingTop="8" text="!!Noch keine Zeichnung ausgewählt" verticalAlignment="TOP">
+        <constraints_border />
+      </label>
+      <constraints_gridbag fill="b" gridy="4" insetsLeft="8" insetsRight="8" insetsTop="8" weightx="100.0" weighty="100.0" />
+    </panel>
+    <buttonPanel dialogStyle="CUSTOM" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_gridbag anchor="s" fill="h" gridy="5" insetsTop="8" />
+    </buttonPanel>
+  </window>
+</gui>
+

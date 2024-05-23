@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="mqTestTitle" minimumHeight="50" minimumWidth="5" title="MQ Test">
+      <constraints_border position="north" />
+    </title>
+    <panel id="leftPanel" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <panel borderColor="clTransparent" borderWidth="4" id="mqConfigPanel" title="!!Konfiguration">
+        <invisible />
+        <layout_gridbag />
+        <panel id="configLabelPanel" paddingTop="8">
+          <invisible />
+          <layout_gridbag />
+          <label id="channelLabel" minimumHeight="10" minimumWidth="10" text="!!MQ Kanal wählen:">
+            <constraints_gridbag anchor="w" fill="b" insetsBottom="4" />
+          </label>
+          <combobox genericType="MQChannelType" id="channelComboBox" maxRowCount="20" minimumHeight="10" minimumWidth="10" onChangeEvent="showSelectedMQChannel">
+            <constraints_gridbag anchor="w" fill="b" gridy="1" insetsBottom="16" />
+          </combobox>
+          <label id="connectionLabel" minimumHeight="10" minimumWidth="10" text="Connection JNDI Alias:">
+            <constraints_gridbag anchor="w" gridy="2" insetsBottom="4" />
+          </label>
+          <textfield id="connectionTextfield" isEditable="false" minimumHeight="10" minimumWidth="150">
+            <constraints_gridbag anchor="w" fill="h" gridy="3" insetsBottom="8" />
+          </textfield>
+          <label id="dstinationOutLabel" minimumHeight="10" minimumWidth="10" text="Destination OUT JNDI Alias:">
+            <constraints_gridbag anchor="sw" gridy="4" insetsBottom="4" weightx="100.0" />
+          </label>
+          <textfield id="destinationOutTextfield" isEditable="false" minimumHeight="10" minimumWidth="150">
+            <constraints_gridbag anchor="w" fill="h" gridy="5" insetsBottom="8" />
+          </textfield>
+          <label id="destinationInLabel" minimumHeight="10" minimumWidth="10" text="Destination IN JNDI Alias:">
+            <constraints_gridbag anchor="w" gridy="6" insetsBottom="4" weightx="100.0" />
+          </label>
+          <textfield id="destinationInTextfield" isEditable="false" minimumHeight="10" minimumWidth="150">
+            <constraints_gridbag anchor="w" fill="b" gridy="7" insetsBottom="8" />
+          </textfield>
+          <constraints_gridbag anchor="n" fill="h" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" weightx="100.0" />
+        </panel>
+        <panel id="defaultProviderInfoPanel" minimumHeight="10" minimumWidth="10">
+          <invisible />
+          <layout_flow />
+          <constraints_gridbag fill="v" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" weighty="100.0" />
+        </panel>
+        <panel id="reinitPanel">
+          <invisible />
+          <layout_gridbag />
+          <button actionPerformedEvent="reinitChannel" id="reinitButton" mnemonicEnabled="true" text="!!MQ Kanal reinitialisieren">
+            <constraints_gridbag anchor="s" fill="h" weightx="100.0" />
+          </button>
+          <constraints_gridbag fill="h" gridy="2" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </panel>
+        <constraints_border />
+      </panel>
+      <panel borderColor="clTransparent" borderWidth="4" id="mqSimPanel" minimumHeight="10" minimumWidth="10" paddingTop="8" title="!!AS-PLM Simulation für diese Session">
+        <invisible />
+        <layout_gridbag centered="false" />
+        <label id="simAutoResponseDelayLabel" minimumHeight="10" minimumWidth="10" text="!!Automatische Antwort nach x Sekunden">
+          <constraints_gridbag anchor="w" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </label>
+        <intspinner id="simAutoResponseDelayTextField" maxValue="1000" minValue="-1" minimumHeight="10" minimumWidth="100" value="-1">
+          <tooltip>
+            <label id="" text="!!-1 für keine automatische Antwort" />
+          </tooltip>
+          <constraints_gridbag anchor="w" fill="h" gridy="1" insetsBottom="8" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </intspinner>
+        <label id="simAutoResponseDelaySearchLabel" minimumHeight="10" minimumWidth="10" text="!!Automatische Antwort nach x Sekunden für Suchen">
+          <constraints_gridbag anchor="w" gridy="2" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </label>
+        <intspinner id="simAutoResponseDelaySearchTextField" maxValue="1000" minValue="-1" minimumHeight="10" minimumWidth="100" value="-1">
+          <tooltip>
+            <label id="" text="!!-1 für keine automatische Antwort" />
+          </tooltip>
+          <constraints_gridbag anchor="w" fill="h" gridy="3" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </intspinner>
+        <constraints_border position="south" />
+      </panel>
+      <constraints_border position="west" />
+    </panel>
+    <panel borderColor="clTransparent" borderWidth="4" id="mqTextPanel" minimumWidth="10" title="MQ Transaction">
+      <invisible />
+      <layout_gridbag />
+      <label fontStyle="BOLD" id="mqInputLabel" text="!!MQ Nachricht zum Senden">
+        <constraints_gridbag anchor="w" fill="h" insetsLeft="8" insetsTop="4" />
+      </label>
+      <label fontStyle="BOLD" id="mqOutputLabel" text="!!Empfangene MQ Nachrichten">
+        <constraints_gridbag anchor="w" fill="h" gridx="1" insetsLeft="8" insetsTop="4" />
+      </label>
+      <scrollpane borderColor="clDesignTextFieldBorder" borderWidth="1" id="mqInputScrollpane">
+        <textarea id="mqInputTextarea" paddingBottom="8" paddingLeft="8" paddingRight="8" paddingTop="8">
+          <constraints_border />
+        </textarea>
+        <constraints_gridbag anchor="w" fill="b" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="2" weighty="100.0" />
+      </scrollpane>
+      <scrollpane backgroundColor="clTransparent" borderColor="clDesignTextFieldBorder" borderWidth="1" id="mqOutputScrollpane">
+        <textarea backgroundColor="clTransparent" id="mqOutputTextarea" isEditable="false" paddingBottom="8" paddingLeft="8" paddingRight="8" paddingTop="8">
+          <constraints_border />
+        </textarea>
+        <constraints_gridbag fill="b" gridx="1" gridy="1" insetsBottom="4" insetsLeft="2" weighty="100.0" />
+      </scrollpane>
+      <panel id="panelSendButtons" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_gridbag />
+        <button actionPerformedEvent="sendMQMessage" id="sendBtn" mnemonicEnabled="true" text="!!... aus Textbox">
+          <constraints_gridbag fill="h" gridx="1" insetsBottom="1" insetsLeft="1" insetsRight="1" insetsTop="1" />
+        </button>
+        <button actionPerformedEvent="sendMQMessageFile" id="sendFileBtn" minimumHeight="10" minimumWidth="100" mnemonicEnabled="true" text="!!... aus XML-Datei">
+          <constraints_gridbag fill="h" gridx="2" insetsBottom="1" insetsLeft="1" insetsRight="1" insetsTop="1" />
+        </button>
+        <button actionPerformedEvent="simulateMQAnswer" id="simulateAnswerBtn" mnemonicEnabled="true" text="!!... aus Textbox">
+          <constraints_gridbag anchor="s" fill="h" gridx="1" gridy="1" insetsBottom="1" insetsLeft="1" insetsRight="1" insetsTop="1" />
+        </button>
+        <button actionPerformedEvent="simulateMQAnswerFile" id="simulateAnswerFileBtn" minimumHeight="10" minimumWidth="100" mnemonicEnabled="true" text="!!... aus XML-Datei">
+          <constraints_gridbag fill="h" gridx="2" gridy="1" insetsBottom="1" insetsLeft="1" insetsRight="1" insetsTop="1" />
+        </button>
+        <button actionPerformedEvent="simulateMQAnswerFolder" id="simulateAnswerFolderBtn" minimumHeight="10" minimumWidth="100" mnemonicEnabled="true" text="!!... aus Verzeichnis">
+          <constraints_gridbag fill="h" gridx="3" gridy="1" insetsBottom="1" insetsLeft="1" insetsRight="1" insetsTop="1" />
+        </button>
+        <label id="sendLabel" minimumHeight="10" minimumWidth="10" text="!!Nachricht ans MQ-Ziel senden">
+          <constraints_gridbag anchor="e" insetsBottom="1" insetsLeft="1" insetsRight="1" insetsTop="1" />
+        </label>
+        <label id="simulateLabel" minimumHeight="10" minimumWidth="10" text="!!Antwort vom MQ-Ziel simulieren">
+          <constraints_gridbag anchor="e" gridy="1" insetsBottom="1" insetsLeft="1" insetsRight="1" insetsTop="1" />
+        </label>
+        <constraints_gridbag gridy="2" />
+      </panel>
+      <button actionPerformedEvent="openXMLFile" id="openXMLFileBtn" mnemonicEnabled="true" text="!!Gespeicherte XML-Dateien anzeigen...">
+        <constraints_gridbag anchor="n" gridx="1" gridy="2" insetsBottom="8" />
+      </button>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonCloseActionPerformedEvent="closeWindow" dialogStyle="CLOSE" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

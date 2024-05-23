@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" title="!!Ungefilterte Stückliste" visible="false">
+    <invisible />
+    <layout_border />
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <panel id="panelTop" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_gridbag centered="false" />
+        <toolbar backgroundImage="@imgDesignToolbarSmallBackground" buttonLayout="IMAGE_WEST" buttonStyle="SMALL" id="toolbar" minimumHeight="10" minimumWidth="10">
+          <toolButton actionPerformedEvent="showFilter" backgroundColor="clTransparent" glyph="@imgDesignFilter" id="toolButtonFilter" minimumHeight="10" minimumWidth="10">
+            <tooltip>
+              <label id="" text="!!Filter" />
+            </tooltip>
+            <constraints_gridbag anchor="w" fill="v" insetsBottom="2" insetsLeft="2" insetsRight="2" insetsTop="2" weighty="100.0" />
+          </toolButton>
+          <constraints_gridbag anchor="n" insetsTop="4" />
+        </toolbar>
+        <label id="labelDataCardOrModel" minimumHeight="10" minimumWidth="10">
+          <constraints_gridbag fill="h" gridx="1" insetsLeft="8" insetsRight="4" insetsTop="1" weightx="100.0" />
+        </label>
+        <constraints_border position="north" />
+      </panel>
+      <panel id="panelAssemblyListPlaceholder" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <constraints_border />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonCloseActionPerformedEvent="closeWindow" dialogStyle="CLOSE" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window height="300" id="mainWindow" minimumHeight="300" minimumWidth="400" visible="false" width="400">
+    <invisible>
+      <contextmenu id="sqlScriptsListContextMenu" menuName="sqlScriptsListContextMenu" minimumHeight="10" minimumWidth="10">
+        <menuitem iconfilename="@imgDesignToClipboard" id="copyMenuItem" menuItemEvent="copySelectedSqlScripts" mnemonicEnabled="true" text="!!Kopieren" />
+      </contextmenu>
+    </invisible>
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="!!SQL Performance Tests">
+      <constraints_border position="north" />
+    </title>
+    <panel borderWidth="8" id="mainPanel" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag centered="false" />
+      <label id="sqlScriptsLabel" minimumHeight="10" minimumWidth="10" text="!!SQL Skripte:">
+        <constraints_gridbag anchor="ne" insetsBottom="8" insetsRight="8" />
+      </label>
+      <scrollpane id="sqlScriptsScrollPane" minimumHeight="200" minimumWidth="400">
+        <list genericType="de.docware.util.file.DWFile" id="sqlScriptsList" minimumHeight="50" minimumWidth="100" mode="CHECKBOX" multipleSelect="true" onChangeEvent="sqlScriptsChanged">
+          <constraints_border />
+        </list>
+        <constraints_gridbag fill="b" gridx="1" insetsBottom="8" weightx="100.0" weighty="100.0" />
+      </scrollpane>
+      <label id="repeatLabel" minimumHeight="10" minimumWidth="10" text="!!Anzahl Wiederholungen:">
+        <constraints_gridbag anchor="e" gridy="1" insetsBottom="8" insetsRight="8" />
+      </label>
+      <intspinner id="repeatSpinner" maxValue="100000" minValue="1" minimumHeight="10" minimumWidth="10">
+        <constraints_gridbag fill="h" gridx="1" gridy="1" insetsBottom="8" weightx="100.0" />
+      </intspinner>
+      <button actionPerformedEvent="startSQLPerformanceTests" enabled="false" id="startButton" minimumHeight="10" minimumWidth="100" mnemonicEnabled="true" text="!!Start">
+        <constraints_gridbag anchor="w" gridx="1" gridy="3" insetsBottom="8" />
+      </button>
+      <label id="batchStatementsLabel" minimumHeight="10" minimumWidth="10" text="!!SQL Batch Statements:">
+        <constraints_gridbag anchor="e" gridy="2" insetsBottom="8" insetsRight="8" />
+      </label>
+      <checkbox id="batchStatementsCheckbox" minimumHeight="10" minimumWidth="10" selected="true">
+        <constraints_gridbag anchor="w" gridx="1" gridy="2" insetsBottom="8" />
+      </checkbox>
+      <constraints_border />
+    </panel>
+    <buttonPanel dialogStyle="CLOSE" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

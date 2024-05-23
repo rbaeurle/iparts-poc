@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ #==============================================================================
+ #
+ #  AS-PLM
+ #
+ #  $HeadURL: https://dev-dynplm.it-solutions.atos.net/svn/asplmdev/trunk/cust_root_dir/integration/prototypes/was/services/MediaService_BO/xml/v1/samples/CreateMediaAttachments/CreateMediaAttachments_req_e01.xml $
+ #  $LastChangedRevision: 3218 $
+ #  $LastChangedDate: 2016-01-15 16:53:18 +0100 (Fr, 15 Jan 2016) $
+ #  $LastChangedBy: a424518 $
+ #
+ #  Author: Andreas Saremba, Atos
+ #  Purpose: Sample message for the AS-PLM Media Service (AMS): Operation CreateMcAttachments (Request)
+ #           Expected result: Complete failure because the MC does not exist (request error 6) 
+ #
+ #==============================================================================
+-->
+<Message xmlns="http://asplm.daimler.com/MediaService/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://asplm.daimler.com/MediaService/v1 ../asplm_message_flat.xsd">
+    <Request from="iParts" to="ASPLM" requestId="req_s01">
+        <Requestor userId="migimport"/>
+        <Operation>
+            <CreateMcAttachments mcItemId="MC000.000.000.000" mcItemRevId="001">
+                <Attachment id="id1" name="TestNameCMA">
+                    <TextFile><![CDATA[Umlaute in UTF-8: ä ü ö ß]]></TextFile>
+                </Attachment>
+            </CreateMcAttachments>
+        </Operation>
+    </Request>
+</Message>

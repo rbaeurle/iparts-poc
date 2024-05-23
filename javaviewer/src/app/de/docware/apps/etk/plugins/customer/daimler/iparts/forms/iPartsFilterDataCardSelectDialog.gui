@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="!!Datenkarte auswählen">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag />
+      <label horizontalalignment="RIGHT" id="labelDatacardType" minimumHeight="10" minimumWidth="10" text="!!Datenkarten Typ">
+        <constraints_gridbag anchor="e" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="8" />
+      </label>
+      <combobox genericType="DCAggregateTypes" id="comboboxDatacardType" maxRowCount="15" minimumHeight="10" minimumWidth="10" onChangeEvent="onDatacardTypeChanged">
+        <constraints_gridbag fill="h" gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="8" weightx="100.0" />
+      </combobox>
+      <label horizontalalignment="RIGHT" id="labelIdentType" minimumHeight="10" minimumWidth="10" scaleForResolution="false" text="!!Ident Typ">
+        <constraints_gridbag anchor="e" gridy="1" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="4" />
+      </label>
+      <combobox genericType="DatacardIdentOrderTypes" id="comboboxIdentType" minimumHeight="10" minimumWidth="10" onChangeEvent="onIdentTypeChanged">
+        <constraints_gridbag fill="h" gridx="1" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" />
+      </combobox>
+      <label horizontalalignment="RIGHT" id="labelDatacardExtended" minimumHeight="10" minimumWidth="10" text="!!Datenkarten Zusatztyp">
+        <constraints_gridbag anchor="e" gridy="2" insetsBottom="8" insetsLeft="8" insetsRight="4" insetsTop="4" />
+      </label>
+      <combobox genericType="DCAggregateTypeOf" id="comboboxDatacardExtended" minimumHeight="10" minimumWidth="10" onChangeEvent="onDatacardExtendedChanged">
+        <constraints_gridbag fill="h" gridx="1" gridy="2" insetsBottom="8" insetsLeft="4" insetsRight="8" insetsTop="4" />
+      </combobox>
+      <label id="label_0" minimumHeight="10" minimumWidth="10">
+        <constraints_gridbag gridx="1" gridy="3" weighty="100.0" />
+      </label>
+      <constraints_border />
+    </panel>
+    <buttonPanel id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

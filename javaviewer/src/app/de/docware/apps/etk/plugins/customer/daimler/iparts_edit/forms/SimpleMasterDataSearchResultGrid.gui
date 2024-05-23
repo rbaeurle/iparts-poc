@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible>
+      <contextmenu id="contextMenuTable" menuName="contextMenu" minimumHeight="10" minimumWidth="10" />
+    </invisible>
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag />
+      <panel id="panelForContainer" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <panel id="panelContainer" minimumHeight="10" minimumWidth="10">
+          <invisible />
+          <layout_gridbag centered="false" />
+          <label id="label_0" maximumHeight="2147483647" maximumWidth="2147483647" minimumHeight="0" minimumWidth="0" text="!!Suche">
+            <constraints_gridbag insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+          </label>
+          <textfield id="textfield_0" minimumHeight="0" minimumWidth="200">
+            <constraints_gridbag fill="h" gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+          </textfield>
+          <label id="label_1" maximumHeight="2147483647" maximumWidth="2147483647" minimumHeight="0" minimumWidth="0" text="Suche">
+            <constraints_gridbag gridx="2" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+          </label>
+          <textfield id="textfield_1" minimumHeight="0" minimumWidth="200">
+            <constraints_gridbag fill="h" gridx="3" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+          </textfield>
+          <label id="label_2" minimumHeight="10" minimumWidth="10">
+            <constraints_gridbag fill="h" gridx="4" weightx="100.0" />
+          </label>
+          <constraints_border />
+        </panel>
+        <panel id="panelForCancel" minimumHeight="10" minimumWidth="10">
+          <invisible />
+          <layout_gridbag />
+          <button actionPerformedEvent="buttonCancelActionPerformed" id="buttonStartStopSearch" minimumHeight="10" minimumWidth="130" mnemonicEnabled="true" text="!!Suche abbrechen">
+            <constraints_gridbag anchor="n" fill="h" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" weightx="100.0" weighty="100.0" />
+          </button>
+          <constraints_border position="east" />
+        </panel>
+        <separator id="separator">
+          <constraints_border position="south" />
+        </separator>
+        <constraints_gridbag fill="h" weightx="100.0" />
+      </panel>
+      <panel backgroundColor="clDesignTableContentBackground" id="panelGrid" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_gridbag />
+        <panel id="panelTop" minimumHeight="39" minimumWidth="10">
+          <invisible />
+          <layout_gridbag />
+          <label id="labelSearchResult" minimumHeight="10" minimumWidth="10" text="!!Suchergebnis">
+            <constraints_gridbag insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+          </label>
+          <label id="labelResultCount" minimumHeight="10" minimumWidth="10">
+            <constraints_gridbag fill="h" gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" weightx="100.0" />
+          </label>
+          <progressbar id="kitLight" marquee="true" minimumHeight="10" minimumWidth="130" visible="false">
+            <constraints_gridbag anchor="e" gridx="2" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+          </progressbar>
+          <constraints_gridbag fill="h" weightx="100.0" />
+        </panel>
+        <toolbar backgroundImage="@imgDesignToolbarBigBackground" id="toolbar" minimumHeight="10" minimumWidth="10">
+          <constraints_gridbag fill="h" gridy="1" weightx="100.0" />
+        </toolbar>
+        <scrollpane id="scrollPane" minimumHeight="42" minimumWidth="10">
+          <table htmlPageSplitMode="NO_SPLIT" id="resultGrid" minimumHeight="10" minimumWidth="10" mouseDoubleClickedEvent="onTableDoubleClicked" tableSelectionEvent="onTableSelectionChanged">
+            <constraints_border />
+          </table>
+          <constraints_gridbag fill="b" gridy="2" weightx="100.0" weighty="100.0" />
+        </scrollpane>
+        <label id="labelNotFound" minimumHeight="10" minimumWidth="10" paddingLeft="15" paddingTop="4" text="!!Die Suche ist abgeschlossen. Es liegen keine Ergebnisse vor." visible="false">
+          <constraints_gridbag anchor="nw" fill="h" gridy="3" />
+        </label>
+        <label id="labelMinChar" minimumHeight="10" minimumWidth="10" paddingLeft="15" paddingTop="4" text="!!Minimale Anzahl von Zeichen für Suche nicht erreicht" visible="false">
+          <constraints_gridbag anchor="nw" fill="h" gridy="4" />
+        </label>
+        <constraints_gridbag fill="b" gridy="1" weightx="100.0" weighty="100.0" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonCancelActionPerformedEvent="onCancelButtonClick" buttonOKActionPerformedEvent="onOKButtonClick" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

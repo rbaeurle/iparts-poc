@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window height="170" id="mainWindow" visible="false" width="500">
+    <invisible />
+    <layout_border />
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag />
+      <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+        <constraints_gridbag fill="h" weightx="100.0" />
+      </title>
+      <panel id="panelGrid" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <scrollpane id="scrollPane" minimumHeight="10" minimumWidth="10">
+          <panel id="panelEditFields" minimumHeight="10" minimumWidth="10" paddingBottom="8" paddingLeft="8" paddingRight="8" paddingTop="8">
+            <invisible />
+            <layout_gridbag />
+            <label horizontalalignment="RIGHT" id="label_0" minimumHeight="10" minimumWidth="10" text="Lable1">
+              <constraints_gridbag anchor="e" insetsBottom="4" insetsRight="4" insetsTop="4" />
+            </label>
+            <textfield id="textfield_0" minimumHeight="10" minimumWidth="200">
+              <constraints_gridbag fill="h" gridx="1" insetsBottom="4" insetsLeft="4" insetsTop="4" weightx="100.0" />
+            </textfield>
+            <label horizontalalignment="RIGHT" id="label_1" minimumHeight="10" minimumWidth="10" text="ein längerer Text">
+              <constraints_gridbag anchor="e" gridy="1" insetsBottom="4" insetsRight="4" insetsTop="4" />
+            </label>
+            <textfield id="textfield_1" minimumHeight="10" minimumWidth="200">
+              <constraints_gridbag fill="h" gridx="1" gridy="1" insetsBottom="4" insetsLeft="4" insetsTop="4" weightx="100.0" />
+            </textfield>
+            <label horizontalalignment="RIGHT" id="label_2" minimumHeight="10" minimumWidth="10" text="weiteres Label">
+              <constraints_gridbag anchor="e" gridy="2" insetsBottom="4" insetsRight="4" insetsTop="4" />
+            </label>
+            <buttonTextField buttonText="..." buttonVisible="true" id="buttontextfield_0" minimumHeight="10" minimumWidth="10">
+              <constraints_gridbag fill="h" gridx="1" gridy="2" insetsBottom="4" insetsLeft="4" insetsTop="4" weightx="100.0" />
+            </buttonTextField>
+            <constraints_border />
+          </panel>
+          <constraints_border />
+        </scrollpane>
+        <constraints_gridbag fill="b" gridy="1" weightx="100.0" weighty="100.0" />
+      </panel>
+      <buttonPanel buttonCancelActionPerformedEvent="onButtonCancelAction" buttonOKActionPerformedEvent="onButtonOKAction" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+        <constraints_gridbag fill="h" gridy="3" weightx="100.0" />
+      </buttonPanel>
+      <constraints_border />
+    </panel>
+  </window>
+</gui>
+

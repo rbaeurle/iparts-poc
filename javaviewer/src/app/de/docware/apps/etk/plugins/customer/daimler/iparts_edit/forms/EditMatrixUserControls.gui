@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <scrollpane id="scrollpane" minimumHeight="10" minimumWidth="10">
+        <panel id="panelElements" minimumHeight="10" minimumWidth="10">
+          <invisible />
+          <layout_absolute />
+          <constraints_border />
+        </panel>
+        <constraints_border />
+      </scrollpane>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonCancelActionPerformedEvent="onButtonCancelAction" buttonOKActionPerformedEvent="onButtonOKAction" id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

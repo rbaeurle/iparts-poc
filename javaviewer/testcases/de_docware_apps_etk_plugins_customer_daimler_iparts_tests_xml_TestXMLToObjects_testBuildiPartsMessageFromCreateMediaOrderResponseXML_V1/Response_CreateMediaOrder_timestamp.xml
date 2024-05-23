@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ #==============================================================================
+ #
+ #  AS-PLM
+ #
+ #  $HeadURL: https://dev-dynplm.it-solutions.atos.net/svn/asplmdev/trunk/cust_root_dir/integration/prototypes/was/services/MediaService_BO/xml/samples/CreateMediaOrder_res_s01.xml $
+ #  $LastChangedRevision: 2245 $
+ #  $LastChangedDate: 2015-09-07 15:52:58 +0200 (Mo, 07 Sep 2015) $
+ #  $LastChangedBy: a424518 $
+ #
+ #  Author: Andreas Saremba, Atos
+ #  Purpose: Sample message for the AS-PLM Media Service (AMS): Operation CreateMediaOrder (Response)
+ #           This is a success response
+ #
+ #==============================================================================
+-->
+<Message xmlns="http://asplm.daimler.com/MediaService/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://asplm.daimler.com/MediaService/v1 asplm_message_flat.xsd">
+    <Response from="ASPLM" to="iParts" requestId="req_s01" requestOperation="CreateMediaOrder">
+        <Success ok="true"/>
+        <ResCreateMediaOrder>
+            <MediaOrder dateOrdered="2015-09-04T18:13:51.0"/>
+            <MediaContainer mcItemId="MC000.010.000.007" mcItemRevId="001"/>
+        </ResCreateMediaOrder>
+    </Response>
+    <History>
+        <Timestamp creator="Broker" event="reqReceived">2015-09-04T18:13:51.0</Timestamp>
+        <Timestamp creator="AppServer" event="reqReceived">2015-09-04T18:13:52.0</Timestamp>
+        <Timestamp creator="AppServer" event="resSent">2015-09-04T18:13:53.0</Timestamp>
+        <Timestamp creator="Broker" event="resSent">2015-09-04T18:13:54.0</Timestamp>
+    </History>
+</Message>

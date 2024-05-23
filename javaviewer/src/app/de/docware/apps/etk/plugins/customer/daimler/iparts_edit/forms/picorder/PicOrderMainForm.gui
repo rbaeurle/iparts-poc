@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window height="950" id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMainNew" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <tabbedpane id="tabbedpanePicOrder" minimumHeight="10" minimumWidth="10">
+        <tabentry id="tabbedpaneentryPicOrder" minimumHeight="10" minimumWidth="10" title="!!Bildauftrag">
+          <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+            <invisible />
+            <layout_border />
+            <scrollpane id="scrollpane" minimumHeight="10" minimumWidth="10">
+              <panel id="panelMainSub" minimumHeight="10" minimumWidth="10">
+                <invisible />
+                <layout_gridbag centered="false" />
+                <panel id="panelOrderNo" minimumHeight="10" minimumWidth="10" title="!!AS-PLM Auftragsnummer">
+                  <invisible />
+                  <layout_gridbag />
+                  <constraints_gridbag fill="h" insetsBottom="4" insetsLeft="8" insetsRight="8" insetsTop="4" weightx="100.0" />
+                </panel>
+                <panel id="panelOrderTyp" minimumHeight="10" minimumWidth="10" title="!!Auftragstyp und Status">
+                  <invisible />
+                  <layout_gridbag />
+                  <label horizontalalignment="RIGHT" id="labelOrderType" minimumHeight="10" minimumWidth="80" text="!!Auftragstyp">
+                    <constraints_gridbag anchor="e" insetsBottom="4" insetsLeft="4" insetsRight="4" />
+                  </label>
+                  <combobox genericType="Object" id="comboboxOrderType" minimumHeight="10" minimumWidth="10">
+                    <constraints_gridbag fill="h" gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="4" weightx="100.0" />
+                  </combobox>
+                  <label horizontalalignment="RIGHT" id="labelOrderState" minimumHeight="10" minimumWidth="80" text="!!Status">
+                    <constraints_gridbag anchor="e" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+                  </label>
+                  <textfield backgroundColor="clDesignBackground" id="textfieldOrderState" isEditable="false" minimumHeight="10" minimumWidth="200">
+                    <constraints_gridbag fill="h" gridx="1" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" weightx="100.0" />
+                  </textfield>
+                  <label horizontalalignment="RIGHT" id="labelOrderMessage" minimumHeight="10" minimumWidth="80" text="!!Fehlermeldung">
+                    <constraints_gridbag anchor="ne" gridy="2" insetsLeft="4" insetsRight="4" insetsTop="4" />
+                  </label>
+                  <textarea backgroundColor="clDesignBackground" id="textareaOrderMessage" isEditable="false" minimumHeight="10" minimumWidth="200" paddingBottom="1" paddingLeft="1" paddingRight="1" paddingTop="1">
+                    <constraints_gridbag fill="h" gridx="1" gridy="2" insetsBottom="8" insetsLeft="4" insetsRight="8" insetsTop="4" weightx="100.0" />
+                  </textarea>
+                  <constraints_gridbag fill="h" gridy="1" insetsBottom="4" insetsLeft="8" insetsRight="8" insetsTop="4" weightx="100.0" />
+                </panel>
+                <panel id="panelOrderProduct" minimumHeight="10" minimumWidth="10" title="!!Produkt">
+                  <invisible />
+                  <layout_gridbag />
+                  <constraints_gridbag fill="h" gridy="2" insetsBottom="4" insetsLeft="8" insetsRight="8" insetsTop="4" weightx="100.0" />
+                </panel>
+                <panel id="panelEinPAS" minimumHeight="120" minimumWidth="10" paddingBottom="4" paddingLeft="8" paddingRight="8" paddingTop="4">
+                  <invisible />
+                  <layout_border />
+                  <constraints_gridbag fill="h" gridy="3" weightx="100.0" />
+                </panel>
+                <panel id="panelKGTU" minimumHeight="100" minimumWidth="10" paddingBottom="4" paddingLeft="8" paddingRight="8" paddingTop="4">
+                  <invisible />
+                  <layout_border />
+                  <constraints_gridbag fill="h" gridy="4" weightx="100.0" />
+                </panel>
+                <panel id="panelOrderData" minimumHeight="10" minimumWidth="10" title="!!Bildauftrag Daten">
+                  <invisible />
+                  <layout_gridbag />
+                  <label fontStyle="BOLD" id="labelName" minimumHeight="10" minimumWidth="10" text="!!Benennung">
+                    <constraints_gridbag anchor="e" insetsBottom="4" insetsLeft="4" insetsRight="4" />
+                  </label>
+                  <textfield id="textfieldName" minimumHeight="10" minimumWidth="200" onChangeEvent="onChangeRequiredEvent">
+                    <constraints_gridbag fill="h" gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="8" weightx="100.0" />
+                  </textfield>
+                  <label fontStyle="BOLD" id="labelOrderShowType" minimumHeight="10" minimumWidth="10" text="!!Darstellungsart">
+                    <constraints_gridbag anchor="e" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+                  </label>
+                  <combobox genericType="Object" id="comboboxOrderShowType" minimumHeight="10" minimumWidth="10" onChangeEvent="onChangeRequiredEvent">
+                    <constraints_gridbag fill="h" gridx="1" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" weightx="100.0" />
+                  </combobox>
+                  <label id="labelCustomer" minimumHeight="10" minimumWidth="10" text="!!Auftragnehmer">
+                    <constraints_gridbag anchor="e" gridy="2" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+                  </label>
+                  <panel id="panelCustomer" minimumHeight="20" minimumWidth="10">
+                    <invisible />
+                    <layout_border />
+                    <constraints_gridbag fill="b" gridx="1" gridy="2" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" weightx="100.0" />
+                  </panel>
+                  <label fontStyle="BOLD" id="labelReason" minimumHeight="10" minimumWidth="10" text="!!Grund für Änderung" visible="false">
+                    <constraints_gridbag anchor="ne" gridy="3" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+                  </label>
+                  <scrollpane borderColor="clDesignTextFieldBorder" borderWidth="1" id="scrollpaneReason" minimumHeight="60" minimumWidth="10" visible="false">
+                    <textarea id="textareaReason" minimumHeight="60" minimumWidth="100" onChangeEvent="onChangeRequiredEvent">
+                      <constraints_border />
+                    </textarea>
+                    <constraints_gridbag fill="h" gridx="1" gridy="3" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" weightx="100.0" />
+                  </scrollpane>
+                  <label id="labelOrderDate" minimumHeight="10" minimumWidth="10" text="!!Beauftragungsdatum">
+                    <constraints_gridbag anchor="e" gridy="4" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+                  </label>
+                  <calendar id="calendarOrderDate" minimumHeight="10" minimumWidth="10">
+                    <constraints_gridbag fill="h" gridx="1" gridy="4" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" weightx="100.0" />
+                  </calendar>
+                  <label id="labelTargetDeadline" minimumHeight="10" minimumWidth="10" text="!!Gew. Fertigstellungstermin">
+                    <constraints_gridbag anchor="e" gridy="5" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+                  </label>
+                  <calendar id="calendarTargetDeadline" minimumHeight="10" minimumWidth="10">
+                    <constraints_gridbag fill="h" gridx="1" gridy="5" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" weightx="100.0" />
+                  </calendar>
+                  <label id="labelComment" minimumHeight="10" minimumWidth="10" text="!!Bemerkung">
+                    <constraints_gridbag anchor="ne" gridy="6" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+                  </label>
+                  <scrollpane borderColor="clDesignTextFieldBorder" borderWidth="1" id="scrollpaneComment" minimumHeight="60" minimumWidth="10">
+                    <textarea id="textareaComment" minimumHeight="60" minimumWidth="100">
+                      <constraints_border />
+                    </textarea>
+                    <constraints_gridbag fill="h" gridx="1" gridy="6" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" weightx="100.0" />
+                  </scrollpane>
+                  <label id="labelCode" minimumHeight="10" minimumWidth="10" name="labelCode" text="!!Code-Gültigkeit">
+                    <constraints_gridbag anchor="e" gridy="7" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+                  </label>
+                  <textfield id="textfieldCode" minimumHeight="10" minimumWidth="200">
+                    <constraints_gridbag fill="h" gridx="1" gridy="7" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" weightx="100.0" />
+                  </textfield>
+                  <label id="labelWorkingContext" minimumHeight="10" minimumWidth="10" text="!!Bearbeitungskontext" visible="false">
+                    <constraints_gridbag anchor="e" gridy="8" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+                  </label>
+                  <textfield id="textfieldWorkingContext" isEditable="false" minimumHeight="10" minimumWidth="200" visible="false">
+                    <constraints_gridbag fill="h" gridx="1" gridy="8" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" weightx="100.0" />
+                  </textfield>
+                  <label id="labelEvents" minimumHeight="10" minimumWidth="10" name="labelEvents" text="!!Ereignissteuerung">
+                    <constraints_gridbag anchor="e" gridy="9" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+                  </label>
+                  <panel id="panelEvents" minimumHeight="10" minimumWidth="10">
+                    <invisible />
+                    <layout_border />
+                    <constraints_gridbag fill="b" gridx="1" gridy="9" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" weightx="100.0" />
+                  </panel>
+                  <label id="labelOnlyWithFIN" minimumHeight="10" minimumWidth="10" text="!!Nur bei FIN ausgeben">
+                    <constraints_gridbag anchor="e" gridy="10" insetsBottom="8" insetsLeft="4" insetsRight="4" insetsTop="4" />
+                  </label>
+                  <checkbox id="checkboxOnlyWithFIN" minimumHeight="10" minimumWidth="10">
+                    <constraints_gridbag anchor="w" fill="h" gridx="1" gridy="10" insetsBottom="8" insetsLeft="4" insetsRight="8" insetsTop="4" />
+                  </checkbox>
+                  <constraints_gridbag fill="h" gridy="5" insetsBottom="4" insetsLeft="8" insetsRight="8" insetsTop="4" weightx="100.0" />
+                </panel>
+                <panel id="panelOrderInitiator" minimumHeight="10" minimumWidth="10" title="!!Auftraggeber Daten">
+                  <invisible />
+                  <layout_gridbag />
+                  <label id="labelInitiator" minimumHeight="10" minimumWidth="10" text="!!Auftraggeber">
+                    <constraints_gridbag anchor="e" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+                  </label>
+                  <panel id="panelInitiator" minimumHeight="20" minimumWidth="10">
+                    <invisible />
+                    <layout_border />
+                    <constraints_gridbag fill="b" gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" weightx="100.0" />
+                  </panel>
+                  <label id="labelInitiatorGroup" minimumHeight="10" minimumWidth="10" text="!!Auftragsgruppe">
+                    <constraints_gridbag anchor="e" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+                  </label>
+                  <textfield backgroundColor="clDesignBackground" id="textfieldInitiatorGroup" isEditable="false" minimumHeight="10" minimumWidth="200">
+                    <constraints_gridbag fill="h" gridx="1" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" weightx="100.0" />
+                  </textfield>
+                  <label id="labelInitiatorDate" minimumHeight="10" minimumWidth="10" text="!!Auftragsanlagedatum">
+                    <constraints_gridbag anchor="e" gridy="2" insetsBottom="8" insetsLeft="4" insetsRight="4" insetsTop="4" />
+                  </label>
+                  <dateTimePanel id="calenderInitiatorDateTime" minimumHeight="10" minimumWidth="10">
+                    <constraints_gridbag fill="h" gridx="1" gridy="2" insetsBottom="8" insetsLeft="4" insetsRight="8" insetsTop="4" />
+                  </dateTimePanel>
+                  <constraints_gridbag fill="h" gridy="6" insetsBottom="4" insetsLeft="8" insetsRight="8" insetsTop="4" weightx="100.0" />
+                </panel>
+                <constraints_border />
+              </panel>
+              <constraints_border />
+            </scrollpane>
+            <panel borderWidth="4" id="panelButton" minimumHeight="10" minimumWidth="10" paddingRight="8" paddingTop="4">
+              <invisible />
+              <layout_border />
+              <button actionPerformedEvent="onButtonPartInfoClicked" id="buttonPartInfo" minimumHeight="10" minimumWidth="100" mnemonicEnabled="true" text="!!Teileinformation bearbeiten">
+                <constraints_border position="east" />
+              </button>
+              <label fontStyle="BOLD" id="labelCantBeSended" minimumHeight="10" minimumWidth="10" paddingBottom="4" paddingLeft="4" paddingTop="4">
+                <constraints_border position="west" />
+              </label>
+              <constraints_border position="north" />
+            </panel>
+            <constraints_border position="west" />
+          </panel>
+        </tabentry>
+        <tabentry id="tabbedpaneentryPicAttachments" minimumHeight="10" minimumWidth="10" title="!!Anhänge">
+          <panel id="panelAttachments">
+            <invisible />
+            <layout_flow />
+          </panel>
+        </tabentry>
+        <constraints_border />
+      </tabbedpane>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonOKActionPerformedEvent="onOKButtonClick" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

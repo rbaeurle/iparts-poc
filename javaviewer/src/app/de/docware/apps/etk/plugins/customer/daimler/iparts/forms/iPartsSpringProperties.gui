@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <scrollpane id="scrollpane" minimumHeight="10" minimumWidth="10">
+        <panel id="panelElements" minimumHeight="10" minimumWidth="10">
+          <invisible />
+          <layout_gridbag />
+          <textfield id="textfieldTop" minimumHeight="10" minimumWidth="200">
+            <constraints_gridbag fill="h" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="8" />
+          </textfield>
+          <button actionPerformedEvent="onActionPerformedTopEvent" id="buttonTop" maximumHeight="22" maximumWidth="20" minimumHeight="10" minimumWidth="10" mnemonicEnabled="true" text="...">
+            <constraints_gridbag gridx="1" insetsBottom="4" insetsRight="4" insetsTop="8" />
+          </button>
+          <label id="labelTop" minimumHeight="10" minimumWidth="10" text="labelTop">
+            <constraints_gridbag anchor="w" gridx="2" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="8" />
+          </label>
+          <textfield id="textfieldBottom" minimumHeight="10" minimumWidth="200">
+            <constraints_gridbag fill="h" gridy="1" insetsBottom="8" insetsLeft="8" insetsRight="4" insetsTop="4" />
+          </textfield>
+          <button actionPerformedEvent="onActionPerformedBottomEvent" id="buttonBottom" maximumHeight="22" maximumWidth="20" minimumHeight="10" minimumWidth="10" mnemonicEnabled="true" text="...">
+            <constraints_gridbag gridx="1" gridy="1" insetsBottom="8" insetsRight="4" insetsTop="4" />
+          </button>
+          <label id="labelBottom" minimumHeight="10" minimumWidth="10" text="labelBottom">
+            <constraints_gridbag anchor="w" gridx="2" gridy="1" insetsBottom="8" insetsLeft="4" insetsRight="8" insetsTop="4" />
+          </label>
+          <label id="labelAbstandshalter" minimumHeight="10" minimumWidth="10" text="dummy">
+            <constraints_gridbag gridx="2" gridy="2" weightx="100.0" weighty="100.0" />
+          </label>
+          <constraints_border />
+        </panel>
+        <constraints_border />
+      </scrollpane>
+      <constraints_border />
+    </panel>
+    <buttonPanel id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

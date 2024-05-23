@@ -1,0 +1,103 @@
+<!-- edited with XML Spy v4.2 U (http://www.xmlspy.com) by Fr.  Götz (T- Systems) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!-- ######################################################################## -->
+	<xsd:annotation>
+		<xsd:documentation>
+  			 Beschreibung der Eingangs- und Ausgangsschnittstellen des Systems JDAX
+  			 Copyright 2003 by T-Systems. All rights reserved.
+ 		</xsd:documentation>
+	</xsd:annotation>
+	<!-- ######################################################################## -->
+	<xsd:element name="SchnittstellenListe" type="SchnittstellenListeType"/>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="SchnittstellenListeType">
+		<xsd:sequence>
+			<xsd:element name="Protokollierung" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Schnittstelle" type="SchnittstelleType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="SchnittstelleType">
+		<xsd:sequence>
+			<xsd:element name="Beschreibung" type="xsd:string"/>
+			<xsd:element name="Name" type="xsd:string"/>
+			<xsd:element name="Art" type="xsd:string"/>
+			<xsd:element name="Serial" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Status" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PhysikalischePraesentierung" type="PhysikalischePraesentierungType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="KontextType">
+		<xsd:sequence>
+			<xsd:element name="VorgaengerNF" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="NachfolgerNF" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Anzahl" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="IdentifikationsAttributName" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="PhysikalischePraesentierungType">
+		<xsd:sequence>
+			<xsd:element name="Typ" type="xsd:string"/>
+			<xsd:choice>
+				<xsd:element name="Datei" type="DateiType"/>
+				<xsd:element name="DB" type="DBType"/>
+				<xsd:element name="MailVersand" type="MailVersandType"/>
+				<xsd:element name="MQS" type="MQSType"/>
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="MailVersandType">
+		<xsd:sequence>
+			<xsd:element name="Adresse" type="xsd:string" maxOccurs="unbounded"/>
+			<xsd:element name="Absender" type="xsd:string"/>
+			<xsd:element name="SMTP" type="xsd:string"/>
+			<xsd:element name="Header" type="xsd:string"/>
+			<xsd:element name="Body" type="xsd:string"/>
+			<xsd:element name="Attachment" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="DateiType">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string"/>
+			<xsd:element name="Pfad" type="xsd:string"/>
+			<xsd:element name="Rechner" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="DBType">
+		<xsd:sequence>
+			<xsd:element name="URL" type="xsd:string"/>
+			<xsd:element name="PW" type="xsd:string"/>
+			<xsd:element name="User" type="xsd:string"/>
+			<xsd:element name="Tabelle" type="xsd:string"/>
+			<xsd:element name="Modus" type="xsd:string"/>
+			<xsd:element name="Session" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="NotAutoCommit" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PollTime" type="xsd:string" minOccurs="0"/>
+			<!-- I Insert, U Update, UI Update dann Insert; bei U PK nicht vergessen!!!-->
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="MQSType">
+		<xsd:sequence>
+			<xsd:element name="HostName" type="xsd:string"/>
+			<xsd:element name="Port" type="xsd:string"/>
+			<xsd:element name="Channel" type="xsd:string"/>
+			<xsd:element name="QueueName" type="xsd:string"/>
+			<xsd:element name="AutoCommit" type="xsd:string"/>
+			<!-- JMSClient legt fest ob der Schalter JMSC.MQJMS_CLIENT_NONJMS_MQ gesetzt wird -->
+			<xsd:element name="JMSClient" type="xsd:string" minOccurs="0"/>
+			<!-- PartNrJMSHeader legt fest ob Teileinformationen im JMS Header gesendet werden -->
+			<xsd:element name="PartNrJMSHeader" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PollTime" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Validierung" type="xsd:string" minOccurs="0"/>
+			<!-- I Insert, U Update, UI Update dann Insert; bei U PK nicht vergessen!!!-->
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<!-- ________________________________________________________________________ -->
+</xsd:schema>

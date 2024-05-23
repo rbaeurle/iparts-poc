@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible>
+      <contextmenu id="contextMenuTableAttachments" menuName="contextMenuTableAttachments" minimumHeight="10" minimumWidth="10" />
+    </invisible>
+    <layout_border />
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <panel id="panelGrid" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <constraints_border />
+      </panel>
+      <panel id="panelStatus" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_gridbag />
+        <label id="labelCount" minimumHeight="10" minimumWidth="10" text="!!Anzahl Anhänge:">
+          <constraints_gridbag insetsBottom="8" insetsLeft="8" insetsRight="4" insetsTop="8" />
+        </label>
+        <label id="labelCountValue" minimumHeight="10" minimumWidth="10">
+          <constraints_gridbag gridx="1" insetsBottom="8" insetsRight="8" insetsTop="8" />
+        </label>
+        <label id="labelSize" minimumHeight="10" minimumWidth="10" text="!!Gesamtgröße:">
+          <constraints_gridbag gridx="2" insetsBottom="8" insetsLeft="8" insetsRight="4" insetsTop="8" />
+        </label>
+        <label id="labelSizeValue" minimumHeight="10" minimumWidth="10">
+          <constraints_gridbag gridx="3" insetsBottom="8" insetsRight="8" insetsTop="8" />
+        </label>
+        <label id="labelRemoveSize" minimumHeight="10" minimumWidth="10" text="!!Übertrag:" visible="false">
+          <constraints_gridbag gridx="4" insetsBottom="8" insetsLeft="8" insetsRight="4" insetsTop="8" />
+        </label>
+        <label id="labelRemoveSizeValue" minimumHeight="10" minimumWidth="10" visible="false">
+          <constraints_gridbag gridx="5" insetsBottom="8" insetsRight="8" insetsTop="8" />
+        </label>
+        <constraints_border position="south" />
+      </panel>
+      <constraints_border />
+    </panel>
+  </window>
+</gui>
+

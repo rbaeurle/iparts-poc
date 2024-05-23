@@ -1,0 +1,11 @@
+{
+	"responseHeader": {
+		"context": "Expiry=-1"
+	},
+	"vehicleRestrictedInclMasterDataResponse": null,
+	"version": "16.3.1.1",
+	"exception": {
+		"description": "Da stimmt was nicht!",
+		"id": "08/15"
+	}
+}

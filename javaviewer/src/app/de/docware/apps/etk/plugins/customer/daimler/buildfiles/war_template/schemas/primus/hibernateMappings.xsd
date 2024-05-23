@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="hibernate-mapping" type="hibernate-mappingType"/>
+  <xs:complexType name="columnType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="name" use="optional"/>
+        <xs:attribute type="xs:string" name="sql-type" use="optional"/>
+        <xs:attribute type="xs:string" name="index" use="optional"/>
+        <xs:attribute type="xs:string" name="not-null" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="paramType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="name" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="generatorType">
+    <xs:sequence>
+      <xs:element type="paramType" name="param"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="class" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="idType">
+    <xs:sequence>
+      <xs:element type="columnType" name="column"/>
+      <xs:element type="generatorType" name="generator"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="type" use="optional"/>
+    <xs:attribute type="xs:byte" name="unsaved-value" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="propertyType">
+    <xs:sequence>
+      <xs:element type="columnType" name="column" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="type" use="optional"/>
+    <xs:attribute type="xs:string" name="update" use="optional"/>
+    <xs:attribute type="xs:string" name="insert" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="many-to-oneType">
+    <xs:sequence>
+      <xs:element type="columnType" name="column" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="class" use="optional"/>
+    <xs:attribute type="xs:string" name="cascade" use="optional"/>
+    <xs:attribute type="xs:string" name="outer-join" use="optional"/>
+    <xs:attribute type="xs:string" name="update" use="optional"/>
+    <xs:attribute type="xs:string" name="insert" use="optional"/>
+    <xs:attribute type="xs:string" name="foreign-key" use="optional"/>
+    <xs:attribute type="xs:string" name="type" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="classType">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="idType" name="id"/>
+      <xs:element type="propertyType" name="property"/>
+      <xs:element type="many-to-oneType" name="many-to-one"/>
+      <xs:element type="setType" name="set"/>
+      <xs:element type="one-to-oneType" name="one-to-one"/>
+    </xs:choice>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="table" use="optional"/>
+    <xs:attribute type="xs:string" name="dynamic-update" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="hibernate-mappingType">
+    <xs:sequence>
+      <xs:element type="classType" name="class"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="keyType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="column" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="one-to-manyType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="class" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="setType" mixed="true">
+    <xs:sequence>
+      <xs:element type="keyType" name="key" minOccurs="0"/>
+      <xs:element type="one-to-manyType" name="one-to-many" minOccurs="0"/>
+      <xs:element type="columnType" name="column" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="lazy" use="optional"/>
+    <xs:attribute type="xs:string" name="inverse" use="optional"/>
+    <xs:attribute type="xs:string" name="cascade" use="optional"/>
+    <xs:attribute type="xs:string" name="sort" use="optional"/>
+    <xs:attribute type="xs:string" name="type" use="optional"/>
+    <xs:attribute type="xs:string" name="update" use="optional"/>
+    <xs:attribute type="xs:string" name="insert" use="optional"/>
+    <xs:attribute type="xs:string" name="class" use="optional"/>
+    <xs:attribute type="xs:string" name="outer-join" use="optional"/>
+    <xs:attribute type="xs:string" name="constrained" use="optional"/>
+    <xs:attribute type="xs:string" name="property-ref" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="one-to-oneType" mixed="true">
+    <xs:sequence>
+      <xs:element type="keyType" name="key" minOccurs="0"/>
+      <xs:element type="one-to-manyType" name="one-to-many" minOccurs="0"/>
+      <xs:element type="columnType" name="column" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="class" use="optional"/>
+    <xs:attribute type="xs:string" name="cascade" use="optional"/>
+    <xs:attribute type="xs:string" name="outer-join" use="optional"/>
+    <xs:attribute type="xs:string" name="constrained" use="optional"/>
+    <xs:attribute type="xs:string" name="property-ref" use="optional"/>
+    <xs:attribute type="xs:string" name="lazy" use="optional"/>
+    <xs:attribute type="xs:string" name="inverse" use="optional"/>
+    <xs:attribute type="xs:string" name="sort" use="optional"/>
+    <xs:attribute type="xs:string" name="type" use="optional"/>
+    <xs:attribute type="xs:string" name="update" use="optional"/>
+    <xs:attribute type="xs:string" name="insert" use="optional"/>
+    <xs:attribute type="xs:string" name="foreign-key" use="optional"/>
+  </xs:complexType>
+</xs:schema>

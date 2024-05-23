@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ #==============================================================================
+ #
+ #  AS-PLM
+ #
+ #  $HeadURL: https://dev-dynplm.it-solutions.atos.net/svn/asplmdev/cust_root_dir/integration/prototypes/was/services/MediaService_BO/xml/samples/SearchMediaContainers_res_s01.xml $
+ #  $LastChangedRevision: 976 $
+ #  $LastChangedDate: 2015-05-22 14:11:07 +0200 (Fr, 22 Mai 2015) $
+ #  $LastChangedBy: a424518 $
+ #
+ #  Author: Andreas Saremba, Atos
+ #  Purpose: Sample message for the AS-PLM Media Service (AMS): Operation SearchMediaContainers (Request)
+ #           Response reports Success, List of MediaContainers found is returned with the attributes
+ #                 specified in the request
+ #
+ #==============================================================================
+-->
+<Message xmlns="http://asplm.daimler.com/MediaService/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://asplm.daimler.com/MediaService/v1 asplm_message_flat.xsd">
+    <Response from="ASPLM" requestId="req_s01" to="iParts" requestOperation="SearchMediaContainers">
+        <Success ok="true"/>
+        <ResSearchMediaContainers numResultsDelivered="2">
+            <MediaContainer mcItemId="MC000.010.000.023" mcItemRevId="001">
+                <Attr name="name">B2156</Attr>               
+                <Attr name="description">xyz</Attr>               
+            </MediaContainer>
+            <MediaContainer mcItemId="MC000.010.000.087" mcItemRevId="001">
+                <Attr name="name">B6732</Attr>               
+                <Attr name="description">abc</Attr>               
+            </MediaContainer>
+        </ResSearchMediaContainers>
+    </Response>
+    <History>
+        <Request from="iParts" requestId="req_s01" to="ASPLM">
+            <Requestor userId="migimport"/>
+            <Operation>
+                <SearchMediaContainers maxResults="300">
+                    <SearchCriterion attrName="name">B*</SearchCriterion>
+                    <ResultAttribute attrName="name"/>
+                    <ResultAttribute attrName="description"/>
+                </SearchMediaContainers>
+            </Operation>
+        </Request>
+    </History>
+</Message>

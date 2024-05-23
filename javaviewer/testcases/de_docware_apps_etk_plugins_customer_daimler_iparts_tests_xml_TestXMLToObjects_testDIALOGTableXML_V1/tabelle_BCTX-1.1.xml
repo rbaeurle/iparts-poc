@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dataset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../dialog.xsd" 
+    name="T10RBCTX" origin="DIALOG" sourceExportTime="2006-05-04T18:13:51.0" trafoTime="2006-05-04T18:13:51.0" schemaVersion="1.1">
+
+<!-- Record + Fortsetzungssatz aber nicht aktuell -->
+    <T10RBCTX seqNo="0" kem="">
+        <BCTX_PG>P</BCTX_PG>
+        <BCTX_BR>C205</BCTX_BR>
+        <BCTX_RAS>010212</BCTX_RAS>
+        <BCTX_POSE>0100</BCTX_POSE>
+        <BCTX_SESI>BCTX_SES</BCTX_SESI>
+        <BCTX_POSP>01</BCTX_POSP>
+        <BCTX_PV>PV</BCTX_PV>
+        <BCTX_WW>WW</BCTX_WW>
+        <BCTX_ETZ>ETZ</BCTX_ETZ>
+        <BCTX_SPS>0</BCTX_SPS>
+        <BCTX_SDATA>020080710170557</BCTX_SDATA>
+        <BCTX_SDATB>020080710170600</BCTX_SDATB>
+        <BCTX_FED>FE</BCTX_FED>
+        <BCTX_AATAB>AATAB</BCTX_AATAB>
+        <BCTX_STR>ST</BCTX_STR>
+        <BCTX_TXTSORT>TS</BCTX_TXTSORT>
+        <BCTX_TXTART>WW</BCTX_TXTART>
+        <BCTX_FS>01</BCTX_FS>
+        <BCTX_TEXT>TEXT0-1</BCTX_TEXT>
+        <BCTX_RFG>R</BCTX_RFG>
+    </T10RBCTX>
+    <T10RBCTX seqNo="0" kem="">
+        <BCTX_PG>P</BCTX_PG>
+        <BCTX_BR>C205</BCTX_BR>
+        <BCTX_RAS>010212</BCTX_RAS>
+        <BCTX_POSE>0100</BCTX_POSE>
+        <BCTX_SESI>BCTX_SES</BCTX_SESI>
+        <BCTX_POSP>01</BCTX_POSP>
+        <BCTX_PV>PV</BCTX_PV>
+        <BCTX_WW>WW</BCTX_WW>
+        <BCTX_ETZ>ETZ</BCTX_ETZ>
+        <BCTX_SPS>0</BCTX_SPS>
+        <BCTX_SDATA>020080710170557</BCTX_SDATA>
+        <BCTX_SDATB>020080710170600</BCTX_SDATB>
+        <BCTX_FED>FE</BCTX_FED>
+        <BCTX_AATAB>AATAB</BCTX_AATAB>
+        <BCTX_STR>ST</BCTX_STR>
+        <BCTX_TXTSORT>TS</BCTX_TXTSORT>
+        <BCTX_TXTART>WW</BCTX_TXTART>
+        <BCTX_FS>02</BCTX_FS>
+        <BCTX_TEXT>TEXT0-2</BCTX_TEXT>
+        <BCTX_RFG>R</BCTX_RFG>
+    </T10RBCTX>
+    
+<!-- Record + Fortsetzungssatz aktuell -->
+    <T10RBCTX seqNo="0" kem="">
+        <BCTX_PG>P</BCTX_PG>
+        <BCTX_BR>C205</BCTX_BR>
+        <BCTX_RAS>010212</BCTX_RAS>
+        <BCTX_POSE>0100</BCTX_POSE>
+        <BCTX_SESI>BCTX_SES</BCTX_SESI>
+        <BCTX_POSP>01</BCTX_POSP>
+        <BCTX_PV>PV</BCTX_PV>
+        <BCTX_WW>WW</BCTX_WW>
+        <BCTX_ETZ>ETZ</BCTX_ETZ>
+        <BCTX_SPS>0</BCTX_SPS>
+        <BCTX_SDATA>020080710170600</BCTX_SDATA>
+        <BCTX_SDATB>999999999999999</BCTX_SDATB>
+        <BCTX_FED>FE</BCTX_FED>
+        <BCTX_AATAB>AATAB</BCTX_AATAB>
+        <BCTX_STR>ST</BCTX_STR>
+        <BCTX_TXTSORT>TS</BCTX_TXTSORT>
+        <BCTX_TXTART>WW</BCTX_TXTART>
+        <BCTX_FS>01</BCTX_FS>
+        <BCTX_TEXT>TEXT0-1</BCTX_TEXT>
+        <BCTX_RFG>R</BCTX_RFG>
+    </T10RBCTX>
+    <T10RBCTX seqNo="0" kem="">
+        <BCTX_PG>P</BCTX_PG>
+        <BCTX_BR>C205</BCTX_BR>
+        <BCTX_RAS>010212</BCTX_RAS>
+        <BCTX_POSE>0100</BCTX_POSE>
+        <BCTX_SESI>BCTX_SES</BCTX_SESI>
+        <BCTX_POSP>01</BCTX_POSP>
+        <BCTX_PV>PV</BCTX_PV>
+        <BCTX_WW>WW</BCTX_WW>
+        <BCTX_ETZ>ETZ</BCTX_ETZ>
+        <BCTX_SPS>0</BCTX_SPS>
+        <BCTX_SDATA>020080710170600</BCTX_SDATA>
+        <BCTX_SDATB>999999999999999</BCTX_SDATB>
+        <BCTX_FED>FE</BCTX_FED>
+        <BCTX_AATAB>AATAB</BCTX_AATAB>
+        <BCTX_STR>ST</BCTX_STR>
+        <BCTX_TXTSORT>TS</BCTX_TXTSORT>
+        <BCTX_TXTART>WW</BCTX_TXTART>
+        <BCTX_FS>02</BCTX_FS>
+        <BCTX_TEXT>TEXT0-2</BCTX_TEXT>
+        <BCTX_RFG>R</BCTX_RFG>
+    </T10RBCTX>
+    
+    
+    <T10RBCTX seqNo="0" kem="">
+        <BCTX_PG>P</BCTX_PG>
+        <BCTX_BR>C205</BCTX_BR>
+        <BCTX_RAS>010212</BCTX_RAS>
+        <BCTX_POSE>0101</BCTX_POSE>
+        <BCTX_SESI>BCTX_SES</BCTX_SESI>
+        <BCTX_POSP>01</BCTX_POSP>
+        <BCTX_PV>PV</BCTX_PV>
+        <BCTX_WW>WW</BCTX_WW>
+        <BCTX_ETZ>ETZ</BCTX_ETZ>
+        <BCTX_SPS>0</BCTX_SPS>
+        <BCTX_SDATA>020080710170600</BCTX_SDATA>
+        <BCTX_SDATB>999999999999999</BCTX_SDATB>
+        <BCTX_FED>FE</BCTX_FED>
+        <BCTX_AATAB>AATAB</BCTX_AATAB>
+        <BCTX_STR>ST</BCTX_STR>
+        <BCTX_TXTSORT>TS</BCTX_TXTSORT>
+        <BCTX_TXTART>VW</BCTX_TXTART>
+        <BCTX_FS>01</BCTX_FS>
+        <BCTX_TEXT>TEXT1</BCTX_TEXT>
+        <BCTX_RFG>R</BCTX_RFG>
+    </T10RBCTX>
+</Dataset>

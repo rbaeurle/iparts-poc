@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10">
+      <constraints_border position="north" />
+    </title>
+    <panel id="mainPanel">
+      <invisible />
+      <layout_gridbag />
+      <panel id="additionalTopPanel" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_gridbag />
+        <constraints_gridbag fill="h" gridwidth="2" />
+      </panel>
+      <splitpane dividerPosition="484" horizontal="false" id="splitPane" minimumHeight="10" minimumWidth="10" paddingBottom="1" resizeWeight="0.5">
+        <panel id="panelTop" minimumHeight="0" paddingBottom="8" paddingLeft="8" paddingRight="8" paddingTop="4">
+          <invisible />
+          <layout_border />
+          <label id="labelDataObjectGridTopTitle" minimumHeight="10" minimumWidth="10" paddingBottom="2" text="DataObjectGridTopTitle">
+            <constraints_border position="north" />
+          </label>
+          <panel id="panelDataObjectGridTop" minimumHeight="10" minimumWidth="10">
+            <invisible />
+            <layout_border />
+            <constraints_border />
+          </panel>
+        </panel>
+        <panel id="panelBottom" minimumHeight="0" paddingBottom="8" paddingLeft="8" paddingRight="8" paddingTop="4">
+          <invisible />
+          <layout_border />
+          <label id="labelDataObjectGridBottomTitle" minimumHeight="10" minimumWidth="10" paddingBottom="2" text="DataObjectGridBottomTitle">
+            <constraints_border position="north" />
+          </label>
+          <panel id="panelDataObjectGridBottom" minimumHeight="10" minimumWidth="10">
+            <invisible />
+            <layout_border />
+            <constraints_border />
+          </panel>
+        </panel>
+        <constraints_gridbag fill="b" gridwidth="2" gridy="1" weightx="100.0" weighty="100.0" />
+      </splitpane>
+      <checkbox id="checkboxShowHistory" onChangeEvent="checkboxShowHistoryClicked" text="!!Alle Stände" visible="false">
+        <constraints_gridbag anchor="w" fill="h" gridwidth="2" gridx="1" gridy="2" insetsBottom="8" insetsLeft="8" insetsRight="8" />
+      </checkbox>
+      <checkbox id="checkboxRetailFilter" minimumHeight="10" minimumWidth="10" onChangeEvent="checkboxRetailFilterClicked" text="!!Retailfilter" visible="false">
+        <constraints_gridbag anchor="w" gridy="2" insetsBottom="8" insetsLeft="8" insetsRight="4" />
+      </checkbox>
+      <constraints_border />
+    </panel>
+    <buttonPanel dialogStyle="CLOSE" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

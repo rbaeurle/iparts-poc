@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="!!BOM-DB KEM-Datenblatt">
+      <constraints_border position="north" />
+    </title>
+    <panel borderWidth="4" id="mainPanel" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <tabbedpane id="tabbedpane" minimumHeight="10" minimumWidth="10">
+        <tabentry id="tabbedPaneEntryKEMHeader" minimumHeight="10" minimumWidth="10" title="!!KEM-Stammdaten">
+          <panel id="tabbedPaneEntryKEMHeaderContent">
+            <invisible />
+            <layout_border />
+            <panel id="tabbedPaneEntryKEMHeaderContentPanel" minimumHeight="10" minimumWidth="10">
+              <invisible />
+              <layout_border />
+              <constraints_border />
+            </panel>
+          </panel>
+        </tabentry>
+        <tabentry id="tabbedPaneEntryKEMData" minimumHeight="10" minimumWidth="10" title="!!KEM-Inhalt">
+          <panel id="tabbedPaneEntryKEMDataContent">
+            <invisible />
+            <layout_border />
+            <panel id="tabbedPaneEntryKEMDataContentPanel" minimumHeight="10" minimumWidth="10">
+              <invisible />
+              <layout_border />
+              <table id="tabbedPaneEntryKEMDataTable" minimumHeight="10" minimumWidth="10">
+                <constraints_border />
+              </table>
+              <constraints_border />
+            </panel>
+          </panel>
+        </tabentry>
+        <constraints_border />
+      </tabbedpane>
+      <constraints_border />
+    </panel>
+  </window>
+</gui>
+

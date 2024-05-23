@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window height="500" id="mainWindow" minimumHeight="300" minimumWidth="300" name="EditImportFilesDialog" title="!!Importiere %1..." visible="false" width="600">
+    <invisible />
+    <layout_border gap_vertical="8" />
+    <buttonPanel dialogStyle="CUSTOM" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+  <panel id="filesPanel">
+    <invisible />
+    <layout_gridbag centered="false" />
+    <title backgroundColor="clWhite" iconfilename="@imgPlugin_iParts_ImportFiles" id="filesTitle" minimumHeight="50" minimumWidth="10" title="!!Dateien auswählen...">
+      <constraints_gridbag fill="h" weightx="100.0" />
+    </title>
+    <scrollpane id="filesScrollPane" minimumHeight="10" minimumWidth="10">
+      <panel id="filesImporterPanel" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_gridbag centered="false" />
+        <constraints_border />
+      </panel>
+      <constraints_gridbag fill="b" gridy="1" weighty="100.0" />
+    </scrollpane>
+  </panel>
+  <panel id="messagesPanel">
+    <invisible />
+    <layout_gridbag centered="false" />
+    <title backgroundColor="clWhite" iconfilename="@imgPlugin_iParts_ImportFiles" id="messagesTitle" minimumHeight="50" minimumWidth="10" title="!!Import läuft...">
+      <constraints_gridbag fill="h" weightx="100.0" />
+    </title>
+    <label id="messagesLabel" minimumHeight="10" minimumWidth="10" text="!!Meldungen">
+      <constraints_gridbag anchor="w" gridy="1" insetsLeft="8" insetsRight="8" insetsTop="8" />
+    </label>
+    <scrollpane borderColor="clDesignTextFieldBorder" borderWidth="1" id="messagesScrollPane" minimumHeight="10" minimumWidth="10">
+      <textarea id="messagesTextArea" isEditable="false" minimumHeight="100" minimumWidth="200" scrollToVisible="true">
+        <constraints_border />
+      </textarea>
+      <constraints_gridbag fill="b" gridy="4" insetsLeft="8" insetsRight="8" insetsTop="8" weightx="100.0" weighty="100.0" />
+    </scrollpane>
+    <panel id="panelProgressbar" maximumHeight="16" minimumHeight="16" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <progressbar fractionDigits="2" id="progressbar" minimumHeight="10" minimumWidth="10" visible="false">
+        <constraints_border />
+      </progressbar>
+      <constraints_gridbag fill="b" gridy="5" insetsLeft="8" insetsRight="8" weightx="100.0" />
+    </panel>
+  </panel>
+</gui>
+

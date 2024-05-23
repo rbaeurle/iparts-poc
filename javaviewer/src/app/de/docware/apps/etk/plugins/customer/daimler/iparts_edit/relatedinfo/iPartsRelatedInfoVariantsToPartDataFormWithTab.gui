@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false" width="1000">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" borderWidth="0" id="title" minimumHeight="50" minimumWidth="0" visible="false">
+      <constraints_border position="north" />
+    </title>
+    <tabbedpane id="tabbedPane" minimumHeight="10" minimumWidth="10">
+      <constraints_border />
+    </tabbedpane>
+  </window>
+</gui>
+

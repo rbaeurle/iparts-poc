@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" title="!!Stückliste mit Änderungsständen" visible="false" width="1000">
+    <invisible />
+    <layout_border />
+    <label fontStyle="BOLD" id="headingLabel" minimumHeight="10" minimumWidth="10" paddingLeft="4" paddingRight="4" paddingTop="4" text="Heading">
+      <constraints_border position="north" />
+    </label>
+    <panel id="mainPanel" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <panel borderColor="clTransparent" borderWidth="4" id="northPanel" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_gridbag centered="false" />
+        <label id="revisionStateLabel" minimumHeight="10" minimumWidth="10" text="!!Änderungsstand:">
+          <constraints_gridbag insetsRight="4" />
+        </label>
+        <button actionPerformedEvent="showLastRevisionState" iconfilename="@imgPlugin_iParts_MoveLeft" id="lastRevisionStateButton" minimumHeight="10" minimumWidth="100" mnemonicEnabled="true" text="!!Vorheriger">
+          <constraints_gridbag gridx="1" insetsRight="4" />
+        </button>
+        <combobox genericType="Object" id="revisionStateComboBox" minimumHeight="10" minimumWidth="50" onChangeEvent="revisionStateSelected">
+          <constraints_gridbag gridx="2" insetsRight="4" />
+        </combobox>
+        <button actionPerformedEvent="showNextRevisionState" iconfilename="@imgPlugin_iParts_MoveRight" id="nextRevisionStateButton" minimumHeight="10" minimumWidth="100" mnemonicEnabled="true" text="!!Nächster">
+          <constraints_gridbag gridx="3" insetsRight="4" />
+        </button>
+        <label id="labelDate" minimumHeight="10" minimumWidth="10" text="!!Stichtag:">
+          <constraints_gridbag gridx="4" insetsLeft="4" />
+        </label>
+        <label id="labelDateValue" minimumHeight="10" minimumWidth="10">
+          <constraints_gridbag gridx="5" />
+        </label>
+        <constraints_border position="north" />
+      </panel>
+      <panel id="assemblyListPanel" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <constraints_border />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonCloseActionPerformedEvent="closeWindow" dialogStyle="CLOSE" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

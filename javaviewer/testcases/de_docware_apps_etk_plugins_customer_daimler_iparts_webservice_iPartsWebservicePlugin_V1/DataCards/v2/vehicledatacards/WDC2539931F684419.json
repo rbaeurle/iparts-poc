@@ -1,0 +1,1389 @@
+{
+  "version": "16.3.1.1",
+  "responseHeader": {
+    "context": "Expiry=GMTTIMESTAMP '2018-12-15 15:15:17.732828'"
+  },
+  "vehicleRestrictedInclMasterDataResponse": {
+    "vehicleInclMasterData": {
+      "bodyType": "T",
+      "checkDigit": "6",
+      "fin": "WDC2539931F684419",
+      "productSeries": "253",
+      "productSeriesBrand": "mb",
+      "vehicleModelDesignation": "253993",
+      "activeAssignedFpd": {
+        "equipmentCodes": [
+          {
+            "code": "003",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "01U",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "02B",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "06V",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "08U",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "09U",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "12U",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "13U",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "14U",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "16U",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "1A1",
+            "codeType": "production",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "21A",
+            "codeType": "production",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "220A",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "221A",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "229L",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "22P",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "234",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "235",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "239",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "242",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "243",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "249",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "255B",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "260",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "270",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "274",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "275",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "294",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "299",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "2A7",
+            "codeType": "production",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "2U8",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "2XXL",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "309",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "30P",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "332B",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "345",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "351",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "362",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "367",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "3A3",
+            "codeType": "production",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "3U1",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "413",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "428",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "446",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "463",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "464",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "475",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "482",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "500",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "501",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "502",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "50A",
+            "codeType": "production",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "513",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "51U",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "531",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "537",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "54R",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "551",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "580",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "5A1",
+            "codeType": "production",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "5P6",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "608",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "611",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "632",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "63B",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "682",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "6A2",
+            "codeType": "production",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "6P5",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "70B",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "723",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "725",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "736",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "775U",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "79B",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "7A1",
+            "codeType": "production",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "7U9",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "800",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "840",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "851",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "859",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "871",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "873",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "876",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "877",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "882",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "889",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "890",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "893",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "8U6",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "8U7",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "8U8",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "900",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "981",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "998",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "9O1",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "A025",
+            "codeType": "production",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "A104",
+            "codeType": "production",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "AA6",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "B08",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "B30",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "B33",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "B51",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "B53",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "B59",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "F253",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "FX",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "G041",
+            "codeType": "partsIdent",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "GA",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "GA7",
+            "codeType": "production",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "HA",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "IJ6",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "JVF",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "JVO",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "JWA",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "K11",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "K13",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "L",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "L3E",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "M005",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "M014",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "M20",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "M264",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "ME02",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "P17",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "P47",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "P49",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "P54",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "P75",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "P76",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "PZB",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "R01",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "U01",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "U09",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "U10",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "U12",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "U22",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "U25",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "U35",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "U40",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "U60",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "U67",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "VL",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          },
+          {
+            "code": "VR",
+            "codeType": "sales",
+            "productGroupIndication": "P"
+          }
+        ],
+        "vpd": [
+          {
+            "content": "A2533204166             A2533204266",
+            "productCategory": "passCar",
+            "typeOf": "unresolved",
+            "vpdIdent": "00064"
+          },
+          {
+            "content": "25368036029H15EU1916576768",
+            "productCategory": "passCar",
+            "typeOf": "unresolved",
+            "vpdIdent": "10036"
+          },
+          {
+            "content": "A2053200725",
+            "productCategory": "passCar",
+            "typeOf": "unresolved",
+            "vpdIdent": "10112"
+          },
+          {
+            "content": "A2053200825",
+            "productCategory": "passCar",
+            "typeOf": "unresolved",
+            "vpdIdent": "10113"
+          },
+          {
+            "content": "125390550021800502095101004",
+            "productCategory": "passCar",
+            "typeOf": "unresolved",
+            "vpdIdent": "10188"
+          },
+          {
+            "content": "125247009001916931041101002",
+            "productCategory": "passCar",
+            "typeOf": "unresolved",
+            "vpdIdent": "10191"
+          },
+          {
+            "content": "17859051500021807401980",
+            "productCategory": "passCar",
+            "typeOf": "unresolved",
+            "vpdIdent": "10192"
+          },
+          {
+            "content": "A7853408500  785020300001930",
+            "productCategory": "passCar",
+            "typeOf": "unresolved",
+            "vpdIdent": "10193"
+          },
+          {
+            "content": "04330002BB4D5C0002BB45CF0002BC2FD70002BC478B",
+            "productCategory": "passCar",
+            "typeOf": "unresolved",
+            "vpdIdent": "10199"
+          },
+          {
+            "content": "125247004001819300005101007",
+            "productCategory": "passCar",
+            "typeOf": "unresolved",
+            "vpdIdent": "10215"
+          },
+          {
+            "content": "7859011800DC1810120003",
+            "productCategory": "passCar",
+            "typeOf": "controlUnitSerialNumber",
+            "vpdIdent": "10223"
+          },
+          {
+            "content": "125390551021800502235101004",
+            "productCategory": "passCar",
+            "typeOf": "unresolved",
+            "vpdIdent": "10248"
+          },
+          {
+            "content": "125247102001910259058100002",
+            "productCategory": "passCar",
+            "typeOf": "unresolved",
+            "vpdIdent": "10307"
+          },
+          {
+            "content": "125247104001903000037100003",
+            "productCategory": "passCar",
+            "typeOf": "unresolved",
+            "vpdIdent": "10308"
+          },
+          {
+            "content": "125290508001822004296101009",
+            "productCategory": "passCar",
+            "typeOf": "unresolved",
+            "vpdIdent": "10309"
+          },
+          {
+            "content": "125290509001822004372101005",
+            "productCategory": "passCar",
+            "typeOf": "unresolved",
+            "vpdIdent": "10310"
+          },
+          {
+            "content": "59473030375345413037373039",
+            "productCategory": "passCar",
+            "typeOf": "controlUnitSerialNumber",
+            "vpdIdent": "10316"
+          },
+          {
+            "content": "2539012600000600000182812711073",
+            "productCategory": "passCar",
+            "typeOf": "unresolved",
+            "vpdIdent": "10377"
+          },
+          {
+            "content": "125247103001911706067100009",
+            "typeOf": "unresolved",
+            "vpdIdent": "10396"
+          },
+          {
+            "content": "100099719021900400023100003",
+            "typeOf": "unresolved",
+            "vpdIdent": "10430"
+          },
+          {
+            "content": "125247003001915600007100004",
+            "typeOf": "unresolved",
+            "vpdIdent": "10431"
+          },
+          {
+            "content": "125247003001916100012100007",
+            "typeOf": "unresolved",
+            "vpdIdent": "10432"
+          },
+          {
+            "content": "2539002803370001",
+            "productCategory": "passCar",
+            "typeOf": "scnNo",
+            "vpdIdent": "30043"
+          },
+          {
+            "content": "2536700201370001",
+            "productCategory": "passCar",
+            "typeOf": "scnNo",
+            "vpdIdent": "30044"
+          },
+          {
+            "content": "2138201101370003",
+            "productCategory": "passCar",
+            "typeOf": "scnNo",
+            "vpdIdent": "30130"
+          },
+          {
+            "content": "4519050212370002",
+            "productCategory": "passCar",
+            "typeOf": "scnNo",
+            "vpdIdent": "30137"
+          },
+          {
+            "content": "20190628",
+            "typeOf": "unresolved",
+            "vpdIdent": "80023"
+          }
+        ]
+      },
+      "activeAuthorizedAgent": {
+        "validFrom": "20190628"
+      },
+      "activeCustomerServiceData": {
+        "unloadingCode": "0001021700",
+        "vehicleOwnershipTitleNo": "FR919488",
+        "validSince": "20210706",
+        "xmlId": "_1"
+      },
+      "activeProductDate": {
+        "dateOfFirstRegistration": "20200219",
+        "shipmentDate": "20190904",
+        "technicalApprovalDate": "20190628",
+        "validSince": "20200222",
+        "xmlId": "_4"
+      },
+      "activeProductionInfo": {
+        "originEngineId": "26492030148722",
+        "originEngineObjectNo": "A2640102304",
+        "originTransmissionId": "72505822196439",
+        "originTransmissionObjectNo": "2532708100",
+        "validSince": "20201205",
+        "xmlId": "_5"
+      },
+      "activeState": {
+        "bodyNumber": "3357140",
+        "checkDigitProductionNumber": "5",
+        "dateOfTechnicalState": "20190627",
+        "frontAxleLeftPc": "2533308100011917606936",
+        "frontAxleRightPc": "2533308200011917606943",
+        "integralSupportNo": "2536208500201917001916",
+        "integralSupportObjectNo": "2536208500",
+        "modeOfShipment": "M1",
+        "orderNumber": "0829223704",
+        "plant": "P0670",
+        "productionNumber": "0332686",
+        "rearAxlePc": "253584770001011917500012",
+        "status": "delivered",
+        "steeringInfoId": "2934601600021916569080",
+        "steeringInfoObjectNo": "2934601600",
+        "tire": "PIRELLI",
+        "cocData": {
+          "cocNumber": "V     253993    AAAAA5AA000"
+        },
+        "engine": {
+          "id": "780996300001484",
+          "modelDesignation": "780996",
+          "objectNumber": "A2533408500",
+          "activeState": {
+            "status": "delivered"
+          }
+        },
+        "extendedCocData": [
+          {
+            "id": "105W",
+            "unit": "g/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "106W",
+            "unit": "km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "110W",
+            "unit": "km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "11W",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "120W",
+            "unit": "Wh/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "123W",
+            "unit": "l/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "126W",
+            "unit": "kg/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "12W",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "141W",
+            "unit": "g/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "142W",
+            "unit": "g/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "143W",
+            "unit": "g/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "161W",
+            "unit": "g/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "187W",
+            "unit": "Wh/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "188W",
+            "unit": "km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "193W",
+            "unit": "km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "206W",
+            "unit": "m3/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "207W",
+            "unit": "m3/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "208W",
+            "unit": "m3/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "209W",
+            "unit": "m3/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "210W",
+            "unit": "m3/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "21W",
+            "unit": "m^2",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "221W",
+            "unit": "g/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "222W",
+            "unit": "g/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "223W",
+            "unit": "g/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "242W",
+            "unit": "Wh/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "243W",
+            "unit": "km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "244W",
+            "unit": "l/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "245W",
+            "unit": "l/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "246W",
+            "unit": "l/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "247W",
+            "unit": "l/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "24W",
+            "unit": "N",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "256W",
+            "unit": "m3/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "257W",
+            "unit": "m3/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "258W",
+            "unit": "m3/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "25W",
+            "unit": "N/kph",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "26W",
+            "unit": "N/kph^2",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "27W",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "28W",
+            "unit": "kg",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "61W",
+            "unit": "mg CO/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "63W",
+            "unit": "mg/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "66W",
+            "unit": "mg/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "81W",
+            "unit": "g/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "82W",
+            "unit": "g/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "83W",
+            "unit": "g/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "84W",
+            "unit": "g/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "85W",
+            "unit": "g/km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "86W",
+            "unit": "l/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "87W",
+            "unit": "l/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "88W",
+            "unit": "l/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "89W",
+            "unit": "l/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "901W",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "902W",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "903W",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "904W",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "905W",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "906W",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "907W",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "908W",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "909W",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "90W",
+            "unit": "l/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "910W",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "911W",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "912W",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "91W",
+            "unit": "kg/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "92W",
+            "unit": "kg/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "93W",
+            "unit": "kg/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "94W",
+            "unit": "kg/100km",
+            "valid": "N",
+            "value": ""
+          },
+          {
+            "id": "95W",
+            "unit": "kg/100km",
+            "valid": "N",
+            "value": ""
+          }
+        ],
+        "interiorEquipment": [
+          {
+            "code": "220",
+            "usage": "additionalInteriorCode1"
+          },
+          {
+            "code": "221",
+            "usage": "interiorCode"
+          }
+        ],
+        "paint": [
+          {
+            "code": "775",
+            "usage": "paint1"
+          }
+        ],
+        "salesAreaInformation": [
+          {
+            "salesArea": "229",
+            "salesAreaType": "consumerCountry"
+          },
+          {
+            "salesArea": "229",
+            "salesAreaType": "countryInformation1"
+          },
+          {
+            "salesArea": "2XX",
+            "salesAreaType": "countryInformation2"
+          },
+          {
+            "salesArea": "292",
+            "salesAreaType": "orderCountry"
+          }
+        ]
+      },
+      "prodOrderTextAvailable": "false",
+      "fixingPartsAvailable": "false",
+      "vehicleModelDescription": "GLC F-CELL Off-Roader"
+    }
+  },
+  "reference": {
+    "productgroup": {
+      "id": "1",
+      "designation": "PKW"
+    },
+    "company": {
+      "id": "0",
+      "designation": "Mercedes-Benz AG"
+    }
+  }
+}

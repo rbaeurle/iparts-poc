@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <splitpane dividerPosition="197" horizontal="false" id="splitpane" minimumHeight="10" minimumWidth="10">
+        <panel id="splitpane_saa" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_border />
+          <panel borderWidth="4" id="panel_saa_top" minimumHeight="10" minimumWidth="10">
+            <invisible />
+            <layout_border />
+            <constraints_border position="north" />
+          </panel>
+          <panel borderWidth="4" id="panel_saa_center" minimumHeight="10" minimumWidth="10">
+            <invisible />
+            <layout_border />
+            <constraints_border />
+          </panel>
+          <panel borderWidth="4" id="panel_saa_bottom" minimumHeight="10" minimumWidth="10">
+            <invisible />
+            <layout_border />
+            <constraints_border position="south" />
+          </panel>
+        </panel>
+        <panel id="splitpane_kem" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_border />
+          <panel borderWidth="4" id="panel_kem_top" minimumHeight="10" minimumWidth="10">
+            <invisible />
+            <layout_border />
+            <constraints_border position="north" />
+          </panel>
+          <panel borderWidth="4" id="panel_kem_center" minimumHeight="10" minimumWidth="10">
+            <invisible />
+            <layout_border />
+            <constraints_border />
+          </panel>
+          <panel borderWidth="4" id="panel_kem_bottom" minimumHeight="10" minimumWidth="10">
+            <invisible />
+            <layout_border />
+            <constraints_border position="south" />
+          </panel>
+        </panel>
+        <constraints_border />
+      </splitpane>
+      <constraints_border />
+    </panel>
+    <buttonPanel dialogStyle="CLOSE" id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

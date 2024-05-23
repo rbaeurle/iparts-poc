@@ -1,0 +1,2340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ #==============================================================================
+ #
+ #  AS-PLM
+ #
+ #  Revision: 40100
+ #
+ #  Author: Andreas Saremba, Atos, Petra Fraas, Atos
+ #  Purpose: Schema for the AS-PLM Media Service
+ #
+ #==============================================================================
+-->
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+    targetNamespace="http://asplm.daimler.com/MediaService/v1" version="1.2.4" xmlns="http://asplm.daimler.com/MediaService/v1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Element and attribute names correspond with those in the Teamcenter Data Model, respecting the following
+            conventions:</xs:documentation>
+        <xs:documentation>Element names are written in capital case, attribute names in lower case.</xs:documentation>
+        <xs:documentation>Technical prefixes in TC like c54_ or cp_ (for Compound Property) are ignored.</xs:documentation>
+    </xs:annotation>
+    <xs:annotation>
+        <xs:documentation>This schema module contains definitions that are only relevant for the MediaService consumer
+            iParts.</xs:documentation>
+    </xs:annotation>
+    <xs:element abstract="true" name="abstractOperation"/>
+    <xs:element abstract="true" name="abstractResult" type="TypeResult"/>
+    <xs:element abstract="true" name="abstractMediaOrderAppSpecific">
+        <xs:annotation>
+            <xs:documentation>This abstract element acts as placeholder for MediaOrder data that are specific to some calling
+                application.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Requestor">
+        <xs:complexType>
+            <xs:attributeGroup ref="AttrGroupUser"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Success">
+        <xs:annotation>
+            <xs:documentation>The success (ok=true) or failure (ok=false) of a complete operation or part of an
+                operation.</xs:documentation>
+            <xs:documentation>Even if an operation succeeds as a whole, there may be partial problems; therefore, the Warning
+                subelements have to be checked by the client.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Errortext" type="TypeLocalizedText">
+                    <xs:annotation>
+                        <xs:documentation>In the case of ok=false, the Errortext subelements contain more detailed explanation of
+                            what went wrong.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Warning">
+                    <xs:annotation>
+                        <xs:documentation>Warnings may be present even if the operation as a whole succeeded; for example, the
+                            creation of a MediaOrder was successful but sending the MediaContainer into the creation workflow
+                            failed.</xs:documentation>
+                        <xs:documentation>One Warning may be represented by texts in multiple languages; this is the reason for
+                            the two-step hierarchy Warning/Warningtext.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element form="qualified" maxOccurs="unbounded" name="Warningtext" type="TypeLocalizedText"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute form="unqualified" name="ok" type="xs:boolean" use="required"/>
+            <xs:attribute form="unqualified" name="errorcode" type="xs:integer">
+                <xs:annotation>
+                    <xs:documentation>The operation-dependent errorcode will only be present if ok=false.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="targetId" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Optionally, the id of a target object to which the success message is related can be
+                        specified.</xs:documentation>
+                    <xs:documentation>This is only necessary when the Success element relates to a part of an operation, e.g. one
+                        out of multiple Attachments.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PartPosition">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element form="qualified" minOccurs="0" name="SourceKey">
+                    <xs:annotation>
+                        <xs:documentation>The definition of the source key is different for cars and trucks.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:choice>
+                            <xs:element form="qualified" name="SourceKeyDialog">
+                                <xs:annotation>
+                                    <xs:documentation>Source key attributes for data from DIALOG (representing passenger
+                                        cars).</xs:documentation>
+                                    <xs:documentation>The attributes which together identify the position variant will be
+                                        concatenated for storage in Teamcenter.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:attribute form="unqualified" name="modelSeries" type="xs:string"/>
+                                    <xs:attribute form="unqualified" name="mainModule" type="xs:string"/>
+                                    <xs:attribute form="unqualified" name="module" type="xs:string"/>
+                                    <xs:attribute form="unqualified" name="submodule" type="xs:string"/>
+                                    <xs:attribute form="unqualified" name="pos" type="xs:string"/>
+                                    <xs:attribute form="unqualified" name="posVariant" type="xs:string"/>
+                                    <xs:attribute form="unqualified" name="productVersion" type="xs:string">
+                                        <xs:annotation>
+                                            <xs:documentation>German: Ausführungsart</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute form="unqualified" name="ecoValidFrom" type="xs:dateTime">
+                                        <xs:annotation>
+                                            <xs:documentation>German: KemDatumAb</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute form="unqualified" name="optionalPartIndicator" type="xs:string">
+                                        <xs:annotation>
+                                            <xs:documentation>German: Wahlweise</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute form="unqualified" name="partsCounter" type="xs:string">
+                                        <xs:annotation>
+                                            <xs:documentation>German: ETZähler</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element form="qualified" name="SourceKeyTruck" type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>The text content of this element is the complete, unmodified source key as
+                                        sent by the client (iParts).</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element form="qualified" minOccurs="0" name="PicturePositionMarker">
+                    <xs:annotation>
+                        <xs:documentation>German: Bildposkenner</xs:documentation>
+                        <xs:documentation>Possible Values: Y = Relevant for Picture (bildrelevant), N = Relevant for Context
+                            (kontextrelevant), P = Phantom, D = Delete</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:length value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element form="qualified" minOccurs="0" name="Hotspot" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>Presently, hotspots have numbers like 110; we extend this to arbitrary alphanumeric
+                            names.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element form="qualified" minOccurs="0" name="AssemblySign" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>Zusammenbau Kennzeichen</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element form="qualified" name="PartNumber">
+                    <xs:annotation>
+                        <xs:documentation>Sachnummer</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attributeGroup ref="AttrGroupPartPosition"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="PartName">
+                    <xs:annotation>
+                        <xs:documentation>The German name is "Teilebenennung (AS)".</xs:documentation>
+                        <xs:documentation>Technically (in the XML sense) this element is optional, but functionally it is
+                            mandatory.</xs:documentation>
+                        <xs:documentation>As long as the TC data model allows only one PartName to be stored in a PartPosition, we
+                            use the german name or (if not present) the first one.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:restriction base="TypeMultiLanguageText">
+                                <xs:maxLength value="128"/>
+                            </xs:restriction>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Supp_LI_Text" type="TypeMultiLanguageText">
+                    <xs:annotation>
+                        <xs:documentation>Supplementary / Language Independent Text</xs:documentation>
+                        <xs:documentation>By convention, the two parts (supplementary / language independent) are separated by a
+                            semicolon.</xs:documentation>
+                        <xs:documentation>As long as the TC data model allows only one Supp_LI_Text to be stored in a
+                            PartPosition, we use the german content or (if not present) the first one.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element form="qualified" minOccurs="0" name="Quantity">
+                    <xs:annotation>
+                        <xs:documentation>Number of instances of this part at the position</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="128"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element form="qualified" minOccurs="0" name="StructureLevel">
+                    <xs:annotation>
+                        <xs:documentation>Structural level of this part in the parts hierarchy</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="128"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element form="qualified" name="ExternalId">
+                    <xs:annotation>
+                        <xs:documentation>The Id of the PartPosition in the external system that calls this service
+                            operation.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string"/>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element form="qualified" minOccurs="0" name="FaultLocation" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>Fehlerort, only used for content up to 18 characters long, but the length is not checked
+                            (see AMD-1870 and AMD-2761).</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element form="qualified" minOccurs="0" name="GenVO" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>Generischer Verbauort, only used for content 5 - 18 characters long, but the length is
+                            not checked (see AMD-3404).</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute form="unqualified" name="seqNrMo" type="xs:positiveInteger">
+                <xs:annotation>
+                    <xs:documentation>The abbreviated name seqNrMo stands for 'Sequence Number MediaOrder' (Sequenzummer
+                        Bildauftrag).</xs:documentation>
+                    <xs:documentation>It helps the designer to distinguish 'old' (unchanged) PicturePositions from new and changed
+                        ones.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Attachment">
+        <xs:annotation>
+            <xs:documentation>Represents a file of arbitrary type attached to the MediaContainer.</xs:documentation>
+            <xs:documentation>The Teamcenter attribute "type" and the relation between the MediaContainer and the attachment will
+                be determined by the MediaService based on the type of the file and the value of the optional attribute "purpose".
+                The details have to be agreed by the service consumer and the service implementor, they are not part of this
+                schema.</xs:documentation>
+            <xs:documentation>For the contents, the client can choose between TextFile (only suitable for text content) and
+                BinaryFile (suitable for arbitrary content). From an implementation viewpoint it is easier to always use
+                BinaryFile, but this increases the size by 1/3 because of the necessary Base64 encoding.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:choice>
+                <xs:element form="qualified" name="TextFile" type="TypeInlinedTextFile"/>
+                <xs:element form="qualified" name="BinaryFile" type="TypeInlinedBinaryFile"/>
+            </xs:choice>
+            <xs:attribute form="unqualified" name="id" use="required">
+                <xs:annotation>
+                    <xs:documentation>The attachment id is a technical attribute that identifies this attachment in a set of
+                        multiple attachments.</xs:documentation>
+                    <xs:documentation>The intention is to be able to uniquely identify an attachment in the case where an error or
+                        a problem needs to be reported.</xs:documentation>
+                    <xs:documentation>The id needs to be locally unique only (i.e. in the set of attachments contained in the
+                        current operation).</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>Content for Teamcenter attachment attribute "name".</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="description" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Content for Teamcenter attachment attribute "description".</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="purpose" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The value of the optional attribute purpose may give a hint to Teamcenter about what the
+                        exact type of the attachment is and by which relation it should be attached to the
+                        MediaContainer.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Event">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element ref="EventReleaseStatusChange"/>
+                <xs:element ref="EventAssignmentChange"/>
+                <xs:element ref="EventApplicationAction"/>
+                <xs:element ref="EventDispatcherTaskStatusInfo"/>
+            </xs:choice>
+            <xs:attribute form="unqualified" name="from" type="AttrTypeParticipant">
+                <xs:annotation>
+                    <xs:documentation>Identifies the sending system (not only ASPLM can send events!)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attributeGroup ref="AttrGroupTime"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EventReleaseStatusChange">
+        <xs:annotation>
+            <xs:documentation>The release status of a Teamcenter object (e.g. a MediaContainer) changed.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="TcObject">
+                    <xs:annotation>
+                        <xs:documentation>The Teamcenter object whose release status changed</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="Comment">
+                    <xs:annotation>
+                        <xs:documentation>A textual comment that explains why the release status was changed.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+            <xs:attributeGroup ref="AttrGroupStatusChange"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EventAssignmentChange">
+        <xs:annotation>
+            <xs:documentation>The assignment of a task changed; this may happen because a user claims a task that was assigned to
+                a group or because a user unclaims a task and gives it back to the group.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="TcObject">
+                    <xs:annotation>
+                        <xs:documentation>The target of the workflow for which the assignment changed</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="Comment">
+                    <xs:annotation>
+                        <xs:documentation>A textual comment that explains why the assignment was changed.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute form="unqualified" name="groupId" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>The group to whom the task is assigned now.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="userId" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The user to whom the task is assigned now.</xs:documentation>
+                    <xs:documentation>If this optional attribute is missing, the task is assigned to the group
+                        only.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="workflowName" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Optional and purely informative; this is NOT an identifier for the
+                        workflow.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EventApplicationAction">
+        <xs:annotation>
+            <xs:documentation>The user has started an action in an application (e.g. AWC) which is related to a Teamcenter object,
+                but performing the action must be done by a MediaService client which receives this event and considers itself
+                responsible.</xs:documentation>
+            <xs:documentation>Before processing, receivers of this event should check whether they are affected: (1) check
+                attribute client, is this my client system (e.g. iParts)? (2) Is the me (as a user)? (3) check attribute
+                correlationId, does it mean my application instance?</xs:documentation>
+            <xs:documentation>If all filter criteria are satisfied, the action should be performed with the Teamcenter objects
+                identified by the itemIds and itemRevIds in the TcObjects.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="TcObject">
+                    <xs:annotation>
+                        <xs:documentation>The Teamcenter objects selected by the action</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute form="unqualified" name="application" type="AttrTypeParticipant">
+                <xs:annotation>
+                    <xs:documentation>The client system for which this event is relevant.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="action" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The name of the action has triggered the event, e.g. IncludeMcInDocument</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="userId">
+                <xs:annotation>
+                    <xs:documentation>Identifies the user who trigered the action</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="correlationId" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>An application-specific id that allows for filtering the relevant
+                        event(s).</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EventDispatcherTaskStatusInfo">
+        <xs:annotation>
+            <xs:documentation>This event type is published by a Dispatcher task in case of a status change (the new status is
+                given in attribute targetStatus).</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Success">
+                    <xs:annotation>
+                        <xs:documentation>Reports whether the task was successfully processed or not and, if not, which error
+                            occured.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="TcObject">
+                    <xs:annotation>
+                        <xs:documentation>The Teamcenter object that was processed by the Dispatcher task.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+            <xs:attributeGroup ref="AttrGroupTask"/>
+            <xs:attributeGroup ref="AttrGroupTasker"/>
+            <xs:attribute form="unqualified" name="targetStatus" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>The targetStatus may be FINISHED</xs:documentation>
+                    <xs:documentation>TODO: Can we use an LOV?</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="TcObject" type="TypeTcObject">
+        <xs:annotation>
+            <xs:documentation>A Teamcenter object</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Comment">
+        <xs:annotation>
+            <xs:documentation>A textual comment</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute form="unqualified" name="userId" type="xs:string">
+                        <xs:annotation>
+                            <xs:documentation>The user who made the comment.</xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute form="unqualified" name="time" type="xs:dateTime">
+                        <xs:annotation>
+                            <xs:documentation>In case the time of the comment is not known from the context, it can be given
+                                here.</xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="TypeOperation"> </xs:complexType>
+    <xs:complexType name="TypeResult"> </xs:complexType>
+    <xs:complexType name="TypeLocalizedText">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attributeGroup ref="AttrGroupTexts"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="TypeMultiLanguageText">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attributeGroup ref="AttrGroupLanguage"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="TypeTcAttribute">
+        <xs:annotation>
+            <xs:documentation>The (optional) attribute value is in the text content of the element.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute form="unqualified" name="name" type="xs:string" use="required">
+                    <xs:annotation>
+                        <xs:documentation>The attribute name in Teamcenter, without the prefix for custom
+                            attributes</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="TypeTcArrayAttribute">
+        <xs:annotation>
+            <xs:documentation>A Teamcenter attribute can contain an array of (String) values; in this case, it is represented by
+                this type.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element form="qualified" maxOccurs="unbounded" name="String" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute form="unqualified" name="name" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>The attribute name in Teamcenter, without the prefix for custom attributes</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="TypeTcObject">
+        <xs:sequence>
+            <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="attribute" type="TypeTcAttribute"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="AttrGroupTcObjectId"/>
+    </xs:complexType>
+    <xs:complexType name="TypeInlinedTextFile">
+        <xs:annotation>
+            <xs:documentation>The contents of the text file is inlined in the XML (in a CDATA section in the text content of the
+                enclosing element).</xs:documentation>
+            <xs:documentation>The reason for the usage of CDATA sections is the possibility that the text may contain XML special
+                characters.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute form="unqualified" name="fileType" type="xs:string"> </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="TypeInlinedBinaryFile">
+        <xs:annotation>
+            <xs:documentation>The contents of the file is inlined in the XML (as text content of the enclosing
+                element).</xs:documentation>
+            <xs:documentation>Contrary to TypeInlinedTextFile, the text is interpreted as a Base64-encoded string here. It will be
+                decoded to the original binary content and stored in a binary file belonging to a Dataset in
+                Teamcenter.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:extension base="xs:base64Binary">
+                <xs:attribute form="unqualified" name="fileType" type="xs:string"> </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="TypeInlinedImageFile">
+        <xs:annotation>
+            <xs:documentation>Like in TypeInlinedBinaryFile, the contents of the file is inlined in the XML, and it is interpreted
+                as a Base64-encoded string.</xs:documentation>
+            <xs:documentation>The receiver must decode it to retrieve the original binary content.</xs:documentation>
+            <xs:documentation>The only difference to TypeInlinedBinaryFile is the value range of attribute fileType which is
+                restricted to image types.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute form="unqualified" name="fileType">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="png"/>
+                            <xs:enumeration value="gif"/>
+                            <xs:enumeration value="tif"/>
+                            <xs:enumeration value="jpg"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="AttrTypeParticipant">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ASPLM"/>
+            <xs:enumeration value="iParts"/>
+            <xs:enumeration value="XENTRY"/>
+            <xs:enumeration value="WAService"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:attributeGroup name="AttrGroupRequestResponse">
+        <xs:annotation>
+            <xs:documentation>Group of attributes used in both Response and Request elements</xs:documentation>
+        </xs:annotation>
+        <xs:attribute form="unqualified" name="from" type="AttrTypeParticipant" use="required">
+            <xs:annotation>
+                <xs:documentation>The sending system</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute form="unqualified" name="to" type="AttrTypeParticipant" use="required">
+            <xs:annotation>
+                <xs:documentation>The receiving system</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute form="unqualified" name="requestId" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>Identifies the request; only relevant for the client who is responsible for the uniqueness of
+                    the value.</xs:documentation>
+                <xs:documentation>In the response, ASPLM supplies the requestId sent with the request; this enables the client to
+                    find the corresponding request.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="AttrGroupResponse">
+        <xs:annotation>
+            <xs:documentation>Group of attributes used in Response only</xs:documentation>
+        </xs:annotation>
+        <xs:attribute form="unqualified" name="requestOperation" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>The name of the operation in the original request, e.g. CreateMediaOrder or
+                    GetMediaPreview.</xs:documentation>
+                <xs:documentation>This attribute is required in the response where it will support the calling application in
+                    finding the data of the original request.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute form="unqualified" name="execTimeMs" type="xs:nonNegativeInteger">
+            <xs:annotation>
+                <xs:documentation>Execution time in the MediaService (measured in milliseconds)</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute form="unqualified" name="serviceVersion" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>Optional: Version of the MediaService, e.g. 16.1.1.0</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="AttrGroupTime">
+        <xs:attribute form="unqualified" name="when" type="xs:dateTime">
+            <xs:annotation>
+                <xs:documentation>The time when the event occured or the Response was sent.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="AttrGroupTexts">
+        <xs:attribute form="unqualified" name="lang" type="xs:string"/>
+        <xs:attribute form="unqualified" name="textId" type="xs:string"/>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="AttrGroupUser">
+        <xs:attribute form="unqualified" name="userId" type="xs:string" use="required"/>
+        <xs:attribute form="unqualified" name="groupId" type="xs:string"/>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="AttrGroupPartPosition">
+        <xs:attribute form="unqualified" name="zgs">
+            <xs:annotation>
+                <xs:documentation>zgs ist an abbreviation for Zeichnungs-Geometrie-Stand</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:length value="3"/>
+                    <xs:pattern value="[0-9]+"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute form="unqualified" name="releaseDate" type="xs:dateTime"/>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="AttrGroupValueChange">
+        <xs:attribute form="unqualified" name="old" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The value before the change</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute form="unqualified" name="new" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>The value after the change</xs:documentation>
+                <xs:documentation>The value range depends on the object(s) involved. </xs:documentation>
+                <xs:documentation>Example: A MediaContainerRevision can have the releases status values Ordered, Released and
+                    forInquiry.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="AttrGroupStatusChange">
+        <xs:attributeGroup ref="AttrGroupValueChange"/>
+        <xs:attribute form="unqualified" name="userId" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>Optionally, the user who triggered the status change can be given (e.g. the one who rejected an
+                    order).</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="AttrGroupTcObjectId">
+        <xs:attribute form="unqualified" name="itemId" type="xs:string"/>
+        <xs:attribute form="unqualified" name="itemRevId" type="xs:string"/>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="AttrGroupTcDate">
+        <xs:attribute form="unqualified" name="tcDateLastModified" type="xs:dateTime">
+            <xs:annotation>
+                <xs:documentation>The date and time of the last modification of a Teamcenter object.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="AttrGroupLanguage">
+        <xs:attribute form="unqualified" name="language" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>The language of the containing element, using ISO 639-1 (for example de, en,
+                    it...)</xs:documentation>
+                <xs:documentation>We do not use xml:lang here because importing xml.xsd would prevent us from completely
+                    flattening the MediaService schema.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="AttrGroupImageProperties">
+        <xs:annotation>
+            <xs:documentation>Image properties are defined as attributes on a Teamcenter dataset.</xs:documentation>
+        </xs:annotation>
+        <xs:attribute form="unqualified" name="image_width" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>Image width in pixels</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute form="unqualified" name="image_height" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>Image height in pixels</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute form="unqualified" name="image_resolution" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>The image resolution measured in DPI (dots per inch)</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute form="unqualified" name="compmethod" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The compression method </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute form="unqualified" name="colorscheme" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The color scheme of the image</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute form="unqualified" name="colordepth" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>The color depth of the image</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute form="unqualified" name="filesize" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>The image file size (in the unit set in attribute mbsymbols)</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute form="unqualified" name="mbsymbols" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The unit in which the filesize is measured</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="AttrGroupFile">
+        <xs:attribute form="unqualified" name="filename" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The filename</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="AttrGroupTimeInterval">
+        <xs:annotation>
+            <xs:documentation>Describes a time interval by giving the start time (timeFrom) and optional end time
+                (timeTo).</xs:documentation>
+            <xs:documentation>A missing timeTo attribute is interpreted as "up to now".</xs:documentation>
+        </xs:annotation>
+        <xs:attribute form="unqualified" name="timeFrom" type="xs:dateTime" use="required">
+            <xs:annotation>
+                <xs:documentation>The start time of the interval</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute form="unqualified" name="timeTo" type="xs:dateTime" use="optional">
+            <xs:annotation>
+                <xs:documentation>The end time of the interval.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="AttrGroupPurpose">
+        <xs:attribute form="unqualified" name="purpose" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The purpose of a MediaContainer, e.g. Betriebsanleitung, Et-Dokumentation
+                    etc.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="AttrGroupTask">
+        <xs:attribute form="unqualified" name="taskId">
+            <xs:annotation>
+                <xs:documentation>Identifies a Teamcenter Dispatcher task.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute form="unqualified" name="taskName"/>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="AttrGroupTasker">
+        <xs:annotation>
+            <xs:documentation>Tasker is the component that generated a Dispatcher task</xs:documentation>
+        </xs:annotation>
+        <xs:attribute form="unqualified" name="taskerId" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The identifier of the Tasker, in case of the MediaService the requestId</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute form="unqualified" name="taskerName" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The Tasker name, e.g. MediaService</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+    <xs:element name="Product">
+        <xs:annotation>
+            <xs:documentation>The product may be a vehicle, an aggregate or an item from a legacy catalog.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute form="unqualified" name="type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="vehicle"/>
+                        <xs:enumeration value="aggregate"/>
+                        <xs:enumeration value="catalog"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="name" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Contractor">
+        <xs:annotation>
+            <xs:documentation>The Contractor is the person and/or group in Teamcenter who is commissioned to create or change the
+                media.</xs:documentation>
+            <xs:documentation>Error cases: groupId not known (errorcode 04), userId not known (05), user not member of group
+                (06)</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute form="unqualified" name="groupId" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>The Teamcenter group id must be specified; in the absence of a specific user id a member of
+                        this group will have to create the media.</xs:documentation>
+                    <xs:documentation>If no group with the given id is known in Teamcenter, no MediaOrder is created and an error
+                        is reported.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="userId" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Optionally, the author can (in addition to the group) name a specific user who is
+                        commissioned to create the media.</xs:documentation>
+                    <xs:documentation>If the user is not known in Teamcenter or is not a member of the given group, a warning is
+                        reported in the response but the MediaOrder is created.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AssignTo">
+        <xs:annotation>
+            <xs:documentation>Project assignment</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute form="unqualified" name="projects" type="xs:NMTOKENS" use="required">
+                <xs:annotation>
+                    <xs:documentation>The list of projects to which the MediaContainer will be assigned.</xs:documentation>
+                    <xs:documentation>The list of projects must always be complete, not only in CreateMediaOrder but also in
+                        ChangeMediaOrder, even if there is no change in the project assignment.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DateDue" type="xs:date">
+        <xs:annotation>
+            <xs:documentation>The desired date of completion ("Gewünschtes Fertigstellungsdatum")</xs:documentation>
+            <xs:documentation>Sample value: 2019-12-24</xs:documentation>
+            <xs:documentation>In MediaService tests (only!), the value 3000-01-01 stands for today, value 3000-12-31 stands for
+                today + random number of days (up to 10).</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KGTU">
+        <xs:annotation>
+            <xs:documentation>KGTU means KonstruktionsGruppe/TeileUmfang</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="PartScopeName">
+                    <xs:annotation>
+                        <xs:documentation>As long as the TC data model allows only one part scope name to be stored in a
+                            MediaContainer, we use the german name or (if not present) the first one.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attributeGroup ref="AttrGroupLanguage"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute form="unqualified" name="constructionGroup">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="2"/>
+                        <xs:pattern value="[0-9]+"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="partScopeNr">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="3"/>
+                        <xs:pattern value="[0-9]+"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EinPAS">
+        <xs:annotation>
+            <xs:documentation>The name of the EinPAS object may be present in more than one language in subelement Name. Any
+                direct text content of EinPAS is ignored, the schema allows it just for compatibility reasons.</xs:documentation>
+            <xs:documentation>The presence of an EinPAS structure is formally always optional, but in the CreateMediaOperation it
+                will always be filled by iParts.</xs:documentation>
+            <xs:documentation>TODO: Use mixed=false in future versions.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Name">
+                    <xs:annotation>
+                        <xs:documentation>The name of the EinPAS main group, group or technical scope in one language (which must
+                            be defined in attribute language).</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attributeGroup ref="AttrGroupLanguage"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute form="unqualified" name="mainGroup" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[0-9]+"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="group" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[0-9]+"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="technicalScope" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[0-9]+"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Name" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>The name of the MediaContainer, meant as a proposal; AS-PLM will make a name assignment on its
+                own.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Description">
+        <xs:annotation>
+            <xs:documentation>The description of the MediaContainer</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="1000"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="Company">
+        <xs:annotation>
+            <xs:documentation>This information is used to distinguish between orders for MBAG and DTAG</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="4"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="CodeValidity">
+        <xs:annotation>
+            <xs:documentation>This information is used to distinguish between orders which are created for the same technical
+                scope.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="128"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="WorkingContext">
+        <xs:annotation>
+            <xs:documentation>Used only for Truck MediaContainers. Contains a comma separated list of all source keys of the
+                assigned part positions. </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="4000"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="Remark">
+        <xs:annotation>
+            <xs:documentation>A remark about the MediaContainer</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="1000"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="Realization">
+        <xs:annotation>
+            <xs:documentation>A static LOV is used for the realization ("Umsetzungsart")</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Strichbild"/>
+                <xs:enumeration value="Foto"/>
+                <xs:enumeration value="Rasterbild"/>
+                <xs:enumeration value="Technische Grafik"/>
+                <xs:enumeration value="Angebotszeichnung"/>
+                <xs:enumeration value="Basisbild 3D"/>
+                <xs:enumeration value="Animation"/>
+                <xs:enumeration value="Audio"/>
+                <xs:enumeration value="Video"/>
+                <xs:enumeration value="Visuelle Suche"/>
+                <xs:enumeration value="Graustufenbild"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="Usage">
+        <xs:annotation>
+            <xs:documentation>Provides information for what the media in the MediaContainer will be used.</xs:documentation>
+            <xs:documentation>One or more names of concrete products (model series or model types) are listed.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="Product"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Parameter">
+        <xs:annotation>
+            <xs:documentation>A parameter with its name and value (the latter may be empty if the name of the parameter alone is
+                sufficient, e.g. parameter strip of the ImageMagick convert tool.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute form="unqualified" name="name" type="xs:string"/>
+            <xs:attribute form="unqualified" name="value" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ParameterSet">
+        <xs:annotation>
+            <xs:documentation>A set of parameters</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="Parameter"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GeneratedContent">
+        <xs:annotation>
+            <xs:documentation>Describes a content file (to be) generated by giving its file name and a set of parameters for the
+                conversion from the original to the derived format.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ParameterSet"/>
+            </xs:sequence>
+            <xs:attributeGroup ref="AttrGroupFile"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="BinaryFile" type="TypeInlinedBinaryFile">
+        <xs:annotation>
+            <xs:documentation>BinaryFile represents the Media contents.</xs:documentation>
+            <xs:documentation>It can be present when the MediaContainer is used in a response to GetMediaContents; if the file is
+                too large (due to MQ message size restrictions or client options) a DownloadFile element can be used
+                instead.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="GeneratedFile">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="TypeInlinedBinaryFile">
+                    <xs:attributeGroup ref="AttrGroupFile"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DownloadFile">
+        <xs:annotation>
+            <xs:documentation>Represents a file stored in a Teamcenter Dataset that is too big to be transmitted in an MQ
+                message.</xs:documentation>
+            <xs:documentation>Instead, the caller of GetMediaContents gets a URL by which it can download the file directly from
+                Teamcenter (without further assistance of the MediaService).</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attributeGroup ref="AttrGroupFile"/>
+            <xs:attribute form="unqualified" name="fileType" type="xs:string"/>
+            <xs:attribute form="unqualified" name="url" type="xs:anyURI">
+                <xs:annotation>
+                    <xs:documentation>The URL by which the file can be directly downloaded from Teamcenter</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="IPartsPositionList" substitutionGroup="abstractMediaOrderAppSpecific">
+        <xs:annotation>
+            <xs:documentation>A list of Part Positions to be stored in the MediaContainer</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="PartPosition"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Ping" substitutionGroup="abstractOperation">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeOperation"/>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResPing" substitutionGroup="abstractResult">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeResult">
+                    <xs:attribute form="unqualified" name="time" type="xs:dateTime"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CreateMediaOrder" substitutionGroup="abstractOperation">
+        <xs:annotation>
+            <xs:documentation>Creates a Media Order in Teamcenter and a corresponding MediaContainer</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeOperation">
+                    <xs:sequence>
+                        <xs:element minOccurs="0" ref="Name"/>
+                        <xs:element ref="Description"/>
+                        <xs:element minOccurs="0" ref="Remark"/>
+                        <xs:element ref="Realization"/>
+                        <xs:element minOccurs="0" ref="Contractor">
+                            <xs:annotation>
+                                <xs:documentation>The Contractor is the person and/or group in Teamcenter who is commissioned to
+                                    create the media.</xs:documentation>
+                                <xs:documentation>Contractor should be a mandatory element in CreateMediaOrder but will be defined
+                                    as optional in version v1. This is a transitional solution that is intended to prevent legacy
+                                    v1 requests from becoming invalid.</xs:documentation>
+                                <xs:documentation>TODO: Make element Contractor mandatory in CreateMediaOrder, Version
+                                    v2.</xs:documentation>
+                                <xs:documentation>Error cases: groupId not known (errorcode 04), userId not known (05), user not
+                                    member of group (06)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element minOccurs="0" ref="AssignTo"/>
+                        <xs:element ref="DateDue"/>
+                        <xs:element minOccurs="0" ref="Company"/>
+                        <xs:element minOccurs="0" ref="CodeValidity"/>
+                        <xs:element minOccurs="0" ref="KGTU"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="EinPAS"/>
+                        <xs:element minOccurs="0" ref="WorkingContext">
+                            <xs:annotation>
+                                <xs:documentation>Optional element, only filled for Trucks</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element minOccurs="0" ref="Usage">
+                            <xs:annotation>
+                                <xs:documentation>Optional element, but always filled by iParts</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="abstractMediaOrderAppSpecific"/>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResCreateMediaOrder" substitutionGroup="abstractResult">
+        <xs:annotation>
+            <xs:documentation>The result of the MediaOrder creation consists of a MediaOrder (containing the order date) and the
+                MediaContainer(Revision) object that has been created.</xs:documentation>
+            <xs:documentation>This MediaContainer composite identifier (item id and item revision id) can be used in all future
+                calls to reference the MediaContainer itself and the attached MediaOrder.</xs:documentation>
+            <xs:documentation>Partial failures can happen if a MC cannot be assigned to all requested projects. In this case, each
+                Success subelement (ok="False") will identify the project which either does not exist or for which the assignment
+                failed.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeResult">
+                    <xs:sequence>
+                        <xs:group ref="ElGroupMOC"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="Success"/>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CorrectMediaOrder" substitutionGroup="abstractOperation">
+        <xs:annotation>
+            <xs:documentation>Refuses to accept the result of a contractor's work that was signaled to be released, and instructs
+                the same or another contractor to correct it.</xs:documentation>
+            <xs:documentation>The MediaContainer referenced by mcItemId/mcItemRevId can be rejected as a whole, but optionally
+                only selected MediaVariants may be refused.</xs:documentation>
+            <xs:documentation>The (implicitly or explicitly) referenced MediaVariants are revised in Teamcenter without copying
+                their contents, and they are sent into the media creation workflow.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeOperation">
+                    <xs:sequence>
+                        <xs:element form="qualified" name="Reason">
+                            <xs:annotation>
+                                <xs:documentation>The reason why the correction is requested.</xs:documentation>
+                                <xs:documentation>This is freetext content (contrary to ChangeMediaOrder where only a predefined
+                                    List Of Values can be used).</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="240"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" ref="Contractor">
+                            <xs:annotation>
+                                <xs:documentation>The Contractor is the person and/or group in Teamcenter who is commissioned to
+                                    correct the media.</xs:documentation>
+                                <xs:documentation>If the optional element Contractor is missing, the contractor will remain the
+                                    same as before.</xs:documentation>
+                                <xs:documentation>Error cases: groupId not known (errorcode 04), userId not known (05), user not
+                                    member of group (06)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element minOccurs="0" ref="DateDue"> </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="MediaVariant"/>
+                    </xs:sequence>
+                    <xs:attributeGroup ref="AttrGroupMediaContainerId"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResCorrectMediaOrder" substitutionGroup="abstractResult">
+        <xs:annotation>
+            <xs:documentation>In the case of success, a MediaOrder element (containing the order date) and a
+                MediaContainer(Revision) element containing all affected MediaVariants is returned.</xs:documentation>
+            <xs:documentation>Since the datasets are not copied in the revise, the contents of each new MediaVariant revision is
+                empty.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeResult">
+                    <xs:group ref="ElGroupMOC"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UpdateMediaOrder" substitutionGroup="abstractOperation">
+        <xs:annotation>
+            <xs:documentation>Updates the MediaContainer identified by mcItemId/mcItemRevId and its order data after rejection by
+                a contractor. After that, the MC is re-sent into the workflow where it was rejected.</xs:documentation>
+            <xs:documentation>Only those sub-elements that have changed need to be present. This means that UpdateMediaOrder might
+                have no sub-elements at all (in the case where the contractor just needed an additional attachment).
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeOperation">
+                    <xs:sequence>
+                        <xs:element minOccurs="0" ref="Name"/>
+                        <xs:element minOccurs="0" ref="Description"/>
+                        <xs:element minOccurs="0" ref="Remark"/>
+                        <xs:element minOccurs="0" ref="Realization"/>
+                        <xs:element minOccurs="0" ref="Contractor">
+                            <xs:annotation>
+                                <xs:documentation>The Contractor is the person and/or group in Teamcenter who is commissioned to
+                                    create the media.</xs:documentation>
+                                <xs:documentation>Contractor should be a mandatory element in CreateMediaOrder but will be defined
+                                    as optional in version v1. This is a transitional solution that is intended to prevent legacy
+                                    v1 requests from becoming invalid.</xs:documentation>
+                                <xs:documentation>TODO: Make element Contractor mandatory in CreateMediaOrder, Version
+                                    v2.</xs:documentation>
+                                <xs:documentation>Error cases: groupId not known (errorcode 04), userId not known (05), user not
+                                    member of group (06)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element minOccurs="0" ref="AssignTo"/>
+                        <xs:element minOccurs="0" ref="DateDue"/>
+                        <xs:element minOccurs="0" ref="Company"/>
+                        <xs:element minOccurs="0" ref="CodeValidity"/>
+                        <xs:element minOccurs="0" ref="KGTU"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="EinPAS"/>
+                        <xs:element minOccurs="0" ref="WorkingContext">
+                            <xs:annotation>
+                                <xs:documentation>Optional element, only filled for Trucks</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element minOccurs="0" ref="Usage"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="abstractMediaOrderAppSpecific"/>
+                    </xs:sequence>
+                    <xs:attributeGroup ref="AttrGroupMediaContainerId"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResUpdateMediaOrder" substitutionGroup="abstractResult">
+        <xs:annotation>
+            <xs:documentation>In the case of success, a MediaOrder element (containing the order date) and a
+                MediaContainer(Revision) element are returned.</xs:documentation>
+            <xs:documentation>Partial failures can happen if a MC cannot be re-assigned to all requested projects. In this case,
+                each Success subelement (ok="False") will identify the project which either does not exist or for which the
+                assignment failed.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeResult">
+                    <xs:sequence>
+                        <xs:group ref="ElGroupMOC"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="Success"/>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ChangeMediaOrder" substitutionGroup="abstractOperation">
+        <xs:annotation>
+            <xs:documentation>Initiates the change of a released and accepted MediaContainer.</xs:documentation>
+            <xs:documentation>The MediaContainer referenced by mcItemId/mcItemRevId is revised, and the referenced MediaVariants
+                (or all, if none are explicitly referenced) are also revised but without copying their contents. The newly created
+                MediaContainer Revision references these new (empty) MediaVariant Revisions as well as those that have not been
+                revised (and still have their existing content).</xs:documentation>
+            <xs:documentation>Several attributes as well as the geometry data (IpartsPositionList) can be changed; these data are
+                not added to the old values but replace them completely. This means, in particular, that the complete list of
+                iPartPositions must be (re-)sent if there is one change.</xs:documentation>
+            <xs:documentation>The new MediaContainer Revision is sent into the media change workflow.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeOperation">
+                    <xs:sequence>
+                        <xs:element form="qualified" name="Reason">
+                            <xs:annotation>
+                                <xs:documentation>The reason why the change is requested.</xs:documentation>
+                                <xs:documentation>The values can be taken from the LOV definition in Teamcenter for
+                                    C54L_reasonForChange (Geometry Update, Extend Part Scope, Customer service/Callback, Error
+                                    Compensation), but free-text values are also allowed since the LOV is not defined as
+                                    exhaustive.</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="128"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" ref="Name"/>
+                        <xs:element minOccurs="0" ref="Description"/>
+                        <xs:element minOccurs="0" ref="Remark"/>
+                        <xs:element minOccurs="0" ref="Realization"/>
+                        <xs:element ref="Contractor">
+                            <xs:annotation>
+                                <xs:documentation>The Contractor is the person and/or group in Teamcenter who is commissioned to
+                                    create the media.</xs:documentation>
+                                <xs:documentation>Contractor should be a mandatory element in CreateMediaOrder but will be defined
+                                    as optional in version v1. This is a transitional solution that is intended to prevent legacy
+                                    v1 requests from becoming invalid.</xs:documentation>
+                                <xs:documentation>TODO: Make element Contractor mandatory in CreateMediaOrder, Version
+                                    v2.</xs:documentation>
+                                <xs:documentation>Error cases: groupId not known (errorcode 04), userId not known (05), user not
+                                    member of group (06)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element minOccurs="0" ref="AssignTo"/>
+                        <xs:element ref="DateDue"/>
+                        <xs:element minOccurs="0" ref="Company"/>
+                        <xs:element minOccurs="0" ref="CodeValidity"/>
+                        <xs:element minOccurs="0" ref="KGTU"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="EinPAS"/>
+                        <xs:element minOccurs="0" ref="WorkingContext">
+                            <xs:annotation>
+                                <xs:documentation>Optional element, only filled for Trucks</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element minOccurs="0" ref="Usage">
+                            <xs:annotation>
+                                <xs:documentation>Optional element</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="abstractMediaOrderAppSpecific"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="MediaVariant">
+                            <xs:annotation>
+                                <xs:documentation>If one or more MediaVariants are explicitly referenced here, only these MVs are
+                                    revised (without copying the original contents), and the newly created MV revision is attached
+                                    to the new MC revision. Otherwise, this procedure is applied to all
+                                    MediaVariants.</xs:documentation>
+                                <xs:documentation>Any MV that is not revised is attached to the new MC revision
+                                    unchanged.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attributeGroup ref="AttrGroupMediaContainerId"/>
+                    <xs:attribute form="unqualified" name="copy" type="xs:boolean" use="optional"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResChangeMediaOrder" substitutionGroup="abstractResult">
+        <xs:annotation>
+            <xs:documentation>In the case of success, a MediaOrder element (containing the order date) and a
+                MediaContainer(Revision) element containing all affected MediaVariants is returned.</xs:documentation>
+            <xs:documentation>Since the datasets are not copied in the revise, the contents of each new MediaVariant revision is
+                empty.</xs:documentation>
+            <xs:documentation>Partial failures can happen if a MC cannot be re-assigned to all requested projects. In this case,
+                each Success subelement (ok="False") will identify the project which either does not exist or for which the
+                assignment failed.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeResult">
+                    <xs:sequence>
+                        <xs:group ref="ElGroupMOC"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="Success"/>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CreateMcAttachments" substitutionGroup="abstractOperation">
+        <xs:annotation>
+            <xs:documentation>Adds attachments to an already existing MediaContainer which is identified by its item id and item
+                revision id.</xs:documentation>
+            <xs:documentation>The attachments are inlined in the message which limits the overall size to 100
+                MB.</xs:documentation>
+            <xs:documentation>iParts specific note: Maximum number of attachments will be 20, maximum overall size 20 MB (binary,
+                which means about 27 MB Base64-encoded).</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeOperation">
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" ref="Attachment"/>
+                    </xs:sequence>
+                    <xs:attributeGroup ref="AttrGroupMediaContainerId">
+                        <xs:annotation>
+                            <xs:documentation>Identifies the MediaContainer to which the attachments will be
+                                related.</xs:documentation>
+                        </xs:annotation>
+                    </xs:attributeGroup>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResCreateMcAttachments" substitutionGroup="abstractResult">
+        <xs:annotation>
+            <xs:documentation>Since operation CreateMcAttachments may contain multiple attachments, it may succeed for some of
+                them and fail for others. This result element can have multiple Success children to allow for more differentiated
+                reporting than complete failure or complete success.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeResult">
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="Success">
+                            <xs:annotation>
+                                <xs:documentation>Success messages are present only for those attachments that failed to be
+                                    related to the MediaContainer (which means that ok is always false here). All others were
+                                    processed successfully.</xs:documentation>
+                                <xs:documentation>Attribute targetId identifies the attachment and refers to the id attribute in
+                                    element Attachment.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SearchMediaContainers" substitutionGroup="abstractOperation">
+        <xs:annotation>
+            <xs:documentation>Requests a search for MediaContainerRevision objects in Teamcenter. The caller can set a maximum
+                number of results to deliver.</xs:documentation>
+            <xs:documentation>All search criteria are implicitly ANDed, at least one must be present.</xs:documentation>
+            <xs:documentation>The caller must specify for which MC attributes he expects to get the values. If no ResultAttribute
+                is set, the search will only return the identifying attributes (mcItemId and mcItemRevId) for each
+                result.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeOperation">
+                    <xs:sequence>
+                        <xs:element form="qualified" maxOccurs="unbounded" name="SearchCriterion">
+                            <xs:annotation>
+                                <xs:documentation>The text content (which may contain Unix-style * wildcards) determines the
+                                    allowed values for the MediaContainer attribute "attrName".</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:string">
+                                        <xs:attribute form="unqualified" name="attrName" use="required">
+                                            <xs:annotation>
+                                                <xs:documentation>The internal name of a MediaContainer TC attribute (without the
+                                                    prefix)</xs:documentation>
+                                                <xs:documentation>The allowed attribute names are enumerated to enable client-side
+                                                    validation.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="name"/>
+                                                    <xs:enumeration value="workflowState">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Comma separated list of workflow/release
+                                                                states</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                    <xs:enumeration value="description"/>
+                                                    <xs:enumeration value="alternateID"/>
+                                                    <xs:enumeration value="difficulty"/>
+                                                    <xs:enumeration value="einpasMainGroup"/>
+                                                    <xs:enumeration value="einpasGroup"/>
+                                                    <xs:enumeration value="einpasTechnicalScope"/>
+                                                    <xs:enumeration value="imageFormat"/>
+                                                    <xs:enumeration value="presentation"/>
+                                                    <xs:enumeration value="purpose"/>
+                                                    <xs:enumeration value="realization"/>
+                                                    <xs:enumeration value="remarks"/>
+                                                    <xs:enumeration value="br_market">
+                                                        <xs:annotation>
+                                                            <xs:documentation>ARKi-Attribut: BR-Markt</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                    <xs:enumeration value="hu_market">
+                                                        <xs:annotation>
+                                                            <xs:documentation>ARKi-Attribut: HU-Markt</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                    <xs:enumeration value="hu_genn">
+                                                        <xs:annotation>
+                                                            <xs:documentation>ARKi-Attribut: HU-Generation</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                    <xs:enumeration value="hu_type">
+                                                        <xs:annotation>
+                                                            <xs:documentation>ARKi-Attribut: HU-Variante</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                    <xs:enumeration value="config_code">
+                                                        <xs:annotation>
+                                                            <xs:documentation>ARKi-Attribut: Ausstattungscode</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                    <xs:enumeration value="spec">
+                                                        <xs:annotation>
+                                                            <xs:documentation>ARKi-Attribut: Ausprägung</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                    <xs:enumeration value="market">
+                                                        <xs:annotation>
+                                                            <xs:documentation>ARKi-Attribut: Markt</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                    <xs:enumeration value="hu_layout">
+                                                        <xs:annotation>
+                                                            <xs:documentation>ARKi-Attribut: HU-Layout</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                    <xs:enumeration value="infoClassDescription">
+                                                        <xs:annotation>
+                                                            <xs:documentation>ARKi-Attribut: I-Klassifikation
+                                                                Beschreibung</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                    <xs:enumeration value="infoClassDiagnosis">
+                                                        <xs:annotation>
+                                                            <xs:documentation>ARKi-Attribut: I-Klassifikation
+                                                                Diagnose</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                    <xs:enumeration value="infoClassInstruction">
+                                                        <xs:annotation>
+                                                            <xs:documentation>ARKi-Attribut: I-Klassifikation
+                                                                Anleitung</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                    <xs:enumeration value="pClassFunctionMainGroup">
+                                                        <xs:annotation>
+                                                            <xs:documentation>ARKi-Attribut: BA: Funktionshauptgruppe
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                    <xs:enumeration value="pClassFunctionGroup">
+                                                        <xs:annotation>
+                                                            <xs:documentation>ARKi-Attribut: BA: Funktionsgruppe
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                    <xs:enumeration value="pClassFunctionSubGroup">
+                                                        <xs:annotation>
+                                                            <xs:documentation>ARKi-Attribut: BA: Funktionsuntergruppe
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                    <xs:enumeration value="pClassFunctionModule">
+                                                        <xs:annotation>
+                                                            <xs:documentation>ARKi-Attribut: BA: Funktion-Baugruppe
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ResultAttribute"/>
+                        <xs:element form="qualified" minOccurs="0" name="ResultWorkflowState"/>
+                    </xs:sequence>
+                    <xs:attribute form="unqualified" name="maxResults">
+                        <xs:annotation>
+                            <xs:documentation>Not more than maxResults MediaContainers shall be delivered in the result
+                                ResSearchMediaContainers.</xs:documentation>
+                            <xs:documentation>There is a maximum upper bound of 1000 results; if maxResults is missing or greater
+                                than this bound, it will be assumed to be 1000.</xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:integer">
+                                <xs:maxInclusive value="1000"/>
+                                <xs:minInclusive value="1"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResSearchMediaContainers" substitutionGroup="abstractResult">
+        <xs:annotation>
+            <xs:documentation>The search result contains all MediaContainers found (possibly restricted to the maximum number set
+                in the operation or by the maximum upper bound).</xs:documentation>
+            <xs:documentation>Each MediaContainer element contains (in addition to the identifying attributes which are always
+                present) exactly those Attr elements that were requested in the SearchMediaContainers
+                operation.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeResult">
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="MediaContainer"/>
+                    </xs:sequence>
+                    <xs:attribute form="unqualified" name="numResultsDelivered" use="required">
+                        <xs:annotation>
+                            <xs:documentation>The number of results that follow in the child elements
+                                (MediaContainer)</xs:documentation>
+                            <xs:documentation>This may be less than the number of results effectively found due to the maxResults
+                                restriction.</xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:integer">
+                                <xs:minInclusive value="0"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                    <xs:attribute form="unqualified" name="numResultsFound">
+                        <xs:annotation>
+                            <xs:documentation>The number of results found</xs:documentation>
+                            <xs:documentation>This attribute is present if and only if the number of results found exceeds the
+                                number of result delivered due to the maxResults restriction.</xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:integer">
+                                <xs:minInclusive value="2"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GetMediaInfo" substitutionGroup="abstractOperation">
+        <xs:annotation>
+            <xs:documentation>Request to get information about a MediaContainer (attributes and/or
+                MediaVariants).</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeOperation">
+                    <xs:sequence>
+                        <xs:element minOccurs="0" ref="ResultAttributes">
+                            <xs:annotation>
+                                <xs:documentation>The result shall include all attributes that are listed in the ResultAttribute
+                                    children of this element.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element form="qualified" minOccurs="0" name="ResultWorkflowState">
+                            <xs:annotation>
+                                <xs:documentation>The presence of element ResultMediaVariants indicates that the workflow state of
+                                    the MC shall be included in the result.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element form="qualified" minOccurs="0" name="ResultPartPositions">
+                            <xs:annotation>
+                                <xs:documentation>The presence of element ResultPartPositions indicates that the part positions
+                                    shall be included in the result.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element form="qualified" minOccurs="0" name="ResultMediaVariants">
+                            <xs:annotation>
+                                <xs:documentation>The presence of element ResultMediaVariants indicates that the MediaVariants of
+                                    the MC shall be included in the result.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attributeGroup ref="AttrGroupMediaContainerId"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResGetMediaInfo" substitutionGroup="abstractResult">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeResult">
+                    <xs:sequence>
+                        <xs:element ref="MediaContainer"/>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GetMediaPreview" substitutionGroup="abstractOperation">
+        <xs:annotation>
+            <xs:documentation>Requests the unique preview for the MediaContainer identified by the attributes mcItemId and
+                mcItemRevId.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeOperation">
+                    <xs:attributeGroup ref="AttrGroupMediaContainerId"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResGetMediaPreview" substitutionGroup="abstractResult">
+        <xs:annotation>
+            <xs:documentation>The preview file is typically small so it is reasonable to transfer its contents as part of the
+                message, despite of the overhead induced by the Base64 encoding.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeResult">
+                    <xs:sequence>
+                        <xs:element form="qualified" name="BinaryFile" type="TypeInlinedImageFile">
+                            <xs:annotation>
+                                <xs:documentation>The contents of the preview file, provided as a Base64-encoded
+                                    string.</xs:documentation>
+                                <xs:documentation>The client is expected to decode the string and process the binary result as a
+                                    file of type fileType.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attributeGroup ref="AttrGroupMediaContainerId">
+                        <xs:annotation>
+                            <xs:documentation>Identifies the MediaContainer for which the preview was
+                                requested.</xs:documentation>
+                        </xs:annotation>
+                    </xs:attributeGroup>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GetMediaContents" substitutionGroup="abstractOperation">
+        <xs:annotation>
+            <xs:documentation>Request to get the contents of (all or some) media attached to this MediaContainer (without the
+                preview).</xs:documentation>
+            <xs:documentation>The contents of all Media is delivered if there are no MediaVariant children in the request.
+                Otherwise, only the referenced MediaVariants and the referenced Media contained therein are
+                delivered.</xs:documentation>
+            <xs:documentation>The requested MediaVariants are selected by their itemId and itemRevId attributes, the Media by
+                their BinaryFile fileType attributes. All other selection criteria are ignored.</xs:documentation>
+            <xs:documentation>If possible with respect to the size restrictions of MQ mesages, all file contents are delivered in
+                the response using Base64 encoding. Otherwise, download URLs are provided where the size does not fit (see
+                sub-element DownloadFile in ResGetMediaContents). This behaviour can be forced by the caller, see the
+                fileSizeThreshold attribute.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeOperation">
+                    <xs:sequence minOccurs="0">
+                        <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Relation">
+                            <xs:annotation>
+                                <xs:documentation>In the default case (when this element is not present), only original and
+                                    derived files are included in the response. </xs:documentation>
+                                <xs:documentation>Adding one or more Relation elements this default behaviour can be changed:
+                                    Exactly the listed relations are used for building the contents of the
+                                    response.</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:attribute form="unqualified" name="name" use="required">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:NMTOKEN">
+                                            <xs:enumeration value="original"/>
+                                            <xs:enumeration value="derived"/>
+                                            <xs:enumeration value="additional"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="MediaVariant"/>
+                    </xs:sequence>
+                    <xs:attributeGroup ref="AttrGroupMediaContainerId"/>
+                    <xs:attribute form="unqualified" name="fileTypes" type="xs:NMTOKENS">
+                        <xs:annotation>
+                            <xs:documentation>The fileTypes attribute in element GetMediaContents must provide a list of file
+                                types separated by blanks; it signals that all files in all MediaVariants are requested that have
+                                one of the listed types.</xs:documentation>
+                            <xs:documentation>No children of GetMediaContents are expected, and if present they are
+                                ignored.</xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute form="unqualified" name="fileSizeThresholdKB" type="xs:nonNegativeInteger">
+                        <xs:annotation>
+                            <xs:documentation>All files with a size exceeding this threshold value will not be included in the
+                                response (using a BinaryFile element with Base64 encoded content) but will be referenced by a
+                                DownloadFile element with url attribute.</xs:documentation>
+                            <xs:documentation>In particular, getting download URLs for all files can be easily achieved by setting
+                                fileSizeThresholdKB=0.</xs:documentation>
+                            <xs:documentation>If the attribute is missing, DownloadFile is only used if there is at least one file
+                                which does not fit into an MQ message (size up to 100 MB).</xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResGetMediaContents" substitutionGroup="abstractResult">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeResult">
+                    <xs:sequence>
+                        <xs:element ref="MediaContainer"/>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GetChangeInfo" substitutionGroup="abstractOperation">
+        <xs:annotation>
+            <xs:documentation>Requests a list of all MediaContainers that have the given purpose and have been changed or created
+                in the given time interval.</xs:documentation>
+            <xs:documentation>A MediaContainer is also considered as changed if a MediaVariant or a Media (dataset) has
+                changed.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeOperation">
+                    <xs:attributeGroup ref="AttrGroupTimeInterval"/>
+                    <xs:attributeGroup ref="AttrGroupPurpose">
+                        <xs:annotation>
+                            <xs:documentation>Only MediaContaines with the given purpose (Verwendungsart) will be reported in the
+                                response.</xs:documentation>
+                        </xs:annotation>
+                    </xs:attributeGroup>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResGetChangeInfo" substitutionGroup="abstractResult">
+        <xs:annotation>
+            <xs:documentation>Returns a list of MediaContainers that fulfil the criteria (purpose as given, created or changed in
+                given time interval).</xs:documentation>
+            <xs:documentation>Several pre-checks are performed; see the potential errorcodes in the API
+                documentation.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeResult">
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="MediaContainer">
+                            <xs:annotation>
+                                <xs:documentation>In the context of ResGetChangeInfo, only itemId/itemRevisionId and
+                                    tcDateLastModified of the MediaContainer are reported; all other information has to be fetched
+                                    via operations like GetMediaInfo etc.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attributeGroup ref="AttrGroupTimeInterval">
+                        <xs:annotation>
+                            <xs:documentation>The time interval that was given in the GetChangeInfo request; this is just a
+                                convenience to make testing easier.</xs:documentation>
+                        </xs:annotation>
+                    </xs:attributeGroup>
+                    <xs:attributeGroup ref="AttrGroupPurpose">
+                        <xs:annotation>
+                            <xs:documentation>The purpose that was given in the GetChangeInfo request; this is just a convenience
+                                to make testing easier.</xs:documentation>
+                        </xs:annotation>
+                    </xs:attributeGroup>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AcceptMediaContainer" substitutionGroup="abstractOperation">
+        <xs:annotation>
+            <xs:documentation>The MediaContainer given by its id attributes is accepted by the author so it can advance in the
+                workflow.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeOperation">
+                    <xs:attributeGroup ref="AttrGroupMediaContainerId"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AbortMediaOrder" substitutionGroup="abstractOperation">
+        <xs:annotation>
+            <xs:documentation>The MediaContainer given by its id attributes is aborted by the author, .</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeOperation">
+                    <xs:sequence>
+                        <xs:element form="qualified" name="Reason">
+                            <xs:annotation>
+                                <xs:documentation>The reason why the abort is requested.</xs:documentation>
+                                <xs:documentation>This is freetext content (contrary to ChangeMediaOrder where only a predefined
+                                    List Of Values can be used).</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                    <xs:maxLength value="128"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attributeGroup ref="AttrGroupMediaContainerId"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="WithdrawMediaOrder" substitutionGroup="abstractOperation">
+        <xs:annotation>
+            <xs:documentation>The MediaContainer given by its id attributes is withdrawn by the author so the workflow will be
+                cancelled.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TypeOperation">
+                    <xs:attributeGroup ref="AttrGroupMediaContainerId"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="MediaOrder">
+        <xs:annotation>
+            <xs:documentation>The MediaOrder element represents a MediaOrderRevision object in Teamcenter.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attributeGroup ref="AttrGroupMediaOrder"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="MediaContainer">
+        <xs:annotation>
+            <xs:documentation>The MediaContainer element represents a MediaContainerRevision object in Teamcenter, identified by
+                the TC Item Id and the TC Item Revision Id.</xs:documentation>
+            <xs:documentation>The two identifying Teamcenter attributes Item Id and Item Revision Id of the MediaContainerRevision
+                object are always present. Depending on its usage, there may be Attr and ArrayAttr child elements giving the names
+                and values of a set of additional attributes and/or MediaVariant childs with or without the media
+                contents.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice maxOccurs="unbounded" minOccurs="0">
+                    <xs:element form="qualified" name="Attr" type="TypeTcAttribute"/>
+                    <xs:element form="qualified" name="ArrayAttr" type="TypeTcArrayAttribute"/>
+                </xs:choice>
+                <xs:element minOccurs="0" ref="IPartsPositionList"/>
+                <xs:element form="qualified" minOccurs="0" name="WorkflowState" type="xs:string"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="MediaVariant"/>
+            </xs:sequence>
+            <xs:attributeGroup ref="AttrGroupMediaContainerId">
+                <xs:annotation>
+                    <xs:documentation>The identifying attributes for a MediaContainer (which is in fact a Teamcenter
+                        MediaContRevision object).</xs:documentation>
+                </xs:annotation>
+            </xs:attributeGroup>
+            <xs:attributeGroup ref="AttrGroupTcDate"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="MediaVariant">
+        <xs:annotation>
+            <xs:documentation>Variants of the media with different languages and/or colors.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Media">
+                    <xs:annotation>
+                        <xs:documentation>Wrapper for the concrete representations of the Media (there may be different image
+                            formats)</xs:documentation>
+                        <xs:documentation>Element Media is not present as long as no dataset has been attached; therefore, it is
+                            optional.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:choice>
+                            <xs:element ref="BinaryFile"/>
+                            <xs:element ref="DownloadFile"/>
+                        </xs:choice>
+                        <xs:attributeGroup ref="AttrGroupTcDataset"/>
+                        <xs:attributeGroup ref="AttrGroupTcDate"/>
+                        <xs:attributeGroup ref="AttrGroupImageProperties"/>
+                        <xs:attribute form="unqualified" name="designer">
+                            <xs:annotation>
+                                <xs:documentation>Name of the designer (Teamcenter user)</xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute form="unqualified" name="derived" type="xs:boolean">
+                            <xs:annotation>
+                                <xs:documentation>derived=true indicates that the Media is not an original (as built by a
+                                    designer) but has been derived from an original, usually by an automatic process initiated by
+                                    Teamcenter.</xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute form="unqualified" name="additional" type="xs:boolean">
+                            <xs:annotation>
+                                <xs:documentation>additional=true indicates that the Media is neither an original (as built by a
+                                    designer) nor derived from an original, but an additional file.</xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attributeGroup ref="AttrGroupTcObjectId"/>
+            <xs:attributeGroup ref="AttrGroupTcDate"/>
+            <xs:attribute form="unqualified" name="language" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Language of the picture, if applicable</xs:documentation>
+                    <xs:documentation>Sample values: de, en, es</xs:documentation>
+                    <xs:documentation>This is mapped to the Teamcenter attribute c54_languagecode which contains a two-letter ISO
+                        639-1 language code.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="languageVariant" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Country-dependent language variant (for example, English is used differently in the US and
+                        in England, so US and EN are used to distinguish the two variants).</xs:documentation>
+                    <xs:documentation>This is mapped to the Teamcenter attribute c54_languagecodevariant which contains a
+                        two-letter ISO 3166 country code.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="color">
+                <xs:annotation>
+                    <xs:documentation>For ARKi MVs (purpose=Betriebsanleitung), attributes color and mediatype are used
+                        alternatively</xs:documentation>
+                    <xs:documentation>color is relevant only if and only if image format is 32:ARKi3Medium</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="S/W"/>
+                        <xs:enumeration value="Farbe"/>
+                        <xs:enumeration value="Neutral"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="mediatype">
+                <xs:annotation>
+                    <xs:documentation>This (ARKi) attribute has been moved from the MediaContainer to the MediaVariant which means
+                        that a MC can contain different Media Types.</xs:documentation>
+                    <xs:documentation>For ARKi MVs (purpose=Betriebsanleitung), attributes color and mediatype are used
+                        alternatively</xs:documentation>
+                    <xs:documentation>mediatype is relevant if and only if image format is either 32:MBMasterTif or
+                        32:smartMasterTif</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Print"/>
+                        <xs:enumeration value="Digital"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="isTemplate" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>This attribute will be filled with the BTT. isTemplate=true means a template is used for
+                        createing (AMD-3662 and AMD-3663)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute form="unqualified" name="automationLevel" type="xs:integer">
+                <xs:annotation>
+                    <xs:documentation>This attribute will be filled with the BTT. automation grad for createing as integer value
+                        (AMD-3662 and AMD-3663)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResultAttributes">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="ResultAttribute"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResultAttribute">
+        <xs:annotation>
+            <xs:documentation>The result must contain the value for the attribute "attrName".</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute form="unqualified" name="attrName" use="required">
+                <xs:annotation>
+                    <xs:documentation>The internal name of a MediaContainer TC attribute (without the prefix for custom
+                        attributes)</xs:documentation>
+                    <xs:documentation>The allowed attribute names are enumerated to enable client-side validation of a search
+                        request.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="name"/>
+                        <xs:enumeration value="description"/>
+                        <xs:enumeration value="alternateID"/>
+                        <xs:enumeration value="difficulty"/>
+                        <xs:enumeration value="einpasMainGroup"/>
+                        <xs:enumeration value="einpasGroup"/>
+                        <xs:enumeration value="einpasTechnicalScope"/>
+                        <xs:enumeration value="imageFormat"/>
+                        <xs:enumeration value="presentation"/>
+                        <xs:enumeration value="purpose"/>
+                        <xs:enumeration value="realization"/>
+                        <xs:enumeration value="remarks"/>
+                        <xs:enumeration value="dateDue"/>
+                        <xs:enumeration value="company"/>
+                        <xs:enumeration value="codeValidity"/>
+                        <xs:enumeration value="workingContext"/>
+                        <xs:enumeration value="pClassFunctionMainGroup">
+                            <xs:annotation>
+                                <xs:documentation>ARKi-Attribut: BA: Funktionshauptgruppe </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="pClassFunctionGroup">
+                            <xs:annotation>
+                                <xs:documentation>ARKi-Attribut: BA: Funktionsgruppe </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="pClassFunctionSubGroup">
+                            <xs:annotation>
+                                <xs:documentation>ARKi-Attribut: BA: Funktionsuntergruppe </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="pClassFunctionModule">
+                            <xs:annotation>
+                                <xs:documentation>ARKi-Attribut: BA: Funktion-Baugruppe </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="vehicleGroup">
+                            <xs:annotation>
+                                <xs:documentation>ARKi attribute (Sparte)</xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="br_market">
+                            <xs:annotation>
+                                <xs:documentation>ARKi array attribute (BR-Markt)</xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="hu_market">
+                            <xs:annotation>
+                                <xs:documentation>ARKi array attribute (HU-Markt)</xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="hu_genn">
+                            <xs:annotation>
+                                <xs:documentation>ARKi array attribute (HU-Generation)</xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="hu_type">
+                            <xs:annotation>
+                                <xs:documentation>ARKi array attribute (HU-Variante)</xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="config_code">
+                            <xs:annotation>
+                                <xs:documentation>ARKi array attribute (Ausstattungscode)</xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="spec">
+                            <xs:annotation>
+                                <xs:documentation>ARKi array attribute (Ausprägung)</xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="market">
+                            <xs:annotation>
+                                <xs:documentation>ARKi array attribute (Markt)</xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="hu_layout">
+                            <xs:annotation>
+                                <xs:documentation>ARKi attribute (HU-Layout)</xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="infoclass">
+                            <xs:annotation>
+                                <xs:documentation>ARKi array attribute (Infoklasse)</xs:documentation>
+                                <xs:documentation>Deprecated (replaced by infoclassDescription, infoclassDiagnosis and
+                                    infoclassInstruction)</xs:documentation>
+                                <xs:documentation>Still allowed by the schema, but using this attribute name will deliver no
+                                    results</xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="infoClassDescription"/>
+                        <xs:enumeration value="infoClassDiagnosis"/>
+                        <xs:enumeration value="infoClassInstruction"/>
+                        <xs:enumeration value="pue"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:attributeGroup name="AttrGroupMediaContainerId">
+        <xs:attribute form="unqualified" name="mcItemId" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>The Item Id of the MediaCont Teamcenter object.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute form="unqualified" name="mcItemRevId" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>The Item Revision Id of the MediaContRevision Teamcenter object.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="AttrGroupMediaOrder">
+        <xs:attribute form="unqualified" name="dateOrdered" type="xs:dateTime" use="required"/>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="AttrGroupTcDataset">
+        <xs:attribute form="unqualified" name="datasetName" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>The name of the dataset stored in Teamcenter (attribute object_name)</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute form="unqualified" name="filename" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>The name of the file stored in the dataset (without a directory path)</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+    <xs:group name="ElGroupMOC">
+        <xs:annotation>
+            <xs:documentation>ElGroupMOC means "Element Group of Media Order and Container" and represents the information that is
+                returned by all operations that create or modify a MediaContainer.</xs:documentation>
+            <xs:documentation>Although the structure is formally always the same, the concrete contents depends on the operation.
+                See the comments in the operation responses.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="MediaOrder"/>
+            <xs:element ref="MediaContainer"/>
+        </xs:sequence>
+    </xs:group>
+    <xs:element name="Message">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice>
+                    <xs:element ref="Request"/>
+                    <xs:element ref="Response"/>
+                    <xs:element ref="Event"/>
+                </xs:choice>
+                <xs:element minOccurs="0" ref="History"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Request">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Requestor"/>
+                <xs:element name="Operation">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="abstractOperation"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attributeGroup ref="AttrGroupRequestResponse"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Success"/>
+                <xs:element minOccurs="0" ref="abstractResult">
+                    <xs:annotation>
+                        <xs:documentation>The Result element is optional, in case of an error it will often be impossible to
+                            supply a result.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+            <xs:attributeGroup ref="AttrGroupRequestResponse"/>
+            <xs:attributeGroup ref="AttrGroupResponse"/>
+            <xs:attributeGroup ref="AttrGroupTime"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="History">
+        <xs:annotation>
+            <xs:documentation>The optional history of a response, containing the original request.</xs:documentation>
+            <xs:documentation>If the request was invalid XML, it may be wrapped into a CDATA section.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:group minOccurs="0" ref="SeqTimestamps"/>
+                <xs:group maxOccurs="unbounded" minOccurs="0" ref="SeqRequestResponse"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:group name="SeqRequestResponse">
+        <xs:sequence>
+            <xs:element ref="Request"/>
+            <xs:element minOccurs="0" ref="Response"/>
+        </xs:sequence>
+    </xs:group>
+    <xs:group name="SeqTimestamps">
+        <xs:annotation>
+            <xs:documentation>A sequence of timestamps which may be used for error or performance analysis
+                purposes</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="Timestamp">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:dateTime">
+                            <xs:attribute name="creator">
+                                <xs:annotation>
+                                    <xs:documentation>Who created the timestamp? (MQ, WS, ...)</xs:documentation>
+                                </xs:annotation>
+                            </xs:attribute>
+                            <xs:attribute name="event">
+                                <xs:annotation>
+                                    <xs:documentation>What happened? (reqReceived, resSent, ...)</xs:documentation>
+                                </xs:annotation>
+                            </xs:attribute>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:group>
+</xs:schema>

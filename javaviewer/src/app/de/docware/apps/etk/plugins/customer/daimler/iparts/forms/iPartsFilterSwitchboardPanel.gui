@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+    <invisible />
+    <layout_border />
+    <scrollpane id="scrollpane" minimumHeight="10" minimumWidth="10">
+      <panel id="panel" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_gridbag />
+        <checkbox id="checkbox_0" minimumHeight="10" minimumWidth="10" onChangeEvent="doOnChangeEvent" text="!!Baumuster-Filter">
+          <constraints_gridbag fill="h" insetsBottom="8" insetsLeft="8" insetsRight="8" insetsTop="8" weightx="100.0" />
+        </checkbox>
+        <checkbox id="checkbox_1" minimumHeight="10" minimumWidth="10" text="!!letzter Filter">
+          <constraints_gridbag fill="h" gridy="1" insetsBottom="8" insetsLeft="8" insetsRight="8" insetsTop="8" />
+        </checkbox>
+        <constraints_border />
+      </panel>
+      <constraints_border />
+    </scrollpane>
+    <panel id="panelMasterSwitch" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag />
+      <checkbox fontStyle="1" id="checkboxMasterSwitch" minimumHeight="10" minimumWidth="10" onChangeEvent="doOnMasterSwitchChangeEvent" text="!!Filter einschalten">
+        <constraints_gridbag fill="h" insetsBottom="8" insetsLeft="8" insetsRight="8" insetsTop="8" weightx="100.0" />
+      </checkbox>
+      <separator id="separator_0">
+        <constraints_gridbag fill="h" gridy="1" />
+      </separator>
+      <constraints_border position="north" />
+    </panel>
+  </panel>
+</gui>
+

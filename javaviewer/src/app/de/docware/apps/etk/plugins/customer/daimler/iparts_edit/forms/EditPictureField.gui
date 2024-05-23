@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window height="700" id="mainWindow" visible="false">
+    <invisible>
+      <contextmenu id="contextMenuExistingEntries" menuName="contextMenu" minimumHeight="10" minimumWidth="10" />
+      <contextmenu id="contextMenuSelectedEntries" menuName="contextMenuSelectedEntries" minimumHeight="10" minimumWidth="10" />
+    </invisible>
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title=",,,">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <panel id="panelEntries" minimumHeight="10" minimumWidth="10" paddingLeft="8" paddingRight="8">
+        <invisible />
+        <layout_border />
+        <splitpane dividerPosition="397" id="splitpaneEntries" minimumHeight="10" minimumWidth="10">
+          <panel id="splitpaneEntries_firstChild" minimumWidth="0">
+            <invisible />
+            <layout_gridbag />
+            <label id="labelExistingEntries" minimumHeight="10" minimumWidth="10" paddingBottom="4" paddingLeft="10" paddingTop="4" text="!!Vorhandene Einträge:">
+              <constraints_gridbag fill="h" weightx="100.0" />
+            </label>
+            <toolbar backgroundImage="@imgDesignToolbarBigBackground" id="toolbarExistingEntries" minimumHeight="20" minimumWidth="10">
+              <constraints_gridbag fill="h" gridy="1" weightx="100.0" />
+            </toolbar>
+            <panel id="panelForGridEntries" minimumHeight="10" minimumWidth="10">
+              <invisible />
+              <layout_border />
+              <constraints_gridbag fill="b" gridy="2" weightx="100.0" weighty="100.0" />
+            </panel>
+          </panel>
+          <panel id="splitpaneEntries_secondChild" minimumWidth="0">
+            <invisible />
+            <layout_border />
+            <label id="labelSelectedEntries" minimumHeight="10" minimumWidth="10" paddingBottom="4" paddingLeft="10" paddingTop="4" text="!!Ausgewählte Einträge:">
+              <constraints_border position="north" />
+            </label>
+            <toolbar backgroundImage="@imgDesignToolbarBigBackground" id="toolbarSelectedEntries" minimumHeight="10" minimumWidth="20">
+              <constraints_border position="west" />
+            </toolbar>
+            <list genericType="Object" id="listSelectedEntries" minimumHeight="100" minimumWidth="200" mouseDoubleClickedEvent="listSelectedEntriesDoubleClickEvent" onChangeEvent="onChangeSelectedEntries">
+              <constraints_border />
+            </list>
+          </panel>
+          <constraints_border />
+        </splitpane>
+        <constraints_border />
+      </panel>
+      <panel id="panelPreview" minimumHeight="150" minimumWidth="10" paddingLeft="8" paddingRight="8">
+        <invisible />
+        <layout_border />
+        <label id="labelPreview" minimumHeight="10" minimumWidth="10" paddingBottom="4" paddingLeft="8" paddingTop="4" text="!!Vorschau">
+          <constraints_border position="north" />
+        </label>
+        <scrollpane id="scrollpanePreview" minimumHeight="10" minimumWidth="10">
+          <table htmlPageSplitMode="NO_SPLIT" id="tablePreview" minimumHeight="10" minimumWidth="10">
+            <constraints_border />
+          </table>
+          <constraints_border />
+        </scrollpane>
+        <constraints_border position="south" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonOKActionPerformedEvent="onButtonOKClick" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

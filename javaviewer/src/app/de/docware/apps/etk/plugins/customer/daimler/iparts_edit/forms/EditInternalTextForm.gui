@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel borderWidth="4" id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag />
+      <label id="labelAttachment" minimumHeight="10" minimumWidth="10" text="!!Anlagen:">
+        <constraints_gridbag anchor="w" insetsLeft="8" insetsRight="8" />
+      </label>
+      <panel id="panelAttachment" minimumHeight="100" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <constraints_gridbag fill="h" gridx="1" insetsRight="8" weightx="100.0" />
+      </panel>
+      <scrollpane borderColor="clDesignTextFieldBorder" borderWidth="1" id="scrollerForEdit" minimumHeight="130" minimumWidth="500">
+        <textarea id="textarea" lineWrap="true" minimumHeight="63" minimumWidth="500" onChangeEvent="onTextAreaChangeEvent" placeHolderText="!!Geben Sie hier Ihren Text ein">
+          <constraints_border />
+        </textarea>
+        <constraints_gridbag fill="b" gridwidth="2" gridy="1" insetsBottom="8" insetsLeft="8" insetsRight="8" insetsTop="8" weightx="100.0" weighty="100.0" />
+      </scrollpane>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonOKActionPerformedEvent="onButtonOkClick" id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

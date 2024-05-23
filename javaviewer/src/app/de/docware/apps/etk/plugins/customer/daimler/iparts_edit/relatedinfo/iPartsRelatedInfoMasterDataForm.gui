@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10">
+      <constraints_border position="north" />
+    </title>
+    <panel id="mainPanel">
+      <invisible />
+      <layout_gridbag />
+      <splitpane dividerPosition="353" horizontal="false" id="splitPane" minimumHeight="10" minimumWidth="10" paddingBottom="1" resizeWeight="0.5">
+        <panel id="panelTop" minimumHeight="0" paddingBottom="8" paddingLeft="8" paddingRight="8" paddingTop="4">
+          <invisible />
+          <layout_border />
+        </panel>
+        <panel id="panelBottom" minimumHeight="0" paddingBottom="8" paddingLeft="8" paddingRight="8" paddingTop="4">
+          <invisible />
+          <layout_gridbag />
+          <label id="labelDataObjectGridTitle" minimumHeight="10" minimumWidth="10" paddingBottom="4" text="DataObjectGridBottomTitle">
+            <constraints_gridbag anchor="w" insetsBottom="4" insetsLeft="8" insetsRight="8" insetsTop="4" weightx="100.0" />
+          </label>
+          <panel id="panelDataObjectGrid" minimumHeight="10" minimumWidth="10">
+            <invisible />
+            <layout_border />
+            <constraints_gridbag fill="b" gridy="1" insetsBottom="8" insetsLeft="8" insetsRight="8" insetsTop="4" weighty="100.0" />
+          </panel>
+        </panel>
+        <constraints_gridbag fill="b" weightx="100.0" weighty="100.0" />
+      </splitpane>
+      <constraints_border />
+    </panel>
+    <buttonPanel dialogStyle="CLOSE" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

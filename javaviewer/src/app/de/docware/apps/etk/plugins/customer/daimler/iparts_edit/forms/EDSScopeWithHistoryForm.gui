@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" title="!!Änderungsstände der SAA auf der Position" visible="false">
+    <invisible />
+    <layout_border />
+    <panel id="mainPanel" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <panel borderWidth="4" id="historyPanel" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <constraints_border />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel dialogStyle="CLOSE" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+  </window>
+</gui>
+

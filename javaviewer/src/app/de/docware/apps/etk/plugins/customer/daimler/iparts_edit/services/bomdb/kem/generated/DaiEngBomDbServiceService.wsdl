@@ -1,0 +1,2524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="DaiEngBomDbServiceService" targetNamespace="http://bomDbServices.eng.dai/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:tns="http://bomDbServices.eng.dai/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://bomDbServices.eng.dai/" schemaLocation="DaiEngBomDbServiceService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="BomDbServiceException">
+    <part name="fault" element="tns:BomDbServiceException">
+    </part>
+  </message>
+  <message name="getT43RBKV">
+    <part name="parameters" element="tns:getT43RBKV">
+    </part>
+  </message>
+  <message name="getT43RTEIS">
+    <part name="parameters" element="tns:getT43RTEIS">
+    </part>
+  </message>
+  <message name="NotImplementedException">
+    <part name="fault" element="tns:NotImplementedException">
+    </part>
+  </message>
+  <message name="getT43RTEIL">
+    <part name="parameters" element="tns:getT43RTEIL">
+    </part>
+  </message>
+  <message name="getPartMasterDataResponse">
+    <part name="parameters" element="tns:getPartMasterDataResponse">
+    </part>
+  </message>
+  <message name="getT43RKEMD">
+    <part name="parameters" element="tns:getT43RKEMD">
+    </part>
+  </message>
+  <message name="getT43RSAAS">
+    <part name="parameters" element="tns:getT43RSAAS">
+    </part>
+  </message>
+  <message name="getT43RCODSResponse">
+    <part name="parameters" element="tns:getT43RCODSResponse">
+    </part>
+  </message>
+  <message name="getT43RSAAEResponse">
+    <part name="parameters" element="tns:getT43RSAAEResponse">
+    </part>
+  </message>
+  <message name="getT43RTEID">
+    <part name="parameters" element="tns:getT43RTEID">
+    </part>
+  </message>
+  <message name="getT43RTEIE">
+    <part name="parameters" element="tns:getT43RTEIE">
+    </part>
+  </message>
+  <message name="getT43RLIVWResponse">
+    <part name="parameters" element="tns:getT43RLIVWResponse">
+    </part>
+  </message>
+  <message name="getT43RCODS">
+    <part name="parameters" element="tns:getT43RCODS">
+    </part>
+  </message>
+  <message name="getT43RTEIG">
+    <part name="parameters" element="tns:getT43RTEIG">
+    </part>
+  </message>
+  <message name="getT43RTEIB">
+    <part name="parameters" element="tns:getT43RTEIB">
+    </part>
+  </message>
+  <message name="getT43RK3Response">
+    <part name="parameters" element="tns:getT43RK3Response">
+    </part>
+  </message>
+  <message name="getEcoDecodingRelevanceResponse">
+    <part name="parameters" element="tns:getEcoDecodingRelevanceResponse">
+    </part>
+  </message>
+  <message name="getT43RAEH">
+    <part name="parameters" element="tns:getT43RAEH">
+    </part>
+  </message>
+  <message name="getT43RSAAE">
+    <part name="parameters" element="tns:getT43RSAAE">
+    </part>
+  </message>
+  <message name="getT43RBKZM">
+    <part name="parameters" element="tns:getT43RBKZM">
+    </part>
+  </message>
+  <message name="getAssemblyStructureMultiLevelResponse">
+    <part name="parameters" element="tns:getAssemblyStructureMultiLevelResponse">
+    </part>
+  </message>
+  <message name="getT43RTEILResponse">
+    <part name="parameters" element="tns:getT43RTEILResponse">
+    </part>
+  </message>
+  <message name="getT43RBKA">
+    <part name="parameters" element="tns:getT43RBKA">
+    </part>
+  </message>
+  <message name="getModelTypeMasterData">
+    <part name="parameters" element="tns:getModelTypeMasterData">
+    </part>
+  </message>
+  <message name="getT43RFWResponse">
+    <part name="parameters" element="tns:getT43RFWResponse">
+    </part>
+  </message>
+  <message name="getT43RB2S">
+    <part name="parameters" element="tns:getT43RB2S">
+    </part>
+  </message>
+  <message name="getT43RB2CResponse">
+    <part name="parameters" element="tns:getT43RB2CResponse">
+    </part>
+  </message>
+  <message name="getModuleMasterDataComplete">
+    <part name="parameters" element="tns:getModuleMasterDataComplete">
+    </part>
+  </message>
+  <message name="getT43RCODResponse">
+    <part name="parameters" element="tns:getT43RCODResponse">
+    </part>
+  </message>
+  <message name="getT43RBMAGResponse">
+    <part name="parameters" element="tns:getT43RBMAGResponse">
+    </part>
+  </message>
+  <message name="getT43RBKAResponse">
+    <part name="parameters" element="tns:getT43RBKAResponse">
+    </part>
+  </message>
+  <message name="getPartsListMasterData">
+    <part name="parameters" element="tns:getPartsListMasterData">
+    </part>
+  </message>
+  <message name="getT43RFW">
+    <part name="parameters" element="tns:getT43RFW">
+    </part>
+  </message>
+  <message name="getT43RTEIGResponse">
+    <part name="parameters" element="tns:getT43RTEIGResponse">
+    </part>
+  </message>
+  <message name="getT43RB2I">
+    <part name="parameters" element="tns:getT43RB2I">
+    </part>
+  </message>
+  <message name="getT43RB2IEResponse">
+    <part name="parameters" element="tns:getT43RB2IEResponse">
+    </part>
+  </message>
+  <message name="getModuleMasterDataResponse">
+    <part name="parameters" element="tns:getModuleMasterDataResponse">
+    </part>
+  </message>
+  <message name="getT43RGRU">
+    <part name="parameters" element="tns:getT43RGRU">
+    </part>
+  </message>
+  <message name="getPartMasterDataCompleteResponse">
+    <part name="parameters" element="tns:getPartMasterDataCompleteResponse">
+    </part>
+  </message>
+  <message name="getT43RB2C">
+    <part name="parameters" element="tns:getT43RB2C">
+    </part>
+  </message>
+  <message name="getPartHistory">
+    <part name="parameters" element="tns:getPartHistory">
+    </part>
+  </message>
+  <message name="getT43RBMAA">
+    <part name="parameters" element="tns:getT43RBMAA">
+    </part>
+  </message>
+  <message name="getEcoContentResponse">
+    <part name="parameters" element="tns:getEcoContentResponse">
+    </part>
+  </message>
+  <message name="getT43RPGV">
+    <part name="parameters" element="tns:getT43RPGV">
+    </part>
+  </message>
+  <message name="getT43RBKWW">
+    <part name="parameters" element="tns:getT43RBKWW">
+    </part>
+  </message>
+  <message name="getEcoMasterDataResponse">
+    <part name="parameters" element="tns:getEcoMasterDataResponse">
+    </part>
+  </message>
+  <message name="getModelCodeResponse">
+    <part name="parameters" element="tns:getModelCodeResponse">
+    </part>
+  </message>
+  <message name="getT43RB2IV">
+    <part name="parameters" element="tns:getT43RB2IV">
+    </part>
+  </message>
+  <message name="getT43RLOEResponse">
+    <part name="parameters" element="tns:getT43RLOEResponse">
+    </part>
+  </message>
+  <message name="getT43RT3">
+    <part name="parameters" element="tns:getT43RT3">
+    </part>
+  </message>
+  <message name="getCodeMasterDataResponse">
+    <part name="parameters" element="tns:getCodeMasterDataResponse">
+    </part>
+  </message>
+  <message name="getT43RB2IResponse">
+    <part name="parameters" element="tns:getT43RB2IResponse">
+    </part>
+  </message>
+  <message name="getT43RDATE">
+    <part name="parameters" element="tns:getT43RDATE">
+    </part>
+  </message>
+  <message name="getModelMasterDataComplete">
+    <part name="parameters" element="tns:getModelMasterDataComplete">
+    </part>
+  </message>
+  <message name="getT43RBMAG">
+    <part name="parameters" element="tns:getT43RBMAG">
+    </part>
+  </message>
+  <message name="getT43RTEIDResponse">
+    <part name="parameters" element="tns:getT43RTEIDResponse">
+    </part>
+  </message>
+  <message name="getT43RB2IE">
+    <part name="parameters" element="tns:getT43RB2IE">
+    </part>
+  </message>
+  <message name="getAssemblyStructureMultiLevel">
+    <part name="parameters" element="tns:getAssemblyStructureMultiLevel">
+    </part>
+  </message>
+  <message name="getModelMasterData">
+    <part name="parameters" element="tns:getModelMasterData">
+    </part>
+  </message>
+  <message name="getT43RKEM">
+    <part name="parameters" element="tns:getT43RKEM">
+    </part>
+  </message>
+  <message name="getT43RVVBS">
+    <part name="parameters" element="tns:getT43RVVBS">
+    </part>
+  </message>
+  <message name="getT43RLIVW">
+    <part name="parameters" element="tns:getT43RLIVW">
+    </part>
+  </message>
+  <message name="getPartMasterData">
+    <part name="parameters" element="tns:getPartMasterData">
+    </part>
+  </message>
+  <message name="getT43RBKZMResponse">
+    <part name="parameters" element="tns:getT43RBKZMResponse">
+    </part>
+  </message>
+  <message name="getUsageOrContentResponse">
+    <part name="parameters" element="tns:getUsageOrContentResponse">
+    </part>
+  </message>
+  <message name="getT43RBK">
+    <part name="parameters" element="tns:getT43RBK">
+    </part>
+  </message>
+  <message name="getUsageOrContent">
+    <part name="parameters" element="tns:getUsageOrContent">
+    </part>
+  </message>
+  <message name="getT43RKEMDResponse">
+    <part name="parameters" element="tns:getT43RKEMDResponse">
+    </part>
+  </message>
+  <message name="getT43RBEZA">
+    <part name="parameters" element="tns:getT43RBEZA">
+    </part>
+  </message>
+  <message name="getEcoMasterData">
+    <part name="parameters" element="tns:getEcoMasterData">
+    </part>
+  </message>
+  <message name="getT43RBM">
+    <part name="parameters" element="tns:getT43RBM">
+    </part>
+  </message>
+  <message name="getT43RBMAS">
+    <part name="parameters" element="tns:getT43RBMAS">
+    </part>
+  </message>
+  <message name="getChangedAssemblyStructures">
+    <part name="parameters" element="tns:getChangedAssemblyStructures">
+    </part>
+  </message>
+  <message name="getT43RLIPAResponse">
+    <part name="parameters" element="tns:getT43RLIPAResponse">
+    </part>
+  </message>
+  <message name="getEcoDecodingRelevance">
+    <part name="parameters" element="tns:getEcoDecodingRelevance">
+    </part>
+  </message>
+  <message name="getT43RTEIBResponse">
+    <part name="parameters" element="tns:getT43RTEIBResponse">
+    </part>
+  </message>
+  <message name="getPartsListMasterDataCompleteResponse">
+    <part name="parameters" element="tns:getPartsListMasterDataCompleteResponse">
+    </part>
+  </message>
+  <message name="getPartsListMasterDataResponse">
+    <part name="parameters" element="tns:getPartsListMasterDataResponse">
+    </part>
+  </message>
+  <message name="getT43RVVBResponse">
+    <part name="parameters" element="tns:getT43RVVBResponse">
+    </part>
+  </message>
+  <message name="getItemUsageMultiLevelResponse">
+    <part name="parameters" element="tns:getItemUsageMultiLevelResponse">
+    </part>
+  </message>
+  <message name="getT43RT3Response">
+    <part name="parameters" element="tns:getT43RT3Response">
+    </part>
+  </message>
+  <message name="getT43RB2IVResponse">
+    <part name="parameters" element="tns:getT43RB2IVResponse">
+    </part>
+  </message>
+  <message name="getModuleMasterDataCompleteResponse">
+    <part name="parameters" element="tns:getModuleMasterDataCompleteResponse">
+    </part>
+  </message>
+  <message name="getCodeStructureResponse">
+    <part name="parameters" element="tns:getCodeStructureResponse">
+    </part>
+  </message>
+  <message name="getT43RLIPO">
+    <part name="parameters" element="tns:getT43RLIPO">
+    </part>
+  </message>
+  <message name="getT43RBMAAResponse">
+    <part name="parameters" element="tns:getT43RBMAAResponse">
+    </part>
+  </message>
+  <message name="getT43RKEMResponse">
+    <part name="parameters" element="tns:getT43RKEMResponse">
+    </part>
+  </message>
+  <message name="getPartHistoryResponse">
+    <part name="parameters" element="tns:getPartHistoryResponse">
+    </part>
+  </message>
+  <message name="getT43RBMResponse">
+    <part name="parameters" element="tns:getT43RBMResponse">
+    </part>
+  </message>
+  <message name="getT43RLIPA">
+    <part name="parameters" element="tns:getT43RLIPA">
+    </part>
+  </message>
+  <message name="getCodeMasterData">
+    <part name="parameters" element="tns:getCodeMasterData">
+    </part>
+  </message>
+  <message name="getT43RVWST">
+    <part name="parameters" element="tns:getT43RVWST">
+    </part>
+  </message>
+  <message name="getPartMasterDataComplete">
+    <part name="parameters" element="tns:getPartMasterDataComplete">
+    </part>
+  </message>
+  <message name="getT43RSRM">
+    <part name="parameters" element="tns:getT43RSRM">
+    </part>
+  </message>
+  <message name="getT43RSAA">
+    <part name="parameters" element="tns:getT43RSAA">
+    </part>
+  </message>
+  <message name="getModelTypeMasterDataComplete">
+    <part name="parameters" element="tns:getModelTypeMasterDataComplete">
+    </part>
+  </message>
+  <message name="getAehContentAtCorrespondingObjects">
+    <part name="parameters" element="tns:getAehContentAtCorrespondingObjects">
+    </part>
+  </message>
+  <message name="getT43RUMF">
+    <part name="parameters" element="tns:getT43RUMF">
+    </part>
+  </message>
+  <message name="getT43RDATEResponse">
+    <part name="parameters" element="tns:getT43RDATEResponse">
+    </part>
+  </message>
+  <message name="getChangedPartsResponse">
+    <part name="parameters" element="tns:getChangedPartsResponse">
+    </part>
+  </message>
+  <message name="getT43RBEZAResponse">
+    <part name="parameters" element="tns:getT43RBEZAResponse">
+    </part>
+  </message>
+  <message name="getT43RPCD">
+    <part name="parameters" element="tns:getT43RPCD">
+    </part>
+  </message>
+  <message name="getModelMasterDataCompleteResponse">
+    <part name="parameters" element="tns:getModelMasterDataCompleteResponse">
+    </part>
+  </message>
+  <message name="getPartsListMasterDataComplete">
+    <part name="parameters" element="tns:getPartsListMasterDataComplete">
+    </part>
+  </message>
+  <message name="getT43RSAASResponse">
+    <part name="parameters" element="tns:getT43RSAASResponse">
+    </part>
+  </message>
+  <message name="getT43RB2SResponse">
+    <part name="parameters" element="tns:getT43RB2SResponse">
+    </part>
+  </message>
+  <message name="getModuleMasterData">
+    <part name="parameters" element="tns:getModuleMasterData">
+    </part>
+  </message>
+  <message name="getT43RVVB">
+    <part name="parameters" element="tns:getT43RVVB">
+    </part>
+  </message>
+  <message name="getT43RTEISResponse">
+    <part name="parameters" element="tns:getT43RTEISResponse">
+    </part>
+  </message>
+  <message name="getT43RBKResponse">
+    <part name="parameters" element="tns:getT43RBKResponse">
+    </part>
+  </message>
+  <message name="getT43RCOD">
+    <part name="parameters" element="tns:getT43RCOD">
+    </part>
+  </message>
+  <message name="getEcoContent">
+    <part name="parameters" element="tns:getEcoContent">
+    </part>
+  </message>
+  <message name="getT43RBKWWResponse">
+    <part name="parameters" element="tns:getT43RBKWWResponse">
+    </part>
+  </message>
+  <message name="getAssemblyStructure">
+    <part name="parameters" element="tns:getAssemblyStructure">
+    </part>
+  </message>
+  <message name="getModuleStructure">
+    <part name="parameters" element="tns:getModuleStructure">
+    </part>
+  </message>
+  <message name="getT43RPGVResponse">
+    <part name="parameters" element="tns:getT43RPGVResponse">
+    </part>
+  </message>
+  <message name="getAssemblyStructureResponse">
+    <part name="parameters" element="tns:getAssemblyStructureResponse">
+    </part>
+  </message>
+  <message name="getCodeMasterDataCompleteResponse">
+    <part name="parameters" element="tns:getCodeMasterDataCompleteResponse">
+    </part>
+  </message>
+  <message name="getCodeStructure">
+    <part name="parameters" element="tns:getCodeStructure">
+    </part>
+  </message>
+  <message name="getT43RBMS">
+    <part name="parameters" element="tns:getT43RBMS">
+    </part>
+  </message>
+  <message name="getT43ROTABResponse">
+    <part name="parameters" element="tns:getT43ROTABResponse">
+    </part>
+  </message>
+  <message name="getT43RSNRUResponse">
+    <part name="parameters" element="tns:getT43RSNRUResponse">
+    </part>
+  </message>
+  <message name="getT43RBMASResponse">
+    <part name="parameters" element="tns:getT43RBMASResponse">
+    </part>
+  </message>
+  <message name="getT43RBKVResponse">
+    <part name="parameters" element="tns:getT43RBKVResponse">
+    </part>
+  </message>
+  <message name="getModelMasterDataResponse">
+    <part name="parameters" element="tns:getModelMasterDataResponse">
+    </part>
+  </message>
+  <message name="getT43RVWSTResponse">
+    <part name="parameters" element="tns:getT43RVWSTResponse">
+    </part>
+  </message>
+  <message name="getT43RTEIEResponse">
+    <part name="parameters" element="tns:getT43RTEIEResponse">
+    </part>
+  </message>
+  <message name="getModuleStructureResponse">
+    <part name="parameters" element="tns:getModuleStructureResponse">
+    </part>
+  </message>
+  <message name="getT43RK3">
+    <part name="parameters" element="tns:getT43RK3">
+    </part>
+  </message>
+  <message name="getT43RAEHResponse">
+    <part name="parameters" element="tns:getT43RAEHResponse">
+    </part>
+  </message>
+  <message name="getT43RLOE">
+    <part name="parameters" element="tns:getT43RLOE">
+    </part>
+  </message>
+  <message name="getMonitoringOutputResponse">
+    <part name="parameters" element="tns:getMonitoringOutputResponse">
+    </part>
+  </message>
+  <message name="getT43RGRUResponse">
+    <part name="parameters" element="tns:getT43RGRUResponse">
+    </part>
+  </message>
+  <message name="getT43RLIPOResponse">
+    <part name="parameters" element="tns:getT43RLIPOResponse">
+    </part>
+  </message>
+  <message name="getCodeMasterDataComplete">
+    <part name="parameters" element="tns:getCodeMasterDataComplete">
+    </part>
+  </message>
+  <message name="getT43RPCDResponse">
+    <part name="parameters" element="tns:getT43RPCDResponse">
+    </part>
+  </message>
+  <message name="getT43ROTAB">
+    <part name="parameters" element="tns:getT43ROTAB">
+    </part>
+  </message>
+  <message name="getT43RSAAResponse">
+    <part name="parameters" element="tns:getT43RSAAResponse">
+    </part>
+  </message>
+  <message name="getT43RPTEXResponse">
+    <part name="parameters" element="tns:getT43RPTEXResponse">
+    </part>
+  </message>
+  <message name="getMonitoringOutput">
+    <part name="parameters" element="tns:getMonitoringOutput">
+    </part>
+  </message>
+  <message name="getAehContentAtCorrespondingObjectsResponse">
+    <part name="parameters" element="tns:getAehContentAtCorrespondingObjectsResponse">
+    </part>
+  </message>
+  <message name="getItemUsageMultiLevel">
+    <part name="parameters" element="tns:getItemUsageMultiLevel">
+    </part>
+  </message>
+  <message name="getModelTypeMasterDataCompleteResponse">
+    <part name="parameters" element="tns:getModelTypeMasterDataCompleteResponse">
+    </part>
+  </message>
+  <message name="getChangedAssemblyStructuresResponse">
+    <part name="parameters" element="tns:getChangedAssemblyStructuresResponse">
+    </part>
+  </message>
+  <message name="getChangedParts">
+    <part name="parameters" element="tns:getChangedParts">
+    </part>
+  </message>
+  <message name="getT43RVVBSResponse">
+    <part name="parameters" element="tns:getT43RVVBSResponse">
+    </part>
+  </message>
+  <message name="getT43RUMFResponse">
+    <part name="parameters" element="tns:getT43RUMFResponse">
+    </part>
+  </message>
+  <message name="getModelCode">
+    <part name="parameters" element="tns:getModelCode">
+    </part>
+  </message>
+  <message name="getModelTypeMasterDataResponse">
+    <part name="parameters" element="tns:getModelTypeMasterDataResponse">
+    </part>
+  </message>
+  <message name="getT43RSNRU">
+    <part name="parameters" element="tns:getT43RSNRU">
+    </part>
+  </message>
+  <message name="getT43RBMSResponse">
+    <part name="parameters" element="tns:getT43RBMSResponse">
+    </part>
+  </message>
+  <message name="getT43RSRMResponse">
+    <part name="parameters" element="tns:getT43RSRMResponse">
+    </part>
+  </message>
+  <message name="getT43RPTEX">
+    <part name="parameters" element="tns:getT43RPTEX">
+    </part>
+  </message>
+  <portType name="DaiEngBomDbService">
+    <operation name="getUsageOrContent">
+      <input message="tns:getUsageOrContent" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getUsageOrContentRequest">
+    </input>
+      <output message="tns:getUsageOrContentResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getUsageOrContentResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getUsageOrContent/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getUsageOrContent/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getModelCode">
+      <input message="tns:getModelCode" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelCodeRequest">
+    </input>
+      <output message="tns:getModelCodeResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelCodeResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelCode/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelCode/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getEcoContent">
+      <input message="tns:getEcoContent" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getEcoContentRequest">
+    </input>
+      <output message="tns:getEcoContentResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getEcoContentResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getEcoContent/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getEcoContent/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getPartHistory">
+      <input message="tns:getPartHistory" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartHistoryRequest">
+    </input>
+      <output message="tns:getPartHistoryResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartHistoryResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartHistory/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartHistory/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getAssemblyStructure">
+      <input message="tns:getAssemblyStructure" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getAssemblyStructureRequest">
+    </input>
+      <output message="tns:getAssemblyStructureResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getAssemblyStructureResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getAssemblyStructure/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getAssemblyStructure/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getModuleStructure">
+      <input message="tns:getModuleStructure" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModuleStructureRequest">
+    </input>
+      <output message="tns:getModuleStructureResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModuleStructureResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModuleStructure/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModuleStructure/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getChangedParts">
+      <input message="tns:getChangedParts" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getChangedPartsRequest">
+    </input>
+      <output message="tns:getChangedPartsResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getChangedPartsResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getChangedParts/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getChangedParts/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getChangedAssemblyStructures">
+      <input message="tns:getChangedAssemblyStructures" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getChangedAssemblyStructuresRequest">
+    </input>
+      <output message="tns:getChangedAssemblyStructuresResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getChangedAssemblyStructuresResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getChangedAssemblyStructures/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getChangedAssemblyStructures/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getPartMasterDataComplete">
+      <input message="tns:getPartMasterDataComplete" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartMasterDataCompleteRequest">
+    </input>
+      <output message="tns:getPartMasterDataCompleteResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartMasterDataCompleteResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartMasterDataComplete/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartMasterDataComplete/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getPartsListMasterDataComplete">
+      <input message="tns:getPartsListMasterDataComplete" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartsListMasterDataCompleteRequest">
+    </input>
+      <output message="tns:getPartsListMasterDataCompleteResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartsListMasterDataCompleteResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartsListMasterDataComplete/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartsListMasterDataComplete/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getModelMasterDataComplete">
+      <input message="tns:getModelMasterDataComplete" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelMasterDataCompleteRequest">
+    </input>
+      <output message="tns:getModelMasterDataCompleteResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelMasterDataCompleteResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelMasterDataComplete/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelMasterDataComplete/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getModelTypeMasterDataComplete">
+      <input message="tns:getModelTypeMasterDataComplete" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelTypeMasterDataCompleteRequest">
+    </input>
+      <output message="tns:getModelTypeMasterDataCompleteResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelTypeMasterDataCompleteResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelTypeMasterDataComplete/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelTypeMasterDataComplete/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getCodeMasterDataComplete">
+      <input message="tns:getCodeMasterDataComplete" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getCodeMasterDataCompleteRequest">
+    </input>
+      <output message="tns:getCodeMasterDataCompleteResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getCodeMasterDataCompleteResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getCodeMasterDataComplete/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getCodeMasterDataComplete/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getModuleMasterDataComplete">
+      <input message="tns:getModuleMasterDataComplete" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModuleMasterDataCompleteRequest">
+    </input>
+      <output message="tns:getModuleMasterDataCompleteResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModuleMasterDataCompleteResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModuleMasterDataComplete/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModuleMasterDataComplete/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getAehContentAtCorrespondingObjects">
+      <input message="tns:getAehContentAtCorrespondingObjects" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getAehContentAtCorrespondingObjectsRequest">
+    </input>
+      <output message="tns:getAehContentAtCorrespondingObjectsResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getAehContentAtCorrespondingObjectsResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getAehContentAtCorrespondingObjects/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getAehContentAtCorrespondingObjects/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getCodeStructure">
+      <input message="tns:getCodeStructure" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getCodeStructureRequest">
+    </input>
+      <output message="tns:getCodeStructureResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getCodeStructureResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getCodeStructure/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getCodeStructure/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getItemUsageMultiLevel">
+      <input message="tns:getItemUsageMultiLevel" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getItemUsageMultiLevelRequest">
+    </input>
+      <output message="tns:getItemUsageMultiLevelResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getItemUsageMultiLevelResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getItemUsageMultiLevel/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getItemUsageMultiLevel/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getAssemblyStructureMultiLevel">
+      <input message="tns:getAssemblyStructureMultiLevel" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getAssemblyStructureMultiLevelRequest">
+    </input>
+      <output message="tns:getAssemblyStructureMultiLevelResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getAssemblyStructureMultiLevelResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getAssemblyStructureMultiLevel/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getAssemblyStructureMultiLevel/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getEcoDecodingRelevance">
+      <input message="tns:getEcoDecodingRelevance" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getEcoDecodingRelevanceRequest">
+    </input>
+      <output message="tns:getEcoDecodingRelevanceResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getEcoDecodingRelevanceResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getEcoDecodingRelevance/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getEcoDecodingRelevance/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getCodeMasterData">
+      <input message="tns:getCodeMasterData" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getCodeMasterDataRequest">
+    </input>
+      <output message="tns:getCodeMasterDataResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getCodeMasterDataResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getCodeMasterData/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getCodeMasterData/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getPartMasterData">
+      <input message="tns:getPartMasterData" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartMasterDataRequest">
+    </input>
+      <output message="tns:getPartMasterDataResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartMasterDataResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartMasterData/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartMasterData/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getEcoMasterData">
+      <input message="tns:getEcoMasterData" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getEcoMasterDataRequest">
+    </input>
+      <output message="tns:getEcoMasterDataResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getEcoMasterDataResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getEcoMasterData/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getEcoMasterData/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getModelMasterData">
+      <input message="tns:getModelMasterData" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelMasterDataRequest">
+    </input>
+      <output message="tns:getModelMasterDataResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelMasterDataResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelMasterData/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelMasterData/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getPartsListMasterData">
+      <input message="tns:getPartsListMasterData" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartsListMasterDataRequest">
+    </input>
+      <output message="tns:getPartsListMasterDataResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartsListMasterDataResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartsListMasterData/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getPartsListMasterData/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getModuleMasterData">
+      <input message="tns:getModuleMasterData" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModuleMasterDataRequest">
+    </input>
+      <output message="tns:getModuleMasterDataResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModuleMasterDataResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModuleMasterData/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModuleMasterData/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getModelTypeMasterData">
+      <input message="tns:getModelTypeMasterData" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelTypeMasterDataRequest">
+    </input>
+      <output message="tns:getModelTypeMasterDataResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelTypeMasterDataResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelTypeMasterData/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getModelTypeMasterData/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RB2I">
+      <input message="tns:getT43RB2I" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2IRequest">
+    </input>
+      <output message="tns:getT43RB2IResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2IResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2I/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2I/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RBM">
+      <input message="tns:getT43RBM" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBMRequest">
+    </input>
+      <output message="tns:getT43RBMResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBMResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBM/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBM/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RBMS">
+      <input message="tns:getT43RBMS" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBMSRequest">
+    </input>
+      <output message="tns:getT43RBMSResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBMSResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBMS/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBMS/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RBMAS">
+      <input message="tns:getT43RBMAS" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBMASRequest">
+    </input>
+      <output message="tns:getT43RBMASResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBMASResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBMAS/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBMAS/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RBMAG">
+      <input message="tns:getT43RBMAG" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBMAGRequest">
+    </input>
+      <output message="tns:getT43RBMAGResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBMAGResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBMAG/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBMAG/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RB2C">
+      <input message="tns:getT43RB2C" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2CRequest">
+    </input>
+      <output message="tns:getT43RB2CResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2CResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2C/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2C/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RCOD">
+      <input message="tns:getT43RCOD" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RCODRequest">
+    </input>
+      <output message="tns:getT43RCODResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RCODResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RCOD/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RCOD/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RCODS">
+      <input message="tns:getT43RCODS" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RCODSRequest">
+    </input>
+      <output message="tns:getT43RCODSResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RCODSResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RCODS/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RCODS/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RTEIL">
+      <input message="tns:getT43RTEIL" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEILRequest">
+    </input>
+      <output message="tns:getT43RTEILResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEILResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEIL/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEIL/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RTEIS">
+      <input message="tns:getT43RTEIS" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEISRequest">
+    </input>
+      <output message="tns:getT43RTEISResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEISResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEIS/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEIS/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RTEIB">
+      <input message="tns:getT43RTEIB" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEIBRequest">
+    </input>
+      <output message="tns:getT43RTEIBResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEIBResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEIB/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEIB/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RTEIG">
+      <input message="tns:getT43RTEIG" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEIGRequest">
+    </input>
+      <output message="tns:getT43RTEIGResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEIGResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEIG/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEIG/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RTEID">
+      <input message="tns:getT43RTEID" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEIDRequest">
+    </input>
+      <output message="tns:getT43RTEIDResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEIDResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEID/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEID/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RTEIE">
+      <input message="tns:getT43RTEIE" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEIERequest">
+    </input>
+      <output message="tns:getT43RTEIEResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEIEResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEIE/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RTEIE/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RK3">
+      <input message="tns:getT43RK3" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RK3Request">
+    </input>
+      <output message="tns:getT43RK3Response" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RK3Response">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RK3/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RK3/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RKEM">
+      <input message="tns:getT43RKEM" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RKEMRequest">
+    </input>
+      <output message="tns:getT43RKEMResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RKEMResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RKEM/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RKEM/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RKEMD">
+      <input message="tns:getT43RKEMD" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RKEMDRequest">
+    </input>
+      <output message="tns:getT43RKEMDResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RKEMDResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RKEMD/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RKEMD/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RSAA">
+      <input message="tns:getT43RSAA" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSAARequest">
+    </input>
+      <output message="tns:getT43RSAAResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSAAResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSAA/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSAA/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RSAAE">
+      <input message="tns:getT43RSAAE" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSAAERequest">
+    </input>
+      <output message="tns:getT43RSAAEResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSAAEResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSAAE/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSAAE/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RSAAS">
+      <input message="tns:getT43RSAAS" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSAASRequest">
+    </input>
+      <output message="tns:getT43RSAASResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSAASResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSAAS/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSAAS/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RBK">
+      <input message="tns:getT43RBK" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBKRequest">
+    </input>
+      <output message="tns:getT43RBKResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBKResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBK/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBK/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RBKV">
+      <input message="tns:getT43RBKV" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBKVRequest">
+    </input>
+      <output message="tns:getT43RBKVResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBKVResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBKV/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBKV/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RUMF">
+      <input message="tns:getT43RUMF" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RUMFRequest">
+    </input>
+      <output message="tns:getT43RUMFResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RUMFResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RUMF/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RUMF/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RSNRU">
+      <input message="tns:getT43RSNRU" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSNRURequest">
+    </input>
+      <output message="tns:getT43RSNRUResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSNRUResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSNRU/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSNRU/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RAEH">
+      <input message="tns:getT43RAEH" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RAEHRequest">
+    </input>
+      <output message="tns:getT43RAEHResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RAEHResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RAEH/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RAEH/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RBKZM">
+      <input message="tns:getT43RBKZM" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBKZMRequest">
+    </input>
+      <output message="tns:getT43RBKZMResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBKZMResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBKZM/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBKZM/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RBKA">
+      <input message="tns:getT43RBKA" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBKARequest">
+    </input>
+      <output message="tns:getT43RBKAResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBKAResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBKA/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBKA/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RBMAA">
+      <input message="tns:getT43RBMAA" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBMAARequest">
+    </input>
+      <output message="tns:getT43RBMAAResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBMAAResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBMAA/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBMAA/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RBKWW">
+      <input message="tns:getT43RBKWW" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBKWWRequest">
+    </input>
+      <output message="tns:getT43RBKWWResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBKWWResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBKWW/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBKWW/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RPGV">
+      <input message="tns:getT43RPGV" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RPGVRequest">
+    </input>
+      <output message="tns:getT43RPGVResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RPGVResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RPGV/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RPGV/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RPTEX">
+      <input message="tns:getT43RPTEX" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RPTEXRequest">
+    </input>
+      <output message="tns:getT43RPTEXResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RPTEXResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RPTEX/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RPTEX/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RBEZA">
+      <input message="tns:getT43RBEZA" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBEZARequest">
+    </input>
+      <output message="tns:getT43RBEZAResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBEZAResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBEZA/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RBEZA/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RFW">
+      <input message="tns:getT43RFW" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RFWRequest">
+    </input>
+      <output message="tns:getT43RFWResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RFWResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RFW/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RFW/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RB2IE">
+      <input message="tns:getT43RB2IE" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2IERequest">
+    </input>
+      <output message="tns:getT43RB2IEResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2IEResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2IE/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2IE/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RB2IV">
+      <input message="tns:getT43RB2IV" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2IVRequest">
+    </input>
+      <output message="tns:getT43RB2IVResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2IVResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2IV/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2IV/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RB2S">
+      <input message="tns:getT43RB2S" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2SRequest">
+    </input>
+      <output message="tns:getT43RB2SResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2SResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2S/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RB2S/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RVVB">
+      <input message="tns:getT43RVVB" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RVVBRequest">
+    </input>
+      <output message="tns:getT43RVVBResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RVVBResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RVVB/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RVVB/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RVVBS">
+      <input message="tns:getT43RVVBS" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RVVBSRequest">
+    </input>
+      <output message="tns:getT43RVVBSResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RVVBSResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RVVBS/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RVVBS/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RPCD">
+      <input message="tns:getT43RPCD" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RPCDRequest">
+    </input>
+      <output message="tns:getT43RPCDResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RPCDResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RPCD/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RPCD/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RDATE">
+      <input message="tns:getT43RDATE" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RDATERequest">
+    </input>
+      <output message="tns:getT43RDATEResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RDATEResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RDATE/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RDATE/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RLOE">
+      <input message="tns:getT43RLOE" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RLOERequest">
+    </input>
+      <output message="tns:getT43RLOEResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RLOEResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RLOE/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RLOE/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RLIPA">
+      <input message="tns:getT43RLIPA" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RLIPARequest">
+    </input>
+      <output message="tns:getT43RLIPAResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RLIPAResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RLIPA/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RLIPA/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RLIPO">
+      <input message="tns:getT43RLIPO" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RLIPORequest">
+    </input>
+      <output message="tns:getT43RLIPOResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RLIPOResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RLIPO/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RLIPO/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RLIVW">
+      <input message="tns:getT43RLIVW" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RLIVWRequest">
+    </input>
+      <output message="tns:getT43RLIVWResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RLIVWResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RLIVW/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RLIVW/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RT3">
+      <input message="tns:getT43RT3" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RT3Request">
+    </input>
+      <output message="tns:getT43RT3Response" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RT3Response">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RT3/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RT3/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43ROTAB">
+      <input message="tns:getT43ROTAB" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43ROTABRequest">
+    </input>
+      <output message="tns:getT43ROTABResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43ROTABResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43ROTAB/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43ROTAB/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RSRM">
+      <input message="tns:getT43RSRM" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSRMRequest">
+    </input>
+      <output message="tns:getT43RSRMResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSRMResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSRM/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RSRM/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RVWST">
+      <input message="tns:getT43RVWST" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RVWSTRequest">
+    </input>
+      <output message="tns:getT43RVWSTResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RVWSTResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RVWST/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RVWST/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getT43RGRU">
+      <input message="tns:getT43RGRU" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RGRURequest">
+    </input>
+      <output message="tns:getT43RGRUResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RGRUResponse">
+    </output>
+      <fault name="BomDbServiceException" message="tns:BomDbServiceException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RGRU/Fault/BomDbServiceException">
+    </fault>
+      <fault name="NotImplementedException" message="tns:NotImplementedException" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getT43RGRU/Fault/NotImplementedException">
+    </fault>
+    </operation>
+    <operation name="getMonitoringOutput">
+      <input message="tns:getMonitoringOutput" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getMonitoringOutputRequest">
+    </input>
+      <output message="tns:getMonitoringOutputResponse" wsam:Action="http://bomDbServices.eng.dai/DaiEngBomDbService/getMonitoringOutputResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="DaiEngBomDbServicePortBinding" type="tns:DaiEngBomDbService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getUsageOrContent">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getModelCode">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getEcoContent">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getPartHistory">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getAssemblyStructure">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getModuleStructure">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getChangedParts">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getChangedAssemblyStructures">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getPartMasterDataComplete">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getPartsListMasterDataComplete">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getModelMasterDataComplete">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getModelTypeMasterDataComplete">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getCodeMasterDataComplete">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getModuleMasterDataComplete">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getAehContentAtCorrespondingObjects">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getCodeStructure">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getItemUsageMultiLevel">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getAssemblyStructureMultiLevel">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getEcoDecodingRelevance">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getCodeMasterData">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getPartMasterData">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getEcoMasterData">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getModelMasterData">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getPartsListMasterData">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getModuleMasterData">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getModelTypeMasterData">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RB2I">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RBM">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RBMS">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RBMAS">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RBMAG">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RB2C">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RCOD">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RCODS">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RTEIL">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RTEIS">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RTEIB">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RTEIG">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RTEID">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RTEIE">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RK3">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RKEM">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RKEMD">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RSAA">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RSAAE">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RSAAS">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RBK">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RBKV">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RUMF">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RSNRU">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RAEH">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RBKZM">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RBKA">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RBMAA">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RBKWW">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RPGV">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RPTEX">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RBEZA">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RFW">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RB2IE">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RB2IV">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RB2S">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RVVB">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RVVBS">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RPCD">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RDATE">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RLOE">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RLIPA">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RLIPO">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RLIVW">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RT3">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43ROTAB">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RSRM">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RVWST">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getT43RGRU">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="BomDbServiceException">
+        <soap:fault name="BomDbServiceException" use="literal"/>
+      </fault>
+      <fault name="NotImplementedException">
+        <soap:fault name="NotImplementedException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getMonitoringOutput">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="DaiEngBomDbServiceService">
+    <port name="DaiEngBomDbServicePort" binding="tns:DaiEngBomDbServicePortBinding">
+      <soap:address location="http://localhost:9080/BomDbServices/DaiEngBomDbServiceService"/>
+    </port>
+  </service>
+</definitions>

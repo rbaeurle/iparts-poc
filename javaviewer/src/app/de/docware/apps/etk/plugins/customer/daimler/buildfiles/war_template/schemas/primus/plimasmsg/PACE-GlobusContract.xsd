@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xml:lang="en" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:jxb="http://java.sun.com/xml/ns/jaxb" jxb:version="1.0">
+
+  <!-- This file is controlled by DCCS SVN and must not be changed otherwise.
+       Usage of attributes preferred over use of tags.
+
+       Created by DCCS GmbH. on behalf of Daimler AG.
+       Copyright 2012 Daimler AG and DCCS GmbH.
+
+       Author:       Peter.Stuecklschwaiger@DCCS.at
+       Responsible:  Tomislav.Jerkovic@Daimler.com, Swen.Koelbel@Daimler.com -->
+
+  <xs:annotation>
+    <xs:documentation>Copyright 2012 Daimler AG and DCCS GmbH.</xs:documentation></xs:annotation>
+
+  <xs:element name="globusContract" type="globusContractType">
+    <xs:annotation><xs:documentation>PACE Globus Contract definition</xs:documentation></xs:annotation>
+  </xs:element>
+
+  <xs:complexType name="globusContractType">
+    <xs:annotation><xs:documentation xml:lang="en"><![CDATA[The contents of a Globus contract.<br>
+        Like Contract validity, suppliers, buyers, ....]]></xs:documentation></xs:annotation>
+    <xs:attribute name="contractNumber" use="required" type="xs:positiveInteger">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The number of the Globus contract.
+          Part one of four of the Globus contract key.</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+    <xs:attribute name="contractPosition" use="required" type="xs:positiveInteger">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The position of the Globus contract.
+          Part two of four of the Globus contract key.</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+    <xs:attribute name="contractAmountPos" use="required" type="xs:positiveInteger">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The amount position of the Globus contract.
+          Part three of four of the Globus contract key.</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+    <xs:attribute name="contractPricePos" use="required" type="xs:positiveInteger">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The price postition of the Globus contract.
+          Part four of four of the Globus contract key.</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+    <xs:attribute name="status" type="globusStatusType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The (validity) status of the Globus
+          contract.</jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="created" type="xs:date">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The creation date of the Globus contract.
+          </jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attributeGroup ref="contractValidity"/>
+    <xs:attribute name="incoTerm" use="required" type="incoTermType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The inco terms (freight terms) of the
+          Globus contract.</jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="incoTermName" use="required" type="incoTermNameType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The short description of the inco terms
+          of the Globus contract.</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+    <xs:attribute name="priceBase" use="required" type="xs:decimal">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The base price (without most shares)
+          of the part for the purchase unit.</jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="priceFull" use="required" type="xs:decimal">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The full price (with all shares) of
+          the part for the purchase unit.</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+  </xs:complexType>
+
+  <xs:simpleType name="globusStatusType">
+    <xs:annotation>
+      <xs:documentation>Allows sensible enums for Globus contract status.</xs:documentation>
+      <xs:appinfo><jxb:typesafeEnumClass name="GlobusStatusType"/></xs:appinfo></xs:annotation>
+    <xs:restriction base="xs:byte">
+      <xs:enumeration value="10">
+        <xs:annotation><xs:appinfo><jxb:typesafeEnumMember name="created"/>
+        </xs:appinfo></xs:annotation></xs:enumeration>
+      <xs:enumeration value="35">
+        <xs:annotation><xs:appinfo><jxb:typesafeEnumMember name="forApproval"/>
+        </xs:appinfo></xs:annotation></xs:enumeration>
+      <xs:enumeration value="40">
+        <xs:annotation><xs:appinfo><jxb:typesafeEnumMember name="approved"/>
+        </xs:appinfo></xs:annotation></xs:enumeration>
+      <xs:enumeration value="45">
+        <xs:annotation><xs:appinfo><jxb:typesafeEnumMember name="disapproved"/>
+        </xs:appinfo></xs:annotation></xs:enumeration>
+      <xs:enumeration value="60">
+        <xs:annotation><xs:appinfo><jxb:typesafeEnumMember name="effective"/>
+        </xs:appinfo></xs:annotation></xs:enumeration>
+      <xs:enumeration value="75">
+        <xs:annotation><xs:appinfo><jxb:typesafeEnumMember name="reminded"/>
+        </xs:appinfo></xs:annotation></xs:enumeration>
+      <xs:enumeration value="90">
+        <xs:annotation><xs:appinfo><jxb:typesafeEnumMember name="cancelled"/>
+        </xs:appinfo></xs:annotation></xs:enumeration>
+      <xs:enumeration value="95">
+        <xs:annotation><xs:appinfo><jxb:typesafeEnumMember name="cancelledWithReplacement"/>
+        </xs:appinfo></xs:annotation></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:attributeGroup name="contractValidity">
+    <xs:attribute name="validFrom" use="required" type="xs:date">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The start of the validity of the
+          Globus contract.</jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="validTill" use="required" type="xs:date">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The end of the validity of the
+          Globus contract.</jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="invalidSince" use="optional" type="xs:date">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The first day of invalidity of the
+          Globus contract, when status is 90 or 95!</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+  </xs:attributeGroup>
+
+  <xs:simpleType name="incoTermType">
+    <xs:restriction base="xs:string"><xs:pattern value=".{1,5}"/></xs:restriction></xs:simpleType>
+
+  <xs:simpleType name="incoTermNameType">
+    <xs:restriction base="xs:string"><xs:pattern value=".{3,15}"/></xs:restriction></xs:simpleType>
+</xs:schema>

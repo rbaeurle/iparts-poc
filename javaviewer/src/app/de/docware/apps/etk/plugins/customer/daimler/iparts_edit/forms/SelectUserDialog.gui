@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" isResizable="false" title="!!Benutzergruppe oder Benutzer auswählen" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel borderWidth="8" id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag />
+      <image backgroundColor="clTransparent" id="image" minimumHeight="10" minimumWidth="10">
+        <constraints_gridbag anchor="n" />
+      </image>
+      <panel id="panelUser" minimumHeight="10" minimumWidth="10" paddingBottom="8" paddingLeft="4" paddingRight="4">
+        <invisible />
+        <layout_gridbag />
+        <label fontStyle="BOLD" id="labelUser" minimumHeight="10" minimumWidth="10" text="!!Benutzer">
+          <constraints_gridbag fill="h" insetsBottom="4" />
+        </label>
+        <combobox genericType="UserDbObject" id="comboboxUser" minimumHeight="10" minimumWidth="250">
+          <constraints_gridbag fill="h" gridy="1" insetsTop="4" weightx="100.0" weighty="100.0" />
+        </combobox>
+        <constraints_gridbag fill="b" gridx="1" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

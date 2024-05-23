@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="DATASETION" type="datasection"/>
+  <xs:complexType name="datasection">
+    <xs:sequence>
+      <xs:element name="CONTROL">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="FORM" type="xs:string" minOccurs="0"/>
+            <xs:element name="TICKETTYPE" type="ticketType" minOccurs="0"/>
+            <xs:element name="TRANSACTION" type="xs:string"/>
+            <xs:element name="RECIPIENT" type="xs:string"/>
+            <xs:element name="SENDER" type="xs:string"/>
+            <xs:element name="IDRECIPIENT" type="xs:string"/>
+            <xs:element name="IDSENDER" type="xs:string"/>
+            <xs:element name="RETRYCOUNTER" type="xs:string" minOccurs="0"/>
+            <xs:element name="CREATED" type="xs:string" minOccurs="0"/>
+            <xs:element name="SUBMITTER" type="xs:string" minOccurs="0"/>
+            <xs:element name="EXTRA" type="xs:string" minOccurs="0"/>
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FIELDS" type="fields"/>
+      <xs:element name="END">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="END"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="type" type="xs:string" use="optional"/>
+    <xs:attribute name="TYPE" type="xs:string" use="optional"/>
+  </xs:complexType>
+  <xs:simpleType name="ticketType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Incident"/>
+      <xs:enumeration value="Task"/>
+      <xs:enumeration value="Request"/>
+      <xs:enumeration value="Change"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="fields">
+    <xs:all>
+      <xs:element name="ECOMPUTERNAME" minOccurs="0"/>
+      <xs:element name="TCREATIONDATE" minOccurs="0"/>
+      <xs:element name="TLOGDIARY" minOccurs="0"/>
+      <xs:element name="TPRIORITY"/>
+      <xs:element name="TSUBMITTER" minOccurs="0"/>
+      <xs:element name="CDEPARTMENT" minOccurs="0"/>
+      <xs:element name="CEMAIL" minOccurs="0"/>
+      <xs:element name="CFIRSTNAME"/>
+      <xs:element name="CLASTNAME"/>
+      <xs:element name="COMPONENTFIELD"/>
+      <xs:element name="CPHONE"/>
+      <xs:element name="RBUILDING" minOccurs="0"/>
+      <xs:element name="RCOSTCENTER" minOccurs="0"/>
+      <xs:element name="RDBVKI" minOccurs="0"/>
+      <xs:element name="RDEPARTMENT" minOccurs="0"/>
+      <xs:element name="REMAIL" minOccurs="0"/>
+      <xs:element name="RFAX" minOccurs="0"/>
+      <xs:element name="RFIRSTNAME"/>
+      <xs:element name="RLASTNAME"/>
+      <xs:element name="RPHONE"/>
+      <xs:element name="RPLANT" minOccurs="0"/>
+      <xs:element name="RROOM" minOccurs="0"/>
+      <xs:element name="RUSERID" minOccurs="0"/>
+      <xs:element name="TASSTOGROUP"/>
+      <xs:element name="TCLASSIFICATION"/>
+      <xs:element name="TCOMPONENTTYPE"/>
+      <xs:element name="TDETAILS" minOccurs="0"/>
+      <xs:element name="TSHORTDESCR"/>
+      <xs:element name="EHWROOM" minOccurs="0"/>
+      <xs:element name="EHWPLANT" minOccurs="0"/>
+      <xs:element name="EHWBUILDING" minOccurs="0"/>
+      <xs:element name="EASSETID" minOccurs="0"/>
+      <xs:element name="RLOCATION" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
+
+
+

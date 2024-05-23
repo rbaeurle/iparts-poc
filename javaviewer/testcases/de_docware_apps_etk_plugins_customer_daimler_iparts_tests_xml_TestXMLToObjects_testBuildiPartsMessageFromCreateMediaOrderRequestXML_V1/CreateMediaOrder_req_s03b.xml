@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2021 Quanos Service Solutions GmbH
+  -->
+
+<!--
+ #==============================================================================
+ #
+ #  AS-PLM
+ #
+ #  $HeadURL: https://dev-dynplm.it-solutions.atos.net/svn/asplmdev/trunk/cust_root_dir/integration/prototypes/was/services/MediaService_BO/xml/v1/samples/CreateMediaOrder/CreateMediaOrder_req_s03b.xml $
+ #  $LastChangedRevision: 4894 $
+ #  $LastChangedDate: 2016-06-10 11:12:53 +0200 (Fr, 10 Jun 2016) $
+ #  $LastChangedBy: a424518 $
+ #
+ #  Author: Andreas Saremba, Atos
+ #  Purpose: Sample message for the AS-PLM Media Service (AMS): Operation CreateMediaOrder (Request)
+ #           Contains KGTU and enhanced EinPAS from story AG-2434
+ #           Expected result: Success, MediaContainer is created
+ #
+ #==============================================================================
+-->
+<Message xmlns="http://asplm.daimler.com/MediaService/v1"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://asplm.daimler.com/MediaService/v1 ../asplm_message_flat.xsd">
+	<Request from="iParts" to="ASPLM" requestId="req_s01">
+		<Requestor userId="migimport"/>
+		<Operation>
+			<CreateMediaOrder>
+				<Name>TestCase CMO Name</Name>
+				<Description>Test description</Description>
+				<Remark>This is a remark!</Remark>
+				<Realization>Graustufenbild</Realization>
+				<DateDue>2016-02-22</DateDue>
+				<KGTU constructionGroup="18" partScopeNr="567">
+					<PartScopeName language="de"/>
+					<PartScopeName language="en">Phantasy name</PartScopeName>
+					<PartScopeName language="es">Phantasia</PartScopeName>
+					<PartScopeName language="pt"/>
+				</KGTU>
+				<EinPAS mainGroup="35" group="76" technicalScope="33">
+                    Ignorierter Text
+					<Name language="de"/>
+					<Name language="en">TechnicalScope Engine</Name>
+                    Noch mehr ignorierter Text
+					<Name language="es">Machina</Name>
+					<Name language="pt"/>
+				</EinPAS>
+				<Usage>
+					<Product type="vehicle" name="C204"/>
+				</Usage>
+				<IPartsPositionList>
+					<PartPosition>
+						<Hotspot>10</Hotspot>
+						<PartNumber>A9762600198</PartNumber>
+						<PartName language="DE">SCHALTGERAET</PartName>
+						<PartName language="EN">SWITCHING UNIT</PartName>
+						<PartName language="ES">EQUIPO DE MANDO</PartName>
+						<PartName language="PT">APARELHO DE MANOBRA</PartName>
+						<Quantity>1</Quantity>
+						<StructureLevel>1</StructureLevel>
+						<ExternalId>F0DAD8CEA0414EEB992B0B1572970CF3|30Y_27_012_00001||00002</ExternalId>
+						<FaultLocation>111111,222222</FaultLocation>
+						<GenVO>0004S</GenVO>
+					</PartPosition>
+				</IPartsPositionList>
+			</CreateMediaOrder>
+		</Operation>
+	</Request>
+</Message>

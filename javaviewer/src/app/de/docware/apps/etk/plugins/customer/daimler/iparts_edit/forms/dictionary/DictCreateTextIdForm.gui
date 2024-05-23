@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window height="440" id="mainWindow" visible="false" width="600">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <panel borderWidth="4" id="panelTextKind" minimumHeight="10" minimumWidth="10" title="!!Textart Auswahl">
+        <invisible />
+        <layout_gridbag />
+        <combobox genericType="iPartsDataDictTextKind" id="comboboxTextKind" maximumHeight="2147483647" maximumWidth="2147483647" minimumHeight="0" minimumWidth="0">
+          <constraints_gridbag fill="h" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" weightx="100.0" />
+        </combobox>
+        <constraints_border position="north" />
+      </panel>
+      <panel borderWidth="4" id="panelTextObject" minimumHeight="10" minimumWidth="10" title="!!Text-Metadaten">
+        <invisible />
+        <layout_gridbag centered="false" />
+        <label horizontalalignment="RIGHT" id="labelTextAndTextId" minimumHeight="10" minimumWidth="10" text="!!Text und Text-Id">
+          <constraints_gridbag anchor="ne" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="8" />
+        </label>
+        <multiedit backgroundColor="clTransparent" id="multilangeditAndTextId" minimumHeight="10" minimumWidth="10">
+          <invisible />
+          <layout_gridbag />
+          <constraints_gridbag fill="h" gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </multiedit>
+        <label horizontalalignment="RIGHT" id="labelForeignId" minimumHeight="10" minimumWidth="10" text="!!Fremd-Id">
+          <constraints_gridbag anchor="e" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </label>
+        <textfield id="textfieldForeignId" minimumHeight="10" minimumWidth="200">
+          <constraints_gridbag fill="h" gridx="1" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </textfield>
+        <label horizontalalignment="RIGHT" id="labelForeignSource" minimumHeight="10" minimumWidth="10" text="!!Fremd-Quelle">
+          <constraints_gridbag anchor="e" gridy="2" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </label>
+        <combobox genericType="String" id="comboboxForeignSource" minimumHeight="10" minimumWidth="10">
+          <constraints_gridbag fill="h" gridx="1" gridy="2" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </combobox>
+        <label horizontalalignment="RIGHT" id="labelState" minimumHeight="10" minimumWidth="10" text="!!Status">
+          <constraints_gridbag anchor="e" gridy="3" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </label>
+        <combobox genericType="String" id="comboboxState" minimumHeight="10" minimumWidth="10">
+          <constraints_gridbag fill="h" gridx="1" gridy="3" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </combobox>
+        <label horizontalalignment="RIGHT" id="labelCreationDate" minimumHeight="10" minimumWidth="10" text="!!Anlagedatum">
+          <constraints_gridbag anchor="e" gridy="4" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </label>
+        <dateTimePanel id="datetimeeditpanelCreationDate" minimumHeight="10" minimumWidth="10">
+          <constraints_gridbag fill="h" gridx="1" gridy="4" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </dateTimePanel>
+        <label horizontalalignment="RIGHT" id="labelChangeDate" minimumHeight="10" minimumWidth="10" text="!!Änderungsdatum">
+          <constraints_gridbag anchor="e" gridy="5" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </label>
+        <dateTimePanel id="datetimeeditpanelChangeDate" minimumHeight="10" minimumWidth="10">
+          <constraints_gridbag fill="h" gridx="1" gridy="5" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </dateTimePanel>
+        <label horizontalalignment="RIGHT" id="labelUser" minimumHeight="10" minimumWidth="10" text="!!Benutzer">
+          <constraints_gridbag anchor="e" gridy="6" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </label>
+        <combobox genericType="String" id="comboboxUser" minimumHeight="10" minimumWidth="10">
+          <constraints_gridbag fill="h" gridx="1" gridy="6" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" weightx="100.0" />
+        </combobox>
+        <constraints_border />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonOKActionPerformedEvent="onButtonOKClicked" id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+  <window height="160" id="windowTextId" visible="false" width="340">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="titleTextId" minimumHeight="50" minimumWidth="10" title="!!Eingabe der Text-Id">
+      <constraints_border position="north" />
+    </title>
+    <panel borderWidth="4" id="panelMainTextId" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag centered="false" />
+      <label id="labelTextId" minimumHeight="10" minimumWidth="10" text="!!Text-Id">
+        <constraints_gridbag insetsLeft="4" insetsRight="4" />
+      </label>
+      <textfield id="textfieldTextId" minimumHeight="10" minimumWidth="200">
+        <constraints_gridbag fill="h" gridx="1" insetsLeft="4" insetsRight="4" weightx="100.0" />
+      </textfield>
+      <constraints_border />
+    </panel>
+    <buttonPanel id="buttonpanelTextId" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

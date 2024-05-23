@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <label id="labelPreview" minimumHeight="10" minimumWidth="10" paddingBottom="4" paddingLeft="8" paddingTop="4" text="!!Vorschau">
+        <constraints_border position="north" />
+      </label>
+      <scrollpane borderColor="clDesignTextFieldBorder" borderWidth="1" id="scrollpanePreview" minimumHeight="10" minimumWidth="10">
+        <table htmlPageSplitMode="NO_SPLIT" id="tablePreview" minimumHeight="10" minimumWidth="10" mouseDoubleClickedEvent="onButtonChangeClicked" selectionMode="SELECTION_MODE_NONE">
+          <constraints_border />
+        </table>
+        <constraints_border />
+      </scrollpane>
+      <panel id="panelForChange" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_gridbag centered="false" />
+        <button actionPerformedEvent="onButtonChangeClicked" id="buttonChange" maximumHeight="21" maximumWidth="21" minimumHeight="10" minimumWidth="10" mnemonicEnabled="true" text="...">
+          <constraints_gridbag anchor="n" insetsBottom="8" insetsLeft="1" />
+        </button>
+        <constraints_border position="east" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

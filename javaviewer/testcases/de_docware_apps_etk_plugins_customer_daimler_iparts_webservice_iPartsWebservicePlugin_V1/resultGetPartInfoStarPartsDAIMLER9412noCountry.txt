@@ -1,0 +1,1 @@
+{"partInfo":{"plantInformation":[{"date":"2014-02-28","ident":"A989820","plant":"A, B","type":"bis"},{"date":"2014-02-28","ident":"A990875","plant":"A, B","type":"bis"},{"date":"2014-03-31","ident":"L043675","plant":"L, V (CKD)","type":"bis"},{"date":"2014-03-31","ident":"V003043","plant":"L, V (CKD)","type":"bis"}]}}

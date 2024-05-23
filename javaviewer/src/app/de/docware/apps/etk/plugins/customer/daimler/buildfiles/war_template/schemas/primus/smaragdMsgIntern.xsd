@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--W3C Schema erstellt mit XMLSpy v2011 rel. 2 (http://www.altova.com)-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="UserValue">
+		<xs:complexType>
+			<xs:attribute name="value" use="required" type="xs:string"/>
+			<xs:attribute name="title" use="required" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UserData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="UserValue" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RemRelease">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="UserData"/>
+				<xs:element ref="AssociatedAttachment"/>
+			</xs:sequence>
+			<xs:attribute name="type" use="required" type="xs:string"/>
+			<xs:attribute name="number" use="required" type="xs:string"/>
+			<xs:attribute name="instanceRefs" use="required" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RemPart">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="UserData"/>
+			</xs:sequence>
+			<xs:attribute name="type" use="required" type="xs:string"/>
+			<xs:attribute name="number" use="required" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AssociatedAttachment">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RemPart" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="class" use="required" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

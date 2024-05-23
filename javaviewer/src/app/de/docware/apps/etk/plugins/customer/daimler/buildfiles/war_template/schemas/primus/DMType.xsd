@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:simpleType name="BrdType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="DCAG"/>
+            <xsd:enumeration value="SMART"/>
+            <xsd:enumeration value="UNKNOWN"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!-- ######################################################################## -->
+    <xsd:simpleType name="ActType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="PIN">
+                <xsd:annotation>
+                    <xsd:documentation>Part insert</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PUP">
+                <xsd:annotation>
+                    <xsd:documentation>Part update</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PDEL">
+                <xsd:annotation>
+                    <xsd:documentation>Part delete</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PSS">
+                <xsd:annotation>
+                    <xsd:documentation>Part Supersession insert | Hinweis Neuanlage</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PSUP">
+                <xsd:annotation>
+                    <xsd:documentation>Part Supersessionpdate | Hinweis aenderung</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PSDEL">
+                <xsd:annotation>
+                    <xsd:documentation>PartSupersession delete | Hinweis Loechung</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <!-- neu hinzugefuegt fuer Anbindung Zubehoer -->
+            <xsd:enumeration value="RPIN">
+                <xsd:annotation>
+                    <xsd:documentation>Request for Part Insert | Anforderung zur Stammdatensatzanlage
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RPUP">
+                <xsd:annotation>
+                    <xsd:documentation>Request for Part Aenderung | Anforderung zur Stammdatensatzaenderung
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RPSS">
+                <xsd:annotation>
+                    <xsd:documentation>Request for Hinweis anlage | Anforderung zur Hinweisanlage</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RPSUP">
+                <xsd:annotation>
+                    <xsd:documentation>Request for Hinweis aenderung | Anforderung zur Hinweisaenderung
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RPSDEL">
+                <xsd:annotation>
+                    <xsd:documentation>Request for Hinweis loeschung | Anforderung zur Hinweisloeschung
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BIN">
+                <xsd:annotation>
+                    <xsd:documentation>Bill of Material (Stuecklisten) Insert</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BUP">
+                <xsd:annotation>
+                    <xsd:documentation>Bill of Material (Stuecklisten) Update</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BDEL">
+                <xsd:annotation>
+                    <xsd:documentation>Bill of Material (Stuecklisten) Delete</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="WWIN">
+                <xsd:annotation>
+                    <xsd:documentation>Wahlweise Informationen Insert</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="WWUP">
+                <xsd:annotation>
+                    <xsd:documentation>Wahlweise Informationen Update</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="WWDEL">
+                <xsd:annotation>
+                    <xsd:documentation>Wahlweise Informationen Delete</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="LIN">
+                <xsd:annotation>
+                    <xsd:documentation>Ladungstraegerstammdaten Insert</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="LUP">
+                <xsd:annotation>
+                    <xsd:documentation>Ladungstraegerstammdaten Update</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="LDEL">
+                <xsd:annotation>
+                    <xsd:documentation>Ladungstraegerstammdaten Delete</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="UPDATE">
+                <xsd:annotation>
+                    <xsd:documentation>Update, z.B. von PLIMAS</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CREQ">
+                <xsd:annotation>
+                    <xsd:documentation>Zertifikatsanfrage an den CERTUS WebService</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="REQ">
+                <xsd:annotation>
+                    <xsd:documentation>Allgemeine Anfrage an ein Fremdsystem</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!-- ######################################################################## -->
+    <xsd:simpleType name="AttIdType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Bez1"/>
+            <xsd:enumeration value="Bez2"/>
+            <xsd:enumeration value="Bez3"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!-- ######################################################################## -->
+    <xsd:simpleType name="SysType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="COMS"/>
+            <xsd:enumeration value="DIALOG"/>
+            <xsd:enumeration value="EDS"/>
+            <xsd:enumeration value="EWML"/>
+            <xsd:enumeration value="FUSO"/>
+            <xsd:enumeration value="IPS"/>
+            <xsd:enumeration value="LIBS"/>
+            <xsd:enumeration value="LOGBUS"/>
+            <xsd:enumeration value="LOGBUSBSTD"/>
+            <xsd:enumeration value="MBS"/>
+            <xsd:enumeration value="MBUSI"/>
+            <xsd:enumeration value="MBA"/>
+            <xsd:enumeration value="NACOS"/>
+            <xsd:enumeration value="nuzuco"/>
+            <xsd:enumeration value="PAID"/>
+            <xsd:enumeration value="PARAGON"/>
+            <xsd:enumeration value="PARAGON_DCJAPAN"/>
+            <xsd:enumeration value="PARAGON_DCMEXIKO"/>
+            <xsd:enumeration value="PARAGON_MBUSA"/>
+            <xsd:enumeration value="PARAGON_MBUSI"/>
+            <xsd:enumeration value="PLIMAS"/>
+            <xsd:enumeration value="PORTUGAL"/>
+            <xsd:enumeration value="PRESTO"/>
+            <xsd:enumeration value="PRIMUS"/>
+            <xsd:enumeration value="SPM"/>
+            <xsd:enumeration value="SPMB"/>
+            <xsd:enumeration value="SPML"/>
+            <xsd:enumeration value="SPMT"/>
+            <xsd:enumeration value="SRM"/>
+            <xsd:enumeration value="TARGENIO"/>
+            <xsd:enumeration value="TROST"/>
+            <xsd:enumeration value="VAS"/>
+            <xsd:enumeration value="VASB"/>
+            <xsd:enumeration value="VDS2"/>
+            <xsd:enumeration value="WMS"/>
+            <xsd:enumeration value="SMARAGD"/>
+            <xsd:enumeration value="ELS"/>
+            <xsd:enumeration value="CERTUS"/>
+            <xsd:enumeration value="ICUST"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!-- ######################################################################## -->
+</xsd:schema>

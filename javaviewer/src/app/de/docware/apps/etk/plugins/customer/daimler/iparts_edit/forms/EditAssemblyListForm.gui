@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible>
+      <contextmenu id="contextMenuTable" menuName="contextMenuTable" minimumHeight="10" minimumWidth="10" />
+    </invisible>
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <panel id="toolbarHolderPanel" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <toolbar backgroundImage="@imgDesignToolbarBigBackground" id="toolbarAssemblyEdit" minimumHeight="10" minimumWidth="10">
+          <constraints_border />
+        </toolbar>
+        <constraints_border position="north" />
+      </panel>
+      <panel id="panelGrid" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <constraints_border />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonCancelActionPerformedEvent="btnCancelActionPerformedEvent" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible>
+      <contextmenu id="contextmenuTextKind" menuName="contextmenuTextKind" minimumHeight="10" minimumWidth="10" />
+    </invisible>
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag />
+      <panel id="panelTop" minimumHeight="40" minimumWidth="10" title="!!Textart Auswahl">
+        <invisible />
+        <layout_gridbag />
+        <combobox genericType="de.docware.apps.etk.plugins.customer.daimler.iparts.dbobjects.dictionary.iPartsDataDictTextKind" id="comboboxTextKind" minimumHeight="10" minimumWidth="10" onChangeEvent="comboTextKindChanged">
+          <constraints_gridbag fill="b" gridwidth="2" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" weightx="100.0" weighty="100.0" />
+        </combobox>
+        <label id="labelResults" minimumHeight="10" minimumWidth="10">
+          <constraints_gridbag fill="h" gridwidth="2" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </label>
+        <checkbox id="checkboxLongTextSearch" minimumHeight="10" minimumWidth="10" onChangeEvent="checkboxLongTextSearchChanged" text="!!Suche in langen Texten">
+          <constraints_gridbag anchor="w" gridy="2" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </checkbox>
+        <checkbox id="checkboxSortSearchResults" minimumHeight="10" minimumWidth="10" text="!!Suchergebnisse sortieren">
+          <constraints_gridbag anchor="w" gridx="1" gridy="2" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </checkbox>
+        <constraints_gridbag fill="h" weightx="100.0" />
+      </panel>
+      <panel id="panelContainer" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_gridbag />
+        <label horizontalalignment="RIGHT" id="labelText" minimumHeight="10" minimumWidth="10" text="!!Text">
+          <constraints_gridbag anchor="e" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="8" />
+        </label>
+        <textfield id="textfieldText" maximumWidth="600" minimumHeight="10" minimumWidth="200">
+          <constraints_gridbag gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="8" />
+        </textfield>
+        <label horizontalalignment="RIGHT" id="labelForeignId" minimumHeight="10" minimumWidth="10" text="!!Fremd-Id">
+          <constraints_gridbag anchor="e" gridx="2" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="8" />
+        </label>
+        <textfield id="textfieldForeignId" minimumHeight="10" minimumWidth="200">
+          <constraints_gridbag gridx="3" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="8" />
+        </textfield>
+        <label horizontalalignment="RIGHT" id="labelSource" minimumHeight="10" minimumWidth="10" text="!!Fremdquelle">
+          <constraints_gridbag anchor="e" gridx="4" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="8" />
+        </label>
+        <combobox genericType="EnumEntry" id="comboboxSource" minimumHeight="10" minimumWidth="10">
+          <constraints_gridbag gridx="5" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="8" />
+        </combobox>
+        <label horizontalalignment="RIGHT" id="labelEldasId" minimumHeight="10" minimumWidth="10" text="!!ELDAS-ID">
+          <constraints_gridbag anchor="e" gridy="1" insetsBottom="8" insetsLeft="8" insetsRight="4" insetsTop="4" />
+        </label>
+        <textfield id="textfieldEldasId" minimumHeight="10" minimumWidth="200">
+          <constraints_gridbag gridx="1" gridy="1" insetsBottom="8" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </textfield>
+        <label horizontalalignment="RIGHT" id="labelDialogId" minimumHeight="10" minimumWidth="10" text="!!DIALOG-ID">
+          <constraints_gridbag anchor="e" gridx="2" gridy="1" insetsBottom="8" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </label>
+        <textfield id="textfieldDialogId" minimumHeight="10" minimumWidth="200">
+          <constraints_gridbag gridx="3" gridy="1" insetsBottom="8" insetsLeft="4" insetsRight="4" insetsTop="4" />
+        </textfield>
+        <panel id="panelForCancel" minimumHeight="10" minimumWidth="10">
+          <invisible />
+          <layout_gridbag />
+          <progressbar id="kitLight" marquee="true" maximumWidth="200" minimumHeight="10" minimumWidth="200" visible="false">
+            <constraints_gridbag anchor="e" fill="h" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="8" weightx="100.0" />
+          </progressbar>
+          <button actionPerformedEvent="onSearchCancelButtonClick" id="buttonForStartAndCancel" minimumHeight="10" minimumWidth="100" mnemonicEnabled="true" text="!!Suche starten">
+            <constraints_gridbag anchor="e" fill="h" gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="8" />
+          </button>
+          <constraints_gridbag anchor="e" gridx="7" weightx="100.0" />
+        </panel>
+        <panel id="panelLanguage" minimumHeight="10" minimumWidth="10">
+          <invisible />
+          <layout_gridbag />
+          <label horizontalalignment="RIGHT" id="labelLanguage" minimumHeight="10" minimumWidth="10" text="!!Suchsprache" visible="false">
+            <constraints_gridbag anchor="e" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="8" />
+          </label>
+          <combobox genericType="Object" id="comboBoxLanguage" minimumHeight="10" minimumWidth="10">
+            <constraints_gridbag fill="h" gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="12" />
+          </combobox>
+          <constraints_gridbag gridx="6" />
+        </panel>
+        <constraints_gridbag fill="h" gridy="1" insetsBottom="8" insetsLeft="4" insetsRight="4" insetsTop="4" />
+      </panel>
+      <panel borderWidth="4" id="panelGrid" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <constraints_gridbag fill="b" gridy="2" weightx="100.0" weighty="100.0" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel dialogStyle="CLOSE" id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

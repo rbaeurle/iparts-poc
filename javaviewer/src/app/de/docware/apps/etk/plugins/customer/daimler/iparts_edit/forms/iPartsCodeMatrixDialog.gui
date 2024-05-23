@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window height="800" id="mainWindow" name="Code-Stammdaten" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="Code-Stammdaten">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10" paddingLeft="8" paddingRight="8">
+      <invisible />
+      <layout_border />
+      <splitpane dividerPosition="279" horizontal="false" id="splitpaneMain" minimumHeight="10" minimumWidth="10">
+        <panel id="splitpaneMainTop" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_border />
+          <splitpane dividerPosition="137" horizontal="false" id="splitPane2" minimumHeight="10" minimumWidth="10">
+            <panel id="splitPane2Top" minimumHeight="0" minimumWidth="0">
+              <invisible />
+              <layout_border />
+              <splitpane dividerPosition="67" horizontal="false" id="splitpaneCode" minimumHeight="10" minimumWidth="10">
+                <panel id="splitpaneCodeTop" minimumHeight="0" minimumWidth="0" paddingBottom="4" paddingTop="4">
+                  <invisible />
+                  <layout_border />
+                  <label id="labelCode" minimumHeight="10" minimumWidth="10" paddingBottom="4" text="!!Code-Regel:">
+                    <constraints_border position="north" />
+                  </label>
+                  <scrollpane borderColor="clDesignTextFieldBorder" borderWidth="1" id="scrollpaneCode" minimumHeight="10" minimumWidth="10">
+                    <textarea id="textareaCode" isEditable="false" minimumHeight="50" minimumWidth="200">
+                      <constraints_border />
+                    </textarea>
+                    <constraints_border />
+                  </scrollpane>
+                </panel>
+                <panel id="splitpaneCodeBottom" minimumHeight="0" minimumWidth="0" paddingBottom="4" paddingTop="4">
+                  <invisible />
+                  <layout_border />
+                  <label id="labelCodeDNF" minimumHeight="10" minimumWidth="10" paddingBottom="4" text="!!Code-DNF:">
+                    <constraints_border position="north" />
+                  </label>
+                  <scrollpane borderColor="clDesignTextFieldBorder" borderWidth="1" id="scrollpaneCodeDNF" minimumHeight="10" minimumWidth="10">
+                    <textarea id="textareaCodeDNF" isEditable="false" minimumHeight="50" minimumWidth="200">
+                      <constraints_border />
+                    </textarea>
+                    <constraints_border />
+                  </scrollpane>
+                </panel>
+                <constraints_border />
+              </splitpane>
+            </panel>
+            <panel id="splitPane2Bottom" minimumHeight="0" minimumWidth="0" paddingBottom="8" paddingTop="8">
+              <invisible />
+              <layout_border />
+              <label id="labelCodeExplanation" minimumHeight="10" minimumWidth="10" paddingBottom="4" text="!!Code-Erklärung:">
+                <constraints_border position="north" />
+              </label>
+              <panel id="panelCodeExplanation" minimumHeight="10" minimumWidth="10">
+                <invisible />
+                <layout_border />
+                <constraints_border />
+              </panel>
+            </panel>
+            <constraints_border />
+          </splitpane>
+        </panel>
+        <panel id="splitpaneMainBottom" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_border />
+          <panel id="panelGrid" minimumHeight="10" minimumWidth="10" paddingBottom="4" paddingTop="4">
+            <invisible />
+            <layout_border />
+            <scrollpane id="scrollpaneGrid" minimumHeight="10" minimumWidth="10">
+              <table htmlPageSplitMode="NO_SPLIT" id="tableCodeMatrix" minimumHeight="10" minimumWidth="10" tableSelectionEvent="onTableSelectionChanged">
+                <constraints_border />
+              </table>
+              <constraints_border />
+            </scrollpane>
+            <label id="labelGridExplanation" minimumHeight="10" minimumWidth="10" paddingBottom="4" text="!!Code-Matrix:">
+              <constraints_border position="north" />
+            </label>
+            <constraints_border />
+          </panel>
+          <panel id="panelConjunction" minimumHeight="10" minimumWidth="10" paddingBottom="4" paddingTop="4">
+            <invisible />
+            <layout_border />
+            <label id="labelConjunctionString" minimumHeight="10" minimumWidth="10" paddingBottom="4" text="!!Teil-Konjunktion:">
+              <constraints_border position="north" />
+            </label>
+            <scrollpane borderColor="clDesignTextFieldBorder" borderWidth="1" id="scrollpaneConjunction" minimumHeight="10" minimumWidth="10">
+              <textarea id="textareaConjunction" isEditable="false" lineWrap="true" minimumWidth="200">
+                <constraints_border />
+              </textarea>
+              <constraints_border />
+            </scrollpane>
+            <constraints_border position="south" />
+          </panel>
+        </panel>
+        <constraints_border />
+      </splitpane>
+      <constraints_border />
+    </panel>
+    <buttonPanel dialogStyle="CLOSE" id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

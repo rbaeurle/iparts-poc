@@ -1,0 +1,1014 @@
+{
+    "version": "16.3.1.1",
+    "responseHeader": {
+        "context": "Expiry=GMTTIMESTAMP '2020-01-09 16:21:53.056120'"
+    },
+    "vehicleRestrictedInclMasterDataResponse": {
+        "requestParameter": [
+            "VehicleSearchCriteria:vehicleSearchCategory=finOrVin;vehicleSearchValue=WDD2938901F001612;delta=false;",
+            "LanguagePreferences:fallbackLanguage=fr;primaryLanguage=de;secondaryLanguage=en;",
+            "ExecutionSettings:causation=interface;date=09.01.2020 17:21;interfaceId=vedoc_sst_interface_dkserv_vehicle;issueThreshold=err;source=VIS-DKSERV;systemPriority=1;unresolvedConflictAction=notifyAdmin;userId=VEDOC_tec_86;"
+        ],
+        "vehicleInclMasterData": {
+            "vehicleModelDesignation": "293890",
+            "vehicleModelDescription": "EQC 400 4MATIC",
+            "productSeriesDesignation": "EQC-Klasse",
+            "productSeriesBrand": "mb",
+            "productSeries": "293",
+            "productGroupIndication": "P",
+            "prodOrderTextAvailable": "false",
+            "fixingPartsAvailable": "false",
+            "fin": "WDD2938901F001612",
+            "checkDigit": "X",
+            "bodyType": "T",
+            "activeAssignedFpd": {
+                "equipmentCodes": [
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "MB-CONNECT-DIENSTE FUER NAVIGATION",
+                        "codeType": "sales",
+                        "code": "01U"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "BEDIENUNGSANLEITUNG U. SERVICEHEFT-DEUTSCH",
+                        "codeType": "sales",
+                        "code": "02B"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "MBCONNECT - DIENSTE FUER FAHRZEUG-SETUP (HERMES)",
+                        "codeType": "sales",
+                        "code": "08U"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "MB CONNECT- FAHRZEUG-MONITORING (HERMES)",
+                        "codeType": "sales",
+                        "code": "09U"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "KUNSTLEDER",
+                        "codeType": "sales",
+                        "code": "100A"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "KUNSTLEDER - SCHWARZ / ANTHRAZIT",
+                        "codeType": "sales",
+                        "code": "111A"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "MBCONNECT - EV-FUNKTIONEN  (HERMES)",
+                        "codeType": "sales",
+                        "code": "13U"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "VORRUESTUNG SMARTPHONE INTEGRATION MB-LINK",
+                        "codeType": "sales",
+                        "code": "15U"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "SPEED + - LOADINDEX 101V + 103V",
+                        "codeType": "sales",
+                        "code": "19V"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "DEUTSCHLAND",
+                        "codeType": "sales",
+                        "code": "229L"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "ABSTANDSREGELTEMPOMAT PLUS (DISTRONIC PLUS)",
+                        "codeType": "sales",
+                        "code": "233"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "AKTIVER PARKASSISTENT",
+                        "codeType": "sales",
+                        "code": "235"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "FAHRPAKET",
+                        "codeType": "sales",
+                        "code": "23P"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "FAHRERSITZ RE. ELEKTR.VERSTELLBAR M.MEMORY",
+                        "codeType": "sales",
+                        "code": "242"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "INNEN- UND AUSSENSPIEGEL AUTOMAT. ABBLENDBAR",
+                        "codeType": "sales",
+                        "code": "249"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "MB-MOBILO MIT DSB UND GGD",
+                        "codeType": "sales",
+                        "code": "255B"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "DISTRONIC PLUS QUERUNTERSTUETZUNG (DTR+Q)",
+                        "codeType": "sales",
+                        "code": "266"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "GPS ANTENNE",
+                        "codeType": "sales",
+                        "code": "270"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "TELEFONANTENNE",
+                        "codeType": "sales",
+                        "code": "274"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "MEMORY-PAKET (FAHRERSITZ, LENKSAEULE U. SPIEGEL)",
+                        "codeType": "sales",
+                        "code": "275"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "MB CONNECT - LADESAEULENZUGANG UND -BEZAHLUNG",
+                        "codeType": "sales",
+                        "code": "28U"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "SIDEBAG IM FOND LINKS UND RECHTS",
+                        "codeType": "sales",
+                        "code": "293"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "KNIEBAG",
+                        "codeType": "sales",
+                        "code": "294"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "PRESAFE",
+                        "codeType": "sales",
+                        "code": "299"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "MB CONNECT - ZUGANG ZUM SCHNELLLADENETZ",
+                        "codeType": "sales",
+                        "code": "29U"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "KAELTEMITTEL ALTERNATIV",
+                        "codeType": "sales",
+                        "code": "2U8"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "BUNDESREPUBLIK DEUTSCHLAND",
+                        "codeType": "sales",
+                        "code": "2XXL"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "CUPHOLDER",
+                        "codeType": "sales",
+                        "code": "309"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "SPRACHE KOMBIINSTRUMENT/ HU - DEUTSCH",
+                        "codeType": "sales",
+                        "code": "332B"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "REGENSENSOR",
+                        "codeType": "sales",
+                        "code": "345"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "ECALL-NOTRUFSYSTEM (HERMES)",
+                        "codeType": "sales",
+                        "code": "351"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "HERMES- KOMMUNIKATIONSMODUL LTE",
+                        "codeType": "sales",
+                        "code": "362"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "FESTPLATTEN-NAVIGATION",
+                        "codeType": "sales",
+                        "code": "365"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "LIVE TRAFFIC - FAEHIGKEIT (HERMES)",
+                        "codeType": "sales",
+                        "code": "367"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "HU LAENDERSET FUER ECE/ROW",
+                        "codeType": "sales",
+                        "code": "3U6"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "SCHIEBEDACH ELEKTRISCH IN GLASAUSFUEHRUNG",
+                        "codeType": "sales",
+                        "code": "414"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "LENKRADSCHALTTASTEN / LENKRADSCHALTPADDEL-LACKIERT",
+                        "codeType": "sales",
+                        "code": "428"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "TOUCHPAD ONLY",
+                        "codeType": "sales",
+                        "code": "446"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "FRONTSICHTANZEIGE (HEAD-UP DISPLAY)",
+                        "codeType": "sales",
+                        "code": "463"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "REIFENDRUCKKONTROLLE (RDK) HIGH LINE / MID LINE",
+                        "codeType": "sales",
+                        "code": "475"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "AUSSENSPIEGEL LI. U. RE. ABKLAPPBAR",
+                        "codeType": "sales",
+                        "code": "500"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "RUNDUMSICHTSYSTEM (SURROUND VIEW)",
+                        "codeType": "sales",
+                        "code": "501"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "3 JAHRE KOSTENFREIE KARTENDATEN-UPDATES",
+                        "codeType": "sales",
+                        "code": "502"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "VERKEHRSZEICHENERKENNUNG",
+                        "codeType": "sales",
+                        "code": "513"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "RATING LAENDERSET EURO-NCAP",
+                        "codeType": "sales",
+                        "code": "51B"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "DACHINNENVERKLEIDUNG STOFF SCHWARZ",
+                        "codeType": "sales",
+                        "code": "51U"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "DIGITALER RADIO-STANDARD DAB (DIGI. AUDIO BROADC.)",
+                        "codeType": "sales",
+                        "code": "537"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "AUTOMATISCHE GESCHWINDIGKEITSREGELUNG",
+                        "codeType": "sales",
+                        "code": "546"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "CONNECT 20 HIGH (NTG6)",
+                        "codeType": "sales",
+                        "code": "549"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "ANHAENGEVORRICHTUNG",
+                        "codeType": "sales",
+                        "code": "550"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "KLIMATISIERUNGSAUTOMATIC",
+                        "codeType": "sales",
+                        "code": "581"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "STEUERCODE VERTRIEB",
+                        "codeType": "sales",
+                        "code": "5P6"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "UMFELDBELEUCHTUNG",
+                        "codeType": "sales",
+                        "code": "611"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "AUTOMATISCHE FERNLICHTSCHALTUNG PLUS (IHC+)",
+                        "codeType": "sales",
+                        "code": "628"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "FAHRZEUGS. XEV-LADEDOSE COMBO2 / TYP2",
+                        "codeType": "sales",
+                        "code": "63B"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "SCHEINWERFER LED DYNAMISCH RECHTSVERKEHR",
+                        "codeType": "sales",
+                        "code": "642"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "FEUERLOESCHER",
+                        "codeType": "sales",
+                        "code": "682"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "STEUERCODE VERTRIEB",
+                        "codeType": "sales",
+                        "code": "6P5"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "WARNWESTE - FAHRER UND PASSAGIERE",
+                        "codeType": "sales",
+                        "code": "71B"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "GEPAECKRAUMABDECKUNG",
+                        "codeType": "sales",
+                        "code": "723"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "ZIERELEMENTE - HOLZ ESCHE SCHWARZ (2A70)",
+                        "codeType": "sales",
+                        "code": "736"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "AC-LADEFUNKTION MIT 7,4 KW LADELEISTUNG",
+                        "codeType": "sales",
+                        "code": "76B"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "VORRUESTUNG DIGITALER RADIO-STANDARD DAB",
+                        "codeType": "sales",
+                        "code": "79B"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "AEJ 19/1",
+                        "codeType": "sales",
+                        "code": "800"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "DC-LADEFUNKTION",
+                        "codeType": "sales",
+                        "code": "83B"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "GLAS DUNKEL GETOENT",
+                        "codeType": "sales",
+                        "code": "840"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "AKUSTIKVERGLASUNG",
+                        "codeType": "sales",
+                        "code": "851"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "SOUNDSYSTEM MIDLINE",
+                        "codeType": "sales",
+                        "code": "853"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "SITZHEIZUNG FONDSITZ LINKS UND RECHTS",
+                        "codeType": "sales",
+                        "code": "872"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "SITZHEIZUNG FAHRERSITZ LINKS UND RECHTS",
+                        "codeType": "sales",
+                        "code": "873"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "SCHEIBENWASCHANLAGE BEHEIZT",
+                        "codeType": "sales",
+                        "code": "875"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "INNENRAUM-LICHTPAKET",
+                        "codeType": "sales",
+                        "code": "876"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "AMBIENTENBELEUCHTUNG",
+                        "codeType": "sales",
+                        "code": "877"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "KEYLESS-GO",
+                        "codeType": "sales",
+                        "code": "889"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "AUTOMATISCHE RUECKWANDTUER",
+                        "codeType": "sales",
+                        "code": "890"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "KEYLESS-START",
+                        "codeType": "sales",
+                        "code": "893"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "UMSTELLUNG LENKRADBEDIENUNG ASSISTENZSYSTEM",
+                        "codeType": "sales",
+                        "code": "8U6"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "FOND-SICHERHEITSGURT MIT GURTKRAFTBEGR.UND SOFTST.",
+                        "codeType": "sales",
+                        "code": "8U7"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "I-SIZE-MARKING (ISOFIX-NACHFOLGER)",
+                        "codeType": "sales",
+                        "code": "8U8"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "BASISUMFANG",
+                        "codeType": "sales",
+                        "code": "904"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "HIGH-TECH-SILBER METALLIC",
+                        "codeType": "sales",
+                        "code": "922U"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "COC-PAPIER EURO6 TECH. MIT ZULASS.BESCHEIN. TEIL 2",
+                        "codeType": "sales",
+                        "code": "969"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "STEUER-CODE UMSTELLUNG WLTP MIT RDE",
+                        "codeType": "sales",
+                        "code": "998"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "TIREFIT",
+                        "codeType": "sales",
+                        "code": "B51"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "AUSSENGERAEUSCH-SOUNDGENERATOR FUER HYBRIDE",
+                        "codeType": "sales",
+                        "code": "B53"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "FAHRPROGRAMMWAHLSCHALTER (AGILITY SELECT)",
+                        "codeType": "sales",
+                        "code": "B59"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "LADEKABEL SCHUKO CEE 7/7 (TYP E/F) 8M",
+                        "codeType": "sales",
+                        "code": "B80"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "LADEKABEL 7-PIN ICCA PER IEC 62196 16A 8M",
+                        "codeType": "sales",
+                        "code": "B83"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "E-ANTRIEBSEINHEIT AUSFUEHRUNG 1",
+                        "codeType": "sales",
+                        "code": "BE1"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "STEUERCODE VERTRIEB",
+                        "codeType": "sales",
+                        "code": "DMK"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "codeType": "sales",
+                        "code": "DSQ"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "Baureihe 293",
+                        "codeType": "sales",
+                        "code": "F293"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "SONDERAUSFUEHRUNG",
+                        "codeType": "sales",
+                        "code": "FN"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "GETRIEBE AUTOMATISCH",
+                        "codeType": "sales",
+                        "code": "GA"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "HINTERACHSE",
+                        "codeType": "sales",
+                        "code": "HA"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "STEUERCODE WERK",
+                        "codeType": "sales",
+                        "code": "JVO"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "STEUERCODE WERK",
+                        "codeType": "sales",
+                        "code": "JVQ"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "STEUERCODE FUER SERVICEINTERVALL 25000 KM",
+                        "codeType": "sales",
+                        "code": "K13"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "AKTIVER FAHRSPURWECHSELASSISTENT",
+                        "codeType": "sales",
+                        "code": "K32"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "ERWEITERTES WIEDERANFAHREN BEI STOP-AND-GO-VERKEHR",
+                        "codeType": "sales",
+                        "code": "K33"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "STRECKENBASIERTE GESCHWINDIGKEITSANPASSUNG",
+                        "codeType": "sales",
+                        "code": "K34"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "LINKS-LENKUNG",
+                        "codeType": "sales",
+                        "code": "L"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "SPORT-LENKRAD - SPALTLEDER GLATT",
+                        "codeType": "sales",
+                        "code": "L3E"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "FAHRZEUGE MIT 4-MATIC-/ALLRAD-ANTRIEB",
+                        "codeType": "sales",
+                        "code": "M005"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "E-ANTRIEBSEINHEIT",
+                        "codeType": "sales",
+                        "code": "M780"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "ELEKTRO-MOTOR",
+                        "codeType": "sales",
+                        "code": "ME01"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "STEUERCODE WERK BREMEN",
+                        "codeType": "sales",
+                        "code": "N91"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "STEUERCODE WERK BREMEN",
+                        "codeType": "sales",
+                        "code": "NZ1"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "SOFTWARE FRESH-UP 2",
+                        "codeType": "sales",
+                        "code": "O15"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "LUFTQUALITAETSPAKET",
+                        "codeType": "sales",
+                        "code": "P21"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "EINPARK-PAKET HIGH",
+                        "codeType": "sales",
+                        "code": "P47"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "SPIEGEL PAKET",
+                        "codeType": "sales",
+                        "code": "P49"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "INTERIEUR-LINE SENSUAL",
+                        "codeType": "sales",
+                        "code": "PTC"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "EXTERIEUR-LINE ELECTRIC",
+                        "codeType": "sales",
+                        "code": "PUA"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "STEUERCODE VERTRIEB",
+                        "codeType": "sales",
+                        "code": "PZX"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "SOMMERREIFEN",
+                        "codeType": "sales",
+                        "code": "R01"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "LM-RAD 5-SPEICHEN DESIGN 19\" MISCHBEREIFUNG",
+                        "codeType": "sales",
+                        "code": "R82"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "FONDGURTSTATUSANZEIGE",
+                        "codeType": "sales",
+                        "code": "U01"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "I-TAFEL UND BORDKANTE BELEDERT (KUNSTL. GEPRAEGT)",
+                        "codeType": "sales",
+                        "code": "U09"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "BEIFAHRERSITZ MIT GEWICHTSERKENNUNG",
+                        "codeType": "sales",
+                        "code": "U10"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "FUSSMATTEN -VELOURS",
+                        "codeType": "sales",
+                        "code": "U12"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "AUGMENTED REALITY VIDEO",
+                        "codeType": "sales",
+                        "code": "U19"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "LORDOSENVERSTELLUNG",
+                        "codeType": "sales",
+                        "code": "U22"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "EINSTIEGSCHIENE BELEUCHTET",
+                        "codeType": "sales",
+                        "code": "U25"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "VORDERACHSHAELFTE LINKS",
+                        "codeType": "sales",
+                        "code": "VL"
+                    },
+                    {
+                        "productGroupIndication": "P",
+                        "designation": "VORDERACHSHAELFTE RECHTS",
+                        "codeType": "sales",
+                        "code": "VR"
+                    }
+                ],
+                "vpd": [
+                    {
+                        "vpdIdent": "00064",
+                        "typeOf": "unresolved",
+                        "productCategory": "passCar",
+                        "designation": "Federbeine vorne",
+                        "content": "A2933200700             A2933200800"
+                    },
+                    {
+                        "vpdIdent": "00080",
+                        "typeOf": "highVoltageBattery1REESS",
+                        "designation": "REESS-Code 1",
+                        "content": "000PEEBLG 52AH96T0000004"
+                    },
+                    {
+                        "vpdIdent": "00082",
+                        "typeOf": "unresolved",
+                        "designation": "REESS-Code 2",
+                        "content": "000PEEBLG 52AH96T0000004"
+                    },
+                    {
+                        "vpdIdent": "10036",
+                        "typeOf": "unresolved",
+                        "productCategory": "passCar",
+                        "designation": "Naht/Schwächung Airbag Beifahrer    ",
+                        "content": "29368024019J38LG1919050538"
+                    },
+                    {
+                        "vpdIdent": "10199",
+                        "typeOf": "unresolved",
+                        "productCategory": "passCar",
+                        "designation": "Radelektronik-Identifier",
+                        "content": "04330002BE4EE30002BE4CA60002BE5FD00002BE4E8C"
+                    },
+                    {
+                        "vpdIdent": "10316",
+                        "typeOf": "controlUnitSerialNumber",
+                        "productCategory": "passCar",
+                        "designation": "LRSM-Steuergerät (Regen-Licht-Sensor)",
+                        "content": "59473030375346443031303836"
+                    },
+                    {
+                        "vpdIdent": "10639",
+                        "typeOf": "controlUnitSerialNumber",
+                        "designation": "Soundgenerator (SOGE-REAR)",
+                        "content": "2229016904Delphi19052331173715"
+                    },
+                    {
+                        "vpdIdent": "10716",
+                        "typeOf": "notSet",
+                        "designation": "Kontaktplatte im Multifunktionslenkrad",
+                        "content": "09990162000007C19x07x15C000031"
+                    },
+                    {
+                        "vpdIdent": "10717",
+                        "typeOf": "notSet",
+                        "designation": "Schalterfeld Fahrerassistenz",
+                        "content": "SWSP177      09990526040007C2019X05X24C4920"
+                    },
+                    {
+                        "vpdIdent": "10718",
+                        "typeOf": "notSet",
+                        "designation": "Schalterfeld Audio",
+                        "content": "SWSP177      09990526040007C2019X05X24C4920"
+                    },
+                    {
+                        "vpdIdent": "30043",
+                        "typeOf": "scnNo",
+                        "productCategory": "passCar",
+                        "designation": "SCN LRSM (Regen-Licht-Sensor)",
+                        "content": "2539002803020001"
+                    },
+                    {
+                        "vpdIdent": "30044",
+                        "typeOf": "scnNo",
+                        "productCategory": "passCar",
+                        "designation": "SCN WSS (Windschutzscheibe)",
+                        "content": "2536700601020001"
+                    },
+                    {
+                        "vpdIdent": "52671",
+                        "typeOf": "software",
+                        "designation": "SOGE-REAR Flashware 1",
+                        "content": "2939022900"
+                    }
+                ]
+            },
+            "activeCustomerServiceData": {
+                "vehicleOwnershipTitleNo": "FJ670301",
+                "unloadingCode": "0001099015",
+                "validSince": "20190815",
+                "xmlId": "_1",
+                "objectId": "300634474356"
+            },
+            "activeModelPlate": {
+                "vehicleWeightKg": "2940",
+                "vehicleType": "204 X",
+                "powerKwMax": "300.00",
+                "powerHybrid": "145.00",
+                "lowBeamLightBundle": "1.0",
+                "combinedWeightKg": "4840",
+                "axleLoadKg2": "1600",
+                "axleLoadKg1": "1340",
+                "xmlId": "_2"
+            },
+            "activeProductDate": {
+                "technicalApprovalDate": "20190815",
+                "shipmentDate": "20190911",
+                "dateOfFirstRegistration": "20190909",
+                "validSince": "20191031",
+                "xmlId": "_3",
+                "objectId": "303052435333"
+            },
+            "activeProductionInfo": {
+                "originEngineObjectNo": "A2933405000",
+                "originEngineId": "78099830001526",
+                "validSince": "20190911",
+                "xmlId": "_4",
+                "objectId": "301503726169"
+            },
+            "activeState": {
+                "tire": "PIRELLI",
+                "steeringInfoObjectNo": "2534601701",
+                "steeringInfoId": "2534601701021920069103",
+                "status": "delivered",
+                "rearAxlePc": "29358400000101191900",
+                "productionNumber": "0352488",
+                "plant": "P0670",
+                "orderNumber": "0929223179",
+                "modeOfShipment": "M1",
+                "integralSupportObjectNo": "2936200500",
+                "integralSupportNo": "2936200500301918500712",
+                "frontAxleRightPc": "2533308400111920303047",
+                "frontAxleLeftPc": "2533308300111920303030",
+                "dateOfTechnicalState": "20190723",
+                "checkDigitProductionNumber": "1",
+                "bodyNumber": "3371917",
+                "cocData": {
+                    "version": "ZZAC050A",
+                    "vehicleMassKg": "2495",
+                    "variantModelCode": "00004",
+                    "variant": "YNE0Z1",
+                    "typeModelCode": "HXW",
+                    "tiresAxle2": "-",
+                    "tiresAxle1": "-",
+                    "salesDesignation": "EQC 400 4MATIC",
+                    "rimsAxle2": "-",
+                    "rimsAxle1": "-",
+                    "maxSpeed": "180",
+                    "hsn": "1313",
+                    "fuel": "Elektro",
+                    "errorCheckingNumber": "3",
+                    "emissionClass": "AX",
+                    "egPermitNumber": "e1*2001/116*0480*32",
+                    "egPermitDate": "20190517",
+                    "cocNumber": "1 R O YNE0Z1    ZZAC050A032",
+                    "brand": "Mercedes-Benz",
+                    "allowedTireRimSize": "zu 5: min. 4771*zu 6: min. 1890*zu 7: min. 1619*Zu 35: A1 235/55 R19 101V, 7.5Jx19 ET32 / A2 255/50 R19 103V, 8Jx19 ET34; A1 235/45 R21 101Y XL, 8Jx21 ET27 / A2 255/40 R21 102Y XL, 9Jx21 ET31; A1 235/50 R20 100W, 7.5Jx20 ET32 / A2 255/45 R20 101W, 8.5Jx20 ET30; A1 235/55 R19 101H M+S, 7.5Jx19 ET32 / A2 255/50 R19 103H M+S, 8Jx19 ET34*Fahrzeug mit Kurzstreckenradarger?t im Bereich 24 GHz gem. EGTG 12.7.1.*"
+                },
+                "electroEngine": [
+                    {
+                        "typeOf": "eEngine2",
+                        "objectNumber": "A2933405100",
+                        "modelDesignation": "780999",
+                        "id": "78099930001919",
+                        "activeState": {}
+                    }
+                ],
+                "engine": {
+                    "objectNumber": "A2933405000",
+                    "modelDesignation": "780998",
+                    "id": "78099830001526",
+                    "activeState": {}
+                },
+                "highVoltageBattery": [
+                    {
+                        "activeVehicleKey": "LE42131531L448000",
+                        "dataCardAvailable": "true",
+                        "id": "999999AB000415",
+                        "modelDesignation": "999999",
+                        "typeOf": "highVoltageBat1",
+                        "activeState": {
+                            "plant": "P7880",
+                            "status": "delivered"
+                        }
+                    }
+                ],
+                "interiorEquipment": [
+                    {
+                        "usage": "additionalInteriorCode1",
+                        "designation": "KUNSTLEDER",
+                        "code": "100"
+                    },
+                    {
+                        "usage": "interiorCode",
+                        "designation": "KUNSTLEDER - SCHWARZ / ANTHRAZIT",
+                        "code": "111"
+                    }
+                ],
+                "paint": [
+                    {
+                        "usage": "paint1",
+                        "kbaPaintDesignation": "0",
+                        "designation": "HIGH-TECH-SILBER METALLIC",
+                        "code": "922"
+                    }
+                ],
+                "salesAreaInformation": [
+                    {
+                        "salesAreaType": "consumerCountry",
+                        "salesArea": "229",
+                        "designation": "DEUTSCHLAND"
+                    },
+                    {
+                        "salesAreaType": "countryInformation1",
+                        "salesArea": "229",
+                        "designation": "DEUTSCHLAND"
+                    },
+                    {
+                        "salesAreaType": "countryInformation2",
+                        "salesArea": "2XX",
+                        "designation": "BUNDESREPUBLIK DEUTSCHLAND"
+                    },
+                    {
+                        "salesAreaType": "orderCountry",
+                        "salesArea": "292",
+                        "designation": "WERKSGESCHAEFTE"
+                    }
+                ]
+            }
+        }
+    }
+}

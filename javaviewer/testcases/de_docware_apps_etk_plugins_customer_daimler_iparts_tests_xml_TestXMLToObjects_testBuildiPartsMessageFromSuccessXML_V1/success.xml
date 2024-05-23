@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2015 Docware GmbH
+  -->
+
+<!--
+ #==============================================================================
+ #
+ #  AS-PLM
+ #
+ #  $HeadURL: https://dev-dynplm.it-solutions.atos.net/svn/asplmdev/cust_root_dir/integration/prototypes/was/services/MediaService_BO/xml/response_02.xml $
+ #  $LastChangedRevision: 913 $
+ #  $LastChangedDate: 2015-05-12 16:37:23 +0200 (Di, 12 Mai 2015) $
+ #  $LastChangedBy: a424518 $
+ #
+ #  Author: Andreas Saremba, Atos
+ #  Purpose: Sample message for the AS-PLM Media Service (AMS): Operation CreateMediaOrder (Response, error case)
+ #
+ #==============================================================================
+-->
+<Message xmlns="http://asplm.daimler.com/MediaService/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://asplm.daimler.com/MediaService/v1 asplm_message_flat.xsd">
+    <Response from="ASPLM" to="iParts" requestId="r0001" requestOperation="CreateMediaOrder">
+        <Success ok="true">
+        </Success>
+    </Response>
+</Message>

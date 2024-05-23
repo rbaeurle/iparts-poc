@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="0.2">
+	<xsd:annotation>
+		<xsd:documentation>
+			This schema describes the file format that is used to transfer Codebenennung to EPC (ProQuest).
+		    The content of the element Text represents the text in the given language itself.
+		    The file contains all texts belonging to Codes. There will be provided only one file
+		    containing all entries for all languages.
+	    </xsd:documentation>
+	</xsd:annotation>
+    <xsd:element name="code_dic">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="text"/>
+            </xsd:sequence>
+            <xsd:attribute name="creation_date" type="xsd:string" use="required">
+                <xsd:annotation>
+					<xsd:documentation>The date when the mapping file was build</xsd:documentation>
+				</xsd:annotation>
+			</xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="text">
+        <xsd:complexType>
+            <xsd:simpleContent>
+                <xsd:extension base="xsd:string">
+                    <xsd:attribute name="product_grp" type="xsd:string" use="required">
+						<xsd:annotation>
+							<xsd:documentation>product group</xsd:documentation>
+						</xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="br" type="xsd:string" use="required">
+						<xsd:annotation>
+							<xsd:documentation>Baurreihe;BR</xsd:documentation>
+						</xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="code" type="xsd:string" use="required">                    
+                    	<xsd:annotation>
+                    		<xsd:documentation>code</xsd:documentation>
+                    	</xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="lang_id" type="xsd:string" use="required">
+                    	<xsd:annotation>
+                    		<xsd:documentation>language of the elements content</xsd:documentation>
+                    	</xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="valid_from" type="xsd:string" use="required">
+						<xsd:annotation>
+							<xsd:documentation>This date describes deployment date</xsd:documentation>
+						</xsd:annotation>
+                    </xsd:attribute>
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

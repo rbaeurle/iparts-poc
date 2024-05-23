@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false" width="1200">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <splitpane dividerPosition="488" dividerSize="10" id="mainSplitPane" minimumHeight="10" minimumWidth="10">
+        <panel id="mainSplitPane_firstChild" minimumWidth="0">
+          <invisible />
+          <layout_border />
+        </panel>
+        <panel id="mainSplitPane_secondChild" minimumWidth="0">
+          <invisible />
+          <layout_border />
+        </panel>
+        <constraints_border />
+      </splitpane>
+      <constraints_border />
+    </panel>
+    <buttonPanel id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

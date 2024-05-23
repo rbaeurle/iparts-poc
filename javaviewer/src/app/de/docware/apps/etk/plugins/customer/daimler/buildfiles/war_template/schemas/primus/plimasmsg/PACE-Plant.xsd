@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xml:lang="en" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:jxb="http://java.sun.com/xml/ns/jaxb" jxb:version="1.0">
+
+  <!-- This file is controlled by DCCS SVN and must not be changed otherwise.
+       Usage of attributes preferred over use of tags.
+
+       Created by DCCS GmbH. on behalf of Daimler AG.
+       Copyright 2012 Daimler AG and DCCS GmbH.
+
+       Author:       Peter.Stuecklschwaiger@DCCS.at
+       Responsible:  Tomislav.Jerkovic@Daimler.com, Swen.Koelbel@Daimler.com -->
+
+  <xs:annotation>
+    <xs:documentation>Copyright 2012 Daimler AG and DCCS GmbH.</xs:documentation></xs:annotation>
+
+  <xs:element name="plant" type="plantType">
+    <xs:annotation><xs:documentation>PACE plant definition</xs:documentation></xs:annotation>
+  </xs:element>
+
+  <xs:complexType name="plantType">
+    <xs:attribute name="number" use="required" type="plantNumberType"/>
+  </xs:complexType>
+
+  <xs:simpleType name="plantNumberType">
+    <xs:restriction base="xs:string">
+      <xs:annotation>
+        <xs:documentation xml:lang="de">Erlaubt sind Werte von 0000 bis 9999. Verwendet werden sollten nur FAB Werkskennziffern.</xs:documentation>
+        <xs:documentation xml:lang="en">Allowed are values from 0000 to 9999. Only FAB plant numbers should be used.</xs:documentation>
+      </xs:annotation>
+      <xs:pattern value="[0-9]{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

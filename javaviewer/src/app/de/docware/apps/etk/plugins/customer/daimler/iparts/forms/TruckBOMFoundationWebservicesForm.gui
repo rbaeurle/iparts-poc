@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="tbfTitle" minimumHeight="50" minimumWidth="10" title="TruckBOM.foundation Webservices">
+      <constraints_border position="north" />
+    </title>
+    <panel id="leftplanel" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <panel borderWidth="4" id="configPanel" title="Konfiguration">
+        <invisible />
+        <layout_gridbag />
+        <panel id="servicePanel">
+          <invisible />
+          <layout_gridbag centered="false" />
+          <label id="serviceLabel" minimumHeight="10" minimumWidth="10" text="Webservice auswählen:">
+            <constraints_gridbag anchor="n" fill="b" insetsBottom="4" />
+          </label>
+          <combobox genericType="Object" id="serviceComboBox" minimumHeight="10" minimumWidth="10" onChangeEvent="onServiceSelected">
+            <constraints_gridbag anchor="nw" fill="b" gridy="1" weightx="100.0" />
+          </combobox>
+          <constraints_gridbag anchor="n" fill="h" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" weightx="100.0" />
+        </panel>
+        <checkbox id="importResponseCheckbox" minimumHeight="10" minimumWidth="10" onChangeEvent="onImportResponseCheckboxChangeEvent" selected="true" text="!!Import der Response">
+          <constraints_gridbag anchor="n" fill="h" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="8" weighty="100.0" />
+        </checkbox>
+        <constraints_border />
+      </panel>
+      <constraints_border position="west" />
+    </panel>
+    <panel borderWidth="4" id="rightPanel" minimumWidth="10" title="Webservice Test">
+      <invisible />
+      <layout_gridbag />
+      <label fontStyle="BOLD" id="sendRequestLabel" text="Request Body (JSON) [optional]">
+        <constraints_gridbag anchor="w" fill="h" insetsLeft="8" />
+      </label>
+      <label fontStyle="BOLD" id="receivedAnswerLabel" text="Response">
+        <constraints_gridbag anchor="w" fill="h" gridx="1" insetsLeft="8" />
+      </label>
+      <scrollpane borderColor="clDesignTextFieldBorder" borderWidth="1" id="requestScrollpane" minimumHeight="10" minimumWidth="10">
+        <textarea id="requestTextarea" lineWrap="true" paddingBottom="8" paddingLeft="8" paddingRight="8" paddingTop="8">
+          <constraints_border />
+        </textarea>
+        <constraints_gridbag anchor="w" fill="b" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="2" weighty="100.0" />
+      </scrollpane>
+      <scrollpane backgroundColor="clTransparent" borderColor="clDesignTextFieldBorder" borderWidth="1" id="responseScrollpane">
+        <textarea backgroundColor="clTransparent" id="responseTextarea" isEditable="false" lineWrap="true" paddingBottom="8" paddingLeft="8" paddingRight="8" paddingTop="8">
+          <constraints_border />
+        </textarea>
+        <constraints_gridbag fill="b" gridx="1" gridy="1" insetsBottom="4" insetsLeft="2" weighty="100.0" />
+      </scrollpane>
+      <panel id="sendButtonPanel" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_gridbag />
+        <button actionPerformedEvent="sendRequest" enabled="false" id="sendButton" mnemonicEnabled="true" text="Request senden">
+          <constraints_gridbag fill="h" insetsBottom="8" insetsLeft="8" insetsRight="4" insetsTop="8" />
+        </button>
+        <button actionPerformedEvent="doFileImport" enabled="false" id="fileImportButton" minimumHeight="10" minimumWidth="100" mnemonicEnabled="true" text="!!Response aus Datei importieren">
+          <constraints_gridbag gridx="1" insetsBottom="8" insetsLeft="4" insetsRight="8" insetsTop="8" />
+        </button>
+        <constraints_gridbag gridy="2" />
+      </panel>
+      <panel id="copyToClipboardButtonPanel" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_gridbag />
+        <button actionPerformedEvent="copyResponseToClipboard" enabled="false" id="copyToClipboardButton" mnemonicEnabled="true" text="Response in Zwischenablage kopieren">
+          <constraints_gridbag fill="h" gridx="1" insetsBottom="8" insetsLeft="8" insetsRight="8" insetsTop="8" />
+        </button>
+        <constraints_gridbag gridx="1" gridy="2" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel dialogStyle="CLOSE" id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

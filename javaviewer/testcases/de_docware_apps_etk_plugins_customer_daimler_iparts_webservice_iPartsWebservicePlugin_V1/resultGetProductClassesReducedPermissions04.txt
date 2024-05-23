@@ -1,0 +1,1 @@
+{"productClasses":[{"aggregateTypes":[{"aggTypeId":"F","aggTypeName":"Fahrzeug"},{"aggTypeId":"FH","aggTypeName":"Aufbau"},{"aggTypeId":"GM","aggTypeName":"Mechanisches Getriebe"},{"aggTypeId":"M","aggTypeName":"Motor"}],"productClassId":"T","productClassName":"Transporter"}]}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible>
+      <contextmenu id="contextmenu" menuName="contextmenu" minimumHeight="10" minimumWidth="10" />
+    </invisible>
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <panel id="panelEntries" minimumHeight="10" minimumWidth="10" paddingLeft="8" paddingRight="8">
+        <invisible />
+        <layout_border />
+        <label id="labelEntries" minimumHeight="10" minimumWidth="10" paddingBottom="4" paddingLeft="8" paddingRight="8" paddingTop="4" text="!!Ausgewählte Elemente">
+          <constraints_border position="north" />
+        </label>
+        <toolbar backgroundImage="@imgDesignToolbarBigBackground" id="toolbarEntries" minimumHeight="10" minimumWidth="20">
+          <constraints_border position="west" />
+        </toolbar>
+        <constraints_border />
+      </panel>
+      <panel id="panelPreview" minimumHeight="70" minimumWidth="10" paddingLeft="8" paddingRight="8">
+        <invisible />
+        <layout_border />
+        <label id="labelPreview" minimumHeight="10" minimumWidth="10" paddingBottom="4" paddingTop="4" text="!!Vorschau">
+          <constraints_border position="north" />
+        </label>
+        <constraints_border position="south" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonOKActionPerformedEvent="onButtonOkClick" id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

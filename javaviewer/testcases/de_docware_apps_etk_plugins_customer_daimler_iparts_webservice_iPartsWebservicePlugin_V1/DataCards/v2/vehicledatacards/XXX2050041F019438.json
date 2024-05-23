@@ -1,0 +1,252 @@
+{
+    "responseHeader": {
+        "context": "Expiry=-1"
+    },
+    "vehicleRestrictedInclMasterDataResponse": {
+        "requestParameter": ["VehicleSearchCriteria:vehicleSearchCategory=finOrVin;vehicleSearchValue=XXX2050041F019438;", "LanguagePreferences:fallbackLanguage=de;primaryLanguage=de;secondaryLanguage=en;", "ExecutionSettings:causation=interface;date=03.11.2016 12:45;interfaceId=vedoc_sst_interface_dkserv_vehicle;issueThreshold=err;systemPriority=1;unresolvedConflictAction=notifyAdmin;userId=VEDOC_tec_86;"],
+        "vehicleInclMasterData": {
+            "vehicleModelDescription": "C 220 BlueTEC",
+            "bodyType": "W",
+            "technicalState": "released",
+            "activeAssignedFpd": {
+                "equipmentCodes": [],
+                "vpd": [{
+                        "vpdIdent": "10199",
+                        "designation": "Radelektronik-Identifier",
+                        "typeOf": "unresolved",
+                        "content": "043300006762C20000676FB70000676FC90000677CFD",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "10200",
+                        "designation": "Injektor-Mengen-Abgleich 1",
+                        "typeOf": "unresolved",
+                        "content": "HP0Y0R952653G7S4E2WZ",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "10201",
+                        "designation": "Injektor-Mengen-Abgleich 2",
+                        "typeOf": "unresolved",
+                        "content": "370Y0Y83JA34G7RCA2Z1",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "10202",
+                        "designation": "Injektor-Mengen-Abgleich 3",
+                        "typeOf": "unresolved",
+                        "content": "5P11WLU4NE70GPSC62Z0",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "10203",
+                        "designation": "Injektor-Mengen-Abgleich 4",
+                        "typeOf": "unresolved",
+                        "content": "7P12157HNA73G7SLE2WY",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "10316",
+                        "designation": "LRSM-Steuerger?t (Regen-Licht-Sensor)",
+                        "typeOf": "controlUnitSerialNumber",
+                        "content": "59303030374E43463331313234",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "10335",
+                        "designation": "IMEI KOM-Modul (alt)",
+                        "typeOf": "unresolved",
+                        "content": "353802051167668",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "10336",
+                        "designation": "IMSI KOM-Modul (alt)",
+                        "typeOf": "unresolved",
+                        "content": "262014843032129",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "10337",
+                        "designation": "ICCID KOM-Modul (alt)",
+                        "typeOf": "unresolved",
+                        "content": "89490200000996435959",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "20002",
+                        "designation": "EGS-Kennung",
+                        "typeOf": "unresolved",
+                        "content": "w43ba05s36stvj6map36",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "30028",
+                        "designation": "SCN DBE (Dachbedieneinheit)",
+                        "typeOf": "scnNo",
+                        "content": "2059004513020001",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "30043",
+                        "designation": "SCN LRSM (Regen-Licht-Sensor)",
+                        "typeOf": "scnNo",
+                        "content": "2059002800020005",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "30044",
+                        "designation": "SCN WSS (Windschutzscheibe)",
+                        "typeOf": "scnNo",
+                        "content": "2056700301020001",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "30112",
+                        "designation": "SCN NOX1 (NOx-Sensor 1)",
+                        "typeOf": "scnNo",
+                        "content": "0009053603290015",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "30113",
+                        "designation": "SCN NOX2 (NOx-Sensor 2)",
+                        "typeOf": "scnNo",
+                        "content": "0009053503290015",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "30157",
+                        "designation": "SCN LCU-L (LED-Spannungswandler links)",
+                        "typeOf": "scnNo",
+                        "content": "2228700789020005",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "30158",
+                        "designation": "SCN LCU-R (LED-Spannungswandler rechts)",
+                        "typeOf": "scnNo",
+                        "content": "2228700789020005",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "40004",
+                        "designation": "CVN ESP (Elektronisches Stabilit?tsprogramm)",
+                        "typeOf": "cvn",
+                        "content": "1B498FE4",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "40112",
+                        "designation": "CVN NOX1 (NOx-Sensor 1)",
+                        "typeOf": "cvn",
+                        "content": "A688381D",
+                        "productCategory": "passCar"
+                    }, {
+                        "vpdIdent": "40113",
+                        "designation": "CVN NOX2 (NOx-Sensor 2)",
+                        "typeOf": "cvn",
+                        "content": "A688381D",
+                        "productCategory": "passCar"
+                    }
+                ]
+            },
+            "productSeriesDesignation": "C-Klasse",
+            "activeState": {
+                "frontAxleLeftPc": "2053306105011408709560",
+                "rearAxlePc": "20535090090026681018",
+                "orderNumber": "0456102600",
+                "checkDigitProductionNumber": "0",
+                "productionNumber": "0019622",
+                "bodyNumber": "3019763",
+                "cocData": {
+                    "rimsAxle2": "7.5Jx18H2 ET44",
+                    "cocNumber": "1 R O R00RP0    NZAAB531031",
+                    "rimsAxle1": "7.5Jx18H2 ET44",
+                    "egPermitDate": "20140220",
+                    "hsn": "1313",
+                    "fuel": "Diesel",
+                    "tiresAxle2": "225/45 R18 95H XL M+S",
+                    "tiresAxle1": "225/45 R18 95H XL M+S",
+                    "maxSpeed": "233",
+                    "typeModelCode": "DZG",
+                    "version": "NZAAB531",
+                    "errorCheckingNumber": "7",
+                    "emissionClass": "Euro 6 (T)",
+                    "variant": "R00RP0",
+                    "salesDesignation": "C 220 BLUETEC",
+                    "vehicleMassKg": "1570",
+                    "egPermitNumber": "e1*2001/116*0431*31",
+                    "brand": "Mercedes-Benz",
+                    "variantModelCode": "00220",
+                    "allowedTireRimSize": "zu 5: min. 4691*zu 6: min. 1810*zu 7: min. 1426*Zu 27: 125/3000-4200*Zu 35: A1/A2 225/50 R17 94W, 7Jx17H2 ET48,5; A1 225/40 R19 93Y XL, 7.5Jx19H2 ET44 / A2 245/35 R19 93Y XL, 8.5Jx19H2 ET56,5; A1 225/45 R18 95Y XL, 7.5Jx18H2 ET44 / A2 245/40 R18 97Y XL, 8.5Jx18H2 ET56; A1 225/50 R17 94W, 7Jx17H2 ET48,5 / A2 245/45 R17 95W, 8Jx17H2 ET54*Fahrzeug mit Kurzstreckenradarger?t im Bereich 24 GHz*"
+                },
+                "paint": [{
+                        "code": "775",
+                        "usage": "paint1",
+                        "designation": "IRIDIUM-SILBER - METALLICLACK",
+                        "kbaPaintDesignation": "7"
+                    }
+                ],
+                "modeOfShipment": "M8",
+                "interiorEquipment": [{
+                        "code": "100",
+                        "usage": "additionalInteriorCode1",
+                        "designation": "KUNSTLEDER"
+                    }, {
+                        "code": "101",
+                        "usage": "interiorCode",
+                        "designation": "KUNSTLEDER - SCHWARZ / ANTHRAZIT"
+                    }
+                ],
+                "steeringInfoId": "2054607600011408031338",
+                "frontAxleRightPc": "2053306205011408709577",
+                "steeringInfoObjectNo": "2054607600",
+                "transmission": {
+                    "technicalState": "released",
+                    "modelDesignation": "722908",
+                    "activeState": {},
+                    "objectNumber": "2052705501",
+                    "id": "72290805540680"
+                },
+                "dateOfTechnicalState": "20140402",
+                "engine": {
+                    "technicalState": "released",
+                    "modelDesignation": "651921",
+                    "activeState": {},
+                    "objectNumber": "A6510109418",
+                    "id": "65192132191662"
+                },
+                "plant": "P0670",
+                "smallSeriesNumber": "",
+                "tire": "MICHELIN",
+                "status": "delivered"
+            },
+            "activeProductDate": {
+                "validSince": "20141006",
+                "technicalApprovalDate": "20140402",
+                "shipmentDate": "20140403",
+                "xmlId": "_3",
+                "objectId": "210501886464"
+            },
+            "fin": "XXX2050041F019438",
+            "activeProductionInfo": {
+                "validSince": "20160311",
+                "originEngineObjectNo": "A6510109418",
+                "originEngineId": "65192132191662",
+                "originTransmissionObjectNo": "2052705501",
+                "xmlId": "_4",
+                "objectId": "210536718411",
+                "originTransmissionId": "72290805540680"
+            },
+            "activeCustomerServiceData": {
+                "validSince": "20141006",
+                "xmlId": "_1",
+                "unloadingCode": "0021981019",
+                "objectId": "210501990592"
+            },
+            "vehicleModelDesignation": "205004",
+            "prodOrderTextAvailable": "false",
+            "productSeriesBrand": "mb",
+            "fixingPartsAvailable": "false",
+            "productGroupIndication": "P",
+            "productSeries": "205",
+            "checkDigit": "5",
+            "activeModelPlate": {
+                "cubicCapacityCcm": "2143",
+                "axleLoadKg2": "1110",
+                "dieselSmokeCoefficient": "0.5100",
+                "combinedWeightKg": "4000",
+                "power": "125.00",
+                "vehicleWeightKg": "2135",
+                "lowBeamLightBundle": "1.0",
+                "axleLoadKg1": "1055",
+                "xmlId": "_2",
+                "vehicleType": "204"
+            }
+        }
+    },
+    "version": "16.3.1.1"
+}

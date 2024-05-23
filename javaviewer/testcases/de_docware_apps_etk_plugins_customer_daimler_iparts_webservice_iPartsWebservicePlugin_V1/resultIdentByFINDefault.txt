@@ -1,0 +1,1 @@
+{"identContexts":[{"aggregates":[{"aggregateNumber":"65192132498132","aggTypeId":"M","modelId":"D651921","modelTypeId":"D651","productClassIds":["P"],"productClassNames":["PKW"],"productId":"69L"}],"aggTypeId":"F","datacardExists":true,"fin":"WDD2050042R042987","modelId":"C205004","modelTypeId":"C205","productClassIds":["P"],"productClassNames":["PKW"],"productId":"C01"}]}

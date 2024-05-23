@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ #==============================================================================
+ #
+ #  AS-PLM
+ #
+ #  $HeadURL: https://dev-dynplm.it-solutions.atos.net/svn/asplmdev/trunk/cust_root_dir/integration/prototypes/was/services/MediaService_BO/xml/samples/CreateMediaOrder_res_e01.xml $
+ #  $LastChangedRevision: 2226 $
+ #  $LastChangedDate: 2015-09-04 13:54:38 +0200 (Fr, 04 Sep 2015) $
+ #  $LastChangedBy: a424518 $
+ #
+ #  Author: Andreas Saremba, Atos
+ #  Purpose: Sample message for the AS-PLM Media Service (AMS): Operation CreateMediaOrder (Response)
+ #           Response reports error because the request contained invalid XML
+ #              (the mandatory element Description was missing).
+ #           The contents of the History element is not the original request (because this
+ #           would make the response also invalid) but the request wrapped into a  CDATA section. 
+ #
+ #==============================================================================
+-->
+<Message xmlns="http://asplm.daimler.com/MediaService/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://asplm.daimler.com/MediaService/v1 asplm_message_flat.xsd">
+    <Response from="ASPLM" to="iParts" requestId="r0001" requestOperation="CreateMediaOrder">
+        <Success ok="false" errorcode="01">
+            <Errortext textId="error003" lang="de">Inkorrekter Request (Invalides XML)</Errortext>
+            <Errortext textId="error003" lang="en">Incorrect Request (invalid XML)</Errortext>
+        </Success>
+    </Response>
+    <History>
+        <![CDATA[<Request from="iParts" to="ASPLM" requestId="req_e01">
+            <Requestor userId="markovic"/>
+            <Operation>
+                <CreateMediaOrder>
+                    <Name>Proposed Name</Name>
+                    <Realization>Strichzeichnung</Realization>
+                    <DateDue>2015-06-30</DateDue>
+                    <EinPAS mainGroup="20" group="16" technicalScope="00">Luftfederung</EinPAS>
+                    <Usage><ModelSeries>204</ModelSeries></Usage>
+                </CreateMediaOrder>
+            </Operation>
+        </Request>]]>
+    </History>
+</Message>

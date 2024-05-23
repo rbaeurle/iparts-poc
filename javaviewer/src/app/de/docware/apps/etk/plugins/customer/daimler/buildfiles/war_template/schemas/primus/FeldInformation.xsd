@@ -1,0 +1,72 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="Felduebersicht" type="Felduebersicht"/>
+
+	<xsd:complexType name="Felduebersicht">
+		<xsd:sequence>
+			<xsd:element name="Feldinformationen" type="Feldinformationen" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Feldbetreuer" type="Feldbetreuer" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="FeldschluesselUebersicht" type="FeldschluesselUebersicht"  minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Feldschluessel" type="Feldschluessel" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Feldinformationen">
+		<xsd:sequence>
+			<xsd:element name="DBFeldname" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="GUIFeldname" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Feldbeschreibung" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Laenge" type="xsd:long" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Format" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Feldbetreuer">
+		<xsd:sequence>
+			<xsd:element name="UserId" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Vorname" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Nachname" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Telefon" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="FeldschluesselUebersicht">
+		<xsd:sequence>
+			<xsd:element name="FeldschluesselUebersichtDetail" type="FeldschluesselUebersichtDetail" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="FeldschluesselUebersichtDetail">
+		<xsd:sequence>
+			<xsd:element name="Schluesselname" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Schluesselbeschreibung" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Stellen" type="Stellen" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Stellen">
+		<xsd:sequence>
+			<xsd:element name="Stelle" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Stellenbeschreibung" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>	
+
+
+	<xsd:complexType name="Feldschluessel">
+		<xsd:sequence>
+			<xsd:element name="SchluesselHeader" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="FeldschluesselDetail" type="FeldschluesselDetail" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="FeldschluesselDetail">
+		<xsd:sequence>
+			<xsd:element name="Stelle" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Wert" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Bedeutung" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Auftraggeber" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="GueltigAb" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Anmerkung" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

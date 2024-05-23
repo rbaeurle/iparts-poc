@@ -1,0 +1,7 @@
+﻿.idea/
+javaviewer/.gradle/
+javaviewer/build/
+javaviewer/src/app/de/docware/apps/etk/plugins/customer/daimler/buildfiles/war_template/version.txt
+javaviewer/extLibs
+/javaviewer/ProGuardDumpForTranslations.dump_out
+/javaviewer/translationProperties.properties

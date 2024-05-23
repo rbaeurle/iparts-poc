@@ -1,0 +1,1 @@
+{"productClasses":[{"aggregateTypes":[{"aggTypeId":"F","aggTypeName":"Fahrzeug"}],"productClassId":"F","productClassName":"Smart"}]}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window height="200" id="mainWindow" visible="false" width="450">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10" paddingBottom="8" paddingLeft="8" paddingRight="8" paddingTop="8">
+      <invisible />
+      <layout_gridbag />
+      <equaldimpanel horizontal="true" id="equaldimensionpanel" minimumHeight="20" minimumWidth="10">
+        <invisible />
+        <layout_absolute />
+        <panel id="panel_HM" maximumHeight="2147483647" maximumWidth="2147483647" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_border />
+          <label horizontalalignment="CENTER" id="label_HM" minimumHeight="10" minimumWidth="10" text="!!Hauptmodul">
+            <constraints_border />
+          </label>
+          <constraints_absolute height="0" left="0" top="0" width="0" />
+        </panel>
+        <panel id="panel_M" maximumHeight="2147483647" maximumWidth="2147483647" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_border />
+          <label horizontalalignment="CENTER" id="label_M" minimumHeight="10" minimumWidth="10" text="!!Modul">
+            <constraints_border />
+          </label>
+          <constraints_absolute height="0" left="0" top="0" width="0" />
+        </panel>
+        <panel id="panel_SM" maximumHeight="2147483647" maximumWidth="2147483647" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_border />
+          <label horizontalalignment="CENTER" id="label_SM" minimumHeight="10" minimumWidth="10" text="!!Submodul">
+            <constraints_border />
+          </label>
+          <constraints_absolute height="0" left="0" top="0" width="0" />
+        </panel>
+        <constraints_gridbag fill="h" weightx="100.0" />
+      </equaldimpanel>
+      <panel id="panel_Replacement" minimumHeight="20" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <constraints_gridbag fill="h" gridy="1" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

@@ -1,0 +1,3121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="STD_Types.xsd"/>
+
+  <xsd:complexType name="AttType">
+    <xsd:all>
+      <xsd:element name="PrtInfo1" type="STD_String20" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-01 | Teile-Info 1, PartInfo 1 | Alt: TIN, ALT2: PIN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Primeline" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Primeline-Kennzeichen, kein ETAS-Feld</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DescrGerman" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-02 | SMART 1001 | Benennung Landessprache, Description German | Alt: LSP, DSG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DescrEnglish" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-03 | SMART 1002 | Benennung 1. Fremdsprache (engl.), Description English | Alt: FS1 DSE </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DescrFrench" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-04 | SMART 1003 | Benennung 2. Fremdsprache (franz.), Description French | Alt2: FS2, DSF </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DescrSpanish" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-05 | SMART 1004 | Benennung 3. Fremdsprache (span.) , Description Spanish| Alt2: FS3, DSS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="NatoPTN" type="STD_String13" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-06 | Bundeswehr Versorgungsnummer, NATO Partnumber  | Alt2: BVN, NPN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PricelistIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-08 | Preislistenkennzeichen, Pricelist Indicator | Alt2: PLK, PLI</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PredecessorPart" type="STD_String19" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-09 | Vorgänger-Teilenr., Predecessor Part | Alt2: VTN, PPN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SuccessorPart" type="STD_String19" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-10 | Nachfolger Teilenr., Successor Part | Alt2: NTN, SPN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AlternativePart" type="STD_String19" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-11 | Wahlweise Teilenr., Alternative Part | Alt2: WTN,APN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="QuantityUnit" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-12 | Mengeneinheit ( Integer1 ???) , Quantity Unit | Alt: MEH, QUN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HB9" type="STD_String9" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-32 | Hinweisfeld fuer B9</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="GrossWeight" type="STD_Decimal7_3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-33 | Gewicht , weight | Alt: GWT, WGT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PartfamilyIndicatorOASE" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-35 | techn. zusatzinformation, Partfamily Indicator OASE | Alt2: TZI, PIO</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HazGoodInd" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-36 | Gefahrklasse, Hazardous Goods Indicator | Alt: GKL HGI,  </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ListpriceNew" type="STD_Decimal7_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-46 | Listpreis neu, Listprice new | Alt2 = Neu, LPN.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MatDispoIndx" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-50 | Material-Dispositions-Index | Alt2: MDI</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ProcType" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-54 | Beschaffungsart (BSA),  Procurement Type | Alt2: BAT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SenderCostCenter" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-56 | Abliefernde Kostenstelle, Sender Cost Center| Alt2: AKS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="OriginInd" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-109 | KZ fuer weitere Ursprungsposition, Origin Indicator | alt3: WUP </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="InitialCreationDate" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-120 | Datum Ersterstellung, Initial Creation Date | Alt2: DEE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RevisionDate" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-121 | Datum letzte Aenderung/ Korrektur | Alt3: DLK</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TechInfo" type="STD_String7" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-134 | Technik-Info, Technical Information| Alt2: TKI</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrtInfo2" type="STD_String15" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-135 | Teile Info 2, Part Info 2 | Alt3: TI2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="UnloadingPoint" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-153 | ET-Abladestelle, Unloading Point | Alt2: AST</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="OriginKey" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-179 | Ursprungsschluessel, Origin Keey | Alt3: USL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AggregateKey" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-180 | Aggregate-Schluessel | Alt3: ASL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PriceInd" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-181 | Preiskennzeichen, Price Indicator | Alt3: PKZ  </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="QtyFixedPriceOfferOld" type="STD_Integer3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-182 | Anzahl Festperisangebote alt,Quanatity Fixed Price Offer Old | Alt3: AFA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PricelistNumNew" type="STD_Integer3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-183 | ehem Preislistennr | Alt3: EPN </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CountryManufactureNum" type="STD_Integer3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-198 | Herstell-Land-Nr., Country Manufacture Number | Alt2: HLN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="FireHazGoodInd" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-332 | Brandgefahrenklasse, Fire Hazardous Good Indicator | Alt3: BGK</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Mobility" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-334 | Gaengigkeit, Mobilty | Alt3: GAE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrtInd" type="STD_Integer5" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-337 | Teilekennung, Part Indicator | Alt2: TKN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StorageArea1GLC" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-339 | Einlagerbereich 1 GLC, Storage Area 1 GLC | Alt2: EBE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CustomsProcedure" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-351 | Zollverfahren, Customs Procedure | Alt3: ZVF</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WaterHazClass" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-353 | Wassergefährdungsklasse, Water hazardous class | Alt: WGK</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="FireHazClass" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-355 | Brandklasse Technik, Fire hazardous class |  Alt: BKT </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="B9S" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-357 | B9-Schluessel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="GoodsBasket" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-358 | Warenkorb, Goods Basket | Alt2: WKB</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingPreservationUnit" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-501 | Konservierung/Vorverpackung: Träger , Preservation Unit | Alt3 TRG, Alt 6: PreservationUnit  </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingPreservationUnitDesc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-501 - Text | Text zu  Konservierung/Vorverpackung: Träger, text  Preservation Unit | Alt3 TRGDesc, Alt6:PreservationUnitDesc  </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingPreservationType" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-502 | Konservierung/Vorverpackung: Art,PackagingConservationType | Alt2: ART: Alt4 PackagingConservationType </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingPreservationTypeDesc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-502 - Text |Text zu Konservierung/Vorverpackung: Art,PackagingConservationType | Alt4 PackagingConservationTypeDesc, Alt6 :PrepackagingConservationTypeDesc </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingPreservationMeans" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-503 | Konservierung/Vorverpackung: Mittel, Preservation Mean | Alt3: MIT, Alt6: PreservationMean</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingPreservationMeansDesc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-503 Text | Text zu  Konservierung/Vorverpackung: Mittel, text Preservation Mean | Alt3: MITDesc, Alt6: PreservationMeanDesc </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingPreservationBrand" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-504 | Konservierung/Vorverpackung: Warenzeichen, Brand | Alt3: WZN, Alt4: Brand, Alt5: BrandPreservationPrepackaging, Alt6: PrepackagingPreservationBrand</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingPreservationBrandDesc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-504 Text | Text zu Konservierung/Vorverpackung: Warenzeichen , text Brand | Alt3: WZNDesc, Alt4: BrandDesc, Alt5: BrandPreservationPrepackagingDesc, Alt6: PrepackagingPreservationBrandDesc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingPreservationLocation" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-505 | Konservierung/Vorverpackung: Platz, Preservation Site Packaging Level 0 | Alt3: PLA, Alt4 PreservationSitePL0, Alt6: PreservationLocationPL0 </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingPreservationLocationDesc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-505 Text | Text zu Konservierung/Vorverpackung: Platz,  text Preservation Site Packaging Level 0 | Alt3: PLADesc Alt4:  PreservationSitePL0Desc, Alt6: PreservationLocationPL0Desc  </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingPackagerCodePL0" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-506 | Vorverpackung VP0: Träger, Packager Code Level 0  | Alt2: V0T, Alt4 PackagerCodePL0, Alt6: PackagerCodePrepackagingPL0</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingPackagerCodePL0Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-506 Text | Text fuer Vorverpackung VP0: Traeger, Packager Code Level 0 | Alt4 PackagerCodePL0Desc, Alt6: PackagerCodePrepackagingPL0Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingProtectionMeansPL0" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-507 | Vorverpackung VP0: Schutzmittel, Pkg Protection Means Level 0  | Alt2 : V0S, Alt4 PackagingProtectionMeansPL0, Alt6: PrepackagingProtectionMeansPL0</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingProtectionMeansPL0Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-507 Text | Text zu Vorverpackung VP0: Schutzmittel, Pkg Protection Means Level 0  | Alt2 : V0S, Alt4 PackagingProtectionMeansPL0Desc, Alt6: PrepackagingProtectionMeansPL0Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingKindPL0" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-508 | Vorverpackung VP0: Verpackungs-Art, PackagingType Level 0 | Alt2: V0A, Alt4: PackagingTypePL0 Alt6: PrepackagingTypePL0 </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingKindPL0Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-508 Text | Text zu Vorverpackung VP0: Verpackungs-Art, PackagingType Level 0 | Alt4: PackagingTypePL0Desc, Alt6: PrepackagingTypePL0Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingTypePL0" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-509 | Vorverpackung VP0: Verpackungs-Typ | Alt4: V0Y, Alt6: PackagingTypePL0</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingTypePL0Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-509 Text | Text fuer Vorverpackung VP0: Verpackungs-Typ  | Alt4: V0YDesc, Alt6: PackagingTypePL0Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingMatTypePL0" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-510 | Vorverpackung VP0: Material-Art | Alt4: V0M, Alt6: PackagingMatTypePL0</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingMatTypePL0Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-510 Text | Text fuew Vorverpackung VP0: Material-Art  | Alt4: V0MDesc, Alt6: PackagingMatTypePL0Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingTextPL0" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-511 | Vorverpackung VP0: Vorverpackungs-Text, Packaging Text Level 0 | Alt2: V0X, Alt4: PackagingTextPL0, Alt6: PrepackagingTextPL0</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingTextPL0Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-511 Text | Text zu Vorverpackung VP0: Vorverpackungs-Text, Packaging Text Level 0 | Alt2: V0X, Alt4: PackagingTextPL0Desc, Alt6: PrepackagingTextPL0Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingLocationPL0" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-512 | Vorverpackung VP0: Platz, PackagingSitePackaging Level 0 | Alt3: V0P, Alt4: PackagingSitePL0, Alt6: PackagingLocationPL0</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingLocationPL0Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-512 Text | Text zu Vorverpackung VP0: Platz PackagingSitePackaging Level 0 | Alt3: V0PDesc, Alt4: PackagingSitePL0Desc , Alt6: PackagingLocationPL0Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TransportCageRack" type="STD_String7" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-513 | Vorverpackung VP0: Transportmittel, Transport Cage/Rack |Alt2: V0R </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TransportCageRackQty" type="STD_Decimal7_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-514 | Vorverpackung VP0: Menge, Part Quantity Transport Cage/Rack | Alt2: V0G, Alt6: PartQtyTransportCageRack</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StorageTime" type="STD_Integer3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-515 | Lagerzeit, Storage Time | Alt2: LZT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingPackagerCodePL1" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-517 | Verkaufsverpackung VP1: Träger, Packager Code Level 1 | Alt2: V1T, Alt5 : PackagerCodePL1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingPackagerCodePL1Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-517 Text | Text zu Verkaufsverpackung VP1: Träger, Packager Code Level 1 | Alt5: PackagerCodePL1Desc </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingProtectionMeansPL1" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-518 | Verkaufsverpackung VP1: Schutzmittel, Pkg Protection Means Level 1  | Alt2 : V1S, Alt5: PackagingProtectionMeansPL1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingProtectionMeansPL1Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-518 Text | Text zu Verkaufsverpackung VP1: Schutzmittel, Pkg Protection Means Level 1  | Alt2 : V1S, Alt5: PackagingProtectionMeansPL1Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingKindPL1" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-519 | Verkaufsverpackung VP1: Verpackungs-Art, , PackagingType Level 1 | Alt2: V1A, Alt5: PackagingTypePL1, Alt6:SalesPackagingTypePL1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingKindPL1Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-519 Text | Text zu Verkaufsverpackung VP1: Verpackungs-Art, , PackagingType Level 1 | Alt5: PackagingTypePL1Desc, Alt6: SalesPackagingTypePL1Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingTypePL1" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-520 | Verkaufsverpackung VP1: Verpackungs-Typ | Alt5: V1Y, Alt6: PackagingTypePL1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingTypePL1Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-520 Text | Text zu Verkaufsverpackung VP1: Verpackungs-Typ | Alt5: V1YDesc , Alt6: PackagingTypePL1Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingMatTypePL1" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-521 | Verkaufsverpackung VP1: Material-Art | Alt4 V1M, Alt6: PackagingMatTypePL1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingMatTypePL1Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-521 Text | Text zu Verkaufsverpackung VP1: Material-Art | Alt4 V1MDesc, Alt6: PackagingMatTypePL1Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingTextPL1" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-522 | Verkaufsverpackung VP1: Verpackungs-Text, Packaging Text Level 1 | Alt2: V1X, Alt5: PackagingTextPL1 </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingTextPL1Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-522 Text | Text zu Verkaufsverpackung VP1: Verpackungs-Text, Packaging Text Level 1 | Alt2: V1X, Alt5: PackagingTextPL1Desc </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingLocationPL1" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-523 | Verkaufsverpackung VP1: Platz, Site Packaging Level 1 | Alt3:V1P, Alt4: SitePL1, Alt5: LocationPL1, Alt6: PackagingLocationPL1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingLocationPL1Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-523 Text | Text zu Verkaufsverpackung VP1: Platz, text Site Packaging Level 1 | Alt3:V1PDesc, Alt4: SitePL1Desc, Alt5: LocationPL1Desc, Alt6: PackagingLocationPL1Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingQtyPL1" type="STD_Decimal7_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-524 | Verkaufsverpackung VP1: Menge: Alt2: V1E, Alt5: QtyPL1, Alt6: PackagingQtyPL1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingPackagerCodePL2" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-525 | Verkaufsverpackung VP2: Träger, Packager Code Level 2 | Alt2: V2T, Alt5: PackagerCodePL2, Alt6: PackagingPackagerCodePL2 </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingPackagerCodePL2Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-525 Text| Text zu Verkaufsverpackung VP2: Träger, Packager Code Level 2 | Alt5: PackagerCodePL2Desc </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingProtectionMeansPL2" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-526 | Verkaufsverpackung VP2: Schutzmittel, , Pkg Protection Means Level 2  | Alt2 : V2S, Alt5: PackagingProtectionMeansPL2 , Alt6: PackagingPackagerCodePL2Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingProtectionMeansPL2Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-526 Text | Text zu Verkaufsverpackung VP2: Schutzmittel, , Pkg Protection Means Level 2  | Alt2 : V2S, Alt5: PackagingProtectionMeansPL2Desc , Alt6: PackagingPackagerCodePL2Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingKindPL2" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-527 | Verkaufsverpackung VP2: Verpackungs-Art, Packaging Type Level 2 | Alt2:V2A, Alt6: PackagingTypePL2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingKindPL2Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-527 Text | Text zu Verkaufsverpackung VP2: Verpackungs-Art, Packaging Type Level 2 | Alt6: PackagingTypePL2Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingTypePL2" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-528 | Verkaufsverpackung VP2: Verpackungs-Typ | Alt5: V2Y, </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingTypePL2Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-528 Text | Text zu Verkaufsverpackung VP2: Verpackungs-Typ | Alt5: V2YDesc,</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingMatTypePL2" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-529 | Verkaufsverpackung VP2: Material-Art| Alt4: V2M, Alt5: PackagingMatTypePL2, Alt6: PackagingLocationPL2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingMatTypePL2Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-529 Text | Text zu Verkaufsverpackung VP2: Material-Art Alt4: V2MDesc, Alt5: PackagingMatTypePL2Desc , Alt6: PackagingLocationPL2Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingTextPL2" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-530 | Verkaufsverpackung VP2: Verpackungs-Text, Packaging Text Level 2 | Alt2: V2X, Alt6: PackagingTextPL2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingTextPL2Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-530 Text | Text zu Verkaufsverpackung VP2: Verpackungs-Text, Packaging Text Level 2 | Alt2: V2X, Alt6: PackagingTextPL2Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingLocationPL2" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-531 | Verkaufsverpackung VP2: Platz | Alt4: V2P, Alt6: LocationPL2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingLocationPL2Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-531 Text | Text zu Verkaufsverpackung VP2: Platz - neu fuer WMS | Alt4: V2PDesc, Alt6: LocationPL2Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingQtyPL2" type="STD_Decimal7_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-532 | Verkaufsverpackung VP2: Menge, Quantity Packaging Level 2 | Alt2: V2E, Alt6: QtyPL2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="InfoInd" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-533 | Informationskennzeichen, Information Indicator | Alt2: IKZ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MinOrderQty" type="STD_Decimal5_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-534 | Kleinste Liefereinheit, minummum order quantity | Alt2: KLE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SupplierNum1" type="STD_String8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-536 | Lieferant 1 , Supplier Number 1 | Alt LF1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SupplierIndex1" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>LIEF_WAREN_LFNT_IDX | basisdaten.lieferantfuerteil.warenLieferantenIndex</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SupplierNum2" type="STD_String8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-537 | Lieferant 2, Supplier Number 2 | Alt LF2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SupplierNum3" type="STD_String8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-538 | Lieferant 3 , Supplier Number 3 | Alt LF3</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Vertragslieferant" type="STD_Integer8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>LIEF_VRTRG_LFNT | Vertragslieferant</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="VertragslieferantenIndex" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>LIEF_VRTRG_LFNT_IDX | VertragslieferantenIndex</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PTNSupplier" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TNRLFT | LIEF_TL_NR_LFNT in VL0RLIEF_LIEFERANTENFUERTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DivisionInd" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-541 | Sparte, Division Index  | Alt3: SPA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SpecCode" type="STD_String6" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-567 | Arbeitsplatz Disponent, working place specifier (specifier code) | Alt: APD</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ServiceDemand" type="STD_Integer5" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-801 | Servicebedarf, Service Demand | Alt3: SBA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DI3" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-804 | Dispo-Info 3</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingClosurePL0" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-809 | Verschluss, Closure Level 0 | Alt2: VER. Alt6: ClosurePL0</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingClosurePL0Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-809 Text | Text zu Verschluss, Closure Level 0 | Alt2: VER. Alt6: ClosurePL0Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingLabelingPL0" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-810 | Kennzeichnung, Labeling Level 0 | Alt2: KZN, Alt6: LabelingPL0</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackagingLabelingPL0Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-810 Text | Text zu Kennzeichnung, Labeling Level 0 | Alt2: KZN, Alt6: LabelingPL0Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingClosurePL1" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-811 | Verkaufspackung 1: Verschluss, Closure Level 1 | Alt2: V1V, Alt6: ClosurePL1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingClosurePL1Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-811 Text | Text zu Verkaufspackung 1: Verschluss, Closure Level 1 | Alt2: V1V, Alt6: ClosurePL1Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingLabelingPL1" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-812 | Verkaufspackung 1: Kennzeichnung, Labeling Level 1 | Alt2: V1K, Alt6: LabelingPL1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingLabelingPL1Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-812 Text | Text zu Verkaufspackung 1: Kennzeichnung, Labeling Level 1 | Alt2: V1K, Alt6: LabelingPL1Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingClosurePL2" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-814 | Verkaufspackung 2: Verschluss, Closure Level 2 | Alt2: V2V, Alt6: ClosurePL2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingClosurePL2Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-814 Text | Text zu Verkaufspackung 2: Verschluss, Closure Level 2 | Alt2: V2V, Alt6: ClosurePL2Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingLabelingPL2" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-815 | Verkaufspackung 2: Kennzeichnung, Labeling Level 2 | Alt2: V2K, Alt6: LabelingPL2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SalesPackagingLabelingPL2Desc" type="STD_String24" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-815 Text | Text zu Verkaufspackung 2: Kennzeichnung, Labeling Level 2 | Alt2: V2K, Alt6: LabelingPL2Desc</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="VolumeKeyInd" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-8171 | Volumenschluessel KZ, Volume Key Indicator | Alt2: VSK</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="VolKeyL" type="STD_Decimal7_3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-8172 | Volumenschluessel Laenge, Volume key length | Alt: VSL  Einheit definieren Unit is to define</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="VolKeyW" type="STD_Decimal7_3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-8173 | Volumenschluessel Breite, Volume key width | Alt: VSB  Einheit definieren Unit is to define</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="VolKeyH" type="STD_Decimal7_3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-8174 | Volumenschluessel Hoehe, Volume key height  | Alt: VSH Einheit definieren Unit is to define </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="VolKeyNestingPercentage" type="STD_Integer2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-8175 | Volumenschluessel Verschachtelung in % | Alt5: VSV</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PackageNumPL0" type="STD_String8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-821 | Packmittelnummer zu Verkaufspackung 0, Packing Number Level 0, ALT2: PN0</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PackageNumPL1" type="STD_String8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-822 | Packmittelnummer zu Verkaufspackung 1, Packing Number Level 1, ALT2: PN1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PackageNumPL2" type="STD_String8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-823 | Packmittelnummer zu Verkaufspackung 2, Packing Number Level 2, ALT2: PN2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ShippingUnit" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-824 | Versandeinheit, ShippingUnit | Alt3: VEH</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PackageNumStorUnit" type="STD_String8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-825 | Packmittelnummer zu Lagereinheit, Number Storage Unit | Alt2: PNE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StorageUnitProtectionMeans" type="STD_Integer3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-828 | Lagereinheit: Schutzmittel, Storage Unit Protection Means | Alt LES</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StorageUnitPackagingText" type="STD_Integer3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-832 | Lagereinheit: Verpackungs-Text, Stoage Unit Packaging Tetx | Alt3: LEX</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StorageUnitClosure" type="STD_Integer3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-834 | Lagereinheit: Verschluss, Storage Unit Closure | Alt3: LEV</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StorageUnitIndicator" type="STD_Integer3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-835 | Lagereinheit: Kennzeichnung, Storage Unit Indicator | Alt3: LEK</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StorageUnitQty" type="STD_Decimal7_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-836 | Lagereinheit: Menge, Storge Unit Quantity | Alt2:LEE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PTNOld" type="STD_String19" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation> Teilenummer Alt (Hinweis), Old Part Number (PSS) </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PTNNew" type="STD_String19" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation> Teilenummer Neu (Hinweis), New Part Number (PSS) </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PSSCodeForw" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation> Hinweiscode (von alt auf neu), Supersession Code (forward)  (PSS) </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PSSCodeBack" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation> Hinweiscode (von neu auf alt), Supersession Code (backward)  (PSS) </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PSSUserID" type="STD_String8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation> UserID für Hinweis aus Dialog </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="QuantityOld" type="STD_Integer7" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation> (Hinweis), Old part Quantity  (PSS) </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="QuantityNew" type="STD_Integer7" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation> (Hinweis), New part Quantity  (PSS) </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="QuantityUnitOld" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation> Mengeneinheit Teilenummer alt  (Hinweis), Quantity Unit old  (PSS) </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="QuantityUnitNew" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation> Mengeneinheit Teilenummer neu  (Hinweis), Quantity Unit new   (PSS) </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PSSInfoType" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Beidseitiger Ersetzungsvermerk oder Einseitiger Ersetzungsvermerk(Feld 141 E bei Neutnr = EE   (Hinweis), Info type (PSS) </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StockAmountParagon" type="STD_Decimal10_2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Bestand PARAGON wie Feld 13 ,Stock amount </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ResOrderParagon" type="STD_Integer9" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Bestellausstand PARAGON wie Feld 58 (Bestellausstand) ,reserved Open purchase orders Paragon </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="QualityHoldPart" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Fuer Paragon aus den Feldern 027, 543, 37 berechneter Wert fuer Abbuchungssperre </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="NetHazPot" type="STD_Decimal7_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Nettogefahrenpotenzial | Alt4: NGP</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="NetHazPotQtyUnit" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Mengeneinheit zu Nettogefahrenpotenzial | Alt4: NQPME </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ProdHierarchy" type="STD_String6" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-775 | Marketingcode</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="KeysLocks" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Keyslocks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CommodityCode" type="STD_String9" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-330 | Warennummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="LabelType" type="STD_String19" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>LABELTYPE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CMOP" type="STD_String10" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>CMOP (berechneter Wert)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StockAvailable" type="STD_Integer8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Bestand | T013BESTAND</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StockReserved" type="STD_Integer6" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Reservierter Bestand | T014RESBESTAND</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ConsumptionTotal" type="STD_Integer8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Gesamtverbrauch laufendes Jahr | T021GESVERBRAUCH</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DiscontinueMsgInd" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Aufbrauch | T028AUFBRAUCHKZ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="InitialSampleQualityDescr" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Erstmusterstatus | T037EMU</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PriceValidityDate" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Gueltigkeitsdatum | T044PREISGUELTAB</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DiscountGrpNew" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Rabattgruppe neu | T048RABATTGRP</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="InitialCostCenter" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Lagerortangabe fuer SC | T055EKST</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="OrderOwing" type="STD_Integer9" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Bestellausstand | T058BESTELLAUS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DemandForecast" type="STD_Decimal9_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Bedarfsvorhersage | T068BEDARFSVORHERSAGE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="InitialProcurementInd" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Kennzeichen Erstbevorratung | T088RUECKNAHMEWERTAKTUELL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RegularDemand" type="STD_Integer9" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Nachfrage Normbed. | T137NACHFRAGENORM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SpecialOpenPoOld" type="STD_Integer9" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Sonderbedarfs-Bestellausstand | T155SONDERBEDARFALT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SerialValidityFromTo" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Seriengueltigkeit | T186SERIEVONBIS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BackPriceOld" type="STD_Decimal9_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Rueckwert alt | T188RUECKWERTTAUSCH</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BackPriceNew" type="STD_Decimal9_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Rueckwert neu | T195RUECKWERTNEU</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="IndicatorSurplusMaterials" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Kennzeichen Ueberbestaende | T354KENNZUEBERSTAND</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="VATCode" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>VAT-Code | T356VATCODE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="B9Key" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>B9-Schluessel | T357B9SCHLUESSEL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WorkplaceTechnician" type="STD_String5" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Telefon Technik | T760TECHNIKAP</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WorkplaceBooker" type="STD_String6" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Telefon Disponent | T761TELDISPO</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AccountedListStockReceiptQty" type="STD_Integer6" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Erfasste WE-Menge | T805WEMENGE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DrawingNumber" type="STD_String13" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Zeichnungsnummer | ZEICHNUNGSNUMMER</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DescItal" type="STD_String25" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Benennung Italienisch | BENITAL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DescNeth" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Benennung Niederlaendisch | BENNIED</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TwActionDescPrice" type="STD_String15" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Aktionsbezeichnung einer Preiseinspielung | TW_AKTIONSBEZEICHNUNG_PREIS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TwIncomingDatePrice" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Einspieldatum der Preisaktion | TW_DATUM_EINGANG_PREIS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TwWorkedDatePrice" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Datum der Pruefung | TW_DATUM_ERLEDIGT_PREIS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TwPriceIndicator" type="STD_String10" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Das Kennzeichen zur Feststellung der weiteren Akionen | TW_PREISBILDUNGSKZ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TwUseridPrice" type="STD_String8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Die Userid des Anwenders | TW_USERID_PREIS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TwInitiatorPrice" type="STD_String25" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Veranlasserdefinition | TW_VERANLASSER_PREIS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TwNote" type="STD_String30" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Anmerkung des Anwenders | TW_BEMERKUNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TwEndDate" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Termin wann die Preisueberpruefung abgeschlossen sein soll | TW_ENDTERMIN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AssortmentClassKey" type="STD_String15" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Sortimentsklassenschluessel | T196SORTSCHL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AssortmentKey" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Sortimentsschluessel | T051SORTIMENTSSCHL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SpecialProvisionWithStocks" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation> | T130SONDERBEVORKZ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CustomsTariff" type="STD_String7" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Zolltarifnummer | T136ZOLLTARIFNR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SpecialSideIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Einseitigkeitsvermerk | T141ERSATZVERMERK</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AccountedListeStockReceiptQty" type="STD_Integer6" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T805WEMENGE aus Ersatzteil</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="UserID" type="STD_String8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>USERID aus BRIEFKASTEN_VORSYSTEME</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SystemOfOrigin" type="STD_String25" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>SYSTEMHERKUNFT aus BRIEFKASTEN_VORSYSTEME</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AddInfo" type="STD_String200" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ZUSATZINFORMATION aus BRIEFKASTEN_VORSYSTEME</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TeamDescription" type="STD_String50" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TEAMBEZEICHNUNG aus BRIEFKASTEN_VORSYSTEME</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RpinNote" type="STD_String200" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>NOTIZ aus BRIEFKASTEN_VORSYSTEME</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="State" type="STD_Integer1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>STATUS aus BRIEFKASTEN_VORSYSTEME</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DiscountGroupOld" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T040RABATTGRUPPEALT aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PriceValidityDateOld" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T044PREISGUELTAB -1Tag aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ListpriceOld" type="STD_Decimal7_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T042PREISALT aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DiscountGroupHistory1" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T571RABATTGRUPPE_HISTORIE_1 aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PriceValidityDateHistory1" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T572GUELTIG_DAT_BIS aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ListpriceHistory1" type="STD_Decimal7_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T573LISTPREIS_BIS aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DiscountGroupHistory2" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T577RABATTGRUPPE_HISTORIE_2 aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PriceValidityDateHistory2" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T578DATUM_PREIS_HISTORIE_2 aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ListpriceHistory2" type="STD_Decimal7_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T579LISTPREIS_HISTORIE_2 aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DiscountGroupHistory3" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T583RABATTGRUPPE_HISTORIE_3 aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PriceValidityDateHistory3" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T584DATUM_PREIS_HISTORIE_3 aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ListpriceHistory3" type="STD_Decimal7_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T585LISTPREIS_HISTORIE_3 aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DiscountGroupHistory4" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T589RABATTGRUPPE_HISTORIE_4 aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PriceValidityDateHistory4" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T590DATUM_PREIS_HISTORIE_4 aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ListpriceHistory4" type="STD_Decimal7_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T591LISTPREIS_HISTORIE_4 aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DiscountGroupHistory5" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T595RABATTGRUPPE_HISTORIE_5 aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PriceValidityDateHistory5" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T596DATUM_PREIS_HISTORIE_5 aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ListpriceHistory5" type="STD_Decimal7_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T597LISTPREIS_HISTORIE_5 aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Brand" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>MARKE aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HandlingPlant" type="STD_String5" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T007ZUSTWERK aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MerchandiseClass" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T0_16_MERCHANDISE_CLASS aus ZUSATZDATEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PriceSymbol" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T0_17_PRICE_SYMBOL aud ZUSATZDATEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ProductLine" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T0_A aus ZUSATZDATEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CommonPartNumber" type="STD_String28" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TZ_37_COMMON_PART_NR aud ZUSATZDATEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ManufacturingCosts" type="STD_Decimal7_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T100HK_STEUER aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SparePartIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ET-Kennzeichen: (E)rsatzteil, (S)onderteil, (F)remdteil | Fuer Anbindung DIALOG-Primus</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AcquisitionType" type="STD_String5" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Bezugsart zu WERK | Fuer Anbindung DIALOG-Primus</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RFG" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Reifegrad zu PTAB | Fuer Anbindung DIALOG-Primus</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ComplexityIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Komplexitaetskennzeichen | Fuer Anbindung DIALOG-Primus</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PartClassificationIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Teile-Klassifikationskennzeichen | Fuer Anbindung DIALOG-Primus</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="FooterIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Fussnote-setzen-Kennzeichen | Fuer Anbindung DIALOG-Primus</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ESDIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ESD-Kennzeichen | Fuer Anbindung DIALOG-Primus</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ChinaClassificator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>CCCKENNER aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DirectDebitingLock" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T027abbuchsperre aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SchedulerInfo1" type="STD_String15" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T540Dispoinfo1 aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="KeyDirectDebitingLock" type="STD_Integer3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T543KLLiefereinheit aus ERSATZTEIL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DescrDevelopment" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>fuer Dialog; in Primus nicht verwendet</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DescrPortuguese" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>fuer Dialog; in Primus nicht verwendet</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DescrItalian" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>fuer Dialog; in Primus nicht verwendet</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Baureihe" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>fuer Dialog; in Primus nicht verwendet</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PTAB" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>fuer Dialog; in Primus nicht verwendet</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ZSIEHE" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>fuer Dialog; in Primus nicht verwendet</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ETKZ" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>fuer Dialog; in Primus nicht verwendet</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PG" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>fuer Dialog; in Primus nicht verwendet</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StateOfLivecycle" type="STD_Integer3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>KZ in Hinweisnew mit Abbildung I-20, S-30, ' '-40</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ValidityDate" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Datum_aktivierung in Hinweisnew</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ChangeReason" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Aendgrund in Hinweisnew</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StatusSupersedence" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-185 | KZ Verbindung zur Hinweisdatei</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrePackageingUserIndex" type="STD_Integer3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>827 | Verpackungsplaner fuer Urladung VAS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ExpirationDate" type="STD_String8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>auslaufdatum in Ersatzteil</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="FlagMBUSI" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-IS_MBUSI | KZ MBUSI</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PartNameCode" type="STD_String7" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>FUKE_PART_NAME_CODE in VL0RFUKE_FUSOKENNZEICHEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CommodityCodeFUSO" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>FUKE_COMMODITY_CODE in VL0RFUKE_FUSOKENNZEICHEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ModelCode" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>FUAT_MODEL_CODE in VL0RFUAT_FUSOATTRIBUT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="KZSupplierNum1" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>nicht klar</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SafetyCode" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>nicht klar</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DateOfPhasedOut" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>FUAT_PHASED_OUT_DT in VL0RFUAT_FUSOATTRIBUT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HazGoodInfo" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>FUAT_HAZ_GOODS_INFO in VL0RFUAT_FUSOATTRIBUT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PNCDescription" type="STD_String60" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>FUKE_PART_NAME_CODE_DESC in VL0RFUAT_FUSOATTRIBUT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+      <xsd:element name="GoodsBasketClass" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T038 BSTS_STRG in VL0RBSTS_BESTANDSSTEUERUNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Consumption1" type="STD_Integer8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T124 KNDB_VBRMNG_GES1_VJHR_BG in VL0RKNDB_KUNDENBESTELLUNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Consumption2" type="STD_Integer8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T126 KNDB_VBRMNG_GES2_VJHR_BG in VL0RKNDB_KUNDENBESTELLUNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Consumption3" type="STD_Integer9" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T128 KNDB_VBRMNG_GES3_VJHR_BG in VL0RKNDB_KUNDENBESTELLUNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="FictitiousModel" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T331 BASI_FIKT_BAU_MST_WERT in VL0RBASI_BASISDATEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+	  <xsd:element name="SPMExclusionIndicatorPart" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_AUSSCHLUSS_KNR in VL0RBASI_BASISDATEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DateOfDelivery" type="STD_Integer3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T544 BSCH_LIF_TERM in VL0RBSCH_BESCHAFFUNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StockIndicator" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T550 BSTU_SND_SRTM in VL0RBSTU_BESTANDSUEBERSICHT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SupplyEntrance" type="STD_Integer9" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T555 BSTU_ZLIF_MNG_EINGEG_BG in VL0RBSTU_BESTANDSUEBERSICHT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MaterialPlanMethod" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T559 BSCH_DISPO_METHODE_WERT in VL0RBSCH_BESCHAFFUNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MaterialPlanLevel" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T560 BSCH_DISPO_HOH in VL0RBSCH_BESCHAFFUNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="NetworkPlannerIndex" type="STD_String8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T656 BSCH_NETZPLANER_IDX in VL0RBSCH_BESCHAFFUNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CriticalPartsIndex" type="STD_String8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T657 BSCH_ENGPASS_MANGR_IDX in VL0RBSCH_BESCHAFFUNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AXSIndicator" type="STD_String7" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T563 BSTS_KZ_AXS_WERT in VL0RBSTS_BESTANDSSTEUERUNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StartingDate" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>seriengueltigkeit.beginn | BASI_SRN_GLKT_BEGINN in VL0RBASI_BASISDATEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="InitialProcurementProposal" type="STD_Decimal12_3XSD"  minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Erstbevorvorschlag | BSTS_EBVORAT_VSCHLG_BG in VL0RBSTS_BESTANDSSTEUERUNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PTNPrintFormat" type="STD_String25" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T000TNRPRINTFORMAT | BASI_DRCKFRMT in VL0RBASI_BASISDATEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="OriginalCosts" type="STD_Decimal12_3XSD"  minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T094SELBSTKOSTEN | TLKO_SELBST_KSTN_WERK_BG in VL0RTLKO_TEILEKOSTEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DateLastArrival" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T190DATUMWE | BSTU_LTZT_WE in VL0RBSTU_BESTANDSUEBERSICHT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CascadePart" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T773KASKADETEIL | BSTS_KZ_KSKD_TL in VL0RBSTS_BESTANDSSTEUERUNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="IndicatorABC" type="STD_Decimal3_0XSD"  minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T803KZABC | BSTS_KZ_ABC in VL0RBSTS_BESTANDSSTEUERUNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SchedulerInfo" type="STD_String500" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>DISPOINFO | BSTS_DISPO_BEMRK in VL0RBSTS_BESTANDSSTEUERUNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="KatalysatorIndicator" type="STD_String5" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>KATALYSATOR_ID | BASI_KATALYSATOR in VL0RBASI_BASISDATEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CumulativeQuantity" type="STD_Integer9" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T060FZLFDJAHR | BSTS_FRTS_ZHL_LFD_JHR in VL0RBSTS_BESTANDSSTEUERUNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MarketPriceIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T545MARKTTEILE | STPB_KZ_MARKT_PRS in VL0RSTPB_STEUERUNGPREISBLDNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ForeignPackerQuantity" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>T807FVPMENGE | TLVP_FREMD_VPK_MNG_BG in VL0RTLVP_TEILEVERPACKUNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AdvisedYearlyQty" type="STD_Integer11" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation> | FUAT_ADV_QNT_YRLY in VL0RFUAT_FUSOATTRIBUT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SurfaceAreaTreatment" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation> | BASI_OBRFLCH_VBHNDL_WERT in VL0RBASI_BASISDATEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="KGU" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation> | BASI_KONSTRKT_UGRP in VL0RBASI_BASISDATEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="EN" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation> | BASI_END_NR in VL0RBASI_BASISDATEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AccColl" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_ZUBEHOER_KNR | Zubehoerkenner</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ContractTerm" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_ENDE_VSRG_PFLICHT | endeVersorgungspflicht</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TheftRelevance" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_RELEV_DSTHL | Basisdaten.IstRelevantFuerDiebstahl</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SecurityRelevance" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_RELEV_SICHRHT | Basisdaten.IstRelevantFuerSicherheit</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CertificationRelevance" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_RELEV_ZRTF | Basisdaten.IstRelevantFuerZertifizierung</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="FDOKRelevance" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_RELEV_FDOK | Basisdaten.IstRelevantFuerFdok</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TermIDProposal" type="STD_String12" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation> RSKB_TERMID | Benennungsvorschlag von SRM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TermID" type="STD_String12" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation> RSKB_TERMID | verbindliche Benennungsvorgabe von SRM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SpecialEdition" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation> BASI_KZ_SND_EDITION | T335 </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PTNEntryFormat" type="STD_String13" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>virtuell | Erfassungsformat aus Grundnummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SupplierIndicator" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TRAT_LIEFERANT_KZ | </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TrostSupplierPTN" type="STD_String22" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TRAT_LIEFERANTEN_TNR | </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TrostSupplierQty" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TRAT_LIEFERANTEN_ME | </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TrostCommodityCode" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TRAT_ST_WARENNR | </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ISOCountryManufactureNum" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ZOLI_GEBIET_WERT | </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ReplacementPartIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TRAT_TAUSCHTEIL_KZ | </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TrostStateIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TRAT_ZUSTAND | </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HazGoodRelevance" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_GFHR_GUT_RELEV | </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SubCommodityGroupNum" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TRAT_UWGR_NUMMER | </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="E3Number" type="STD_String7" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TRAT_E3_NUMMER | </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DescrTrost" type="STD_String50" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TRAT_TEILEBENENNUNG | </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TrostPTNSupplier" type="STD_String22" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>RSKT_TL_NR_LFNT | </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StorageAmount" type="STD_Decimal12_3XSD"  minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSTU_SOLL_MNG_WE_BG in VL0RBSTU_BESTANDSUEBERSICHT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TransportContainerAmount" type="STD_Decimal12_3XSD"  minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSTU_MNG_TRANS_BEH_BG in VL0RBSTU_BESTANDSUEBERSICHT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ChangeDateStorageOutput" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSTU_LTZT_WA in VL0RBSTU_BESTANDSUEBERSICHT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DriverAuthority" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_FBS_RELEV_KNG_WERT | Basisdaten.fbsRelevanzKennung</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StorageTimeDay" type="STD_Integer5" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PPL-515 | Lagerzeit, Storage Time </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ActualPriceValidityDateTo" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PRSD_GLKT_ENDE[PRSD_POS=0]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Stock" type="StockType" minOccurs="0" nillable="false">
+        <xsd:annotation>
+          <xsd:documentation>Bestandsdatenfelder von LOGBUS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TransportContainerNumber" type="STD_String22" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSTU_TRANS_BEH_NR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StorageAmountPositon" type="STD_Integer6" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSTI_WE_POS_NR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StorageAmountStatus" type="STD_Integer2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSTU_WE_POS_STATUS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StorageAmountPosition" type="STD_Integer6" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSTU_WE_POS_NR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RemanRelevance" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_REMAN_RELEV_KNG_WERT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ISOCountryCode" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Alphanumerischer Laendercode ISO-3166</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Vendor" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Vendor Code, numberisch</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Volume" type="STD_Decimal13_4XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Volumen in Liter, berechnet aus 817A/B/C</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="LocationCode" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Standort</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TheftRelevanceLocal" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>GINF_RELEV_DSTHL_LOKAL | Gefahrstoffinformationen.IstRelevantFuerDiebstahlLokal</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PartDescriptions" type="PartDescriptionsType" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Benennungen | Teilebenennungen in den unterschiedlichen Sprachen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AssortmentClasses" type="AssortmentClassesType" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Sortimentsklassenschluessel | Auflistung der Sortimentsklassenschluessel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AdditionalParts" type="AdditionalPartsType" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Mitlieferteile | Auflistung der Mitlieferteile</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="GrossWeightQuantityUnit" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_GW_EH_WERT | gewicht.wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="GermanArea" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ZOLI_GEBIET_WERT | zollinformationteil.gebiet.wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SequenceStartDate" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_SRN_GLKT_BEGINN | seriengueltigkeit.beginn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SequenceEndDate" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_SRN_GLKT_ENDE | seriengueltigkeit.ende</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BasicKey" type="STD_String19" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_GRND_NR | grundnummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CompletionKey1" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_ES_1 | ergaenzungsschluessel1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CompletionKey2" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_ES_2 | ergaenzungsschluessel2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Comment" type="STD_String10" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_FREI_TXT_LBL | freitextLabel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AccessoryIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_MBA_KNR | mbaKenner</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="GevasKeyTrainTruck" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>GINF_GEVAS_SCHLSL_BAHN_LKW | gefahrstoffinformationen.gevasSchluesselBahnLkw</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="GevasKeyAir" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>GINF_GEVAS_SCHLSL_LUFT | gefahrstoffinformationen.gevasSchluesselLuft</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="GevasKeySea" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>GINF_GEVAS_SCHLSL_SEE | gefahrstoffinformationen.gevasSchluesselSee</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="FlashPoint" type="STD_Decimal8_3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>GINF_FLAMMPUNKT | gefahrstoffinformationen.flammpunkt</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HazVolume" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>GINF_VOL | gefahrstoffinformationen.volumen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HazWeight" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>GINF_GW | gefahrstoffinformationen.gewicht</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HazNumber" type="STD_String7" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>GINF_UN_NR | gefahrstoffinformationen.unNummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HazTriggerNumber" type="STD_Integer6" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>GINF_GFHR_AUSLSR_NR | gefahrstoffinformationen.gefahrAusloeserNr</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HazTriggerDesc" type="STD_String2000" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>GINF_GFHR_AUSLSR_TEXT_EN | gefahrstoffinformationen.gefahrAusloeserTextEnglisch</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PartPSSCodeForw" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PART_TLHW_CODE_WERT | teilehinweis.code.wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+	  <xsd:element name="SPMExclusionIndicatorHint" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLHW_AUSSCHLUSS_KNR in VL0RTLHW_TEILEHINWEIS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SupplyPlant" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLHW_LIF_WERK_WERT | teilehinweis.lieferwerk.wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SourceSystemDevelopment" type="STD_String30" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_ENTWCKL_VOR_SYS | entwicklungsVorsystem</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PlannedDeliveryTime" type="STD_Integer3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSCH_PLAN_LIF_ZEIT | beschaffung.planLieferzeit</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SupplyBatchSize" type="STD_Integer8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSCH_LIF_LOS_GRSE | beschaffung.lieferlosGroesse</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PSSID" type="STD_Integer18" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLHW_ID | teilehinweis.id</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="NoteInternal" type="STD_String2000" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLHW_BEMRK_INT | teilehinweis.bemerkungIntern</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WageEvaluationUnit" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLKO_BWRT_EH_LOHN | teilekosten.bewertungseinheitLohn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CommonCostFix" type="STD_Decimal12_3XSD"  minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLKO_GMN_KSTN_FIX_BG | teilekosten.gemeinkostenFix</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CommonCostVariable" type="STD_Decimal12_3XSD"  minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLKO_GMN_KSTN_VAR_BG | teilekosten.gemeinkostenVariabel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MBAIndicator" type="STD_String1"  minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_MBA_KNR | mbaKenner</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CalculationInfo" type="STD_String5" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLKO_KALK_INFO | teilekosten.kalkulationsInformation</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="OIProductIndicator" type="STD_String1"  minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_OI_KNR | oiKenner</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TechnicalGoodsBasket" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_WRNKRB_KNR_TCHNK | warenkorbKennerTechnik</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="OriginalCostsDate" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLKO_SELBST_KSTN_DT | teilekosten.selbstkostenDatum</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TargetMarketCountryCodes" type="TargetMarketCountryCodesType" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Laendercode | Auflistung der Laendercodes</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="LifeCycleFlag" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSCH_LIFE_CYCLE_KNR | beschaffung.lifeCycleKenner</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WeightPlatin" type="STD_Decimal5_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>GINF_GW_PLATIN | gefahrstoffinformationen.gewichtPlatin</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WeightPalladium" type="STD_Decimal5_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>GINF_GW_PALLADIUM | gefahrstoffinformationen.gewichtPalladium</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WeightRhodium" type="STD_Decimal5_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>GINF_GW_RHODIUM | gefahrstoffinformationen.gewichtRhodium</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RunThroughPart" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_KZ_DRCH_LEIT_TL_WERT | Basisdaten.KzDurchleitteil (J/N)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="OldtimerId" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_KZ_OLDTIMER_WERT | Basisdaten.kzOldtimer (O/G/-)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="OldtimerClassId" type="STD_String30" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_OLDTIMER_BR_KNR | Basisdaten.oldtimerBrKenner </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SPMDate" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>SPM-Datum Gueltig Ab</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Plant" type="STD_String20" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stueckliste.basisdaten.lokationteil.BODKennung</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BoMUnloadingPoint" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stueckliste.basisdaten.lokationteil.abladestelle</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BoMUsage" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stueckliste.Verwendung</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BoMType" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stueckliste.Art</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BaseQty" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stueckliste.Menge</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ValidFrom" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stueckliste.DatumGueltigAb</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BoMStatus" type="STD_Integer3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stueckliste.StatusLebenszyklus</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BoMText" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stueckliste.Text</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AlternateTxt" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stueckliste.Alternativentext</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BoMItems" type="BoMItemsType" minOccurs="0" nillable="false">
+        <xsd:annotation>
+          <xsd:documentation>Stuecklistenpositionen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="InitialStockageIndicator" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Bestandssteuerng.EsbRetailKenner</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ReturnIndicator" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Bestandssteuerng.Rückführungskenner | BSTS_RCK_FHRNG_KNR </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RefZGS" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TeilenummerReferenz.Zgs</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RefManufactureKZ" type="STD_String5" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TeilenummerReferenz.hersteller</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RefHistoryStart" type="STD_String15" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TeilenummerReferenz.GueltigAb</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RefHistoryEnd" type="STD_String15" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TeilenummerReferenz.GueltigBis</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RefUser" type="STD_String8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TeilenummerReferenz.ChangeUser</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ReferenceNumber" type="STD_String32" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TeilenummerReferenz.ReferenzNummber</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RefSharedPartKZ" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TeilenummerReferenz.SharedPartKennzeichen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RefChangeLevel" type="STD_String7" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TeilenummerReferenz.ChangeLevel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RefDescription" type="STD_String50" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TeilenummerReferenz.ReferenzBenennung</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RefDesignLead" type="STD_String5" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TeilenummerReferenz.DesignLead</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ExportControl" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ZOLI_KZ_EXP_KTRL_WERT | Zollinformationsteil.KzExportKontrolle</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StorageBin" type="STD_String10" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>LKTL_LG_PLATZ | Lokationteil.LagerPlatz</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AssortmentRelevanceTech" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_FAHR_RELEV_WERT | Basisdaten.FahrRelevanz</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ISOCountryCodeOrigin" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Zollinformationteil.Ursprungsland.Iso3166a2Code</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MaterialGroup" type="STD_String9" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSTS_WAREN_GRP_WERT | Bestandssteuerung.WarenGruppe.Wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Recyclable" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>STPB_WDR_AUF_BRT_BR_WERT | Steuerungpreisbildung.WiederAufbereitbar</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RatingClass" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLKO_BWRT_KLS | Teilkosten.BewertungsKlasse</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="OriginalCostsNacos" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLKO_SELBST_KSTN_PRO_EH_BG | Teilkosten.SelbstkostenProEinheit.Betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CostUnitNacos" type="STD_Integer5" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLKO_KSTN_EH | Teilkosten.Kosteneinheit</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ManufacturingCostsNacos" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLKO_HRSTL_KSTN_PRO_EH_BG | Teilkosten.HerstellkostenProEinheit.Betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AmountUsageKIT" type="STD_Integer5" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_ANZ_KIT | Basisdaten.AnzahlKit</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BranchProductionCosts" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLKO_HRSTL_KSTN_SPTBLNZ_BG | Teilekosten.HerstellkostenSpartenBilanziell.Betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ProdPartNumberNacos" type="STD_String22" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Info: Druckformat ohne Blanks; keine Verarbeitung</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="QualifiedTheftRelevance" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_DRT_KNR | DRT Kenner: qualifizierter Diebstahlrelevanz</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WarehouseUnloadingPoint" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>LKTL_ELG_ALST | Einlagerabladestelle</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ClusterABCIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSTS_ABC_KNZ | AX-Kenner</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ClusterABCTurnOverIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSTS_KZ_UMSATZ | AX-Kenner</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ClusterXYZFreeMovementIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSTS_KZ_GAENGIGKEIT | AX-Kenner</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ClusterABCBrandTurnOverIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSTS_KZ_UMSATZ_MARKE | AX-Kenner</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DutyRate" type="STD_String5" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ZOLI_ZOLLSATZ_PRZNT | Zollsatz in Prozent</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CriticalPart" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSCH_KZ_TOP_5000_WERT | Top5000-Pos.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TechnicalOrderLock" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_KZ_AUFTRAG_SPR | Auftragssperre Technik</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="LockNumberRequired" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_KZ_SCHL_NR_ERFRD | Schliess-Nr. erforderlich</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="FairShareExtraIndicator" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSTS_KZ_FAIR_SHARE | Fair Share Extra Kenner</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SwapType" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSCH_TAUSCH_ART_WERT | Tauschart</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RemanES2ExGLC" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_KZ_EX_GLC_ES_2 | Reman ES2 exGLC</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ProductSubstitutionGroupPart" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_PROD_SUB_SCHEMA | PSS Gruppe</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RemanDamageClassMatrix" type="STD_String1" minOccurs="0" nillable="true">
+          <xsd:annotation>
+              <xsd:documentation>VL0RREMA_REMANATTRIBUT.REMA_SCHDN_KLS | Schadensklasse</xsd:documentation>
+          </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RemanLogisticLevelMatrix" type="STD_String1" minOccurs="0" nillable="true">
+         <xsd:annotation>
+             <xsd:documentation>VL0RREMA_REMANATTRIBUT.REMA_LGSTK_SF | Logistikstufe</xsd:documentation>
+         </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ProductSubstitutionGroupHint" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLHW_PROD_SUB_SCHEMA | PSS Gruppe</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RemanItems" type="RemanItemsType" minOccurs="0" nillable="false">
+        <xsd:annotation>
+          <xsd:documentation>RemanItems</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="FuelEffClass" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>RFNL_KRFTSTF_EFZNZ_KLS_WERT | EU-Reifenlabel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WetGripClass" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>RFNL_NSSHFT_KLS_WERT | EU-Reifenlabel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="NoiseLevel" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>RFNL_ROLL_GRSCH_KLS_WERT | EU-Reifenlabel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="EUNumber" type="STD_String20" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>RFNL_EU_VRORDN_NR_WERT | EU-Reifenlabel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="NoiseValue" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>RFNL_GRSCH_MESS_WERT | EU-Reifenlabel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WheelClass" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>RFNL_RFN_KLSFZNG_WERT | EU-Reifenlabel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WWID" type="STD_Integer18" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>SPM ID fuer Wahlweise Information WWIN_ID_EXT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WWType" type="STD_Integer1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Wahlweise Information Art | WWIN_ART</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WWStatus" type="STD_Integer3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Status Lebenszyklus der Wahlweise Information | WWIN_STATUS_LBN_ZYKL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ProductSubstitutionGroupWW" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Wahlweise Information Produktsubstitutionsschema | WWIN_PROD_SUB_SCHEMA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WWParts" type="WWPartsType" minOccurs="1" nillable="false">
+        <xsd:annotation>
+          <xsd:documentation>Wahlweise Teile</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="LCDescription" type="STD_String100" minOccurs="1" nillable="false">
+        <xsd:annotation>
+          <xsd:documentation>LADT_BENENNUNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="LCVolKeyL" type="STD_Integer5" minOccurs="1" nillable="false">
+        <xsd:annotation>
+          <xsd:documentation>LADT_LNG_AUSSEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="LCVolKeyH" type="STD_Integer5" minOccurs="1" nillable="false">
+        <xsd:annotation>
+          <xsd:documentation>LADT_HOH_AUSSEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="LCVolKeyW" type="STD_Integer5" minOccurs="1" nillable="false">
+        <xsd:annotation>
+          <xsd:documentation>LADT_BRT_AUSSEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="LCVolume" type="STD_Integer8" minOccurs="1" nillable="false">
+        <xsd:annotation>
+          <xsd:documentation>LADT_VOL_AUSSEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="LCShortNR" type="STD_String7" minOccurs="1" nillable="false">
+        <xsd:annotation>
+          <xsd:documentation>LADT_KURZ_NR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TheftRelevanceInformation" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_DRI_KNR | DRI Kenner</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BillOfDistribution" type="STD_String20" minOccurs="0" nillable="true">
+          <xsd:annotation>
+              <xsd:documentation>VL0RLKTL_LOKATIONTEIL.LKTL_BOD_KNG | BOD Kürzel</xsd:documentation>
+          </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SVHCIndicator" type="STD_String10" minOccurs="0" nillable="true">
+          <xsd:annotation>
+              <xsd:documentation>BASI_SVHC_KNR | SVHC Kenner</xsd:documentation>
+          </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="OPCluster" type="STD_String10" minOccurs="0" nillable="true">
+          <xsd:annotation>
+              <xsd:documentation>BSTS_OP_CLUSTER | OP-Cluser</xsd:documentation>
+          </xsd:annotation>
+      </xsd:element>		
+      <xsd:element name="SpecialStockingMeasure" type="STD_String6" minOccurs="0" nillable="true">
+          <xsd:annotation>
+              <xsd:documentation>BSTS_SND_BVORAT_MASNHME | Sonderbevorratungsmassnahme</xsd:documentation>
+          </xsd:annotation>
+     </xsd:element> 
+     <xsd:element name="HazMatHazardCode" type="STD_String50" minOccurs="0" nillable="true">
+          <xsd:annotation>
+              <xsd:documentation>GINF_GFHR_CODE_WERT | Gefahrstoffkennzeichen</xsd:documentation>
+          </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="HazMatRiskCode" type="STD_String50" minOccurs="0" nillable="true">
+          <xsd:annotation>
+              <xsd:documentation>GINF_RISK_CODE_WERT | Risikosaetze</xsd:documentation>
+          </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="HazMatSecurityAdvice" type="STD_String50" minOccurs="0" nillable="true">
+          <xsd:annotation>
+              <xsd:documentation>GINF_SICHRHT_RATSCHLAG_WERT | Sicherheitsratschlaege</xsd:documentation>
+          </xsd:annotation>
+     </xsd:element> 
+     <xsd:element name="VirtualActivityStatus" type="STD_String10" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_AKT_STATUS_VIRT | kontext.aktionsstatus</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PartPSSCodeBackw" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_CODE_RCKWT_WERT | basisdaten.codeRueckwaertsWert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TechnicalCreationDate" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_FACHL_ANL_ZP | basisdaten.fachlicherAnlageZeitpunkt</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="JapanRelevance" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_RELEV_DC_JAPAN | basisdaten.istRelevantFuerDCJapan</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="VirtualNacosNumber" type="STD_String25" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_SACH_NR_NACOS_VIRT | basisdaten.nacosformat</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="VirtualBoMType" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_STKL_ART_WERT_VIRT | basisdaten.stuecklistenArt</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="VirtualPSSCode" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_TLHW_CODE_WERT | basisdaten.hinweisCode</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ProcurementLeadTime" type="STD_Integer2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSCH_BSCHF_ZEIT | basisdaten.beschaffung.beschaffungszeit</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="NewGoodsIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSCH_KZ_HWARE_NEU_WERT | basisdaten.beschaffung.kzHandelswareNeu.wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="GoodsIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSCH_KZ_HWARE_WERT | basisdaten.beschaffung.kzHandelsware.wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="B9PartInfo" type="STD_String9" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSTS_HW_B9 | basisdaten.bestandssteuerung.hinweisB9</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SafetyStock" type="STD_Integer7" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSTS_SICHRHT_BSTD | basisdaten.bestandssteuerung.sicherheitsbestand</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ScrapQtyCurrentYear" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSTU_SCHRT_MNG_JHR_BG | basisdaten.bestandsuebersicht.schrottMengeJahr.betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ScrapQtyPreviousYear" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSTU_SCHRT_MNG_VJHR_BG | basisdaten.bestandsuebersicht.schrottMengeVorjahr.betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ScrapQtyPreviousYear2" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BSTU_SCHRT_MNG2_VJHR_BG | basisdaten.bestandsuebersicht.schrottMenge2Vorjahr.betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="FullUrgentBacklog" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>KNDB_EVL_RSTD_MNG_BG | basisdaten.kundenbestellung.eilVollrueckstandMenge.betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DemandQtyPreMon1" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>KNDB_NFRGE_MNG_1_VMON_BG | basisdaten.kundenbestellung.nachfragemenge1VorMonat.betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DemandQtyPreMon2" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>KNDB_NFRGE_MNG_2_VMON_BG | basisdaten.kundenbestellung.nachfragemenge2VorMonat.betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DemandQtyPreMon3" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>KNDB_NFRGE_MNG_3_VMON_BG | basisdaten.kundenbestellung.nachfragemenge3VorMonat.betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DemandQtyPreMon4" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>KNDB_NFRGE_MNG_4_VMON_BG | basisdaten.kundenbestellung.nachfragemenge4VorMonat.betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DemandQtyPreMon5" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>KNDB_NFRGE_MNG_5_VMON_BG | basisdaten.kundenbestellung.nachfragemenge5VorMonat.betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DemandQtyPreMon6" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>KNDB_NFRGE_MNG_6_VMON_BG | basisdaten.kundenbestellung.nachfragemenge6VorMonat.betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Consumption4" type="STD_Integer8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>KNDB_VBRMNG_GES4_VJHR_BG | basisdaten.kundenbestellung.verbrauchsmengeGesamt4VorJahr.betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Consumption5" type="STD_Integer8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>KNDB_VBRMNG_GES5_VJHR_BG | basisdaten.kundenbestellung.verbrauchsmengeGesamt5VorJahr.betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DeliveryProgram" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>LFBS_LIEF_PRG_BG | basisdaten.bestandssteuerung.lieferantenbestellungen.lieferprogramm.betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DeliveryProgramT1" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>LFBS_LIF_PRGT1_BG | basisdaten.bestandssteuerung.lieferantenbestellungen.lieferprogrammT1.betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DeliveryProgramT2" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>LFBS_LIF_PRGT2_BG | basisdaten.bestandssteuerung.lieferantenbestellungen.lieferprogrammT2.betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DeliveryProgramT3" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>LFBS_LIF_PRGT3 | basisdaten.bestandssteuerung.lieferantenbestellungen.lieferprogrammT3</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DeliveryProgramT4" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>LFBS_LIF_PRGT4 | basisdaten.bestandssteuerung.lieferantenbestellungen.lieferprogrammT4</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PriceEvaluationUnit" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PRSD_BWRT_EH_WERT[PRSD_POS=0] | basisdaten.steuerungpreisbildung.preisdefinition(0).bewertungseinheit.wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PriceValidityDatePrevious" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PRSD_GLKT_BEGINN[PRSD_POS=1] | basisdaten.steuerungpreisbildung.preisdefinition(1).gueltigkeit.beginn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StorageControl" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>STLG_ELG_STRG | basisdaten.steuerunglager.einlagerSteuerung</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StorageExclusionIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>STLG_KZ_AUSGRENZUNG | basisdaten.steuerunglager.kzAusgrenzung</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AdditionalDiscountAbility" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_MEHR_RBT_FHGKT_VIRT | mehrrabattfaehigkeitVirtual</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PrebookedPrice" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>STPB_VMRK_PRS_BG | basisdaten.steuerungpreisbildung.vormerkPreis.betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MaterialPriceEvaluationUnit" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLKO_BWRT_EH_MAT_WERT | basisdaten.teilekosten.bewertungseinheitMaterial.wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MainManufacturingGroup" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLKO_FRTGNG_HAUPT_GRP | basisdaten.teilekosten.fertigungsHauptgruppe</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ManufacturingTime" type="STD_Decimal7_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLKO_FRTGNG_ZEIT | basisdaten.teilekosten.fertigungszeit</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="VirtualAssortmentKeyNew" type="STD_String200" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TNSM_TEILENUMMERSORTMAP_STR | basisdaten.teilenummerSortimentMappingAsString</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CustomsOnlineInfoControl" type="STD_String10" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ZOLI_ONLINE_INFO_STRG | basisdaten.zollinformationteil.onlineInfoSteuerung</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Homologations" type="HomologationsType" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>DZSetzung</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Certificates" type="CertificatesType" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Zertifikatsinformationen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ProdHierarchyOld" type="STD_String6" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PRSD_MRKT_CODE[PRSD_POS=1] | steuerungpreisbildung.preisdefinition(1).marketingcode</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WholeSaleLength" type="STD_Decimal7_3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLAW_LNG | basisdaten.teileAttributeWholeSale.laenge</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WholeSaleWidth" type="STD_Decimal7_3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLAW_BRT | basisdaten.teileAttributeWholeSale.breite</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WholeSaleHeigth" type="STD_Decimal7_3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLAW_HOH | basisdaten.teileAttributeWholeSale.hoehe</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WholeSaleWeight" type="STD_Decimal7_3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLAW_BTO_GW | basisdaten.teileAttributeWholeSale.bruttoGewicht</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WholeSaleVPSplit1" type="STD_Decimal7_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLAW_VPK_SPLT_1 | basisdaten.teileAttributeWholeSale.verpackungsSplitt1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WholeSaleVPSplit2" type="STD_Decimal7_2XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>TLAW_VPK_SPLT_2 | basisdaten.teileAttributeWholeSale.verpackungsSplitt2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ChangeDate" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_AEND_ZS | basisdaten.letzteAenderung</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StorageSite" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>LKTL_ELG_STO | basisdaten.lokationteil.einlagerstandort</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StorageArea" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>LKTL_ELG_STO | basisdaten.lokationteil.einlagerbereich</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DivisionNew" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PRSD_MRKT_CODE_DVSN_WERT[PRSD_POS=0] | basisdaten.steuerungpreisbildung.preisdefinition(0).marketingcode.division.wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SubdivisionNew" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PRSD_MRKT_CODE_SUBDVSN_WERT[PRSD_POS=0] | basisdaten.steuerungpreisbildung.preisdefinition(0).marketingcode.subdivision.wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PartFamilyNew" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PRSD_MRKT_CODE_TL_FAM_WERT[PRSD_POS=0] | basisdaten.steuerungpreisbildung.preisdefinition(0).marketingcode.teilfamilie.wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PartCategoryNew" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PRSD_MRKT_CODE_TL_KTG_WERT[PRSD_POS=0] | basisdaten.steuerungpreisbildung.preisdefinition(0).marketingcode.teilkategorie.wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DivisionOld" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PRSD_MRKT_CODE_DVSN_WERT[PRSD_POS=1] | basisdaten.steuerungpreisbildung.preisdefinition(1).marketingcode.division.wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SubdivisionOld" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PRSD_MRKT_CODE_SUBDVSN_WERT[PRSD_POS=1] | basisdaten.steuerungpreisbildung.preisdefinition(1).marketingcode.subdivision.wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PartFamilyOld" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PRSD_MRKT_CODE_TL_FAM_WERT[PRSD_POS=1] | basisdaten.steuerungpreisbildung.preisdefinition(1).marketingcode.teilfamilie.wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PartCategoryOld" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PRSD_MRKT_CODE_TL_KTG_WERT[PRSD_POS=1] | basisdaten.steuerungpreisbildung.preisdefinition(1).marketingcode.teilkategorie.wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PriceEvaluationUnitOld" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>PRSD_BWRT_EH_WERT[PRSD_POS=1] | steuerungpreisbildung.preisdefinition(1).bewertungseinheit.wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TransitBestand" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>KNDB_UMZUG_MNG_BG | kundenbestellung.umzugsmenge.betrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PartCluster" type="STD_Integer2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_CLUSTER | basisdaten.cluster</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StockFlowUnmountedTires" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>LKTL_GG_LOSE_RFN | basisdaten.lokationteil.gaengigkeitLoseReifen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TotalQuantityBacklog" type="STD_Decimal14_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>KNDB_RSTD_MNG_GES | basisdaten.kundenbestellung.rueckstandsMengeGesamt</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PTNProd" type="STD_String21" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_TNR_PROD_VIRT | basisdaten.produktionsformat</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ImportCommodityCode" type="STD_String11" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ZOLI_WAREN_NR_IMP | basisdaten.zollinformationteil.warennummerImport</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTCustomerID" type="STD_String8" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_KUND_ID_VIRT | icustAttribut.kundenId</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTIndicatorCommodityCode" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_KZCH_WARENNR_VIRT | icustAttribut.kzWarennr</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTClassificationCountry" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_KLZF_LAND_VIRT | icustAttribut.klassifikationsland</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTClassificationType" type="STD_String6" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_KLZF_TYP_VIRT | icustAttribut.klassifikationstyp</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTIndicatorProcType" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_KZCH_PROZTYP_VIRT | icustAttribut.kzProzesstyp</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTIndicatorRegion" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_KZCH_REGION_VIRT | icustAttribut.kzRegion</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTIndicatorOrigin" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_KZCH_URSPRUNG_VIRT | icustAttribut.kzUrsprung</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTIndicatorPreference" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_KZCH_PRFEZ_VIRT | icustAttribut.kzPraeferenz</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTSupplyEntranceIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_KZCH_WARENEINGANG_VIRT | icustAttribut.kzWareneingang</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTPeriods" type="ICUSTPeriodsType" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Icust Anfragezeitraum incl Zieldatum</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTCommodityInformations" type="ICUSTCommodityInformationsType" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>IcustWarennrInfo</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTCustomsInformations" type="ICUSTCustomsInformationsType" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>IcustZollInfo</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTRecipientCountries" type="ICUSTRecipientCountriesType" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Abkommen bzgl. ICUST</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTCustomsRequestIndicator" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Nur fuer interne Zwecke | ZOLI_KZ_ANFRG_ZOLL_INFO</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AggregateModel" type="STD_String7" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_AGGRT_BAU_MST | basisdaten.aggregateBaumuster</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:all>
+  </xsd:complexType>
+
+  <xsd:complexType name="StockType">
+    <xsd:sequence>
+      <xsd:element name="Quantity" type="QuantityType" minOccurs="1" maxOccurs="unbounded" nillable="true">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="QuantityType">
+    <xsd:complexContent>
+      <xsd:extension base="STD_Decimal12_3XSD">
+        <xsd:attribute name="Location" type="STD_String20Type" use="required" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+
+  <xsd:complexType name="PartDescriptionsType">
+    <xsd:sequence>
+      <xsd:element name="PartDescription" type="PartDescriptionType" minOccurs="1" maxOccurs="unbounded" nillable="true">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="PartDescriptionType">
+    <xsd:sequence>
+      <xsd:element name="Language" type="STD_String2" minOccurs="1" maxOccurs="1" nillable="true">
+      </xsd:element>
+      <xsd:element name="Description" type="STD_String40" minOccurs="1" maxOccurs="1" nillable="true">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="AssortmentClassesType">
+    <xsd:sequence>
+      <xsd:element name="AssortmentKey" type="STD_String2" minOccurs="1" maxOccurs="unbounded" nillable="true">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="TargetMarketCountryCodesType">
+    <xsd:sequence>
+      <xsd:element name="ISOCode" type="STD_String2" minOccurs="1" maxOccurs="unbounded" nillable="true">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="AdditionalPartsType">
+    <xsd:sequence>
+      <xsd:element name="AdditionalPart" type="AdditionalPartType" minOccurs="1" maxOccurs="unbounded" nillable="true">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="AdditionalPartType">
+    <xsd:sequence>
+      <xsd:element name="ID" type="STD_Integer18" minOccurs="0" maxOccurs="1" nillable="true">
+      </xsd:element>
+      <xsd:element name="AdditionalPartNumber" type="STD_String19" minOccurs="0" maxOccurs="1" nillable="true">
+      </xsd:element>
+      <xsd:element name="Quantity" type="STD_Decimal12_3XSD" minOccurs="0" maxOccurs="1" nillable="true">
+      </xsd:element>
+      <xsd:element name="AdditionalPartQtyUnit" type="STD_String1" minOccurs="0" maxOccurs="1" nillable="true">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="BoMItemsType">
+    <xsd:sequence>
+      <xsd:element name="BoMItem" type="BoMItemType" minOccurs="1" maxOccurs="unbounded" nillable="true">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="BoMItemType">
+    <xsd:sequence>
+      <xsd:element name="Category" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stuecklistenposition.Positionstyp</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ItemNo" type="STD_String4" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stuecklistenposition.Positionsnummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Component" type="STD_String19" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stuecklistenposition.Unterteilenummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BoMPAK1" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stuecklistenposition.Unterteilenummer.Produktionsergaenzungsschluessel1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ItemQuantity" type="STD_Decimal12_3XSD" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stuecklistenposition.Menge</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="QuantityUnit" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stuecklistenposition.UnterTeilenummer.Masseinheit.Wert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ItemText1" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stuecklistenposition.Positionstext1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ItemText2" type="STD_String40" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stuecklistenposition.Positionstext2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BoMPositionValidFrom" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stuecklistenposition.DatumGueltigAb</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BoMPositionValidTo" type="STD_DateTime" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stuecklistenposition.DatumGueltigBis</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BoMPositionType" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Stuecklistenposition.PositionsKennzeichen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="RemanItemsType">
+    <xsd:sequence>
+      <xsd:element name="RemanItem" type="RemanItemType" minOccurs="0" maxOccurs="unbounded" nillable="true">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="RemanItemType">
+    <xsd:sequence>
+      <xsd:element name="RemanES2PartNumber" type="STD_String19" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>BASI_SACH_NR_VIRT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RemanDamageClass" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>REMA_SCHDN_KLS_VIRT | Schadensklasse</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RemanLogisticLevel" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>REMA_LGSTK_SF_VIRT | Logistikstufe</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RemanWarrant" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>FIX:  "CA" | RemanAttribut.Bezugsrecht</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+
+  <xsd:complexType name="WWPartsType">
+    <xsd:sequence>
+      <xsd:element name="WWPart" type="WWPartType" minOccurs="1" maxOccurs="unbounded" nillable="true">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="WWPartType">
+    <xsd:sequence>
+      <xsd:element name="WWPartNumber" type="STD_String19" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>WahlweiseTeil.Basisdaten.Sachnummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="WWLeadingPart" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>Kennzeichen "Fuehrend" des Wahlweiseteils</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="HomologationsType">
+    <xsd:sequence>
+      <xsd:element name="Homologation" type="HomologationType" minOccurs="1" maxOccurs="unbounded" nillable="true">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="HomologationType">
+    <xsd:sequence>
+      <xsd:element name="HomologationType" type="STD_String15" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>DZSE_TYP | dZSetzung.typ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HomologationNumber" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>DZSE_MRKML_NR | dZSetzung.merkmalNummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HomologationLanguageKey" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>DZSE_SPRCH | dZSetzung.sprache</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HomologationSubjectArea" type="STD_String100" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>DZSE_FACHGEBIET | dZSetzung.fachgebiet</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HomologationAttribute" type="STD_String100" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>DZSE_MRKML_NAME | dZSetzung.merkmalName</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HomologationMarket" type="STD_String5" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>DZSE_MARKT | dZSetzung.markt</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HomologationRegulation" type="STD_String100" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>DZSE_VORSCHRIFT | dZSetzung.vorschrift</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HomologationText" type="STD_String300" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>DZSE_INFO | dZSetzung.information</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="CertificatesType">
+    <xsd:sequence>
+      <xsd:element name="Certificate" type="CertificateType" minOccurs="1" maxOccurs="unbounded" nillable="true">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="CertificateType">
+    <xsd:sequence>
+      <xsd:element name="Market" type="STD_String3" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>CEST_MARKT | Markt der Zertifikatsinformation</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StatusCertificate" type="STD_String2" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>CERT_STATUS_CERTUS | Zertifikatsstatus in CERTUS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="StatusCertification" type="STD_String1" minOccurs="0" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>CEST_STATUS | Berechneter Zertifizierungsstatus des Markts</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="ICUSTPeriodsType">
+    <xsd:sequence>
+      <xsd:element name="ICUSTPeriod" type="ICUSTPeriodType" minOccurs="1" maxOccurs="unbounded" nillable="true">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+      
+  <xsd:complexType name="ICUSTPeriodType">
+    <xsd:sequence>
+      <xsd:element name="ICUSTTargetDate" type="STD_DateTime" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_PERIOD_ZIELDT_VIRT | icustPeriod.zielDatum</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTValidityDateFrom" type="STD_DateTime" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_PERIOD_GUELTIGAB_VIRT | icustPeriod.datumGueltigAb</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTValidityDateTo" type="STD_DateTime" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_PERIOD_GUELTIGAB_VIRT | icustPeriod.datumGueltigBis</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="ICUSTCommodityInformationsType">
+    <xsd:sequence>
+      <xsd:element name="ICUSTCommodityInformation" type="ICUSTCommodityInformationType" minOccurs="1" maxOccurs="unbounded" nillable="true">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="ICUSTCommodityInformationType">
+    <xsd:sequence>
+      <xsd:element name="ICUSTCommodityCode" type="STD_String11" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>WNIC_WAREN_NR_IMP | icustWarennrInfo.warennummerIcust.warennummerImport</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTValidityDateFrom" type="STD_DateTime" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>WNIC_DT_GUELTIG_AB | icustWarennrInfo.warennummerIcust.datumGueltigAb</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTValidityDateTo" type="STD_DateTime" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>WNIC_DT_GUELTIG_BIS | icustWarennrInfo.warennummerIcust.datumGueltigBis</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTRequestID" type="STD_String15" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_WNRINFO_REQID_VIRT | icustWarennrInfo.anfrageId</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTErrorCode" type="STD_String5" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_WNRINFO_ERRCODE_VIRT | icustWarennrInfo.fehlerCode</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTErrorMessage" type="STD_String100" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_WNRINFO_ERRMSG_VIRT | icustWarennrInfo.fehlerInfo</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="ICUSTCustomsInformationsType">
+    <xsd:sequence>
+      <xsd:element name="ICUSTCustomsInformation" type="ICUSTCustomsInformationType" minOccurs="1" maxOccurs="unbounded" nillable="true">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="ICUSTCustomsInformationType">
+    <xsd:sequence>
+      <xsd:element name="ICUSTSupplierNum1" type="STD_Integer8" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ZOIC_WAREN_NR_LFNT | icustZollInfo.zollinformationIcust.warennummerLieferant</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTSupplierIndex1" type="STD_String1" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ZOIC_WAREN_NR_LFNT_IDX | icustZollInfo.zollinformationIcust.warennummerLieferantenIndex</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTCustomerCode" type="STD_String2" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ZOIC_KUNDEN_CODE | icustZollInfo.zollinformationIcust.kundenCode</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTAgreement" type="STD_String2" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ZOIC_ABKOMMEN | icustZollInfo.zollinformationIcust.abkommen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTPreference" type="STD_String2" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ZOIC_PRAEF_KNZ | icustZollInfo.zollinformationIcust.praeferenzkennzeichen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTOriginIsoCode" type="STD_String2" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ZOIC_URSP_ISO3166A2_CODE | icustZollInfo.zollinformationIcust.ursprungsISO3166A2Code</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTGermanArea" type="STD_String2" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ZOIC_REGION | icustZollInfo.zollinformationIcust.region</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTValidityDateFrom" type="STD_DateTime" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ZOIC_DT_GUELTIG_AB | icustZollInfo.zollinformationIcust.datumGueltigAb</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTValidityDateTo" type="STD_DateTime" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ZOIC_DT_GUELTIG_BIS | icustZollInfo.zollinformationIcust.datumGueltigBis</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTWithdrawal" type="STD_String1" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_ZOLLINFO_WIEDERRUFKZ_VIRT | icustZollInfo.kzWiederruf</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTThreshold" type="STD_Decimal15_4XSD" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_ZOLLINFO_SCHWELLENWERT_VIRT | icustZollInfo.schwellenwert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTRequestID" type="STD_String15" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_ZOLLINFO_ANFRAGE_ID_VIRT | icustZollInfo.anfrageId</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTErrorCode" type="STD_String5" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_ZOLLINFO_ERRCODE_VIRT | icustZollInfo.fehlerCode</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ICUSTErrorMessage" type="STD_String100" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>ICUST_ZOLLINFO_ERRMSG_VIRT | icustZollInfo.fehlerInfo</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="ICUSTRecipientCountriesType">
+    <xsd:sequence>
+      <xsd:element name="ICUSTRecipientCountry" type="STD_String2" minOccurs="1" maxOccurs="unbounded" nillable="true">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>

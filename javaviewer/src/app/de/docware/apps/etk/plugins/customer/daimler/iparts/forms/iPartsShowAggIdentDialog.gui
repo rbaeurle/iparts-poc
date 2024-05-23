@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window height="350" id="mainWindow" name="ShowAggIdentDialog" visible="false" width="600">
+    <invisible>
+      <contextmenu id="contextMenuTable" menuName="contextMenuTable" minimumHeight="10" minimumWidth="10" />
+    </invisible>
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <scrollpane id="scrollpane" minimumHeight="10" minimumWidth="10">
+        <table htmlPageSplitMode="NO_SPLIT" id="table" minimumHeight="10" minimumWidth="10">
+          <constraints_border />
+        </table>
+        <constraints_border />
+      </scrollpane>
+      <constraints_border />
+    </panel>
+    <buttonPanel dialogStyle="CLOSE" id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

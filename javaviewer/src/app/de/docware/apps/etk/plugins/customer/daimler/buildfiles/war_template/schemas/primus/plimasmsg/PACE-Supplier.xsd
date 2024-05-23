@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xml:lang="en" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:jxb="http://java.sun.com/xml/ns/jaxb" jxb:version="1.0">
+
+  <!-- This file is controlled by DCCS SVN and must not be changed otherwise.
+       Usage of attributes preferred over use of tags.
+
+       Created by DCCS GmbH. on behalf of Daimler AG.
+       Copyright 2012 Daimler AG and DCCS GmbH.
+
+       Author:       Peter.Stuecklschwaiger@DCCS.at
+       Responsible:  Tomislav.Jerkovic@Daimler.com, Swen.Koelbel@Daimler.com -->
+
+  <xs:annotation>
+    <xs:documentation>Copyright 2012 Daimler AG and DCCS GmbH.</xs:documentation></xs:annotation>
+
+  <xs:element name="supplier" type="supplierType">
+    <xs:annotation><xs:documentation>PACE supplier definition</xs:documentation></xs:annotation>
+  </xs:element>
+
+  <xs:complexType name="supplierType">
+    <xs:attribute name="UID" use="optional" type="uniqueIdType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The global, DAG unique identifier of
+          the supplier resp. corporate group. Supported from SDB (when available).
+          Should be mandatory, but is kept optional until SDB interface is established.
+          </jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+    <xs:attribute name="number" use="required" type="supplierNumberType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The number of a supplier is used for
+          its unique identification and known/used in other applications. It's based on GLOBUS
+          (not yet SDB - supplier database).</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+    <xs:attribute name="index" use="optional" type="supplierIndexType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The index of a supplier is used for
+          the unique identification of a specific subsidiary or location of a supplier.
+          It extends the number of a supplier.</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+    <xs:attribute name="name" use="optional" type="supplierNameType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The name of a supplier.
+          Should usually only be needed for DAG external systems resp. interface partners as all
+          DAG internal interface partners should get their information from the data owner (SDB).
+      </jxb:javadoc></jxb:property></xs:appinfo> </xs:annotation></xs:attribute>
+    <xs:attribute name="short" use="optional" type="supplierShortNameType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The short name of a supplier.
+          See remarks for "name" attribute.</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+    <xs:attribute name="parentUID" use="optional" type="uniqueIdType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The uid of of a suppliers parent.
+          See remarks for "name" attribute.</jxb:javadoc></jxb:property></xs:appinfo>
+      </xs:annotation></xs:attribute>
+  </xs:complexType>
+
+  <xs:simpleType name="uniqueIdType">
+    <xs:annotation><xs:documentation>Not really needed as type, but easily allows later finer
+        grained specification, if needed.</xs:documentation></xs:annotation>
+    <xs:restriction base="xs:positiveInteger"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="supplierNumberType">
+    <xs:annotation><xs:documentation>SupplierNumberType may not contain alphanumeric values (as of SDB).
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string"><xs:pattern value="[0-9]{1,8}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="supplierIndexType">
+    <xs:annotation><xs:documentation>SupplierIndexType may contain alphanumeric values.
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string"><xs:pattern value="[A-Z0-9]{1}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="supplierNameType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="80"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="supplierShortNameType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

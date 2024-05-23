@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel borderWidth="4" id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <splitpane dividerPosition="344" horizontal="false" id="splitpane" minimumHeight="10" minimumWidth="10">
+        <panel borderWidth="4" id="splitpane_firstChild" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_border />
+        </panel>
+        <dockingpanel backgroundColor="clWhite" dockPos="NORTH" fill="true" foregroundColor="clBlack" id="dockingpanel" imageHide="@imgDesignDockingPanelSouth" imageShow="@imgDesignDockingPanelNorth" minimumHeight="19" minimumWidth="196" textHide="!!Änderungsdetails ausblenden" textShow="!!Anzeige Änderungsdetails">
+          <invisible />
+          <panel borderWidth="4" id="panelExtendedGrid" minimumHeight="0" minimumWidth="10">
+            <invisible />
+            <layout_border />
+            <constraints_border />
+          </panel>
+        </dockingpanel>
+        <constraints_border />
+      </splitpane>
+      <panel borderWidth="4" id="panelExtra" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <checkbox id="checkboxHistory" minimumHeight="10" minimumWidth="10" onChangeEvent="onShowHistoryChanged" text="!!Änderungs-Historie anzeigen">
+          <constraints_border position="west" />
+        </checkbox>
+        <checkbox id="checkboxLayoutChange" minimumHeight="10" minimumWidth="10" onChangeEvent="onLayoutChanged" text="!!Alternative Auswertung">
+          <constraints_border position="east" />
+        </checkbox>
+        <constraints_border position="south" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel dialogStyle="CLOSE" id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

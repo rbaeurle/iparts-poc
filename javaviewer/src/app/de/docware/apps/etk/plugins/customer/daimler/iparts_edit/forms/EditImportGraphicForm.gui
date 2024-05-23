@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" minimumHeight="500" minimumWidth="400" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="!!Zusatzgrafik auswählen">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag />
+      <label id="labelGraphicFile" minimumHeight="10" minimumWidth="10" text="!!Zusatzgrafikdatei:">
+        <constraints_gridbag anchor="w" fill="h" insetsLeft="8" insetsRight="8" insetsTop="8" />
+      </label>
+      <filechoosertextfield approveButtonText="!!Zusatzgrafik auswählen" id="filechooserGraphicFile" isEditable="false" minimumHeight="10" minimumWidth="10" serverMode="false">
+        <tooltip>
+          <label id="" text="!!Zusatzgrafikdatei (BMP, GIF, JPG, JPEG, PNG, SMG, SVG, SVGZ, TIF, TIFF)" />
+        </tooltip>
+        <constraints_gridbag anchor="w" fill="h" gridy="1" insetsBottom="4" insetsLeft="8" insetsRight="8" insetsTop="4" />
+      </filechoosertextfield>
+      <panel id="panelPreview" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <label fontSize="14" fontStyle="1" horizontalalignment="CENTER" id="labelNoGraphic" minimumHeight="10" minimumWidth="10" paddingTop="8" text="!!Noch keine Zusatzgrafik ausgewählt" verticalAlignment="TOP">
+          <constraints_border />
+        </label>
+        <constraints_gridbag fill="b" gridy="2" insetsBottom="4" insetsLeft="8" insetsRight="8" insetsTop="4" weightx="100.0" weighty="100.0" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel dialogStyle="CUSTOM" id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

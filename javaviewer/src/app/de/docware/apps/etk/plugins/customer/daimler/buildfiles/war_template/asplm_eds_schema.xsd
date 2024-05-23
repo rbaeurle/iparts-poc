@@ -1,0 +1,3259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ #==============================================================================
+ #
+ #  AS-PLM
+ #
+ #  $HeadURL: https://dev-dynplm.it-solutions.atos.net/svn/asplmdev/trunk/cust_root_dir/integration/broker/apps/bomdb/schema/bom-db.xsd $
+ #  $LastChangedRevision: 11638 $
+ #  $LastChangedDate: 2017-04-27 17:31:59 +0200 (Do, 27 Apr 2017) $
+ #  $LastChangedBy: a408101 $
+ #
+ #  Author: Andreas Saremba, Atos
+ #  Purpose: Schema for the BOM-DB Import Data
+ #
+ #==============================================================================
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="Dataset">
+        <xs:annotation>
+            <xs:documentation>Enthält BOM-DB-Datensätze "sortenrein", d.h. alle Unterelemente stammen aus der gleichen Tabelle (deren Name im Attribut name angegeben wird).</xs:documentation>
+            <xs:documentation>Dies ist die Struktur die Daten, die an die Abnehmersysteme (iParts, ASPLM usw.) geliefert wird.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:choice>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="B90"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="S05"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="PartMasterData"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="PartMasterData_LDI"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="PartSpecialMasterData"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="PartAdditionalMasterData"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="CodeMasterData"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="CodeMasterData_LDI"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="ScopeMasterData"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="PartsListMasterData"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="PartsListAdditionalMasterData"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="PartsListMasterData_LDI"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="S05PointOfUsageText"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="ModelMasterData"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="ModelMasterData_LDI"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="ModuleMasterData"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="ModuleMasterData_LDI"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="EcoMasterData"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="EcoMasterData_LDI"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="K3"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="ChangeNotice"/>
+                </xs:sequence>
+            </xs:choice>
+            <xs:attribute name="name" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Der Name der BOM-DB-Tabelle, aus der die Datensätze stammen.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute ref="origin" use="optional"/>
+            <xs:attribute ref="sourceExportTime"/>
+            <xs:attribute ref="trafoTime"/>
+            <xs:attribute ref="schemaVersion"/>
+            <xs:attribute ref="versionSVN"/>
+            <xs:attribute ref="changedDate"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:attribute name="origin" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Gibt den Ursprung der Daten, also das erzeugende System an.</xs:documentation>
+            <xs:documentation>Wenn dieses Attribut im Element Dataset gesetzt ist, vererbt es sich automatisch auf alle darin enthaltenen Datensätze mit Ausnahme derer, die ein eigenes Attribut origin besitzen.</xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="sourceExportTime" type="xs:dateTime">
+        <xs:annotation>
+            <xs:documentation>Zeitpunkt des Datenexports im erzeugenden System</xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="trafoTime" type="xs:dateTime">
+        <xs:annotation>
+            <xs:documentation>Zeitpunkt der Level1-Transformation</xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    <xs:attribute fixed="1.0" name="schemaVersion" type="xs:NMTOKEN">
+        <xs:annotation>
+            <xs:documentation>Version des aktuellen Schemas.</xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="versionSVN" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>SVN version des aktuellen Schemas</xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    <xs:attribute fixed="$LastChangedRevision: 11638 $" name="revision" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>SVN version des aktuellen Schemas</xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="changedDate" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Datum der letzten Änderung in Subversion</xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    <xs:attribute fixed="$LastChangedDate: 2017-04-27 17:31:59 +0200 (Do, 27 Apr 2017) $"
+        name="lastChangedDate" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Datum der letzten Änderung in Subversion</xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    <xs:element name="B90">
+        <xs:annotation>
+            <xs:documentation>getT43RB2I: Service operation provides the usage data of one or more given items in one or more Baumuster (=Fahrzeugbaumuster or Aggregat) and reverse the Service provides the content of one or more given Baumuster.</xs:documentation>
+            <xs:documentation>The service provides the usage data of one or more given Items in one or more Models (=Vehicles or MajorComponents) and reverse the Service provides the content (=Parts or Assemblies or Parts Lists or XK-Items or MajorComponents) of one or more given Models.</xs:documentation>
+            <xs:documentation>The usage relation resp. content relation is called B90-structure, abbreviated B90.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Model" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Vehicle or MajorComponent</xs:documentation>
+                        <xs:documentation>BOM-DB: B2I-SNR, characters 1 to 13 (Typo?)</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="7"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Module" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Module of Model</xs:documentation>
+                        <xs:documentation>BOM-DB: B2I-SNR, characters 14-17</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="4"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Scope" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Scope within Model/Module</xs:documentation>
+                        <xs:documentation>BOM-DB: B2I-UMF</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="7"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Position" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Position within Model / Module / Scope</xs:documentation>
+                        <xs:documentation>BOM-DB: B2I-POS</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:minInclusive value="0"/>
+                            <xs:maxInclusive value="999"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" ref="Item">
+                    <xs:annotation>
+                        <xs:documentation>Where-used object</xs:documentation>
+                        <xs:documentation>BOM-DB: B2I-SNRU</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:group minOccurs="0" ref="Group_ReleaseDates"/>
+                <xs:group minOccurs="0" ref="Group_EngineeringDates"/>
+                <xs:group minOccurs="0" ref="Group_ManualFlags"/>
+                <xs:group minOccurs="0" ref="Group_Eco"/>
+                <xs:group minOccurs="0" ref="Group_Versions"/>
+                <xs:group minOccurs="0" ref="Group_Status"/>
+                <xs:element minOccurs="0" ref="SteeringType">
+                    <xs:annotation>
+                        <xs:documentation>Limitation of steering of the B90 (optional - if this element is missing, there is no limitation in steering)</xs:documentation>
+                        <xs:documentation>BOM-DB: B2I_LKG. Value 1 and 5 are mapped to L (left), values 2 and 6 are mapped to R (right). Third possible value is Space.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="BodyTypes" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="BodyType">
+                                <xs:annotation>
+                                    <xs:documentation>Limitation of types of body of B90</xs:documentation>
+                                    <xs:documentation>Up to four body types could be assigned to a Model. Possible values are 1, 2, 3, 9.</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="1"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" ref="MaturityLevel">
+                    <xs:annotation>
+                        <xs:documentation>Level of maturity of B90 (S means stopped)</xs:documentation>
+                        <xs:documentation>BOM-DB: B2I_RF</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Quantity" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Quantity of where-used object</xs:documentation>
+                        <xs:documentation>BOM-DB: B21_MG (2 characters)</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="ProductGroup">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: B21_PGKZ (N=Trucks, S=Buses)</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="Type">
+                    <xs:annotation>
+                        <xs:documentation>Type of B90</xs:documentation>
+                        <xs:documentation>BOM-DB: B2I_BGKZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="CodeRule">
+                    <xs:annotation>
+                        <xs:documentation>Code rule of B90</xs:documentation>
+                        <xs:documentation>BOM-DB: B2I_CDBED</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="150"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" ref="PlantSupplies"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="S05">
+        <xs:annotation>
+            <xs:documentation>getT43RBK: This element contains the usage data of one or more given Items (Teile or Zusammenbauten = ZB; Parts or Assemblies) in one or more ModularPartsLists (Zusammenbauten = ZB or Stücklistenausführungsarten = SAA; Assemblies or PartsLists), and reverse the Service provides the content (Teile or ZB) of one or more given ModularPartsLists (ZB or SAA).</xs:documentation>
+            <xs:documentation>ModularPartsLists and PartsLists are used synonymous.</xs:documentation>
+            <xs:documentation>The usage relation resp. content relation is called S05-structure, abbreviated S05.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PartsList" minOccurs="0" type="Typ_PartsList13">
+                    <xs:annotation>
+                        <xs:documentation>PartsList or Assembly</xs:documentation>
+                        <xs:documentation>BOM-DB: BK-SNR</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Position" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Position within ModularPartsList</xs:documentation>
+                        <xs:documentation>BOM-DB: BK-POS (9 digits, but the first three are always 000 so they can be ignored)</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:minInclusive value="0"/>
+                            <xs:maxInclusive value="999999"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element ref="Item" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Part or Assembly</xs:documentation>
+                        <xs:documentation>BOM-DB: BK-SNRU</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:group minOccurs="0" ref="Group_ReleaseDates"/>
+                <xs:group minOccurs="0" ref="Group_Eco"/>
+                <xs:group minOccurs="0" ref="Group_Versions"/>
+                <xs:group minOccurs="0" ref="Group_Status"/>
+                <xs:element name="RemarkDigit" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Remarks to S05-structure are assigned using a digit from 0 to 9 or ‘+’</xs:documentation>
+                        <xs:documentation>BOM-DB: BK-BEMZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="AlternativeFlag" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>In case of Parts or Assemblies may be used alternatively, in S05-structure a character is assigned.</xs:documentation>
+                        <xs:documentation>A or B or … or Z or Space [remark: value ‘*’ is a mistake in EDS/BCS, might be ignored].</xs:documentation>
+                        <xs:documentation>BOM-DB: BK-WWKB</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Quantity" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Quantity of where-used-object</xs:documentation>
+                        <xs:documentation>Maximal 9999 with three decimal places or ‘N.BED’ resp. ‘+’</xs:documentation>
+                        <xs:documentation>BK_MENGE including service transformations by checking BKMGKZ:</xs:documentation>
+                        <xs:documentation>Service transformation:
+If BK-MGKZ Space: quantiy := BK_MENGE
+If BK-MGKZ = ‘B’: quantity := ‘N.BED’
+If BK-MGKZ = ‘+’: quantity := ‘+’</xs:documentation>
+                        <xs:documentation>TODO: Klären, wieviele Stellen - 4 + 3 + 1 = 8</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="8"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" ref="SteeringType">
+                    <xs:annotation>
+                        <xs:documentation>Limitation of steering of S05</xs:documentation>
+                        <xs:documentation>Contents: L or R or Space (see also the comments for the global element definition!)</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="DisqualifyFlag" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Used Parts or Assemblies in S05 could be disqualified by
+assigning a ‘-‘ (=Minus)</xs:documentation>
+                        <xs:documentation>Applied only in the old and idle EDS/BCS Documentation</xs:documentation>
+                        <xs:documentation>BOM-DB: BK-PLMI</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="VariantsFlag" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Applied in EDS/BCSDocumentation done by EvoBus</xs:documentation>
+                        <xs:documentation>BOM-DB: BK-VARIANTEN-KZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="VariableConstructionMeasure" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Applied in EDS/BCS Documentation done by EvoBus</xs:documentation>
+                        <xs:documentation>BOM-DB: BK-VARKONSTR-MASS</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="10"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element ref="MaturityLevel" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Level of maturity of parent element (S means stopped)</xs:documentation>
+                        <xs:documentation>BOM-DB: BK_RF</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="PlantSupplies" minOccurs="0"/>
+                <xs:element name="AcquisitionType" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Defines who produces or procures the item and for whom it is produced or procured.</xs:documentation>
+                        <xs:documentation>BOM-DB: BK-BZA</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="12"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="PipePartsListFlag" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Flag to identify Pipes, which are documented as ModularPartsLists</xs:documentation>
+                        <xs:documentation>BOM-DB: BK-LTG-BK</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PartMasterData">
+        <xs:annotation>
+            <xs:documentation>getT43RTEIL</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="PartNumber" minOccurs="0"/>
+                <xs:element minOccurs="0" ref="PartLangData">
+                    <xs:annotation>
+                        <xs:documentation>This is only the German version of the language dependent data (stored in the main table T43RTEIL).</xs:documentation>
+                        <xs:documentation>The corresponding information in other languages comes from table T43RTEIS and is stored in a separate element PartMasterData_LDI.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:group minOccurs="0" ref="Group_ReleaseDates"/>
+                <xs:group minOccurs="0" ref="Group_Eco"/>
+                <xs:group minOccurs="0" ref="Group_Versions"/>
+                <xs:group minOccurs="0" ref="Group_Status"/>
+                <xs:element minOccurs="0" ref="DesignChangeCounter"/>
+                <xs:element name="FlashwareType" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Type of Flashware part ('HW'=Hardware, 'FW'=Flashware, 'D'=Diagnostics, 'S'=Software, ''=unset/unknown)</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEIL_FW_KZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="2"/>
+                            <!-- Auf Anforderung des FB entfernt
+	                            <xs:enumeration value="HW"/>
+	                            <xs:enumeration value="FW"/>
+	                            <xs:enumeration value="D"/>
+	                            <xs:enumeration value="S"/>
+	                            <xs:enumeration value=""/>
+                             -->
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="PartsType" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Indicates additional abbreviation, if the part is assembly, installation drawing or similar.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEIL_ZBKZ</xs:documentation>
+                        <xs:documentation>
+                        	Possible values:
+							ZB (assembly), 
+							EB (installation drawing), 
+							AO (arrangement drawing),
+							LU (supplier part),
+							TB (table drawing) etc.
+						</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="AssemblyStructureType" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column TEIL_ZBF</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="DrawingGeometryVersion" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Shows the drawing version in Smaragd.</xs:documentation>
+                        <xs:documentation>The leading zero from BOM-DB is ignored (0123 becomes 123)</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEIL_ZGS</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <!-- Auf Anforderung des FB entfernt
+                            <xs:pattern value="[0-9]*"/>
+                            -->
+                            <xs:maxLength value="4"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="DrawingDateOrType" minOccurs="0">
+                    <!-- Auf Anforderung des FB aufgeweicht Attribut "flag" entfernt. Auslieferung nur ueber den Knotenwert-->
+                    <xs:annotation>
+                        <xs:documentation>Shows if the part is drawn or not.</xs:documentation>
+                        <xs:documentation>If a drawing is available, its date is given as content. Otherwise the content describes the reason why there is no drawing (values UV, GEO etc.).</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEIL_ZDAT</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="6"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="ReferencePart" type="Typ_PartNumber" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Shows reference part which indicates the part that stores further drawing information.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEIL_ZSN</xs:documentation>
+                        <xs:documentation>Attribute in EDS: BEZUGS-SNR or Bezugszeichnung</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="ReferenceDrawing" type="Typ_PartNumber" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Shows reference drawing which the part is drawn on, because it has no own drawing.</xs:documentation>
+                        <xs:documentation>BOB-DB: Column TEIL_HZSN</xs:documentation>
+                        <xs:documentation>Attribute in EDS: SIEHESNR or Hinweiszeichnung</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="PartReleaseStatus" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column TEIL_FGST</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="QuantityUnit" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Shows quantity unit of the part relating to its whole usage.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEIL_ME</xs:documentation>
+                        <xs:documentation>
+                        	Possible values:
+							01 (piece), 
+							02 (kg), 
+							03 (meter) etc.
+						</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="ColorItemType" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Shows type of color documentation of the part.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEIL_KZFRB</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+
+                            <!-- Auf Anforderung des FB entfernt
+                            <xs:pattern value="[0-9]*"/>
+                            -->
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="CadIdType" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column TEIL_CADDOK</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="CadSystem" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column TEIL_CADSYS</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="8"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="DocumentationObligation" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column TEIL_DFPL</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="CalculatedWeight" nillable="true" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Shows the calculated weight of the part.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEIL_BGEW</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:float">
+                            <xs:maxInclusive value="9999.999"/>
+                            <xs:minInclusive value="0"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="SafetyRelevant" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Shows if the part is safety relevant or not.</xs:documentation>
+                        <xs:documentation>Aufgrund der Anforderung des FB aufgeweicht!</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="CertificationRelevant" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Shows if the part is certification relevant or not.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEIL_DZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="BasicMaterial" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Shows material of the part.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEIL_WQEZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="39"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="DaimlerMaterialDeliveryPropertySpecification" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Shows DBL (Daimler Benz Liefervorschrift) for material procurement.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEIL_DBL</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="6"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="MaterialDeliveryQuality" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Shows DBL for export and supply.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEIL_DBLA</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="6"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="MaterialSurfaceQuality1" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Shows DBL for procurement of surface.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEIL_DBL01</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="6"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="MaterialSurfaceQuality2" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Shows DBL for procurement of surface.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEIL_DBL02</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="6"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="AuxiliaryMaterialQuality" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Shows DBL for procurement of auxiliary material like grease, adhesive.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEIL_DBLH</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="6"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="AdditionalMaterialQualities">
+                    <xs:annotation>
+                        <xs:documentation>TODO: Inkonsistenz Schema-Doku!</xs:documentation>
+                        <xs:documentation>Up to 3 additional material qualities for the part.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="AdditionalMaterialQuality" minOccurs="0"
+                                maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>Shows additional DBL.</xs:documentation>
+                                    <xs:documentation>BOM-DB: Column TEIL_DBN</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="54"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="ElectromagneticCompatibility" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column TEIL_TYPGEN_NR</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="50"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <!-- -auf Anforderung des FB aufgeweicht
+                	<xs:element name="ElectromagneticCompatibilityFlag" type="Typ_YesNo" minOccurs="0"  nillable="true">
+                 -->
+                <xs:element name="ElectromagneticCompatibilityFlag" minOccurs="0" nillable="true">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column TEIL_EMV</xs:documentation>
+                        <xs:documentation>TODO: Warum wird zwischen NULL und Space unterschieden?</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="10"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="VehicleDocumentationRelevant" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column TEIL_FDOK</xs:documentation>
+                        <xs:documentation>TODO: Ist das nicht auch Typ_YesNo?</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="TheftRelevant" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column TEIL_DRT</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="EcuQualifier" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Shows hardware description.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEIL_HWBEN</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="30"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="FlashwareSequence" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column TEIL_FWNR</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="4"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="DependencyExisting" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column TEIL_ABHVORH</xs:documentation>
+                        <xs:documentation>TODO: Typ_YesNo?</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="SeriesPreliminaryTest" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column TEIL_SVPKZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="DrawingCharacteristics" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Currently only one DrawingCharacteristic is stored in BOM-DB.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0"
+                                name="DrawingCharacteristic">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element minOccurs="0" name="SheetNumber">
+                                            <xs:annotation>
+                                                <xs:documentation>BOM-DB: Column TEIL_ZBLNR</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:maxLength value="3"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element minOccurs="0" name="DrawingFormat">
+                                            <xs:annotation>
+                                                <xs:documentation>BOM-DB: Column TEIL_ZFORM</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:maxLength value="2"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element minOccurs="0" name="MicroficheBoxNumber">
+                                            <xs:annotation>
+                                                <xs:documentation>BOM-DB: Column TEIL_FSKAN</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:maxLength value="2"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element minOccurs="0" name="StorageInformation">
+                                            <xs:annotation>
+                                                <xs:documentation>BOM-DB: Column TEIL_ABLHI</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:maxLength value="2"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element minOccurs="0" name="RetrievalRemark">
+                                            <xs:annotation>
+                                                <xs:documentation>BOM-DB: Column TEIL_S740_BEM</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:maxLength value="20"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element minOccurs="0" name="RetrievalDate"
+                                            type="xs:date">
+                                            <xs:annotation>
+                                                <xs:documentation>BOM-DB: Column TEIL_S740_DATUM1</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element minOccurs="0" name="RetrievalDepartment">
+                                            <xs:annotation>
+                                                <xs:documentation>BOM-DB: Column TEIL_ABT</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:maxLength value="5"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element minOccurs="0" name="RetrievedBy">
+                                            <xs:annotation>
+                                                <xs:documentation>BOM-DB: Column TEIL_NAME</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:maxLength value="10"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element minOccurs="0" name="StorageDate" type="xs:date">
+                                            <xs:annotation>
+                                                <xs:documentation>BOM-DB: Column TEIL_S740_DATUM2</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element minOccurs="0" name="UserIndex">
+                                            <xs:annotation>
+                                                <xs:documentation>BOM-DB: Column TEIL_BAI</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:maxLength value="3"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="RepetitionFlag" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column TEIL_WHTKZ</xs:documentation>
+                        <xs:documentation>This element is always empty.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="ExchangeGroup" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>This element is always empty.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEIL_ASTGR</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="20"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:group minOccurs="0" ref="Group_DesignReleases"/>
+                <xs:element minOccurs="0" ref="PlantSupplies"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PartMasterData_LDI">
+        <xs:annotation>
+            <xs:documentation>getT43RTEIS: Language Dependent Information for PastMasterData, stored in a separate BOM-DB table T43RTEIS.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PartNumberRef" type="Typ_PartNumber" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>The part number of the part to which this Language Dependent Information belongs.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" ref="PartLangData">
+                    <xs:annotation>
+                        <xs:documentation>The language dependent data for the Part in all languages except the main language (German).</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PartSpecialMasterData">
+        <xs:annotation>
+            <xs:documentation>getT43RTEID: Special Master Data are maintained to a Part in EDS/BCS without historical information, without reference to an ECO.</xs:documentation>
+            <xs:documentation>Examples: Part information in cross reference table, surface of part, sparePartPlant and sparePartType, and SRM data.</xs:documentation>
+            <xs:documentation>BOM-DB: Table T43RTEID</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="PartNumber" minOccurs="0"/>
+                <xs:element minOccurs="0" name="SharedPartDgv" type="Typ_DGV">
+                    <xs:annotation>
+                        <xs:documentation>Shows Drawing Geometry Version (DGV) of Part in cross reference table (CRT)</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEID_FSTD_ZGS (ZGS = ZeichnungsGeometrieStand)</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="SharedPartType">
+                    <xs:annotation>
+                        <xs:documentation>Shows shared Part type in Cross Reference Table.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEID_FSTD_ECL</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="8"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="SharedPartFlag">
+                    <xs:annotation>
+                        <xs:documentation>Specifies if Part is registered as shared Part. Possible Values: J, N</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEID_FSTD_ESP</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="Surface">
+                    <xs:annotation>
+                        <xs:documentation>Shows surface of Part.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEID_OBERFL</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0.0"/>
+                            <xs:maxInclusive value="9999.9999"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="SparePartIdentifiers">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element minOccurs="0" maxOccurs="99" name="SparePartIdentifier">
+                                <xs:annotation>
+                                    <xs:documentation/>
+                                    <xs:documentation/>
+                                    <xs:documentation>BOM-DB: Column TEID_ET_KENNER (only the characters at positions 1-2, 4-5, 7-8 etc.)</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:attribute name="type">
+                                        <xs:annotation>
+                                            <xs:documentation>Shows if Part is used as spare Part or not</xs:documentation>
+                                            <xs:documentation>Possible values: E=spare part, K=no spare part, V=simplified spare part, Blank (not checked yet)</xs:documentation>
+                                            <xs:documentation>BOM-DB: Column TEID_ET_KENNER (only the characters at positions 3, 6, 9  etc.)</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:maxLength value="1"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="id" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The supplier/market identifier</xs:documentation>
+                                            <xs:documentation>Possible values:
+01 (MBZEUROP)
+02 (MBTUERK)
+03 (DDC)
+04 (FUSO)
+05 (FUSO GLC)
+10 (MAN)
+11 (VW)
+13 (MTU GLC)
+15 (EVO AGGR)
+16 (EVO FGST)
+22 (BR AGGR)
+25 (DICV)
+Etc…</xs:documentation>
+                                            <xs:documentation>BOM-DB: Column TEID_ET_KENNER (only the characters at positions 1-2, 4-5, 7-8 etc.)</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:maxLength value="2"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="SrmIdentifiers" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="SrmIdentifier" maxOccurs="6">
+                                <xs:annotation>
+                                    <xs:documentation>Shows identifier from SRM (Attribute id, text content contains description)</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="Typ_SrmIdentifierDescription">
+                                            <xs:attribute name="id" use="required">
+                                                <xs:annotation>
+                                                  <xs:documentation>The identifier from SRM</xs:documentation>
+                                                  <xs:documentation>BOM-DB: Column TEID_SRM_KENNER</xs:documentation>
+                                                </xs:annotation>
+                                                <xs:simpleType>
+                                                  <xs:restriction base="xs:string">
+                                                  <xs:maxLength value="20"/>
+                                                  </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:attribute>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PartAdditionalMasterData">
+        <xs:annotation>
+            <xs:documentation>getT43RTEIE: Additional Master Data are maintained to a Part in EDS/BCS including historical information; data are stored with reference to an ECO.</xs:documentation>
+            <xs:documentation>Examples: Remarks to positions or to alternatives in assembly structure (S05-structure), materialsAndSpecifications, and additionalMaterialQualities.</xs:documentation>
+            <xs:documentation>BOM-DB: Table T43RTEIE</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="PartNumber" minOccurs="0"/>
+                <xs:element minOccurs="0" name="PartAdditionalLangData"
+                    type="Typ_RemarksAndExplanations"/>
+                <xs:element minOccurs="0" name="Version" type="Typ_Version">
+                    <xs:annotation>
+                        <xs:documentation>Objects with the given version</xs:documentation>
+                        <xs:documentation>BOM-DB: Column TEIE_AS</xs:documentation>
+                        <xs:documentation>Conform to versionFrom of other objects / structures</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" ref="DesignChangeCounter"/>
+                <xs:element minOccurs="0" name="MaterialsAndSpecifications">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="16" name="MaterialAndSpecification">
+                                <xs:annotation>
+                                    <xs:documentation>One material together with its delivery spcification</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="Typ_BasicMaterial">
+                                            <xs:attribute name="deliverySpec">
+                                                <xs:annotation>
+                                                  <xs:documentation>Shows DBL for material procurement (DBL = Daimler Benz Liefervorschrift)</xs:documentation>
+                                                  <xs:documentation>BOM-DB: Column TEIE_WQEZ_DBL (max. 16 pairs of material and specification can be stored here)</xs:documentation>
+                                                </xs:annotation>
+                                                <xs:simpleType>
+                                                  <xs:restriction base="xs:string">
+                                                  <xs:maxLength value="6"/>
+                                                  </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:attribute>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="AdditionalMaterialQualities">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="AdditionalMaterialQuality" maxOccurs="36">
+                                <xs:annotation>
+                                    <xs:documentation>Shows additional DBL</xs:documentation>
+                                    <xs:documentation>BOM-DB: Column TEIE_DBN</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="18"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PartLangData" type="Typ_PartMasterDataLanguageDependent">
+        <xs:annotation>
+            <xs:documentation>Language dependent data for the part in one language</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="CodeMasterData">
+        <xs:annotation>
+            <xs:documentation>getT43RCOD</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CodeNumber" type="Typ_Code" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>The code to which the Master Data belong.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column COD_SNR</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" ref="CodeLangData">
+                    <xs:annotation>
+                        <xs:documentation>This is only the German version of the language dependent data (stored in the main table T43RCOD).</xs:documentation>
+                        <xs:documentation>The corresponding information in other languages comes from table T43RCODS and is stored in a separate element CodeMasterData_LDI.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:group minOccurs="0" ref="Group_ReleaseDates"/>
+                <xs:group minOccurs="0" ref="Group_EngineeringDates"/>
+                <xs:group minOccurs="0" ref="Group_ManualFlags"/>
+                <xs:group minOccurs="0" ref="Group_Eco"/>
+                <xs:group minOccurs="0" ref="Group_Status"/>
+                <xs:element minOccurs="0" ref="VersionToInvalidFlag"/>
+                <xs:element fixed="CD" minOccurs="0" name="ItemType">
+                    <xs:annotation>
+                        <xs:documentation>In EDS/BCS in general there are different types of items; but every Code has the item type 'CD'.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:length value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="SteeringVariants">
+                    <xs:annotation>
+                        <xs:documentation>A Code is allowed to maximal two variants of steering.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="2" minOccurs="0" name="SteeringVariant"
+                                type="Typ_SteeringVariant">
+                                <xs:annotation>
+                                    <xs:documentation>A steeringVariant of the Code is defined by the steeringType and complemented  with the steeringRequest.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:group minOccurs="0" ref="Group_DesignReleases"/>
+                <xs:element minOccurs="0" ref="PlantSupplies"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CodeMasterData_LDI">
+        <xs:annotation>
+            <xs:documentation>getT43RCODS</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CodeNumber" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>The code to which the language dependent data belong</xs:documentation>
+                        <xs:documentation>BOM-DB: Column CODS_SNR</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" ref="CodeLangData">
+                    <xs:annotation>
+                        <xs:documentation>The language dependent data for the Code in all languages except the main language (German).</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CodeLangData" type="Typ_CodeMasterDataLanguageDependent"> </xs:element>
+    <xs:element name="ScopeMasterData">
+        <xs:annotation>
+            <xs:documentation>getT43RUMF: All content (with the exception of the identifier scope) is language dependent, therefore no separate ScopeMasterData_LDI is needed here.</xs:documentation>
+            <xs:documentation>To make the definitions more uniform and comprehensible, the structure of ScopeMasterData resembles those of PartMasterData and CodeMasterData although the language dependent part only contains a description.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ScopeNumber" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column UMF_UMF</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="10"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="ScopeLangData" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Language Dependent Data for the scope (only consisting of Description in this case).</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="Description" minOccurs="0"/>
+                        </xs:sequence>
+                        <xs:attribute ref="language" use="optional"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PartsListMasterData">
+        <xs:annotation>
+            <xs:documentation>getT43RSAA</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="PartsListNumber" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>The number ("Sachnummer") of the parts list</xs:documentation>
+                        <xs:documentation>BOM-DB: Column SAA_SNR</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" ref="PartsListLangData"/>
+                <xs:group minOccurs="0" ref="Group_ReleaseDates"/>
+                <xs:group minOccurs="0" ref="Group_EngineeringDates"/>
+                <xs:group minOccurs="0" ref="Group_ManualFlags"/>
+                <xs:group minOccurs="0" ref="Group_Eco"/>
+                <xs:group minOccurs="0" ref="Group_Status"/>
+                <xs:element minOccurs="0" ref="VersionToInvalidFlag"/>
+                <xs:element minOccurs="0" name="InstallationType">
+                    <xs:annotation>
+                        <xs:documentation>Type of installation parts list</xs:documentation>
+                        <xs:documentation>Possible values:
+A (attachment part)
+B (connecting element)
+H (main part)
+Z
+Space (no installation parts list)
+</xs:documentation>
+                        <xs:documentation>BOM-DB: Column SAA_INST_CHAR</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:length value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="PartsListType">
+                    <xs:annotation>
+                        <xs:documentation>Possible values:
+SA (Sonderausstattung)
+GV (Grossversuch)
+ET (ET-SA)
+ZA (Zwischenausführung)
+KW (Kundenwunsch)
+CK (CKD-SA)
+KP (Komponentenstückliste)
+ZT (Zeitenstückliste)
+MC (MMC-Stückliste)
+</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:length value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="DmuFlag">
+                    <xs:annotation>
+                        <xs:documentation>Specifies if new or changed geometry is available to corresponding version of parts list.</xs:documentation>
+                        <xs:documentation>CAD-Dok in EDS/BCS
+Possible values: J N Space</xs:documentation>
+                        <xs:documentation>BPM-DB: Column SAA_DMUKZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:length value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="DGV" type="Typ_DGV">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column SAA_ZGS - Original format is NUM(4) or space, but here leading zeroes are stripped.
+</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="SteeringDependentFlag">
+                    <xs:annotation>
+                        <xs:documentation>Specifies if parts list contains steering dependent parts in the structure</xs:documentation>
+                        <xs:documentation>Possible value: J N Space
+</xs:documentation>
+                        <xs:documentation>BOM-DB: Column SAA_L_TEILE</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="SteeringVariant1"
+                    type="Typ_SteeringVariantWithDescription"/>
+                <xs:element minOccurs="0" name="SteeringVariant2"
+                    type="Typ_SteeringVariantWithDescription"/>
+                <xs:group minOccurs="0" ref="Group_DesignReleases"/>
+                <xs:element minOccurs="0" ref="PlantSupplies"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PartsListAdditionalMasterData">
+        <xs:annotation>
+            <xs:documentation>getT43RSAAE</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="PartsListNumber" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>The number ("Sachnummer") of the parts list</xs:documentation>
+                        <xs:documentation>BOM-DB: Column SAAE_SNR</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="PartsListAdditionalLangData"
+                    type="Typ_RemarksAndExplanations"> </xs:element>
+                <xs:group minOccurs="0" ref="Group_ReleaseDates"/>
+                <xs:group minOccurs="0" ref="Group_Eco"/>
+                <xs:group minOccurs="0" ref="Group_Versions"/>
+                <xs:group minOccurs="0" ref="Group_Status"/>
+                <xs:element minOccurs="0" name="ModularPartsListCreationFlag">
+                    <xs:annotation>
+                        <xs:documentation>Specifies if modular parts list is created manually or automatically</xs:documentation>
+                        <xs:documentation>Possible values:
+G = automatically created,
+M = manually created,
+Space = no partsList
+</xs:documentation>
+                        <xs:documentation>BOM-DB: Column SAAE_BK_KZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:length value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:group minOccurs="0" ref="Group_DesignReleases"/>
+                <xs:element minOccurs="0" ref="PlantSupplies"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PartsListMasterData_LDI">
+        <xs:annotation>
+            <xs:documentation>getT43RSAAS</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="PartsListNumber" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>The number ("Sachnummer") of the parts list</xs:documentation>
+                        <xs:documentation>BOM-DB: Column SAAS_SNR</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="PartsListLangData"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EcoMasterData">
+        <xs:annotation>
+            <xs:documentation>getT43RKEM</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Eco" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM-KEM</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" ref="EcoLangDataMaster">
+                    <xs:annotation>
+                        <xs:documentation>This is only the German version of the language dependent data (stored in the main table T43RKEM).</xs:documentation>
+                        <xs:documentation>The corresponding information in other languages comes from table T43RKEMD and is stored in a separate element EcoMasterData_LDI.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:group minOccurs="0" ref="Group_ReleaseDates"/>
+                <xs:group minOccurs="0" ref="Group_EngineeringDates"/>
+                <xs:group minOccurs="0" ref="Group_ManualFlags"/>
+                <xs:group minOccurs="0" ref="Group_Versions"/>
+                <xs:group minOccurs="0" ref="Group_Status"/>
+                <xs:element name="EcoInBcsFlag" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_KZ_BCSKEM</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="UserIndex" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_BAI</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="3"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="LegalRelevant" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_GZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="LegalRelevantDate" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_DGZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="6"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="SpecialToolingRelevant" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_ZKDSW</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="CircularTechnicalLetterRelevant" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_TRDS</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="TypeApprovalRelevant" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_TYP</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="ExhaustApprovalRelevant" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_ABGAS</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Priority" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_DRING</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="AfterSalesRelevant" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_KD</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="EcoType" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_EINID</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="StoppedBy" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_STOPKEM</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="14"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="StopOrderType" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_STOPKEM_KZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="TechnicalDataRelevant" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_TDAT</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="ReasonKey" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_URLS</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="5"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="ChangeRequestNumber" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_ANTR</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="15"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="EstimatedCancellationDate" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_DAT</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="6"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="ProlongationDate" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_VTERM</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="6"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="CancellationEco" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_AUFBAU</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="13"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="SimultaneousEcos">
+                    <xs:annotation>
+                        <xs:documentation>Up to 4 simultaneous entries for the eco.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="SimultaneousEco" minOccurs="0" maxOccurs="4">
+                                <xs:annotation>
+                                    <xs:documentation>BOM-DB: Extract of Column KEM_ZM_KEM</xs:documentation>
+                                    <xs:documentation>ECO#1=digit 1..14, ECO#2=digit 15..28... of KEM_ZM_KEM</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="14"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="ScheduledFlag" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_KZ_SOLDAT</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Project" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_PRKZ_KZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="13"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="ProjectDescription" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column KEM_PRKZ_BEZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="50"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="EcoRegistration" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Ten different ecoRegistration attributes.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="EcoRequester">
+                                <xs:annotation>
+                                    <xs:documentation>BOM-DB: Column KEM_AUFREG_EXT_xy begins with ‘ANTRAGSTELLER’</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="43"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="EcoMainEditor">
+                                <xs:annotation>
+                                    <xs:documentation>BOM-DB: Column KEM_AUFREG_EXT_xy begins with ‘BEARBEITET’</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="43"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="EcoVerifier">
+                                <xs:annotation>
+                                    <xs:documentation>BOM-DB: Column KEM_AUFREG_EXT_xy begins with ‘GEPRUEFT’</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="43"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="EcoApprover">
+                                <xs:annotation>
+                                    <xs:documentation>BOM-DB: Column KEM_AUFREG_EXT_xy begins with ‘GENEHMIGT-KONSTR.LTG’</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="43"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="EcoEmissionResponsible">
+                                <xs:annotation>
+                                    <xs:documentation>BOM-DB: Column KEM_AUFREG_EXT_xy begins with ‘ABGAS’</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="43"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="EcoHomologationAndRegulationResponsible">
+                                <xs:annotation>
+                                    <xs:documentation>BOM-DB: Column KEM_AUFREG_EXT_xy begins with ‘TYPPR. U. VORSCHR.’</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="43"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="TechnicalStandardResponsible">
+                                <xs:annotation>
+                                    <xs:documentation>BOM-DB: Column KEM_AUFREG_EXT_xy begins with ‘NORMEN’</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="43"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="ProductDocumentationEditor">
+                                <xs:annotation>
+                                    <xs:documentation>BOM-DB: Column KEM_AUFREG_EXT_xy begins with ‘ERZEUGNISDOKUMENT.’</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="43"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="AdditionalResponsible1">
+                                <xs:annotation>
+                                    <xs:documentation>BOM-DB: First KEM_AUFREG_EXT_xy which can’t be mapped and for which digit 21 to 43 is not completely empty</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="43"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="AdditionalResponsible2">
+                                <xs:annotation>
+                                    <xs:documentation>BOM-DB: Second KEM_AUFREG_EXT_xy which can’t be mapped and for which digit 21 to 43 is not completely empty</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="43"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:group minOccurs="0" ref="Group_DesignReleases" maxOccurs="1"/>
+                <xs:element minOccurs="0" ref="PlantSuppliesEds"/>
+                <xs:element minOccurs="0" ref="PlantSuppliesBcs"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ChangeNotice">
+        <xs:annotation>
+            <xs:documentation>getT43RAEH</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="System" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Data base system, inside of the item with its change notices is defined.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column AEH-SYSTEM</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="3"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Item" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Item, to which  change notices are defined .</xs:documentation>
+                        <xs:documentation>BOM-DB: Column AEH-SNR</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="17"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element ref="Eco" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>ECO, which has modified the item.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column AEH-KEM</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="EcoVersion" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Version of the eco which has modified the item.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column AEH-ASKE</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="3"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="OrderSupplementData" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Contains 8 Attributes for Order Supplement Data</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="RawMaterial">
+                                <xs:annotation>
+                                    <xs:documentation>Only in EDS: RFME-Rohmaterial.</xs:documentation>
+                                    <xs:documentation>BOM-DB: Column AEH-RFME-R</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="1"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="FinishedPart">
+                                <xs:annotation>
+                                    <xs:documentation>Only in EDS: RFME-Fertigteil.</xs:documentation>
+                                    <xs:documentation>BOM-DB: Column AEH-RFME-F</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="1"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="Mounting">
+                                <xs:annotation>
+                                    <xs:documentation>Only in EDS: RFME-Montage.</xs:documentation>
+                                    <xs:documentation>BOM-DB: Column AEH-RFME-M</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="1"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="SparePart">
+                                <xs:annotation>
+                                    <xs:documentation>Only in EDS: RFME-Ersatzteil.</xs:documentation>
+                                    <xs:documentation>BOM-DB: Column AEH-RFME-E</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="1"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="Exchangeability">
+                                <xs:annotation>
+                                    <xs:documentation>Only in EDS: RFME-Austaschbarkeit.</xs:documentation>
+                                    <xs:documentation>BOM-DB: Column AEH-RFME-A</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="1"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="Tool">
+                                <xs:annotation>
+                                    <xs:documentation>Only in EDS: RFME-Werkzeug.</xs:documentation>
+                                    <xs:documentation>BOM-DB: Column AEH-RFME-W</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="1"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="Diagnose">
+                                <xs:annotation>
+                                    <xs:documentation>Only in EDS: RFME-Diagnose.</xs:documentation>
+                                    <xs:documentation>BOM-DB: Column AEH-RFME-D</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="1"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="PieceNumberForecast">
+                                <xs:annotation>
+                                    <xs:documentation>Only in EDS: Prognosestückzahl.</xs:documentation>
+                                    <xs:documentation>BOM-DB: Column AEH-RFME-PROGNOSE</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="6"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="PlantSupplyData" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="PlantSupplyExtractFlag">
+                                <xs:annotation>
+                                    <xs:documentation>Only in EDS: KZ zu Verteilerauswahl zum Teil.</xs:documentation>
+                                    <xs:documentation>BOM-DB: Column AEH-KZVSTE</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="1"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element minOccurs="0" maxOccurs="30" ref="PlantSupplies">
+                                <xs:annotation>
+                                    <xs:documentation>Plant keys for production plants, to which the change notice is supplied.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="ChangeNoticeTexts">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element minOccurs="0" maxOccurs="unbounded"
+                                ref="ChangeNoticeLangData">
+                                <xs:annotation>
+                                    <xs:documentation>Language dependent data for german, english, spanish, portuguese, french, turkish, italian change notices.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="K3">
+        <xs:annotation>
+            <xs:documentation>getT43RK3</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Eco" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>ID of the ECO</xs:documentation>
+                        <xs:documentation>BOM-DB: Column K3-KEM</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Item" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Item, which is modified by the ECO</xs:documentation>
+                        <xs:documentation>BOM-DB: Column K3-SNR</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="17"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="EcoVersion" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Version of the ECO</xs:documentation>
+                        <xs:documentation>BOM-DB: Column K3-ASKE</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:minInclusive value="0"/>
+                            <xs:maxInclusive value="999"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="TypeFlag" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Type of Item, which is modified by the ECO</xs:documentation>
+                        <xs:documentation>BOM-DB: Column K3-TYPKZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Position" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Position number of an Item inside the ECO-structure from ECO to Items</xs:documentation>
+                        <xs:documentation>BOM-DB: Column K3-POS</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="3"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="ModificationFlag" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Indicates whether the change by ECO is done directly to an Item or only indirect by changing another Item directly and the viewed Item just indirectly.</xs:documentation>
+                        <xs:documentation>BOM-DB: Column K3_ASKZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="EngineeringDate" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column K3-S-DAT</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:dateTime"> </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="ManualFlag" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: Column K3-MKZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <!-- itemContainer was not included, it is not relevant for ASPLM -->
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EcoMasterData_LDI">
+        <xs:annotation>
+            <xs:documentation>getT43RKEMD</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Eco" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>ECO to which master data in foreign language is searched</xs:documentation>
+                        <xs:documentation>BOM-DB: Column KEMD-SNR</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" ref="EcoLangData">
+                    <xs:annotation>
+                        <xs:documentation>Language dependant data regarding EcoMasterData.</xs:documentation>
+                        <xs:documentation>This structure contains information in all available languages except german.</xs:documentation>
+                        <xs:documentation>The german data are stored in EcoMasterData.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EcoLangData" type="Typ_EcoLanguageDependent">
+        <xs:annotation>
+            <xs:documentation>Language dependant data for the EcoMasterData in one language except german.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="EcoLangDataMaster" type="Typ_EcoLanguageDependentMaster">
+        <xs:annotation>
+            <xs:documentation>Language dependant data for the EcoMasterdata for german language.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ChangeNoticeLangData" type="Typ_ChangeNoticeLanguageDependent"
+        abstract="false">
+        <xs:annotation>
+            <xs:documentation>Language dependant data for the changeNotice in one language</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="PartsListLangData">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:group minOccurs="0" ref="Group_Versions"/>
+                <xs:element minOccurs="0" ref="Description"/>
+                <xs:element minOccurs="0" name="ExtendedDescription">
+                    <xs:annotation>
+                        <xs:documentation>Extended description of parts list in given language</xs:documentation>
+                        <xs:documentation>BOM-DB: Column [suffix]_ERW_BEN</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="50"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="SteeringStatusDescription1"
+                    type="Typ_SteeringStatusDescription"/>
+                <xs:element minOccurs="0" name="SteeringStatusDescription2"
+                    type="Typ_SteeringStatusDescription"/>
+                <xs:element minOccurs="0" name="Remark">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="352"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute ref="language" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="S05PointOfUsageText">
+        <xs:annotation>
+            <xs:documentation>getT43RBKV: Point of usage text data of one or more given ModularPartsLists [=Assemblies (ZB) or PartsLists (SAA)]</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PartsList" type="Typ_PartsList13" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>PartsList or Assembly</xs:documentation>
+                        <xs:documentation>BOM-DB: BKV_SNR</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="Position">
+                    <xs:annotation>
+                        <xs:documentation>Position within Modular Parts List</xs:documentation>
+                        <xs:documentation>BOM-DB: Column BKV_POS</xs:documentation>
+                        <xs:documentation>Format in BOM-DB: Num(9), leading 000 stripped by EngBus service</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="[0-9]+"/>
+                            <xs:maxLength value="6"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:group minOccurs="0" ref="Group_ReleaseDates"/>
+                <xs:group minOccurs="0" ref="Group_Eco"/>
+                <xs:group minOccurs="0" ref="Group_Versions"/>
+                <xs:element minOccurs="0" ref="StatusFrom">
+                    <xs:annotation>
+                        <xs:documentation>Status of version of S05, version generated by EcoFrom</xs:documentation>
+                        <xs:documentation>BOM-DB: Column BKV_FRG_KZ_AB</xs:documentation>
+                        <xs:documentation>Allocate Space to Value 0 (=S05 is released)
+Allocate ‘NF’ to Value 1 (=S05 is not released)
+</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" ref="StatusTo">
+                    <xs:annotation>
+                        <xs:documentation>Status of version of S05, version generated by EcoTo</xs:documentation>
+                        <xs:documentation>BOM-DB: Column BKV_FRG_KZ_BIS</xs:documentation>
+                        <xs:documentation>Allocate Space to Value 0 (=S05 is released)
+Allocate ‘NF’ to Value 1 (=S05 is not released)</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="TextType">
+                    <xs:annotation>
+                        <xs:documentation>Specifies type of point of usage text </xs:documentation>
+                        <xs:documentation>BOM-DB: Column BKV_BTXKZ</xs:documentation>
+                        <xs:documentation>Possible values: V, T</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="PointOfUsageTextLangData">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Text" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>Shows point of usage text</xs:documentation>
+                                    <xs:documentation>BOM-DB: Column BKV_TEXT</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="300"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute ref="language" use="optional"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ModelMasterData">
+        <xs:annotation>
+            <xs:documentation>getT43RBM: Master data of one or more given Models (German: Baumuster). </xs:documentation>
+            <xs:documentation>There are two types of Models, a Vehicle and a MajorComponent (German: Fahrzeug-Baumuster and Aggregate-Baumuster). The Service getT43RBM delivers master data to both types of Models.</xs:documentation>
+            <xs:documentation>BOM-DB: Table T43RBM</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ModelNumber" minOccurs="0"/>
+                <xs:element minOccurs="0" ref="ModelLangData">
+                    <xs:annotation>
+                        <xs:documentation>German version of the language dependent Model data</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:group minOccurs="0" ref="Group_ReleaseDates"/>
+                <xs:group minOccurs="0" ref="Group_EngineeringDates"/>
+                <xs:group minOccurs="0" ref="Group_ManualFlags"/>
+                <xs:group minOccurs="0" ref="Group_Eco"/>
+                <xs:group minOccurs="0" ref="Group_Status"/>
+                <xs:element minOccurs="0" ref="VersionToInvalidFlag"/>
+                <xs:element minOccurs="0" name="ProductGroup">
+                    <xs:annotation>
+                        <xs:documentation>Product group of Model:
+N (=Trucks), 
+S (=Buses)</xs:documentation>
+                        <xs:documentation>BOM-DB: Column BM_PGKZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="MajorComponent">
+                    <xs:annotation>
+                        <xs:documentation>Type of MajorComponent: 
+H=1: Hinterachse,
+J=2: Hinterachse, 
+etc.
+</xs:documentation>
+                        <xs:documentation>BOM-DB: Column BM_AGRKZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:group minOccurs="0" ref="Group_DesignReleases"/>
+                <xs:element minOccurs="0" ref="PlantSupplies"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ModelMasterData_LDI">
+        <xs:annotation>
+            <xs:documentation>getT43RBMS: Model Master Data, Language Dependent Information</xs:documentation>
+            <xs:documentation>Contains the master data of one or more given Models (German: Baumuster) in foreign languages</xs:documentation>
+            <xs:documentation>There are two types of Models, a Vehicle and a MajorComponent (German: Fahrzeug-Baumuster and Aggregate-Baumuster). Service getT43RBMS delivers master data in foreign language to both types of Models.</xs:documentation>
+            <xs:documentation>BOM-DB: Table T43RBMS</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ModelNumber" minOccurs="0"/>
+                <xs:element ref="ModelLangData" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Foreign language versions of the language dependent Model data</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ModuleMasterData">
+        <xs:annotation>
+            <xs:documentation>getT43RBMAG: Master data of one or more given Modules to one or more Models</xs:documentation>
+            <xs:documentation>For simplicity, the Module of a Model, in German Baumustergruppe, might be named just Module.</xs:documentation>
+            <xs:documentation>BOM-DB: Table T43RBMAG</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ModelNumber" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Model (=Vehicle or MajorComponent)</xs:documentation>
+                        <xs:documentation>BOM-DB: BMAG_SNR, (TODO: Check this:) digit 1 to 13</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="ModuleNumber" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: BMAG_SNR, digit 14 to 17</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" ref="ModuleLangData"/>
+                <xs:group minOccurs="0" ref="Group_ReleaseDates"/>
+                <xs:group minOccurs="0" ref="Group_EngineeringDates"/>
+                <xs:group minOccurs="0" ref="Group_ManualFlags"/>
+                <xs:group minOccurs="0" ref="Group_Eco"/>
+                <xs:group minOccurs="0" ref="Group_Status"/>
+                <xs:element minOccurs="0" ref="VersionToInvalidFlag"/>
+                <xs:element minOccurs="0" name="DocumentationStatus">
+                    <xs:annotation>
+                        <xs:documentation>Values: UN, BL</xs:documentation>
+                        <xs:documentation>BOM-DB: Column BMAG_STAT</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="ApprovedModelTypes">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="8" name="ApprovedModelType">
+                                <xs:annotation>
+                                    <xs:documentation>For every ModelType, an approvalFlag describes the allowance of the ModelType within the Module of Model.</xs:documentation>
+                                    <xs:documentation>Text content: ModelType defined to the Model in EDS/BCS</xs:documentation>
+                                    <xs:documentation>BOM-DB: Column BMAG_AUSFA[i]  (i=1..8)</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="Typ_ModelType">
+                                            <xs:attribute name="approval">
+                                                <xs:annotation>
+                                                  <xs:documentation>States whether the ModelType is activated to the Module</xs:documentation>
+                                                  <xs:documentation>Value: S, B, Space</xs:documentation>
+                                                  <xs:documentation>BOM-DB: Column BMAG_AUSFA_SPKZ[i]  (i=1..8)</xs:documentation>
+                                                </xs:annotation>
+                                                <xs:simpleType>
+                                                  <xs:restriction base="xs:string">
+                                                  <xs:maxLength value="1"/>
+                                                  </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:attribute>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" ref="LeadingDesignRelease"/>
+                <xs:element minOccurs="0" ref="PlantSupplies"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ModuleMasterData_LDI">
+        <xs:annotation>
+            <xs:documentation>getT43RBMAS: Master data of one or more given Modules (German: Baumuster-Gruppe) and/or one or more given ModelTypes (German: Baumuster-Ausführungsart) in foreign language</xs:documentation>
+            <xs:documentation>There are two types of Modules, a VehicleModule and a MajorComponentModule (German: Fahrzeug-Baumuster-Gruppe and Aggregate-Baumuster-Gruppe). 
+And there are two types of ModelTypes, a VehicleModelType and a MajorComponentModelType (German: Fahrzeug-Baumuster-Ausführungsart and Aggregate-Baumuster-Ausführungsart).
+Service getT43RBMAS delivers master data in foreign language to all of these objects.</xs:documentation>
+            <xs:documentation>BOM-DB: Table T43RBMAS</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ModelNumber" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: BMAS_SNR, (TODO: Check this:) digit 1 to 13</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="ModuleNumber" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>BOM-DB: BMAS_SNR, digit 14 to 17</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" ref="ModuleLangData"/>
+                <xs:element minOccurs="0" ref="ModelTypeLangData"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ModelLangData">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:group minOccurs="0" ref="Group_Versions"/>
+                <xs:element minOccurs="0" ref="Description"/>
+                <xs:element minOccurs="0" name="SalesDescription">
+                    <xs:annotation>
+                        <xs:documentation>Description of Model for Sales (in the given language)</xs:documentation>
+                        <xs:documentation>BOM-DB: Column BMS_VBEZ</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="30"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="Remark">
+                    <xs:annotation>
+                        <xs:documentation>Remark to the Model (in the given language)</xs:documentation>
+                        <xs:documentation>BOM-DB: Column BMS_BEM</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="150"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="0" name="TechnicalData">
+                    <xs:annotation>
+                        <xs:documentation>Technical data to the Model (in the given language)</xs:documentation>
+                        <xs:documentation>BOM-DB: Column BMS_TEDAT</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="200"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute ref="language" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ModuleLangData">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:group ref="Group_ModuleModelTypeDescriptions"/>
+            </xs:sequence>
+            <xs:attribute ref="language" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ModelTypeLangData">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ModelTypeNumber"/>
+                <xs:group ref="Group_ModuleModelTypeDescriptions"/>
+            </xs:sequence>
+            <xs:attribute ref="language" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Item" type="Typ_PartNumber"> </xs:element>
+    <xs:element name="ReleaseDateFrom" type="Typ_BomDbDate">
+        <xs:annotation>
+            <xs:documentation>Date/time from which on the parent element is valid</xs:documentation>
+            <xs:documentation>BOM-DB: Column [suffix]_FRG_DAT_AB</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ReleaseDateTo" type="Typ_BomDbDate">
+        <xs:annotation>
+            <xs:documentation>Date/time up to which the parent element is valid</xs:documentation>
+            <xs:documentation>BOM-DB: Column [suffix]_FRG_DAT_BIS</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="EngineeringDateFrom" type="Typ_BomDbDate">
+        <xs:annotation>
+            <xs:documentation>Date/time from which on the parent element is valid (engineering view)</xs:documentation>
+            <xs:documentation>BOM-DB: Column [suffix]_S_DAT_AB</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="EngineeringDateTo" type="Typ_BomDbDate">
+        <xs:annotation>
+            <xs:documentation>Date/time up to which the parent element is valid (engineering view)</xs:documentation>
+            <xs:documentation>BOM-DB: Column [suffix]_S_DAT_BIS</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ManualFlagFrom">
+        <xs:annotation>
+            <xs:documentation>engineeringDateFrom of parent element is manually shifted if content is 'M'</xs:documentation>
+            <xs:documentation>BOM-DB: Column [suffix]_MKZ_AB</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="1"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ManualFlagTo">
+        <xs:annotation>
+            <xs:documentation>engineeringDateTo of parent element is manually shifted if content is 'M'</xs:documentation>
+            <xs:documentation>BOM-DB: Column [suffix]_MKZ_BIS</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="1"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="Eco">
+        <xs:annotation>
+            <xs:documentation>Engineering Change Object (ECO) / KonstruktionsEinsatzMeldung (KEM)</xs:documentation>
+            <xs:documentation>BOM-DB: Column [suffix]_SNR for table KEM and KEMD</xs:documentation>
+            <xs:documentation>BOM-DB: Column [suffix]_KEM for table K3 and AEH</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="13"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="EcoFrom">
+        <xs:annotation>
+            <xs:documentation>Engineering Change Order creating the versionFrom of object/structure</xs:documentation>
+            <xs:documentation>BOM-DB: Column [suffix]_KEM_AB</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="13"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="EcoTo">
+        <xs:annotation>
+            <xs:documentation>Engineering Change Order closing the versionTo of object/structure</xs:documentation>
+            <xs:documentation>BOM-DB: Column [suffix]_KEM_BIS</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="13"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="VersionFrom" type="Typ_Version">
+        <xs:annotation>
+            <xs:documentation>Version of object/structure, created by EcoFrom</xs:documentation>
+            <xs:documentation>BOM-DB: Column [suffix]_AS_AB</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="VersionTo" type="Typ_Version">
+        <xs:annotation>
+            <xs:documentation>Version of object/structure, closed by EcoFrom</xs:documentation>
+            <xs:documentation>BOM-DB: Column [suffix]_AS_BIS</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="VersionToInvalidFlag">
+        <xs:annotation>
+            <xs:documentation>States if versionTo of object/structure is invalidated</xs:documentation>
+            <xs:documentation>Flag set to ‘U’ means versionTo of Object/structure is not valid (possible values are U and space).</xs:documentation>
+            <xs:documentation>BOM-DB: Column [suffix]_UNG_KZ_BIS</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="1"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="StatusFrom">
+        <xs:annotation>
+            <xs:documentation>Status of version of object/structure, version generated by ecoFrom</xs:documentation>
+            <xs:documentation>BOM-DB, Column [suffix]_VAKZ_AB</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="2"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="StatusTo">
+        <xs:annotation>
+            <xs:documentation>Status of version of object/structure, version generated by ecoTo</xs:documentation>
+            <xs:documentation>BOM-DB, Column [suffix]_VAKZ_BIS</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="2"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="SteeringType">
+        <xs:annotation>
+            <xs:documentation>BOM-DB: Column B2I_LKG/BK_LKG/COD_LKG_1/COD_LKG_2</xs:documentation>
+            <xs:documentation>Values 0 and 4 are mapped to K,
+values 1 and 5 are mapped to L (left), 
+values 2 and 6 are mapped to R (right),
+otherwise the value is Space.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="1"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="MaturityLevel">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="1"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="PlantSupplies">
+        <xs:annotation>
+            <xs:documentation>Contains plant keys for production plants to which the containing object is supplied</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="PlantSupply" maxOccurs="100"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PlantSupply">
+        <xs:annotation>
+            <xs:documentation>Plant key for one production plant to which the containing element (B90, module, S05, changeNotice) is supplied</xs:documentation>
+            <xs:documentation>A single plant is defined by one (J=Wörth) or two characters (EK=Kamaz)</xs:documentation>
+            <xs:documentation>BOM-DB: Extract of [suffix]_WK</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="2"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="LeadingDesignRelease" type="Typ_DesignRelease">
+        <xs:annotation>
+            <xs:documentation>Key for the department/division, which is responsible for object/structure.</xs:documentation>
+            <xs:documentation>BOM-DB: Column (...)_FEDKF</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="InvolvedDesignReleases">
+        <xs:annotation>
+            <xs:documentation>Keys for the departments/divisions, which participate in design and development of an object/structure.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="InvolvedDesignRelease"
+                    type="Typ_DesignRelease">
+                    <xs:annotation>
+                        <xs:documentation>Key for the department/division which is involved.</xs:documentation>
+                        <xs:documentation>BOM-DB: Extract of suffix_BETKF</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Description">
+        <xs:annotation>
+            <xs:documentation>Description of the parent element</xs:documentation>
+            <xs:documentation>BOM-DB: Column [suffix]_BEN</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="50"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="PartsListNumber" type="Typ_PartsList17">
+        <xs:annotation>
+            <xs:documentation>Parts list</xs:documentation>
+            <xs:documentation>BOM-DB: Column [suffix]_SNR</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="S05Remarks">
+        <xs:annotation>
+            <xs:documentation>Remarks can be assigned to positions in (modular) PartsLists (=S05-structures).</xs:documentation>
+            <xs:documentation>Maximal ten different remarks to positions of PartsList can be defined.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="S05Remark" maxOccurs="10" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Every remark to an S05 is assigned using digits from 0 to 9 (stored in attribute Nr).</xs:documentation>
+                        <xs:documentation>BOM-DB: Column [suffix]_BEMZ_TEXT[0-9]</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="Typ_S05Remark">
+                                <xs:attribute name="nr">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string"> </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:group name="Group_ReleaseDates">
+        <xs:sequence>
+            <xs:element minOccurs="0" ref="ReleaseDateFrom"/>
+            <xs:element minOccurs="0" ref="ReleaseDateTo"/>
+        </xs:sequence>
+    </xs:group>
+    <xs:group name="Group_EngineeringDates">
+        <xs:sequence>
+            <xs:element ref="EngineeringDateFrom" minOccurs="0"/>
+            <xs:element ref="EngineeringDateTo" minOccurs="0"/>
+        </xs:sequence>
+    </xs:group>
+    <xs:group name="Group_Eco">
+        <xs:sequence>
+            <xs:element minOccurs="0" ref="EcoFrom"/>
+            <xs:element minOccurs="0" ref="EcoTo"/>
+        </xs:sequence>
+    </xs:group>
+    <xs:group name="Group_Status">
+        <xs:sequence>
+            <xs:element minOccurs="0" ref="StatusFrom"/>
+            <xs:element minOccurs="0" ref="StatusTo"/>
+        </xs:sequence>
+    </xs:group>
+    <xs:group name="Group_Versions">
+        <xs:sequence>
+            <xs:element minOccurs="0" ref="VersionFrom"/>
+            <xs:element minOccurs="0" ref="VersionTo"/>
+        </xs:sequence>
+    </xs:group>
+    <xs:group name="Group_ManualFlags">
+        <xs:sequence>
+            <xs:element minOccurs="0" ref="ManualFlagFrom"/>
+            <xs:element minOccurs="0" ref="ManualFlagTo"/>
+        </xs:sequence>
+    </xs:group>
+    <xs:group name="Group_DesignReleases">
+        <xs:sequence>
+            <xs:element minOccurs="0" ref="LeadingDesignRelease"/>
+            <xs:element minOccurs="0" ref="InvolvedDesignReleases" maxOccurs="20"/>
+        </xs:sequence>
+    </xs:group>
+    <xs:attribute name="language">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"> </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    <xs:simpleType name="Typ_BomDbDate">
+        <xs:annotation>
+            <xs:documentation>A date from BOM-DB (original format: YYYYMMDDhhmmss)</xs:documentation>
+            <xs:documentation>There are two boundary cases:</xs:documentation>
+            <xs:documentation>BOM-DB value 0 ist translated to 0001-01-01:00:00:00</xs:documentation>
+            <xs:documentation>BOM-DB value 99999999999999 ist translated to 9999-12-31T23:59:59</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:dateTime"> </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Typ_Version">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="999"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Typ_PartNumber">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="13"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <!--
+    <xs:simpleType name="Typ_YesNo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="J"/>
+            <xs:pattern value="N"/>
+            <xs:pattern value=" "/>
+        </xs:restriction>
+    </xs:simpleType>
+    -->
+    <xs:simpleType name="Typ_DesignRelease">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="Typ_ChangeNoticeLanguageDependent">
+        <xs:annotation>
+            <xs:documentation>Typ_ChangeNoticeLanguageDependent aggregates all language dependent information.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="ChangeNoticeTextRow1" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Shows additional information of the changeNotice.</xs:documentation>
+                    <xs:documentation>BOM-DB: Column AEH-AEHx-FS01 where x in {'',1,2,3,4,5,6} dependant on value of language</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="42"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="ChangeNoticeTextRow2" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Shows additional information of the changeNotice.</xs:documentation>
+                    <xs:documentation>BOM-DB: Column AEH-AEHx-FS02 where x in {'',1,2,3,4,5,6} dependant on value of language</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="60"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="ChangeNoticeTextRow3" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Shows additional information of the changeNotice.</xs:documentation>
+                    <xs:documentation>BOM-DB: Column AEH-AEHx-FS03 where x in {'',1,2,3,4,5,6} dependant on value of language</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="60"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute ref="language" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="Typ_PartMasterDataLanguageDependent">
+        <xs:annotation>
+            <xs:documentation>Typ_PartMasterDateLanguageDependent aggregates all language dependent information (description, remarks) in PartMasterData.</xs:documentation>
+            <xs:documentation>In BOM-DB, this information is stored in the main table T43RTEIL only for the default language German, all other languages in table T43RTEIS.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" ref="Description"/>
+            <xs:element name="Remark" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Shows additional information of the part.</xs:documentation>
+                    <xs:documentation>BOM-DB: Column TEIL_BEM</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="114"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" ref="S05Remarks"/>
+        </xs:sequence>
+        <xs:attribute ref="language" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="Typ_CodeMasterDataLanguageDependent">
+        <xs:sequence>
+            <xs:element ref="VersionFrom" minOccurs="0"/>
+            <xs:element ref="VersionTo" minOccurs="0"/>
+            <xs:element ref="Description" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>BOM-DB Column: COD_BEN for German, CODS_BEN for all other languages</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ExtendedDescription" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>BOM-DB Column: COD_ERW_BEN for German, CODS_ERW_BEN for all other languages</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="30"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Remark" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>BOM-DB Column: COD_BEM for German, CODS_BEM for all other languages</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="350"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute ref="language" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="Typ_EcoLanguageDependentMaster">
+        <xs:annotation>
+            <xs:documentation>Is used for KEM data</xs:documentation>
+            <xs:documentation>Will be modified in one of the next sprints.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="EngineeringScope" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>BOM-DB: Column KEM_BEUM</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="60"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Reason" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>BOM-DB: Column KEM_GRUND</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="240"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="EngineeringChangeOver" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>BOM-DB: Column KEM_EV</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="120"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Remark" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>BOM-DB: Column KEM_BEM</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="114"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute ref="language" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="Typ_EcoLanguageDependent">
+        <xs:annotation>
+            <xs:documentation>Is used for KEMD data</xs:documentation>
+            <xs:documentation>Will be modified in one of the next sprints.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="EngineeringScope" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>BOM-DB: Column KEM(D)_BEUM</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="60"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Reason" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>BOM-DB: Column KEM(D)_GRUND</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="ReasonRow1" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>BOM-DB: Column KEM(D)_GRUND1</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="60"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ReasonRow2" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>BOM-DB: Column KEM(D)_GRUND2</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="60"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ReasonRow3" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>BOM-DB: Column KEM(D)_GRUND3</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="60"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="ReasonRow4" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>BOM-DB: Column KEM(D)_GRUND4</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="60"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="EngineeringChangeOver" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>BOM-DB: Column KEM(D)_EV</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="120"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Remark" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>BOM-DB: Column KEM(D)_BEM</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="114"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute ref="language" use="optional"/>
+    </xs:complexType>
+    <xs:simpleType name="Typ_S05Remark">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="140"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Typ_Code">
+        <xs:annotation>
+            <xs:documentation>Code with its Master Data</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="7"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Typ_SteeringStatusDescription">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="Typ_SteeringVariant">
+        <xs:sequence>
+            <xs:element ref="SteeringType"/>
+            <xs:element name="SteeringRequest">
+                <xs:annotation>
+                    <xs:documentation>Request for steeringType</xs:documentation>
+                    <xs:documentation>BOM-DB: Column COD_ANTR_1/COD_ANTR_2</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="12"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Typ_SteeringVariantWithDescription">
+        <xs:complexContent>
+            <xs:extension base="Typ_SteeringVariant">
+                <xs:sequence>
+                    <xs:element name="SteeringStatus">
+                        <xs:annotation>
+                            <xs:documentation>Specifies  status of documentation of steering</xs:documentation>
+                            <xs:documentation>The steering documentation itself is stored in the language dependent part of the parent element.</xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="2"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:simpleType name="Typ_String38">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="38"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Typ_PartsList13">
+        <xs:annotation>
+            <xs:documentation>PartsList or Assembly</xs:documentation>
+            <xs:documentation>BOM-DB: Column [suffix]_SNR</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="13"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Typ_PartsList17">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="PartNumber" type="Typ_PartNumber">
+        <xs:annotation>
+            <xs:documentation>Part or Assembly</xs:documentation>
+            <xs:documentation>BOM-DB: Column [suffix]_SNR (Teil-Sachnummer)</xs:documentation>
+            <xs:documentation>Number structure: see V 999 8004</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:simpleType name="Typ_DGV">
+        <xs:annotation>
+            <xs:documentation>Drawing Geometry Version. Shows the drawing version in Smaragd</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+            <xs:pattern value="[ ]*|[0-9]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Typ_SparePartIdentifier">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Typ_SrmIdentifierDescription">
+        <xs:annotation>
+            <xs:documentation>Text content is the description of the SRM identifier</xs:documentation>
+            <xs:documentation>BOM-DB: Column TEID_SRM_KENNER</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="DesignChangeCounter">
+        <xs:annotation>
+            <xs:documentation>BOM-DB: Column [suffix]_KZNR</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:maxInclusive value="999"/>
+                <xs:minInclusive value="0"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:complexType name="Typ_RemarksAndExplanations">
+        <xs:sequence>
+            <xs:element minOccurs="0" ref="S05Remarks"/>
+            <xs:element minOccurs="0" name="S05AlternativeExplanations">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="26" minOccurs="0" name="S05AlternativeExplanation">
+                            <xs:annotation>
+                                <xs:documentation>Text content shows explanation text that is assigned to alternative type</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="Typ_String38">
+                                        <xs:attribute name="type" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>Specifies parts that are assembled optional</xs:documentation>
+                                                <xs:documentation>BOM-DB: Column SAAE_WW_KZi (i = 1 … 26)</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:attribute>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute ref="language" use="optional"/>
+    </xs:complexType>
+    <xs:simpleType name="Typ_BasicMaterial">
+        <xs:annotation>
+            <xs:documentation>Shows material of the part</xs:documentation>
+            <xs:documentation>BOM-DB: Column TEIE_WQEZ_DBL (max. 16 pairs of material and specification can be stored here)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="39"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="ModelNumber">
+        <xs:annotation>
+            <xs:documentation>BOM-DB: Column [suffix]_SNR (SNR=Sachnummer)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="7"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:complexType name="Typ_ModuleModelTypeDescriptions">
+        <xs:sequence>
+            <xs:group minOccurs="0" ref="Group_Versions"/>
+            <xs:element minOccurs="0" ref="Description"/>
+            <xs:element minOccurs="0" name="DocumentationStatusDescription">
+                <xs:annotation>
+                    <xs:documentation>Description of status of documentation to Module or ModelType</xs:documentation>
+                    <xs:documentation>BOM-DB: Column BMAS_STABES</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:group name="Group_ModuleModelTypeDescriptions">
+        <xs:annotation>
+            <xs:documentation>This is the group of elements common to the language dependent part of Module and ModelType</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:group minOccurs="0" ref="Group_Versions"/>
+            <xs:element minOccurs="0" ref="Description"/>
+            <xs:element minOccurs="0" name="DocumentationStatusDescription">
+                <xs:annotation>
+                    <xs:documentation>Description of status of documentation to Module or ModelType</xs:documentation>
+                    <xs:documentation>BOM-DB: Column BMAS_STABES</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:group>
+    <xs:element name="ModuleNumber">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="4"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ModelTypeNumber">
+        <xs:annotation>
+            <xs:documentation>BOM-DB: BMAS_SNR, (TODO: Check this:) digit 1 to 13</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="9"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <!--xs:element name="Eco" type="Typ_PartNumber">
+        <xs:annotation>
+            <xs:documentation>Part or Assembly</xs:documentation>
+            <xs:documentation>BOM-DB: Column [suffix]_SNR (Teil-Sachnummer)</xs:documentation>
+            <xs:documentation>Number structure: see V 999 8004</xs:documentation>
+        </xs:annotation>
+    </xs:element-->
+    <xs:element name="PlantSuppliesEds">
+        <xs:annotation>
+            <xs:documentation>Contains plant keys for production plants in EDS to which the containing object is supplied</xs:documentation>
+            <xs:documentation>BOM-DB: Column KEM_WK</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="100" minOccurs="0" ref="PlantSupply"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PlantSuppliesBcs">
+        <xs:annotation>
+            <xs:documentation>Contains plant keys for production plants in BCS to which the containing object is supplied</xs:documentation>
+            <xs:documentation>BOM-DB: Column KEM_WK_BCS</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="100" minOccurs="0" ref="PlantSupply"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="Typ_ModelType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

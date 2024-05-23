@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="!!MAD Daten nach DIALOG Import bereinigen">
+      <constraints_border position="north" />
+    </title>
+    <panel id="mainPanel" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag />
+      <label id="labelSeries" minimumHeight="10" minimumWidth="10" text="!!DIALOG Baureihen:">
+        <constraints_gridbag insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="8" />
+      </label>
+      <textfield id="textfieldSeriesInput" minimumHeight="10" minimumWidth="200">
+        <constraints_gridbag gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="8" />
+      </textfield>
+      <panel id="panelInfo" minimumHeight="10" minimumWidth="10" title="Hinweis">
+        <invisible />
+        <layout_gridbag />
+        <label id="labelInfoText" minimumHeight="10" minimumWidth="10" text="!!Baureihen bitte kommasepariert eingeben!">
+          <constraints_gridbag fill="h" insetsBottom="8" insetsLeft="8" insetsRight="8" insetsTop="8" />
+        </label>
+        <constraints_gridbag fill="h" gridwidth="2" gridy="1" insetsBottom="8" insetsLeft="8" insetsRight="8" insetsTop="4" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

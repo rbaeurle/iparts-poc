@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window height="200" id="mainWindow" name="EditKGTUDialog" visible="false" width="700">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panel_KGTU" minimumHeight="10" minimumWidth="10" paddingRight="8">
+      <invisible />
+      <layout_gridbag centered="false" />
+      <label horizontalalignment="RIGHT" id="label_product" minimumHeight="10" minimumWidth="10" text="!!Produkt">
+        <constraints_gridbag anchor="e" insetsBottom="8" insetsLeft="8" insetsRight="4" insetsTop="8" />
+      </label>
+      <combobox genericType="KgTuListItem" id="combobox_product" minimumHeight="10" minimumWidth="10" onChangeEvent="onChangeProductCallback">
+        <constraints_gridbag fill="b" gridx="1" insetsBottom="8" insetsLeft="4" insetsTop="8" />
+      </combobox>
+      <label horizontalalignment="RIGHT" id="label_KG" minimumHeight="10" minimumWidth="10" text="!!Konstruktionsgruppe">
+        <constraints_gridbag anchor="e" gridy="1" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="4" />
+      </label>
+      <combobox genericType="KgTuListItem" id="combobox_KGTU_KG" minimumHeight="10" minimumWidth="10" onChangeEvent="onChangeKGCallback">
+        <constraints_gridbag fill="b" gridx="1" gridy="1" insetsBottom="4" insetsLeft="4" insetsTop="4" />
+      </combobox>
+      <button id="button_KGTUChange" maximumWidth="30" minimumHeight="10" minimumWidth="5" mnemonicEnabled="true" text="...">
+        <constraints_gridbag fill="v" gridx="2" gridy="1" insetsBottom="4" insetsTop="4" />
+      </button>
+      <label horizontalalignment="RIGHT" id="label_TU" minimumHeight="10" minimumWidth="10" text="!!Technischer Umfang">
+        <constraints_gridbag anchor="e" gridy="2" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="4" />
+      </label>
+      <combobox genericType="KgTuListItem" id="combobox_KGTU_TU" minimumHeight="10" minimumWidth="10" onChangeEvent="onChangeTUCallback">
+        <constraints_gridbag fill="b" gridx="1" gridy="2" insetsBottom="4" insetsLeft="4" insetsTop="4" weightx="100.0" />
+      </combobox>
+      <label id="label_infoSpacer" minimumHeight="10" minimumWidth="10">
+        <constraints_gridbag gridy="3" />
+      </label>
+      <label id="label_info" minimumHeight="10" minimumWidth="10" text="!!* Standard-Benennung (bisher keine Verwendung im Produkt)" visible="false">
+        <constraints_gridbag anchor="w" fill="h" gridx="1" gridy="3" insetsBottom="4" insetsLeft="4" insetsTop="4" />
+      </label>
+      <checkbox id="checkbox_open_TU" minimumHeight="10" minimumWidth="10" name="checkbox_open_TU" selected="true" text="!!Nach dem Speichern technischen Umfang zur Bearbeitung öffnen" visible="false">
+        <constraints_gridbag anchor="w" fill="h" gridx="1" gridy="4" insetsBottom="4" insetsLeft="4" insetsTop="4" />
+      </checkbox>
+      <constraints_border />
+    </panel>
+    <buttonPanel id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

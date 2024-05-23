@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window height="700" id="mainWindow" name="FilterDialog" visible="false" width="1020">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="!!Filter ändern">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <panel id="panelLeft" minimumHeight="10" minimumWidth="100" title="!!Aktive Filter">
+        <invisible />
+        <layout_border />
+        <constraints_border position="west" />
+      </panel>
+      <panel id="panelForFilterValues" minimumHeight="10" minimumWidth="10" title="!!Filterwerte">
+        <invisible />
+        <layout_border />
+        <constraints_border />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonCancelActionPerformedEvent="buttonCancelClick" buttonOKActionPerformedEvent="buttonOkClick" id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

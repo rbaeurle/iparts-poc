@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!-- ######################################################################## -->
+	<xsd:annotation>
+		<xsd:documentation>
+  			statische Eigenschaften von Attributen in JDAX
+  			 Copyright 2003 by T-Systems. All rights reserved.
+ 		</xsd:documentation>
+	</xsd:annotation>
+	<!-- ######################################################################## -->
+	<xsd:element name="AttributlisteStatisch" type="AttributlisteStatischType"/>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="AttributlisteStatischType">
+		<xsd:sequence>
+			<xsd:element name="Attribut" type="AttributType" maxOccurs="unbounded"/>
+			<xsd:element name="Nachrichten" type="NachrichtenType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="NachrichtenType">
+		<xsd:sequence>
+			<xsd:element name="Typ" type="NachrichtenTypType" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="NachrichtenTypType">
+		<xsd:sequence>
+			<xsd:element name="Bezeichner" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Quelle" type="QuelleZielType" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="Ziel"   type="QuelleZielType" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="QuelleZielType">
+		<xsd:sequence>
+			<xsd:element name="System" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="AttributType">
+		<xsd:sequence>
+			<xsd:element name="DB" type="DBType"/>
+			<xsd:element name="Nachricht" type="NachrichtType"/>
+			<xsd:element name="Primus" type="PrimusType" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="Host" type="HostType" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="FormatFC" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="FormatRegEx" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="Verteiler" type="VerteilerType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="DBType">
+		<xsd:sequence>
+			<xsd:element name="Bezeichner" type="xsd:string"/>
+			<xsd:element name="Tabelle" type="xsd:string"/>
+			<xsd:element name="PK" type="xsd:boolean" default="0"/>
+			<xsd:element name="Typ" type="xsd:string"/>
+			<xsd:element name="WrapperToDB" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="WrapperFromDB" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="NachrichtType">
+		<xsd:sequence>
+			<xsd:element name="Bezeichner" type="xsd:string"/>
+			<xsd:element name="Attribut" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="MehrfachElement" type="xsd:boolean" default="false"/>
+			<xsd:element name="Typ" type="xsd:string" minOccurs="0" />
+			<xsd:element name="WertBestimmen" type="xsd:boolean" default="false" />
+			<xsd:element name="NachrichtErgaenzen" type="xsd:boolean" default="false" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="PrimusType">
+		<xsd:sequence>
+			<xsd:element name="Root" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="Pfad" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Setter" type="xsd:string" minOccurs="0" maxOccurs="1"/> 
+			<!-- wenn Setzen des Wertes ueber abweichenden Pfad erfolgt, kann Setter gesetzt werden -->
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="HostType">
+		<xsd:sequence>
+			<xsd:element name="FeldName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="FeldNr" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="VerteilerType">
+		<xsd:sequence>
+			<xsd:element name="Quelle" type="QuelleType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Ziel" type="ZielType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ZielIndirekt" type="ZielIndirektType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="ZielType">
+		<xsd:sequence>
+			<xsd:element name="ZielSystem" type="xsd:string"/>
+			<xsd:element name="Pflichtfeld" type="xsd:string"/>
+			<xsd:element name="Ereignisliste" type="EreignislisteType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="QuelleType">
+		<xsd:sequence>
+			<xsd:element name="QuellSystem" type="xsd:string"/>
+			<xsd:element name="Pflichtfeld" type="xsd:string"/>
+			<xsd:element name="Ereignisliste" type="EreignislisteType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="ZielIndirektType">
+		<xsd:sequence>
+			<xsd:element name="ZielSystem" type="xsd:string"/>
+			<xsd:element name="Pflichtfeld" type="xsd:string"/>
+			<xsd:element name="ValueMap" type="xsd:string" minOccurs="0" maxOccurs="1"/>  <!-- Value Mapping -->
+			<xsd:element name="Forward" type="xsd:string" minOccurs="0" maxOccurs="1"/>  <!-- Forward Attribut -->
+			<xsd:element name="Ereignisliste" type="EreignislisteType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="EreignislisteType">
+		<xsd:sequence>
+			<xsd:element name="Ereignis" type="xsd:string" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+</xsd:schema>

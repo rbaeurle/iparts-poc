@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="!!Ersetzungen">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <splitpane dividerPosition="191" horizontal="false" id="splitPaneMain" minimumHeight="10" minimumWidth="10">
+        <panel id="splitPanePanelPredecessorData" minimumHeight="50" minimumWidth="0" title="!!Vorgänger">
+          <invisible />
+          <layout_border />
+          <label borderWidth="8" iconfilename="@imgPlugin_iPartsEdit_Predecessor" id="labelPredecessorData" minimumHeight="10" minimumWidth="10">
+            <tooltip>
+              <label id="" text="!!Vorgänger" />
+            </tooltip>
+            <constraints_border position="west" />
+          </label>
+          <panel id="panelPredecessorData" minimumHeight="10" minimumWidth="10" paddingTop="4">
+            <invisible />
+            <layout_border />
+            <constraints_border />
+          </panel>
+        </panel>
+        <panel id="panelInnerSplitPane" minimumHeight="120" minimumWidth="0">
+          <invisible />
+          <layout_border />
+          <splitpane dividerPosition="100" horizontal="false" id="splitPaneInner" minimumHeight="10" minimumWidth="10">
+            <panel id="splitPanePanelCurrentData" minimumHeight="70" minimumWidth="0" title="!!Aktuelles Teil">
+              <invisible />
+              <layout_border />
+              <label borderWidth="8" iconfilename="@imgApp_javaviewer_Part" id="labelCurrentData" minimumHeight="10" minimumWidth="10">
+                <tooltip>
+                  <label id="" text="!!Aktuelles Teil" />
+                </tooltip>
+                <constraints_border position="west" />
+              </label>
+              <panel id="panelCurrentData" minimumHeight="10" minimumWidth="10" paddingTop="4">
+                <invisible />
+                <layout_border />
+                <constraints_border />
+              </panel>
+            </panel>
+            <panel id="splitPanePanelSuccessorData" minimumHeight="50" minimumWidth="0" title="!!Nachfolger">
+              <invisible />
+              <layout_border />
+              <panel id="panelSuccessorData" minimumHeight="10" minimumWidth="10">
+                <invisible />
+                <layout_border />
+                <constraints_border />
+              </panel>
+              <label borderWidth="8" iconfilename="@imgPlugin_iPartsEdit_Successor" id="labelSuccessorData" minimumHeight="10" minimumWidth="10">
+                <tooltip>
+                  <label id="" text="!!Nachfolger" />
+                </tooltip>
+                <constraints_border position="west" />
+              </label>
+            </panel>
+            <constraints_border />
+          </splitpane>
+        </panel>
+        <constraints_border />
+      </splitpane>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonCloseActionPerformedEvent="closeWindow" dialogStyle="CLOSE" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

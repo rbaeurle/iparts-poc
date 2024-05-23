@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xml:lang="en" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:jxb="http://java.sun.com/xml/ns/jaxb" jxb:version="1.0">
+
+  <!-- This file is controlled by DCCS SVN and must not be changed otherwise.
+       Usage of attributes preferred over use of tags.
+
+       Created by DCCS GmbH. on behalf of Daimler AG.
+       Copyright 2012 Daimler AG and DCCS GmbH.
+
+       Author:       Peter.Stuecklschwaiger@DCCS.at
+       Responsible:  Tomislav.Jerkovic@Daimler.com -->
+
+  <xs:annotation>
+    <xs:documentation>Copyright 2012 Daimler AG and DCCS GmbH.</xs:documentation></xs:annotation>
+
+  <xs:element name="part" type="partType">
+    <xs:annotation><xs:documentation>PACE part definition</xs:documentation></xs:annotation>
+  </xs:element>
+
+  <xs:complexType name="partType">
+    <xs:annotation><xs:documentation xml:lang="en"><![CDATA[ The elements of a part.<br>
+        The number, the names (in different languages), the supplementary
+        codes 1 and 2 and the directed information.]]></xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="names" type="partNamesType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+
+    <!-- the direct attributes of the part ... -->
+    <xs:attribute name="number" type="partNumberType" use="required">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The part number in input format
+          without supplementary codes.</jxb:javadoc></jxb:property></xs:appinfo></xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="format" type="partNumberFormatType" default="INPUT">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The format of the part number
+          (attribute number).</jxb:javadoc></jxb:property></xs:appinfo></xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="sc1" type="partScType" use="optional">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The supplementary code for materials.
+          </jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="sc2" type="partScType" use="optional">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The supplementary code for colors.
+          </jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="ZGS" type="xs:nonNegativeInteger" use="optional">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The version of the technical drawing
+          of the part.</jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="directed" type="xs:boolean" use="optional">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The flag for directed parts.
+          </jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="containsDirected" type="xs:boolean" use="optional">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The flag for at least one directed
+          part within the assembled part.</jxb:javadoc></jxb:property></xs:appinfo>
+          </xs:annotation></xs:attribute>
+    <xs:attribute name="tcrStatus" type="tcrStatusType" use="optional">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The task-responsibility-competence
+          matrix of the part.</jxb:javadoc></jxb:property></xs:appinfo>
+          </xs:annotation></xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="partNamesType">
+    <xs:annotation><xs:documentation>The name of a part in various languages.
+        </xs:documentation></xs:annotation>
+    <xs:attribute name="name" type="partNameType" use="required">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The name of the part.
+          </jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+    <xs:attribute name="language" type="xs:language" use="required">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The language of the name of the part.
+          </jxb:javadoc></jxb:property></xs:appinfo></xs:annotation></xs:attribute>
+  </xs:complexType>
+
+  <xs:simpleType name="partNameType">
+    <xs:annotation><xs:documentation>The part name type. Allowing text between 1 and 50 characters.
+        </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value=".{1,50}"/></xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="partNumberType">
+    <xs:annotation><xs:documentation>Content of part numbers - not including
+        supplementary code 1 or 2.</xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z0-9 ]{10,16}"/></xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="partNumberFormatType">
+    <xs:annotation><xs:documentation>Usable formats for part numbers.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="INPUT">
+        <xs:annotation><xs:documentation>Part number in input format following EDS V9998004
+            for DAG vehicle development.
+            e.g.: A111222334455</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="PRINT">
+        <xs:annotation><xs:documentation>Part number in print format following EDS V9998004
+            for DAG vehicle development.
+            e.g.: A 111 222 33 44 55</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="SAVE">
+        <xs:annotation><xs:documentation>Part number in save format following EDS V9998004
+            for DAG vehicle development.
+            e.g.: 06A222445511133A
+        </xs:documentation></xs:annotation></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="partScType">
+    <xs:annotation><xs:documentation>Format of the supplementary codes 1 and 2</xs:documentation>
+        </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z0-9]{4}"/></xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tcrStatusType">
+    <xs:annotation><xs:documentation>The TCR matrix values for a part.
+        </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="A"/>
+      <xs:enumeration value="B"/>
+      <xs:enumeration value="C"/>
+      <xs:enumeration value="F"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

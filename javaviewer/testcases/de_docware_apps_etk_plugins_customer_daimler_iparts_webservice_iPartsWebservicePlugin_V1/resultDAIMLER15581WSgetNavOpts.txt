@@ -1,0 +1,1 @@
+{"nextNodes":[{"id":"050","label":"MITTELSCHALTUNG MECHANISCHES GETRIEBE","partsAvailable":true,"type":"cg_subgroup"}]}

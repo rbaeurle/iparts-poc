@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window borderWidth="2" id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="!!Anhang zu Bildauftrag hinzufügen">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag />
+      <panel id="attachmentInfoPanel" minimumHeight="10" minimumWidth="10" title="!!Informationen zum Anhang">
+        <invisible />
+        <layout_gridbag />
+        <label fontStyle="1" horizontalalignment="RIGHT" id="nameLabel" minimumHeight="10" minimumWidth="10" text="!!Name:">
+          <constraints_gridbag anchor="e" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="4" />
+        </label>
+        <textfield id="textfieldName" minimumHeight="10" minimumWidth="200">
+          <constraints_gridbag fill="h" gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" />
+        </textfield>
+        <label horizontalalignment="RIGHT" id="sizeLabel" minimumHeight="10" minimumWidth="10" text="!!Dateigröße:">
+          <constraints_gridbag anchor="e" gridy="1" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="4" />
+        </label>
+        <textfield enabled="false" id="textfieldSize" minimumHeight="10" minimumWidth="200">
+          <constraints_gridbag fill="h" gridx="1" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" />
+        </textfield>
+        <label horizontalalignment="RIGHT" id="filetypeLabel" minimumHeight="10" minimumWidth="10" text="!!Dateiendung:">
+          <constraints_gridbag anchor="e" gridy="2" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="4" />
+        </label>
+        <textfield enabled="false" id="textfieldFileType" minimumHeight="10" minimumWidth="200">
+          <constraints_gridbag fill="h" gridx="1" gridy="2" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" />
+        </textfield>
+        <label horizontalalignment="RIGHT" id="statusLabel" minimumHeight="10" minimumWidth="10" text="!!Status:">
+          <constraints_gridbag anchor="e" gridy="3" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="4" />
+        </label>
+        <textfield enabled="false" id="textfieldStatus" minimumHeight="10" minimumWidth="200">
+          <constraints_gridbag fill="h" gridx="1" gridy="3" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" />
+        </textfield>
+        <label horizontalalignment="RIGHT" id="errorCodeLabel" minimumHeight="10" minimumWidth="10" text="!!Fehlernummer:">
+          <constraints_gridbag anchor="e" gridy="4" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="4" />
+        </label>
+        <textfield enabled="false" id="textfieldErrorCode" minimumHeight="10" minimumWidth="200">
+          <constraints_gridbag fill="h" gridx="1" gridy="4" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" />
+        </textfield>
+        <label horizontalalignment="RIGHT" id="errortextLabel" minimumHeight="10" minimumWidth="10" text="!!Fehlertext:">
+          <constraints_gridbag anchor="e" gridy="5" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="4" />
+        </label>
+        <textfield enabled="false" id="textfieldErrorText" minimumHeight="10" minimumWidth="200">
+          <constraints_gridbag fill="h" gridx="1" gridy="5" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" />
+        </textfield>
+        <label horizontalalignment="RIGHT" id="descLabel" minimumHeight="10" minimumWidth="10" text="!!Beschreibung:">
+          <constraints_gridbag anchor="ne" gridy="6" insetsBottom="8" insetsLeft="8" insetsRight="4" insetsTop="4" />
+        </label>
+        <scrollpane borderColor="clDesignTextFieldBorder" borderWidth="1" id="scrollpaneDesc" minimumHeight="100" minimumWidth="200">
+          <textarea id="textareaDesc" minimumHeight="100" minimumWidth="200">
+            <constraints_border />
+          </textarea>
+          <constraints_gridbag fill="h" gridx="1" gridy="6" insetsBottom="8" insetsLeft="4" insetsRight="8" insetsTop="4" />
+        </scrollpane>
+        <constraints_gridbag fill="h" insetsBottom="4" insetsLeft="8" insetsRight="8" insetsTop="8" />
+      </panel>
+      <panel id="filechooserPanel" minimumHeight="10" minimumWidth="10" title="!!Datei ersetzen">
+        <invisible />
+        <layout_gridbag />
+        <label horizontalalignment="RIGHT" id="fileChooserLabel" minimumHeight="10" minimumWidth="10" text="!!Datei:">
+          <constraints_gridbag anchor="e" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="4" />
+        </label>
+        <filechoosertextfield approveButtonText="!!Anhang auswählen" id="fileChooserTextField" minimumHeight="10" minimumWidth="200">
+          <constraints_gridbag fill="h" gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" weightx="100.0" />
+        </filechoosertextfield>
+        <constraints_gridbag fill="h" gridy="1" insetsBottom="8" insetsLeft="8" insetsRight="8" insetsTop="4" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonOKActionPerformedEvent="onOKButtonClick" id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

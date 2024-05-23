@@ -1,0 +1,1 @@
+{"identContexts":[{"aggTypeId":"F","datacardExists":true,"fin":"W1T9634031C052212","fixingPartsAvailable":true,"modelDesc":"18.. LS","modelId":"C963403","modelTypeId":"C963","prodOrderTextAvailable":true,"productClassIds":["S"],"productClassNames":[""],"productId":"S01","vin":"W1T9634051C052212"}]}

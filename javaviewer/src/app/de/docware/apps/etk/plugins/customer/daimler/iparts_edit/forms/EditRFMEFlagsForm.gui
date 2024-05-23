@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window height="200" id="mainWindow" visible="false" width="700">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag centered="false" />
+      <label id="labelRFMEA" minimumHeight="10" minimumWidth="10" text="!!RFME Aktuell">
+        <constraints_gridbag insetsBottom="4" insetsLeft="8" insetsRight="8" insetsTop="4" />
+      </label>
+      <combobox genericType="String" id="comboboxRFMEA" maximumWidth="100" minimumHeight="10" minimumWidth="70" onChangeEvent="onChangeComboboxRFMEA">
+        <constraints_gridbag gridx="1" insetsBottom="4" insetsLeft="8" insetsRight="8" insetsTop="4" />
+      </combobox>
+      <label id="labelRFMEN" minimumHeight="10" minimumWidth="10" text="!!RFME Nachfolger">
+        <constraints_gridbag gridx="3" insetsBottom="4" insetsLeft="8" insetsRight="8" insetsTop="4" />
+      </label>
+      <combobox genericType="String" id="comboboxRFMEN" maximumWidth="100" minimumHeight="10" minimumWidth="70" onChangeEvent="onChangeComboboxRFMEN">
+        <constraints_gridbag gridx="4" insetsBottom="4" insetsLeft="8" insetsRight="8" insetsTop="4" />
+      </combobox>
+      <constraints_border />
+    </panel>
+    <buttonPanel id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

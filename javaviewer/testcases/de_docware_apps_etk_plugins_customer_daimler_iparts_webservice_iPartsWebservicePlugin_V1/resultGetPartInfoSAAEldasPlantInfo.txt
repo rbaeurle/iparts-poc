@@ -1,0 +1,1 @@
+{"partInfo":{"plantInformation":[{"text":"SICHERUNG BIS IDENT IM ZUSAMMENBAU, AB NICHT IM ZUSAMMENBAU","type":"undefiniert"},{"aggTypeId":"F","ident":"N136985","type":"bis"}],"saaValidityDetails":[{"code":"Z 514.323","description":"SV KOPPELMAUL QUERTRAEGER","saaCodes":[{"code":"Z 514.323/01","description":"SV KOPPELMAUL QUERTRAEGER"}]}]}}

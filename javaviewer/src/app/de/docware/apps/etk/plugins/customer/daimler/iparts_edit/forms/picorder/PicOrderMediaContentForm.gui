@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false" width="1200">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <splitpane dividerPosition="491" dividerSize="10" id="mainSplitPane" minimumHeight="10" minimumWidth="10">
+        <panel id="mainSplitPane_firstChild" minimumWidth="0">
+          <invisible />
+          <layout_gridbag />
+          <panel id="panel_picList" minimumHeight="10" minimumWidth="10">
+            <invisible />
+            <layout_border />
+            <constraints_gridbag fill="b" weightx="100.0" weighty="100.0" />
+          </panel>
+          <panel id="panel_correction" minimumHeight="10" minimumWidth="10" title="!!Korrekturanfrage - bitte ausfüllen">
+            <invisible />
+            <layout_gridbag />
+            <panel id="panel_reason" minimumHeight="10" minimumWidth="10" title="!!Informationen zur Korrektur">
+              <invisible />
+              <layout_gridbag centered="false" />
+              <label fontStyle="BOLD" horizontalalignment="RIGHT" id="label_reason" minimumHeight="10" minimumWidth="10" text="!!Grund:">
+                <constraints_gridbag anchor="ne" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="4" />
+              </label>
+              <scrollpane borderColor="clDesignTextFieldBorder" borderWidth="1" id="scrollpane_reason" minimumHeight="10" minimumWidth="10">
+                <constraints_gridbag fill="b" gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="8" insetsTop="4" weightx="100.0" weighty="100.0" />
+              </scrollpane>
+              <label horizontalalignment="RIGHT" id="label_dateDue" minimumHeight="10" minimumWidth="10" text="!!Gew. Fertigstellungsdatum:">
+                <constraints_gridbag anchor="e" gridy="1" insetsBottom="8" insetsLeft="8" insetsRight="4" insetsTop="4" />
+              </label>
+              <calendar id="calendar_dateDue" minimumHeight="10" minimumWidth="10">
+                <constraints_gridbag anchor="w" gridx="1" gridy="1" insetsBottom="8" insetsLeft="4" insetsRight="8" insetsTop="4" />
+              </calendar>
+              <constraints_gridbag fill="b" insetsBottom="4" insetsLeft="8" insetsRight="8" insetsTop="8" weightx="100.0" weighty="100.0" />
+            </panel>
+            <panel id="panel_contractor" minimumHeight="20" minimumWidth="10" paddingBottom="8" paddingLeft="8" paddingRight="8" paddingTop="4" title="!!Bearbeiter">
+              <invisible />
+              <layout_border />
+              <constraints_gridbag fill="b" gridy="1" insetsBottom="4" insetsLeft="8" insetsRight="8" insetsTop="4" weightx="100.0" />
+            </panel>
+            <constraints_gridbag fill="b" gridy="1" weightx="100.0" />
+          </panel>
+        </panel>
+        <panel id="mainSplitPane_secondChild" minimumWidth="0">
+          <invisible />
+          <layout_border />
+        </panel>
+        <constraints_border />
+      </splitpane>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonOKActionPerformedEvent="doSendMQMessage" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

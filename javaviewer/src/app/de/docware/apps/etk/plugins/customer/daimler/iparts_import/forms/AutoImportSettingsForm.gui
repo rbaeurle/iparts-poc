@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window height="300" id="mainWindow" visible="false" width="400">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="!!Einstellungen für automatische Importe">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10" paddingBottom="4" paddingLeft="8" paddingRight="8" paddingTop="4">
+      <invisible />
+      <layout_gridbag />
+      <checkbox id="checkboxRFTSxImporter" minimumHeight="10" minimumWidth="10" paddingBottom="2" paddingTop="2" text="!!RFTS/x Importe durchführen">
+        <constraints_gridbag anchor="w" weightx="100.0" />
+      </checkbox>
+      <checkbox id="checkboxDIALOGDeltaImporter" minimumHeight="10" minimumWidth="10" paddingBottom="2" paddingTop="2" selected="true" text="!!DIALOG Delta Importe durchführen">
+        <constraints_gridbag anchor="w" gridy="10" insetsBottom="4" />
+      </checkbox>
+      <separator id="separatorPreventTransmissionToASPLM">
+        <constraints_gridbag fill="h" gridy="14" />
+      </separator>
+      <checkbox id="checkboxPreventTransmissionToASPLM" minimumHeight="10" minimumWidth="10" selected="true" text="!!Bild-/Änderungsaufträge an ASPLM verhindern">
+        <constraints_gridbag anchor="w" gridy="15" insetsTop="4" />
+      </checkbox>
+      <button actionPerformedEvent="rftsxCancelButtonClicked" id="buttonCancelRFTSxImport" minimumHeight="10" minimumWidth="100" mnemonicEnabled="true" text="!!RFTS/x Import abbrechen">
+        <constraints_gridbag anchor="sw" gridy="20" weightx="100.0" weighty="100.0" />
+      </button>
+      <constraints_border />
+    </panel>
+    <buttonPanel id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

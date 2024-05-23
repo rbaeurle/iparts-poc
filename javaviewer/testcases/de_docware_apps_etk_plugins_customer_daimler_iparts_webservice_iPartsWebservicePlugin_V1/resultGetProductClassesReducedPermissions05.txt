@@ -1,0 +1,1 @@
+{"productClasses":[{"aggregateTypes":[{"aggTypeId":"M","aggTypeName":"Motor"}],"productClassId":"O","productClassName":"Bus"}]}

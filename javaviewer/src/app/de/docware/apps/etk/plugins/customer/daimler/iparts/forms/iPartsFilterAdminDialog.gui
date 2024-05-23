@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible>
+      <contextmenu id="contextmenu" menuName="contextmenu" minimumHeight="10" minimumWidth="10" />
+    </invisible>
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="!!Filter">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <splitpane dividerPosition="244" id="splitpane" minimumHeight="10" minimumWidth="10">
+        <panel id="splitpane_firstChild" minimumWidth="0" title="!!Datenkarten">
+          <invisible />
+          <layout_border />
+          <toolbar backgroundImage="@imgDesignToolbarBigBackground" id="toolbarDatacard" minimumHeight="10" minimumWidth="10">
+            <constraints_border position="north" />
+          </toolbar>
+          <list genericType="AbstractDataCard" id="listDatacard" minimumHeight="100" minimumWidth="200" onChangeEvent="onListDatacardChangeEvent">
+            <constraints_border />
+          </list>
+        </panel>
+        <panel id="splitpane_secondChild" minimumWidth="0" title="!!Fahrzeug">
+          <invisible />
+          <layout_border />
+        </panel>
+        <constraints_border />
+      </splitpane>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonOKActionPerformedEvent="onButtonOKClick" id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

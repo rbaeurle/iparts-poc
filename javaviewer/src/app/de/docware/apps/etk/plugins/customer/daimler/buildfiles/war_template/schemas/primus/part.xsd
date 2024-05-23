@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="elements.xsd"/>
+
+	<!-- ######################################################################## -->
+	<xsd:element name="Req" type="ReqType">
+		<xsd:annotation>
+			<xsd:documentation>Request</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="ReqType">
+		<xsd:sequence>
+			<xsd:element name="ReqHd" type="ReqHdType">
+				<xsd:annotation>
+					<xsd:documentation>Request Header</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Src" type="SrcType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Source: System and User</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Msg" type="MsgType" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Message</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Err" type="ErrType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Optionale Fehlermeldung</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="ReqHdType">
+		<xsd:sequence>
+			<xsd:element name="VERS" type="xsd:token">
+				<xsd:annotation>
+					<xsd:documentation>Versionsnummer</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DTI" type="xsd:string">
+				<!-- <xsd:element name="DTI" type="xsd:dateTime"> -->
+				<xsd:annotation>
+					<xsd:documentation>Date and Time of Requets</xsd:documentation>
+				</xsd:annotation>
+				<!--xsd:attribute name="type" type="xsd:string" use="optional" default="blabla"/-->
+			</xsd:element>
+			<xsd:element name="TID" type="xsd:token">
+				<xsd:annotation>
+					<xsd:documentation>unique TransactionID</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="REQFL" type="xsd:boolean" default="0" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Request-Flag: All Messages in one Transaction</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="MsgType">
+		<xsd:annotation>
+			<xsd:documentation>Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="MsgHd" type="MsgHdType" minOccurs="0"/>
+			<xsd:element name="ACT" type="ActType">
+				<xsd:annotation>
+					<xsd:documentation>Action, Process</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Res" type="ResType">
+				<xsd:annotation>
+					<xsd:documentation>Ressource</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Err" type="ErrType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Optionale Fehlermeldung</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="MsgHdType">
+		<xsd:sequence>
+			<xsd:element name="DTI" type="xsd:string" minOccurs="0">
+				<!-- <xsd:element name="DTI" type="xsd:dateTime" minOccurs="0"> -->
+				<xsd:annotation>
+					<xsd:documentation>Date and Time of Requets</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MID" type="xsd:token" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>unique MessageID Identity only with Transaction-ID</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="ResType">
+		<xsd:annotation>
+			<xsd:documentation>Ressource</xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
+			<xsd:element name="Part" type="PrtType">
+				<xsd:annotation>
+					<xsd:documentation>Part, Teil</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:choice>
+	</xsd:complexType>
+	<!-- ________________________________________________________________________ -->
+	<xsd:complexType name="PrtType">
+		<xsd:sequence>
+			<xsd:element name="PrtId" type="PrtIdType">
+				<xsd:annotation>
+					<xsd:documentation>PartIdentifier</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Att" type="AttType">
+				<xsd:annotation>
+					<xsd:documentation>Attribute statisch</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ________________________________________________________________________ -->
+	<xsd:complexType name="AttDynType">
+		<xsd:sequence>
+			<xsd:element name="ATTID" type="AttIdType">
+				<xsd:annotation>
+					<xsd:documentation>Ident, Bezeichner</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="VAL" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>Value, Inhalt, Wert</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ________________________________________________________________________ -->
+	<xsd:complexType name="PrtIdType">
+		<xsd:sequence>
+			<xsd:choice>
+				<xsd:element name="PTN" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>Part Number, Teilenummer</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="LTN" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>Ladungstraegernummer</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:choice>
+			<xsd:element name="PAK1" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>PPL-144 | production appendix key 1 , Produktions ES 1 | alt: PES</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="BRD" type="BrdType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Brand Marke</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Style" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Format der Teilenummer</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PTNProd" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Teilenummer Produktionsformat</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="SrcType">
+		<xsd:sequence>
+			<xsd:element name="USR" type="xsd:token" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>User</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SYS" type="SysType">
+				<xsd:annotation>
+					<xsd:documentation>System</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="ErrType">
+		<xsd:sequence>
+			<xsd:element name="ErrMsg" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>Error Message</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+</xsd:schema>

@@ -1,0 +1,59 @@
+<!-- edited with XML Spy v4.2 U (http://www.xmlspy.com) by Fr.  Götz (T- Systems) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!--	<xsd:include schemaLocation="AttributeType.xsd"/> -->
+	<!-- ######################################################################## -->
+	<xsd:annotation>
+		<xsd:documentation>
+  			 Beschreibung der Eingangs- und Ausgangsschnittstellen des Systems JDAX
+  			 Copyright 2003 by T-Systems. All rights reserved.
+ 		</xsd:documentation>
+	</xsd:annotation>
+	<!-- ######################################################################## -->
+	<xsd:element name="Nachricht" type="NachrichtType"/>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="NachrichtType">
+		<xsd:sequence>
+			<xsd:element name="NachrichtBeschreibung" type="NachrichtBeschreibungType"/>
+			<xsd:choice>
+				<xsd:element name="Attributliste" type="AttributlisteType"/>
+				<xsd:element name="Nachricht" type="NachrichtType"/>
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="NachrichtBeschreibungType">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string"/>
+			<xsd:element name="Beschreibung" type="xsd:string"/>
+			<xsd:element name="Ort" type="OrtType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="OrtType">
+		<xsd:choice>
+			<xsd:element name="Fix" type="FixType"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="FixType">
+		<xsd:sequence>
+			<xsd:element name="Von" type="xsd:nonNegativeInteger"/>
+			<xsd:element name="Laenge" type="xsd:nonNegativeInteger"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="AttributlisteType">
+		<xsd:sequence>
+			<xsd:element name="Attribut" type="AttributType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ######################################################################## -->
+	<xsd:complexType name="AttributType">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string"/>
+			<xsd:element name="Typ" type="xsd:string"/>
+			<xsd:element name="Ort" type="OrtType"/>
+			<xsd:element name="Inhalt" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ________________________________________________________________________ -->
+</xsd:schema>

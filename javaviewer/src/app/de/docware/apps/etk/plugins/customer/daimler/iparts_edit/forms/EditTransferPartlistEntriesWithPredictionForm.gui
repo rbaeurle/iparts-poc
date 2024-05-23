@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" paddingLeft="8" paddingRight="8" subtitle="Untertitel (hier evtl. die BR, AA Infos eintragen) (mehrzeilig)" title="!!In AS-Stückliste übernehmen">
+      <constraints_border position="north" />
+    </title>
+    <panel borderWidth="8" id="centerPanel" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <panel borderWidth="4" id="contentTablePanel" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <panel id="panelSouth" minimumHeight="10" minimumWidth="10">
+          <invisible />
+          <layout_border />
+          <checkbox id="checkboxShowModule" minimumHeight="10" minimumWidth="10" paddingTop="4" text="!!Nach dem Speichern Module zur Bearbeitung öffnen">
+            <constraints_border position="east" />
+          </checkbox>
+          <label id="labelInfo" minimumHeight="10" minimumWidth="10" paddingTop="4" text="!!* Standard KG/TU-Benennung (bisher keine Verwendung im Produkt)">
+            <constraints_border position="west" />
+          </label>
+          <constraints_border position="south" />
+        </panel>
+        <constraints_border />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonOKActionPerformedEvent="onOKbuttonClick" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

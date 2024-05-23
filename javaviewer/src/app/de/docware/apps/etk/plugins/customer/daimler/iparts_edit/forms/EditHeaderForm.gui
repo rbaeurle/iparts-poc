@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <panel id="toolbarHolderPanel" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <toolbar backgroundImage="@imgDesignToolbarBigBackground" id="toolbarEditHeader" minimumHeight="10" minimumWidth="10">
+          <constraints_border />
+        </toolbar>
+        <constraints_border position="north" />
+      </panel>
+      <panel id="panelWork" minimumHeight="10" minimumWidth="10" paddingBottom="4" paddingLeft="4" paddingRight="4" paddingTop="4">
+        <invisible />
+        <layout_gridbag />
+        <label id="labelName" minimumHeight="10" minimumWidth="10" text="!!Benennung">
+          <constraints_gridbag anchor="w" insetsBottom="4" insetsTop="4" />
+        </label>
+        <label id="labelKEM" minimumHeight="10" minimumWidth="10" text="!!Bezug zur KEM">
+          <constraints_gridbag gridx="1" />
+        </label>
+        <textfield id="textfieldName" minimumHeight="10" minimumWidth="400" onChangeEvent="nameChanged">
+          <constraints_gridbag anchor="w" gridy="1" insetsBottom="4" insetsRight="4" />
+        </textfield>
+        <label id="labelValidFrom" minimumHeight="10" minimumWidth="10" text="!!Gültig von:">
+          <constraints_gridbag anchor="w" gridx="1" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="4" />
+        </label>
+        <label id="labelValidTo" minimumHeight="10" minimumWidth="10" text="!!Gültig bis:">
+          <constraints_gridbag anchor="w" gridx="1" gridy="2" insetsBottom="4" insetsLeft="4" insetsRight="4" />
+        </label>
+        <label id="labelStatus" minimumHeight="10" minimumWidth="10" text="!!Modulstatus">
+          <constraints_gridbag anchor="w" gridx="1" gridy="3" insetsLeft="4" insetsRight="4" />
+        </label>
+        <editdatetextfield id="dateedittextfieldValidFrom" isEditable="false" minimumHeight="10" minimumWidth="10">
+          <tooltip>
+            <label id="" text="Tag.Monat.Jahr" />
+          </tooltip>
+          <constraints_gridbag gridx="2" gridy="1" insetsBottom="4" insetsLeft="4" />
+        </editdatetextfield>
+        <editdatetextfield id="dateedittextfieldValidTo" isEditable="false" minimumHeight="10" minimumWidth="10">
+          <tooltip>
+            <label id="" text="Tag.Monat.Jahr" />
+          </tooltip>
+          <constraints_gridbag gridx="2" gridy="2" insetsBottom="4" insetsLeft="4" />
+        </editdatetextfield>
+        <label id="labelStatusShow" minimumHeight="10" minimumWidth="10" text="keiner">
+          <constraints_gridbag anchor="w" gridx="2" gridy="3" insetsLeft="4" />
+        </label>
+        <label id="label_0" minimumHeight="10" minimumWidth="10">
+          <constraints_gridbag fill="b" gridheight="3" gridx="3" gridy="1" weightx="100.0" />
+        </label>
+        <constraints_border />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

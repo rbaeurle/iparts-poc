@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" title="!!Postkorb" visible="false">
+    <invisible />
+    <layout_border />
+    <panel id="centerPanel" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="!!Postkorb">
+        <constraints_border position="north" />
+      </title>
+      <panel id="mainPanel" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <panel id="topPanel" minimumHeight="0" minimumWidth="10">
+          <invisible />
+          <layout_border />
+          <constraints_border position="north" />
+        </panel>
+        <panel id="contentPanel" minimumHeight="10" minimumWidth="10">
+          <invisible />
+          <layout_border />
+          <splitpane dividerPosition="197" horizontal="false" id="messagesGridsSplitPane" minimumHeight="10" minimumWidth="10" resizeWeight="0.5">
+            <dockingpanel arrowStart="false" backgroundColor="clWhite" bgColor="clDesignButtonDisabledBackgroundGradient1" dockPos="NORTH" fgColor="clDesignButtonBorderSelected" fill="true" foregroundColor="clBlack" id="receivedMessagesDockingPanel" imageHide="@imgDesignDockingPanelNorth" imageShow="@imgDesignDockingPanelSouth" minimumHeight="10" minimumWidth="10" textHide="!!Empfangene Nachrichten" textShow="!!Empfangene Nachrichten anzeigen">
+              <invisible />
+              <panel id="receivedMessagesPanel" minimumHeight="10" minimumWidth="10">
+                <invisible />
+                <layout_border />
+                <constraints_border />
+              </panel>
+            </dockingpanel>
+            <dockingpanel arrowStart="false" backgroundColor="clWhite" bgColor="clDesignButtonDisabledBackgroundGradient1" dockPos="NORTH" fgColor="clDesignButtonBorderSelected" fill="true" foregroundColor="clBlack" id="sentMessagesDockingPanel" imageHide="@imgDesignDockingPanelNorth" imageShow="@imgDesignDockingPanelSouth" minimumHeight="10" minimumWidth="10" textHide="!!Gesendete Nachrichten" textShow="!!Gesendete Nachrichten anzeigen">
+              <invisible />
+              <panel id="sentMessagesPanel" minimumHeight="10" minimumWidth="10">
+                <invisible />
+                <layout_border />
+                <constraints_border />
+              </panel>
+            </dockingpanel>
+            <constraints_border />
+          </splitpane>
+          <constraints_border />
+        </panel>
+        <constraints_border />
+      </panel>
+      <constraints_border />
+    </panel>
+  </window>
+</gui>
+

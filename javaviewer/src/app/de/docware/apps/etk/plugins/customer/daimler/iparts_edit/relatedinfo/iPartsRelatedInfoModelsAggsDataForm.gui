@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false" width="1000">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" borderWidth="0" id="title" minimumHeight="50" minimumWidth="0" visible="false">
+      <constraints_border position="north" />
+    </title>
+    <panel id="gridPanel" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonCloseActionPerformedEvent="closeWindow" dialogStyle="CLOSE" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

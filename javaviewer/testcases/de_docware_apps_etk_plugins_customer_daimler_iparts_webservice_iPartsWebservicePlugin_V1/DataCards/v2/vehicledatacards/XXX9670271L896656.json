@@ -1,0 +1,458 @@
+{
+    "version": "16.3.1.1",
+    "responseHeader": {
+        "context": "Expiry=GMTTIMESTAMP '2018-12-15 15:15:17.732828'"
+    },
+    "vehicleRestrictedInclMasterDataResponse": {
+        "vehicleInclMasterData": {
+            "checkDigit": "4",
+            "fin": "XXX9670271L896656",
+            "fixingPartsAvailable": "true",
+            "prodOrderTextAvailable": "true",
+            "productGroupIndication": "N",
+            "productSeries": "967",
+            "productSeriesBrand": "mb",
+            "productSeriesDesignation": "Baureihe 967",
+            "vehicleModelDescription": "1527 L    4X2   V 08",
+            "vehicleModelDesignation": "967027",
+            "activeAssignedFpd": {
+                "equipmentCodes": [],
+                "saa": [],
+                "vpd": [{
+                        "content": "8098956199000602",
+                        "designation": "Rack-and-Pinion Steering",
+                        "productCategory": "passCar",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "00012"
+                    }, {
+                        "content": "0009827208113422000177",
+                        "designation": "Additional Battery",
+                        "productCategory": "passCar",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "00028"
+                    }, {
+                        "content": "0009827208113421301282",
+                        "designation": "Starter Battery",
+                        "productCategory": "passCar",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "00030"
+                    }, {
+                        "content": "936910C0017886",
+                        "designation": "Engine number from control unit ",
+                        "productCategory": "commVehicle",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "11019"
+                    }, {
+                        "content": "196030000041422400606100004000000000",
+                        "designation": "throttle pedal ",
+                        "productCategory": "commVehicle",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "11131"
+                    }, {
+                        "content": "100042002841419900212522006142951234",
+                        "designation": "Parking brake valve ",
+                        "productCategory": "commVehicle",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "11132"
+                    }, {
+                        "content": "196750004011422400065201004CD7650040",
+                        "designation": "Intercooler ",
+                        "productCategory": "commVehicle",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "11133"
+                    }, {
+                        "content": "100925047041420400198103005011300000",
+                        "designation": "Clutch pressure plate ",
+                        "productCategory": "commVehicle",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "11134"
+                    }, {
+                        "content": "102425089031421700085103005011300000",
+                        "designation": "Clutch plate ",
+                        "productCategory": "commVehicle",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "11135"
+                    }, {
+                        "content": "100443118061422400064137002480003038",
+                        "designation": "Brake value sensor ",
+                        "productCategory": "commVehicle",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "11137"
+                    }, {
+                        "content": "21B",
+                        "designation": "Subcategory + generation code ",
+                        "productCategory": "commVehicle",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "11187"
+                    }, {
+                        "content": "194029404011421800327100004000000000",
+                        "designation": "Pedal bearing chair  ",
+                        "productCategory": "commVehicle",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "11195"
+                    }, {
+                        "content": "196755300051419700000000004000000000",
+                        "designation": "Cab tilt cylinder ",
+                        "productCategory": "commVehicle",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "11201"
+                    }, {
+                        "content": "100014039391422500297100003131521220",
+                        "designation": "Dosing unit ",
+                        "productCategory": "commVehicle",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "11202"
+                    }, {
+                        "content": "165441059011421002001169000014929579",
+                        "designation": "Propeller shaft_INTERM_BEARING_ZU_1RA ",
+                        "productCategory": "commVehicle",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "11215"
+                    }, {
+                        "content": "100014059781422800435100001131521510",
+                        "designation": "Supply unit ",
+                        "productCategory": "commVehicle",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "11243"
+                    }, {
+                        "content": "100325050151421300050503001070100000",
+                        "designation": "Clutch operator ",
+                        "productCategory": "commVehicle",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "11244"
+                    }, {
+                        "content": "165441076071423102001169000014959460",
+                        "designation": "Propeller shaft_intermediate bearing_1RA ",
+                        "productCategory": "commVehicle",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "11246"
+                    }, {
+                        "content": "196726033511421800230000002000231992",
+                        "designation": "Quick-Adjuster 1",
+                        "productCategory": "commVehicle",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "11256"
+                    }, {
+                        "content": "196726033511421800245000002000231992",
+                        "designation": "Quick-Adjuster 2",
+                        "productCategory": "commVehicle",
+                        "typeOf": "unresolved",
+                        "vpdIdent": "11257"
+                    }
+                ]
+            },
+            "activeCustomerServiceData": {
+                "archiveIndicator": "true",
+                "vehicleOwnershipTitleNo": "WG528069",
+                "vehicleOwnershipTitlePrintDate": "20140821",
+                "validSince": "20151111",
+                "xmlId": "_1",
+                "objectId": "259216792403"
+            },
+            "activeModelPlate": {
+                "cubicCapacityCcm": "7698",
+                "egPermitNumber": "e1*2007/46*1171*02",
+                "power": "200",
+                "vehicleType": "967PKX3",
+                "xmlId": "_2"
+            },
+            "activeProductDate": {
+                "dateOfFirstRegistration": "20140901",
+                "shipmentDate": "20140902",
+                "technicalApprovalDate": "20140826",
+                "validSince": "20150130",
+                "xmlId": "_3",
+                "objectId": "250059824847"
+            },
+            "activeProductionInfo": {
+                "originAfterTreatmentSystemId": "93072020026427",
+                "originAxleFront1Id": "730078D573038",
+                "originAxleFront1ObjectNo": "X066501718",
+                "originAxleFront1ObjectVarNo": "X311001145",
+                "originAxleRear1Id": "771111P773910",
+                "originAxleRear1ObjectNo": "X068501845",
+                "originAxleRear1ObjectVarNo": "X351001573",
+                "originCabId": "96782015896656",
+                "originEngineId": "936910C0017886",
+                "originEngineObjectNo": "X069522804",
+                "originEngineObjectVarNo": "X110101367",
+                "originTransmissionId": "71557101479891",
+                "originTransmissionObjectNo": "X062506474",
+                "originTransmissionObjectVarNo": "X210027727",
+                "validSince": "20140909",
+                "xmlId": "_4",
+                "objectId": "246952359992"
+            },
+            "activeState": {
+                "additionalEquipmentInfo": "250A",
+                "cvBodyType": "2",
+                "dateOfTechnicalState": "20140829",
+                "orderNumber": "1424302165",
+                "plant": "P0600",
+                "productionNumber": "1190468",
+                "status": "delivered",
+                "afterTreatmentSystem": {
+                    "dataCardAvailable": "true",
+                    "id": "93072020026427",
+                    "modelDesignation": "930720",
+                    "activeState": {
+                        "status": "delivered"
+                    }
+                },
+                "axle": [{
+                        "dataCardAvailable": "true",
+                        "id": "730078D573038",
+                        "modelDesignation": "730078",
+                        "objectNumber": "X066501718",
+                        "objectNumberVariant": "X311001145",
+                        "typeOf": "front1",
+                        "activeAssignedFpd": {
+                            "saa": []
+                        },
+                        "activeProductDate": {
+                            "shipmentDate": "20140821",
+                            "technicalApprovalDate": "20140818",
+                            "validSince": "20140821",
+                            "xmlId": "_5",
+                            "objectId": "246696273700"
+                        },
+                        "activeState": {
+                            "plant": "P0690",
+                            "productionNumber": "1344123",
+                            "status": "delivered",
+                            "type": "F  6.1/C19.5"
+                        }
+                    }, {
+                        "dataCardAvailable": "true",
+                        "id": "771111P773910",
+                        "modelDesignation": "771111",
+                        "objectNumber": "X068501845",
+                        "objectNumberVariant": "X351001573",
+                        "typeOf": "rear1",
+                        "activeAssignedFpd": {
+                            "saa": [],
+                "cab": {
+                    "id": "96782015896656",
+                    "modelDesignation": "967820",
+                    "activeState": {}
+                },
+                "cocData": {
+                    "brand": "Mercedes-Benz",
+                    "cocNumber": "XXX9670271L896656",
+                    "egPermitDate": "20140619",
+                    "egPermitNumber": "e1*2007/46*1171*02",
+                    "emissionClass": "VI",
+                    "fuel": "Diesel",
+                    "hsn": "1313",
+                    "maxSpeed": "90",
+                    "rimsAxle1": "8,25x19,5",
+                    "rimsAxle2": "8,25x19,5",
+                    "salesDesignation": "Atego",
+                    "tiresAxle1": "305/70 R 19,5 147/--- G",
+                    "tiresAxle2": "305/70 R 19,5 ---/142 G",
+                    "typeModelCode": "DMB",
+                    "variant": "KPAFM2C11AXT3BX",
+                    "variantModelCode": "00000",
+                    "vehicleMassKg": "6180",
+                    "version": "JJJXGXAS1Q2KE",
+                    "allowedTireRimSize": "Achse 2: Größer oder gleich 33% der Mindestmasse*ZU 45.1: RAHMEN/SCHLUSSQUERTRÄGER: Dc=70kN; V=38kN"
+                },
+                "electroVariant": [{
+                        "electroVariantDesignation": "FRAME TRUNK CIRCUIT",
+                        "number": "XVK91008323",
+                        "objectNumber": "XVK91",
+                        "usage": "Variant0"
+                    }, {
+                        "electroVariantDesignation": "ENGINE TRUNK CIRCUIT",
+                        "number": "XVK93000946",
+                        "objectNumber": "XVK93",
+                        "usage": "Variant2"
+                    }, {
+                        "electroVariantDesignation": "DASHBOARD TRUNK CIRCUIT",
+                        "number": "XVK94007939",
+                        "objectNumber": "XVK94",
+                        "usage": "Variant3"
+                    }, {
+                        "electroVariantDesignation": "FRONT PART TRUNK CIRCUIT",
+                        "number": "XVK95000069",
+                        "objectNumber": "XVK95",
+                        "usage": "Variant4"
+                    }, {
+                        "electroVariantDesignation": "ROOF TRUNK CIRCUIT",
+                        "number": "XVK96000327",
+                        "objectNumber": "XVK96",
+                        "usage": "Variant5"
+                    }, {
+                        "electroVariantDesignation": "DRIVER'S DOOR TRUNK CIRCUIT",
+                        "number": "XVK97000128",
+                        "objectNumber": "XVK97",
+                        "usage": "Variant6"
+                    }, {
+                        "electroVariantDesignation": "PASSENGER'S DOOR TRUNK CIRCUIT",
+                        "number": "XVK98000124",
+                        "objectNumber": "XVK98",
+                        "usage": "Variant7"
+                    }, {
+                        "electroVariantDesignation": "REAR WALL TRUNK CIRCUIT",
+                        "number": "XVK99000000",
+                        "objectNumber": "XVK99",
+                        "usage": "Variant8"
+                    }
+                ],
+                "engine": {
+                    "dataCardAvailable": "true",
+                    "id": "936910C0017886",
+                    "modelDesignation": "936910",
+                    "objectNumber": "X069522804",
+                    "objectNumberVariant": "X110101367",
+                    "activeAssignedFpd": {
+                        "equipmentCodes": [{
+                                "code": "MB50",
+                                "codeType": "sales",
+                                "designation": "MOTORBREMSE LEISTUNG ERHOEHT",
+                                "productGroupIndication": "A"
+                            }, {
+                                "code": "MJ88",
+                                "codeType": "sales",
+                                "designation": "SOFTWARESTAND P13.13.00.49, DATENSATZUPDATE 3/14",
+                                "productGroupIndication": "A"
+                            }, {
+                                "code": "MJA1",
+                                "codeType": "sales",
+                                "designation": "SOFTWARESTAND P13.13.00.49",
+                                "productGroupIndication": "A"
+                            }, {
+                                "code": "MLB4",
+                                "codeType": "sales",
+                                "designation": "LEISTUNG  200 KW (272 PS) 1100 NM",
+                                "productGroupIndication": "A"
+                            }, {
+                                "code": "MN16",
+                                "codeType": "sales",
+                                "designation": "LENKHELFPUMPE AUSFUEHRUNG 4",
+                                "productGroupIndication": "A"
+                            }, {
+                                "code": "MY76",
+                                "codeType": "sales",
+                                "designation": "STEUERUNGSCODE SCHWUNGRAD GEWINDE FLACH",
+                                "productGroupIndication": "A"
+                            }, {
+                                "code": "MY83",
+                                "codeType": "sales",
+                                "designation": "STEUERCODE ABSCHIRMBLECH AGR-LTG 6 ZYL.",
+                                "productGroupIndication": "A"
+                            }
+                        ],
+                        "saa": []
+                    },
+                    "activeProductDate": {
+                        "shipmentDate": "20140821",
+                        "technicalApprovalDate": "20140814",
+                        "validSince": "20140821",
+                        "xmlId": "_7",
+                        "objectId": "246694012598"
+                    },
+                    "activeState": {
+                        "luNumber": "X069522804",
+                        "plant": "P0200",
+                        "productionNumber": "8813795",
+                        "status": "delivered"
+                    }
+                },
+                "fieldOrganisationText": [{
+                        "authorId": "D2GSTENZ",
+                        "date": "2014-11-06T12:10:48.134+01:00",
+                        "positionNumber": "1",
+                        "objectId": "259214099172",
+                        "designGroup": ["60"],
+                        "textContent": "Repco 142026 vom 04.09.2014 Km 000571 Werkzeugkasten an \n             Pritsche nach Hinterachse rechts montiert.\n60 - R/TJT 21187540 x 1 Werkzeugkasten KST sw GTO 234427000\n                        Br.1200, Hö. 500, Ti. 480 mm\n     R/TJT 21187541 x 1 TS-Halter GTO 234447000 \n"
+                    }, {
+                        "authorId": "D2GSTENZ",
+                        "date": "2014-11-06T12:15:15.230+01:00",
+                        "positionNumber": "2",
+                        "objectId": "259214099173",
+                        "designGroup": ["60"],
+                        "textContent": "Repco 142207 vom 26.09.2014 Km 001651 Werkzeugkasten an \n             Pritsche nach Hinterachse links montiert.\n60 - R/TJT 21187540 x 1 Werkzeugkasten KST sw GTO 234427000\n                        Br.1200, Hö. 500, Ti. 480 mm\n     R/TJT 21187541 x 1 TS-Halter GTO 234447000\n     R/R 4842140  x 0,5 TS-U-Uprofilschiene 3,0 m 41x41 mm\n                        Walraven 6505345 über Rink."
+                    }
+                ],
+                "paint": [{
+                        "code": "2603",
+                        "designation": "tieforange",
+                        "usage": "paint1"
+                    }, {
+                        "code": "2603",
+                        "designation": "tieforange",
+                        "usage": "paint2",
+                        "additionalPaintInfo": "71  - Pritsche / Kipper"
+                    }
+                ],
+                "technicalData": {
+                    "correction": "A  0125423517",
+                    "impulsValue": "05380",
+                    "objectId": "246952198067"
+                },
+                "tireData": [{
+                        "content": "P39M17210",
+                        "typeOf": "tire1",
+                        "objectId": "259216670130"
+                    }, {
+                        "content": "P39M78410",
+                        "typeOf": "tire2",
+                        "objectId": "259216670129"
+                    }
+                ],
+                "transmission": {
+                    "dataCardAvailable": "true",
+                    "id": "71557101479891",
+                    "modelDesignation": "715571",
+                    "objectNumber": "X062506474",
+                    "objectNumberVariant": "X210027727",
+                    "activeAssignedFpd": {
+                        "equipmentCodes": [{
+                                "code": "GHS2",
+                                "codeType": "sales",
+                                "designation": "SAE II",
+                                "productGroupIndication": "A"
+                            }, {
+                                "code": "GK02",
+                                "codeType": "sales",
+                                "designation": "KUPPLUNGSFLANSCH D 150 KREUZVERZAHNT",
+                                "productGroupIndication": "A"
+                            }, {
+                                "code": "GS32",
+                                "codeType": "sales",
+                                "designation": "GETRIEBESCHALTUNG, SEILZUG MIT PSH",
+                                "productGroupIndication": "A"
+                            }, {
+                                "code": "GT00",
+                                "codeType": "sales",
+                                "designation": "TRAGARME GESCHRAUBT",
+                                "productGroupIndication": "A"
+                            }, {
+                                "code": "GZ5C",
+                                "codeType": "sales",
+                                "designation": "MOTORKLASSE 3",
+                                "productGroupIndication": "A"
+                            }
+                        ],
+                        "saa": []
+                    },
+                    "activeProductDate": {
+                        "shipmentDate": "20140821",
+                        "technicalApprovalDate": "20140820",
+                        "validSince": "20140821",
+                        "xmlId": "_8",
+                        "objectId": "246694912856"
+                    },
+                    "activeState": {
+                        "plant": "P0340",
+                        "productionNumber": "4396580",
+                        "status": "delivered",
+                        "transmissionModel": "G 141-9/14,57"
+                    }
+                }
+            }
+        },
+        "requestParameter": ["VehicleSearchCriteria:vehicleSearchCategory=finOrVin;vehicleSearchValue=XXX9670271L896656;delta=false", "LanguagePreferences:fallbackLanguage=de;primaryLanguage=en;secondaryLanguage=en;"]
+    }
+}

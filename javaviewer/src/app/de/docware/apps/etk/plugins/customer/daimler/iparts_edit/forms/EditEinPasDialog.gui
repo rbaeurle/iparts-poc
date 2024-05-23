@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window height="200" id="mainWindow" visible="false" width="450">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10" paddingBottom="8" paddingLeft="8" paddingRight="8" paddingTop="8">
+      <invisible />
+      <layout_gridbag />
+      <equaldimpanel horizontal="true" id="equaldimensionpanel_0" minimumHeight="20" minimumWidth="10">
+        <invisible />
+        <layout_absolute />
+        <panel id="panel_HG" maximumHeight="2147483647" maximumWidth="2147483647" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_border />
+          <label horizontalalignment="CENTER" id="label_HG" minimumHeight="10" minimumWidth="10" text="!!Hauptgruppe">
+            <constraints_border />
+          </label>
+          <constraints_absolute />
+        </panel>
+        <panel id="panel_G" maximumHeight="2147483647" maximumWidth="2147483647" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_border />
+          <label horizontalalignment="CENTER" id="label_G" minimumHeight="10" minimumWidth="10" text="!!Gruppe">
+            <constraints_border />
+          </label>
+          <constraints_absolute />
+        </panel>
+        <panel id="panel_TU" maximumHeight="2147483647" maximumWidth="2147483647" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_border />
+          <label horizontalalignment="CENTER" id="label_TU" minimumHeight="10" minimumWidth="10" text="!!Technischer Umfang">
+            <constraints_border />
+          </label>
+          <constraints_absolute />
+        </panel>
+        <constraints_gridbag fill="h" weightx="100.0" />
+      </equaldimpanel>
+      <panel id="panel_Replacement" minimumHeight="20" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <constraints_gridbag fill="h" gridy="1" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="!!VIN Fallback - Baumuster Auswahl">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelCombobox" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag />
+      <panel id="panelModelSelect" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_gridbag />
+        <label id="labelModels" minimumHeight="10" minimumWidth="10" text="!!Baumuster: *">
+          <constraints_gridbag insetsBottom="8" insetsLeft="8" insetsRight="4" insetsTop="8" />
+        </label>
+        <combobox genericType="Object" id="comboboxModels" minimumHeight="10" minimumWidth="10">
+          <constraints_gridbag anchor="w" fill="h" gridx="1" insetsBottom="8" insetsLeft="4" insetsRight="8" insetsTop="8" weightx="100.0" />
+        </combobox>
+        <constraints_gridbag anchor="w" fill="h" weightx="100.0" />
+      </panel>
+      <label id="labelInfo" minimumHeight="10" minimumWidth="10">
+        <constraints_gridbag anchor="w" gridy="1" insetsBottom="8" insetsLeft="8" insetsRight="8" insetsTop="8" />
+      </label>
+      <constraints_border />
+    </panel>
+    <buttonPanel id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

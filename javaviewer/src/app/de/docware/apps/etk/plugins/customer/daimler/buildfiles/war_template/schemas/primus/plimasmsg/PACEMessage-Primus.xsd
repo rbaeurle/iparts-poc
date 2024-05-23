@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xml:lang="en" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:jxb="http://java.sun.com/xml/ns/jaxb" jxb:version="1.0">
+
+  <!-- This file is controlled by DCCS SVN and must not be changed otherwise.
+       Usage of attributes preferred over use of tags.
+
+       The XSD is an example XSD for an unspecified receiver.
+
+       Created by DCCS GmbH. on behalf of Daimler AG.
+       Copyright 2012 Daimler AG and DCCS GmbH.
+
+       Author:       Peter.Stuecklschwaiger@DCCS.at
+       Responsible:  Tomislav.Jerkovic@Daimler.com, Swen.Koelbel@Daimler.com -->
+
+  <xs:annotation>
+    <xs:documentation>Copyright 2012 Daimler AG and DCCS GmbH.</xs:documentation></xs:annotation>
+
+  <!-- include common definitions... -->
+  <xs:include schemaLocation="./PACECommonDefinitions.xsd"/>
+
+  <!-- include PACE type definitions... -->
+  <xs:include schemaLocation="./PACE-GlobusContract.xsd"/>
+  <xs:include schemaLocation="./PACE-Part.xsd"/>
+  <xs:include schemaLocation="./PACE-Plant.xsd"/>
+  <xs:include schemaLocation="./PACE-Supplier.xsd"/>
+
+  <!-- include logistic type definitions... -->
+  <!--xs:include schemaLocation="../PACE-Definitions/PACE-.xsd"/-->
+
+  <!-- define the root element for a logistics message -->
+  <xs:element name="PACEMessage">
+    <xs:annotation><xs:documentation>The definition of a PACE message for &lt;undefined&gt; business partner.
+    </xs:documentation></xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="part" type="partType"/>
+        <xs:choice>
+          <xs:sequence>
+            <xs:element name="update" minOccurs="1" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:choice>
+                  <xs:sequence>
+                    <xs:element name="contractInformation" type="contractInformationType"/> 
+                  </xs:sequence>
+                  <xs:sequence>
+                    <xs:element name="ctimeInformation" type="ctimeInformationType"/>
+                  </xs:sequence>
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:sequence>
+            <xs:element name="remove" minOccurs="1" maxOccurs="unbounded" type="removalInformationType"/>
+          </xs:sequence>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attributeGroup ref="interior"/>
+      <xs:attributeGroup ref="foreign"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="contractInformationType">
+    <xs:sequence>
+      <xs:element name="plant" type="plantType"/>
+      <xs:element name="supplier" type="supplierType"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="contractValidity"/>
+  </xs:complexType>
+
+  <xs:complexType name="ctimeInformationType">
+    <xs:sequence>
+      <xs:element name="plant" type="plantType"/>
+      <xs:element name="supplier" type="supplierType"/>
+    </xs:sequence>
+    <xs:attribute name="lastModified" use="required" type="xs:date"/>
+  </xs:complexType>
+
+  <xs:complexType name="removalInformationType">
+    <xs:sequence>
+      <xs:element name="supplier" type="supplierType"/>
+      <xs:element name="plant" minOccurs="0" type="plantType">
+      <xs:annotation><xs:appinfo><jxb:property><jxb:javadoc>The plant the supplier is no longer
+          valid for. If missing, the supplier is not valid any longer for any plant.
+      </jxb:javadoc></jxb:property></xs:appinfo> </xs:annotation></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

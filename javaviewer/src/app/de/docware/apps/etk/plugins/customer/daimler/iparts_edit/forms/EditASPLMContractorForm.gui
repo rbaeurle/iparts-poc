@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window height="190" id="mainWindow" visible="false" width="600">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <equaldimpanel horizontal="true" id="equaldimensionpanel" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_absolute />
+        <panel id="panelUserGroup" maximumHeight="2147483647" maximumWidth="2147483647" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_gridbag centered="false" />
+          <label id="labelUserGroup" minimumHeight="10" minimumWidth="10" text="!!Gruppe">
+            <constraints_gridbag anchor="e" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="4" />
+          </label>
+          <combobox genericType="de.docware.apps.etk.plugins.customer.daimler.iparts_edit.dbobjects.user.iPartsDataASPLMGroup" id="comboboxUserGroup" minimumWidth="50" onChangeEvent="onChange_CB_UserGroup">
+            <constraints_gridbag fill="b" gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" weightx="100.0" weighty="100.0" />
+          </combobox>
+          <constraints_absolute height="0" left="0" top="0" width="0" />
+        </panel>
+        <panel id="panelUser" maximumHeight="2147483647" maximumWidth="2147483647" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_gridbag centered="false" />
+          <label id="labelUser" minimumHeight="10" minimumWidth="10" text="!!Benutzer">
+            <constraints_gridbag anchor="e" insetsBottom="4" insetsLeft="8" insetsRight="4" insetsTop="4" />
+          </label>
+          <combobox genericType="de.docware.apps.etk.plugins.customer.daimler.iparts_edit.dbobjects.user.iPartsDataASPLMUser" id="comboboxUser" minimumWidth="50" onChangeEvent="onChange_CB_User">
+            <constraints_gridbag fill="b" gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" weightx="100.0" weighty="100.0" />
+          </combobox>
+          <constraints_absolute height="0" left="0" top="0" width="0" />
+        </panel>
+        <constraints_border />
+      </equaldimpanel>
+      <panel id="panelChange" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_gridbag centered="false" />
+        <button id="buttonChange" minimumHeight="10" minimumWidth="5" mnemonicEnabled="true" text="...">
+          <constraints_gridbag anchor="n" fill="b" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" weightx="100.0" weighty="100.0" />
+        </button>
+        <constraints_border position="east" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

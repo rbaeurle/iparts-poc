@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="!!TruckBOM.foundation manueller Import">
+      <constraints_border position="north" />
+    </title>
+    <panel id="wsPanel" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <panel borderWidth="4" id="configPanel" minimumHeight="10" minimumWidth="10" title="!!Webservice">
+        <invisible />
+        <layout_gridbag />
+        <panel id="checkboxPanel" minimumHeight="10" minimumWidth="10">
+          <invisible />
+          <layout_gridbag />
+          <constraints_gridbag fill="b" gridy="1" insetsBottom="4" insetsLeft="8" insetsRight="8" insetsTop="4" weighty="100.0" />
+        </panel>
+        <constraints_border />
+      </panel>
+      <constraints_border position="west" />
+    </panel>
+    <panel borderWidth="4" id="rightPanel" minimumHeight="10" minimumWidth="10" title="!!Import Zeitraum">
+      <invisible />
+      <layout_gridbag />
+      <panel id="dateTimePanel" minimumHeight="10" minimumWidth="10">
+        <invisible />
+        <layout_gridbag />
+        <constraints_gridbag fill="b" weightx="100.0" weighty="100.0" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonOKActionPerformedEvent="startImport" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

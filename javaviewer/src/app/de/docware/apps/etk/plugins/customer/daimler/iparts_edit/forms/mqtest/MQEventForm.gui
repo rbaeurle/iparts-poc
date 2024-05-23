@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="eventWindowTitle" minimumHeight="50" minimumWidth="10" title="MQ Event Simulation">
+      <constraints_border position="north" />
+    </title>
+    <panel id="mainpanel" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag centered="false" />
+      <label horizontalalignment="RIGHT" id="eventTypeLabel" minimumHeight="10" minimumWidth="10" text="!!Event Typ:">
+        <constraints_gridbag anchor="e" insetsLeft="8" insetsRight="4" insetsTop="4" />
+      </label>
+      <combobox genericType="de.docware.apps.etk.plugins.customer.daimler.iparts.xml.config.iPartsTransferNodeTypes" id="eventTypeCombobox" minimumHeight="10" minimumWidth="10" onChangeEvent="fillEventSpecificParameters">
+        <constraints_gridbag anchor="e" fill="h" gridx="1" insetsRight="8" insetsTop="4" />
+      </combobox>
+      <label horizontalalignment="RIGHT" id="mcLabel" minimumHeight="10" minimumWidth="10" text="!!Media Container:">
+        <constraints_gridbag anchor="e" gridy="1" insetsLeft="8" insetsRight="4" insetsTop="4" />
+      </label>
+      <combobox genericType="de.docware.apps.etk.plugins.customer.daimler.iparts_edit.dbobjects.order.iPartsDataPicOrder" id="mcCombobox" minimumHeight="10" minimumWidth="10" onChangeEvent="fillIdFields">
+        <constraints_gridbag anchor="e" fill="h" gridx="1" gridy="1" insetsRight="8" insetsTop="4" />
+      </combobox>
+      <label horizontalalignment="RIGHT" id="itemIdLabel" minimumHeight="10" minimumWidth="10" text="!!MC Item Id:">
+        <constraints_gridbag anchor="e" gridy="2" insetsLeft="8" insetsRight="4" insetsTop="4" />
+      </label>
+      <textfield id="itemIdTextfield" minimumHeight="10" minimumWidth="200" onChangeEvent="checkParameter">
+        <constraints_gridbag anchor="e" fill="h" gridx="1" gridy="2" insetsRight="8" insetsTop="4" />
+      </textfield>
+      <label horizontalalignment="RIGHT" id="itemRevIdLabel" minimumHeight="10" minimumWidth="10" text="!!MC Item Rev Id:">
+        <constraints_gridbag anchor="e" gridy="3" insetsLeft="8" insetsRight="4" insetsTop="4" />
+      </label>
+      <textfield id="itemRevIdTextfield" minimumHeight="10" minimumWidth="50" onChangeEvent="checkParameter">
+        <constraints_gridbag anchor="w" gridx="1" gridy="3" insetsRight="8" insetsTop="4" />
+      </textfield>
+      <label horizontalalignment="RIGHT" id="commentLabel" minimumHeight="10" minimumWidth="10" text="!!Kommentar:">
+        <constraints_gridbag anchor="e" gridy="4" insetsLeft="8" insetsRight="4" insetsTop="4" />
+      </label>
+      <textarea id="commentTextarea" minimumHeight="100" minimumWidth="200">
+        <constraints_gridbag anchor="e" fill="h" gridx="1" gridy="4" insetsRight="8" insetsTop="4" />
+      </textarea>
+      <panel id="eventParameterPanel" minimumHeight="20" minimumWidth="10">
+        <invisible />
+        <layout_border />
+        <constraints_gridbag fill="b" gridx="1" gridy="6" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="10" weightx="100.0" />
+      </panel>
+      <label horizontalalignment="RIGHT" id="eventParameterLabel" minimumHeight="10" minimumWidth="10" text="!!Event Parameter:">
+        <constraints_gridbag anchor="ne" gridy="6" insetsLeft="8" insetsRight="4" insetsTop="12" />
+      </label>
+      <label id="errorLabel" minimumHeight="10" minimumWidth="10">
+        <constraints_gridbag anchor="w" fill="h" gridx="1" gridy="7" insetsBottom="4" insetsRight="8" insetsTop="14" />
+      </label>
+      <label horizontalalignment="RIGHT" id="hintsLabel" minimumHeight="10" minimumWidth="10" text="!!Hinweise:">
+        <constraints_gridbag anchor="ne" gridy="7" insetsLeft="8" insetsRight="4" insetsTop="14" />
+      </label>
+      <label horizontalalignment="RIGHT" id="delayLabel" minimumHeight="10" minimumWidth="10" text="!!Verzögerung (Sek):">
+        <constraints_gridbag anchor="e" gridy="5" insetsLeft="8" insetsRight="4" />
+      </label>
+      <textfield id="delayTextfield" minimumHeight="10" minimumWidth="50">
+        <constraints_gridbag anchor="w" gridx="1" gridy="5" insetsBottom="4" insetsRight="8" insetsTop="4" />
+      </textfield>
+      <constraints_border />
+    </panel>
+    <panel id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag />
+      <button actionPerformedEvent="sendEvent" id="sendButton" minimumHeight="20" minimumWidth="100" mnemonicEnabled="true" text="Senden">
+        <constraints_gridbag insetsBottom="8" insetsLeft="8" insetsRight="4" />
+      </button>
+      <button actionPerformedEvent="sendAndCloseEvent" id="sendAndCloseButton" minimumHeight="20" minimumWidth="100" mnemonicEnabled="true" text="Senden und schließen">
+        <constraints_gridbag gridx="1" insetsBottom="8" insetsLeft="8" insetsRight="4" />
+      </button>
+      <button actionPerformedEvent="closeWindow" id="closeButton" isCancelButton="true" minimumHeight="20" minimumWidth="100" mnemonicEnabled="true" text="Schließen">
+        <constraints_gridbag anchor="e" gridx="2" insetsBottom="8" insetsRight="8" />
+      </button>
+      <constraints_border position="south" />
+    </panel>
+  </window>
+</gui>
+

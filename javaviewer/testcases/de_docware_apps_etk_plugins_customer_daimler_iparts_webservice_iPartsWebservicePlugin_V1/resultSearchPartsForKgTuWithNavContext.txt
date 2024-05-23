@@ -1,0 +1,1 @@
+{"searchResults":[{"name":"SCHRAUBE","navContext":[{"id":"21","label":"AGGREGATE-ANBAUTEILE","type":"cg_group"},{"id":"300","label":"ABSCHIRMUNGEN UND ABDAEMPFUNGEN AN MOTOR,GETRIEBE,VORDERACHSGETRIEBE","partsAvailable":true,"type":"cg_subgroup"}],"partNo":"A0009906203","partNoFormatted":"A 000 990 62 03"}]}

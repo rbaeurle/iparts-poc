@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="titleMain" minimumHeight="50" minimumWidth="10" title="!!Zeichnungen nachfordern">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_gridbag />
+      <panel id="panelInfo" minimumHeight="10" minimumWidth="10" title="!!Informationen">
+        <invisible />
+        <layout_gridbag />
+        <scrollpane id="scrollpaneProductInfos" minimumHeight="100" minimumWidth="100">
+          <table htmlPageSplitMode="NO_SPLIT" id="tableProductInfos" minimumHeight="100" minimumWidth="100" selectionMode="SELECTION_MODE_NONE">
+            <constraints_border />
+          </table>
+          <constraints_gridbag fill="h" gridwidth="2" gridy="1" insetsBottom="4" insetsLeft="8" insetsRight="8" insetsTop="4" weightx="100.0" />
+        </scrollpane>
+        <label horizontalalignment="RIGHT" id="labelAll" minimumHeight="10" minimumWidth="10" text="!!Gesamtanzahl Bildtafeln für Anfrage:">
+          <constraints_gridbag anchor="w" gridy="2" insetsBottom="8" insetsLeft="8" insetsRight="4" insetsTop="4" />
+        </label>
+        <label id="labelAllResult" minimumHeight="10" minimumWidth="10">
+          <constraints_gridbag anchor="w" fill="h" gridx="1" gridy="2" insetsBottom="8" insetsLeft="4" insetsRight="8" insetsTop="4" />
+        </label>
+        <constraints_gridbag anchor="w" fill="h" insetsBottom="8" insetsLeft="8" insetsRight="8" insetsTop="8" weightx="100.0" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonOKActionPerformedEvent="requestNewPictures" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

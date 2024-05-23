@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ #==============================================================================
+ #
+ #  AS-PLM
+ #
+ #  $HeadURL: https://dev-dynplm.it-solutions.atos.net/svn/asplmdev/cust_root_dir/integration/prototypes/was/services/MediaService_BO/xml/samples/SearchMediaContainers_req_s01.xml $
+ #  $LastChangedRevision: 985 $
+ #  $LastChangedDate: 2015-05-22 17:11:53 +0200 (Fr, 22 Mai 2015) $
+ #  $LastChangedBy: a424518 $
+ #
+ #  Author: Andreas Saremba, Atos
+ #  Purpose: Sample message for the AS-PLM Media Service (AMS): Operation SearchMediaContainers (Request)
+ #           Expected result: Success, List of MediaContainers found is returned
+ #
+ #==============================================================================
+-->
+<Message xmlns="http://asplm.daimler.com/MediaService/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://asplm.daimler.com/MediaService/v1 asplm_message_flat.xsd">
+    <Request from="iParts" requestId="req_s01" to="ASPLM">
+        <Requestor userId="migimport"/>
+        <Operation>
+            <SearchMediaContainers maxResults="300">
+                <SearchCriterion attrName="name">B*</SearchCriterion>
+                <ResultAttribute attrName="name"/>
+                <ResultAttribute attrName="description"/>
+            </SearchMediaContainers>
+        </Operation>
+    </Request>
+</Message>

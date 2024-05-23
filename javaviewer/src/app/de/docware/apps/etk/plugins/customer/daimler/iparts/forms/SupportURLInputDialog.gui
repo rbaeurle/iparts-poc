@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" isResizable="false" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="5" title="!!Support URL Eingabe">
+      <constraints_border position="north" />
+    </title>
+    <panel id="contentPanel" minimumHeight="10" minimumWidth="10" paddingBottom="4" paddingLeft="8" paddingRight="8" paddingTop="4">
+      <invisible />
+      <layout_border />
+      <panel borderWidth="1" id="inputPanel" minimumHeight="80" minimumWidth="400" paddingBottom="4" paddingLeft="4" paddingRight="4" paddingTop="4" title="!!XSF Ticket URL">
+        <invisible />
+        <layout_border />
+        <scrollpane borderWidth="1" horizontalScrollEnabled="false" id="inputScrollpane">
+          <textarea id="inputTextArea" lineWrap="true" onChangeEvent="onInputChanged">
+            <constraints_border />
+          </textarea>
+          <constraints_border />
+        </scrollpane>
+        <toolbar backgroundImage="@imgDesignToolbarBigBackground" buttonOrientation="VERTICAL" id="toolbar" minimumHeight="10" minimumWidth="10">
+          <constraints_border position="east" />
+        </toolbar>
+        <constraints_border />
+      </panel>
+      <panel borderWidth="1" id="outputPanel" maximumWidth="400" minimumHeight="10" minimumWidth="10" paddingBottom="4" paddingTop="4" title="!!Extrahierte Werte">
+        <invisible />
+        <layout_gridbag centered="false" />
+        <panel id="finPanel" minimumHeight="10" minimumWidth="10">
+          <invisible />
+          <layout_gridbag />
+          <label horizontalalignment="RIGHT" id="finLabel" minimumHeight="10" minimumWidth="81" text="!!FIN/ VIN">
+            <constraints_gridbag anchor="e" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+          </label>
+          <textfield id="finTextfield" isEditable="false" minimumHeight="10" minimumWidth="200">
+            <constraints_gridbag anchor="w" fill="b" gridx="1" insetsBottom="4" insetsLeft="7" insetsRight="8" insetsTop="4" />
+          </textfield>
+          <constraints_gridbag anchor="w" fill="h" />
+        </panel>
+        <panel id="fzgPanel" minimumHeight="10" minimumWidth="10" title="!!Fahrzeug">
+          <invisible />
+          <layout_gridbag />
+          <label horizontalalignment="RIGHT" id="fzgBMLabel" minimumHeight="10" minimumWidth="80" text="!!Baumuster">
+            <constraints_gridbag anchor="e" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+          </label>
+          <textfield id="fzgBMTextfield" isEditable="false" minimumHeight="10" minimumWidth="200">
+            <constraints_gridbag anchor="w" fill="b" gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+          </textfield>
+          <label horizontalalignment="RIGHT" id="fzgProductLabel" minimumHeight="10" minimumWidth="80" text="!!Produkt">
+            <constraints_gridbag anchor="e" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+          </label>
+          <textfield id="fzgProductTextfield" isEditable="false" minimumHeight="10" minimumWidth="200">
+            <constraints_gridbag anchor="w" fill="b" gridx="1" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+          </textfield>
+          <constraints_gridbag anchor="w" fill="h" gridy="1" />
+        </panel>
+        <panel id="aggPanel" minimumHeight="10" minimumWidth="10" title="!!Aggregat">
+          <invisible />
+          <layout_gridbag />
+          <label horizontalalignment="RIGHT" id="aggBMLabel" minimumHeight="10" minimumWidth="80" text="!!Baumuster">
+            <constraints_gridbag anchor="e" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+          </label>
+          <textfield id="aggBMTextfield" isEditable="false" minimumHeight="10" minimumWidth="200">
+            <constraints_gridbag anchor="w" fill="b" gridx="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+          </textfield>
+          <label horizontalalignment="RIGHT" id="aggProductLabel" minimumHeight="10" minimumWidth="80" text="!!Produkt">
+            <constraints_gridbag anchor="e" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+          </label>
+          <textfield id="aggProductTextfield" isEditable="false" minimumHeight="10" minimumWidth="200">
+            <constraints_gridbag anchor="w" fill="b" gridx="1" gridy="1" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+          </textfield>
+          <constraints_gridbag anchor="w" fill="h" gridy="2" />
+        </panel>
+        <panel id="navPanel" minimumHeight="10" minimumWidth="10">
+          <invisible />
+          <layout_gridbag />
+          <label horizontalalignment="RIGHT" id="kgLabel" minimumHeight="10" minimumWidth="81" text="!!KG">
+            <constraints_gridbag anchor="e" gridy="3" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+          </label>
+          <textfield id="kgTextfield" isEditable="false" minimumHeight="10" minimumWidth="200">
+            <constraints_gridbag anchor="w" fill="b" gridx="1" gridy="3" insetsBottom="4" insetsLeft="7" insetsRight="8" insetsTop="4" />
+          </textfield>
+          <label horizontalalignment="RIGHT" id="tuLabel" minimumHeight="10" minimumWidth="81" text="!!TU/ freie SA">
+            <constraints_gridbag anchor="e" gridy="4" insetsBottom="4" insetsLeft="4" insetsRight="4" insetsTop="4" />
+          </label>
+          <textfield id="tuTextfield" isEditable="false" minimumHeight="10" minimumWidth="200">
+            <constraints_gridbag anchor="w" fill="b" gridx="1" gridy="4" insetsBottom="4" insetsLeft="7" insetsRight="8" insetsTop="4" />
+          </textfield>
+          <constraints_gridbag anchor="w" fill="h" gridy="3" />
+        </panel>
+        <constraints_border position="south" />
+      </panel>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonCancelActionPerformedEvent="onButtonCancel" buttonOKActionPerformedEvent="onButtonOk" id="buttonPanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+

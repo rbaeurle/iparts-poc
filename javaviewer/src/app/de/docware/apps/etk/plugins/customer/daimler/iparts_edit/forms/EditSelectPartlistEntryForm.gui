@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui>
+  <window id="mainWindow" visible="false">
+    <invisible />
+    <layout_border />
+    <title backgroundColor="clWhite" id="title" minimumHeight="50" minimumWidth="10" title="...">
+      <constraints_border position="north" />
+    </title>
+    <panel id="panelMain" minimumHeight="10" minimumWidth="10">
+      <invisible />
+      <layout_border />
+      <splitpane dividerPosition="200" horizontal="false" id="splitpane" minimumHeight="10" minimumWidth="10">
+        <panel borderWidth="8" id="splitpane_firstChild" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_border />
+          <panel id="panelTop" minimumHeight="10" minimumWidth="10" title="!!Selektierte Einträge">
+            <invisible />
+            <layout_border />
+            <panel id="panelCurrentSelection" minimumHeight="70" minimumWidth="500" paddingBottom="4" paddingLeft="8" paddingRight="8" paddingTop="4">
+              <invisible />
+              <layout_border />
+              <constraints_border />
+            </panel>
+            <constraints_border />
+          </panel>
+        </panel>
+        <panel id="splitpane_secondChild" minimumHeight="0" minimumWidth="0">
+          <invisible />
+          <layout_border />
+          <panel id="panelBottom" minimumHeight="10" minimumWidth="10">
+            <invisible />
+            <layout_border />
+            <panel borderWidth="8" id="panelMovement" minimumHeight="10" minimumWidth="10">
+              <invisible />
+              <layout_border />
+              <toolbar backgroundImage="@imgDesignToolbarBigBackground" id="toolbar" minimumHeight="10" minimumWidth="10">
+                <constraints_border />
+              </toolbar>
+              <constraints_border position="north" />
+            </panel>
+            <panel borderWidth="8" id="panelActualEntries" minimumHeight="10" minimumWidth="10" paddingBottom="4" paddingLeft="8" paddingRight="8" paddingTop="4" title="!!Aktuelle Einträge">
+              <invisible />
+              <layout_border />
+              <constraints_border />
+            </panel>
+            <constraints_border />
+          </panel>
+        </panel>
+        <constraints_border />
+      </splitpane>
+      <constraints_border />
+    </panel>
+    <buttonPanel buttonOKActionPerformedEvent="buttonOKClicked" id="buttonpanel" minimumHeight="10" minimumWidth="10">
+      <constraints_border position="south" />
+    </buttonPanel>
+  </window>
+</gui>
+
