@@ -26,6 +26,9 @@ import de.docware.apps.etk.plugins.customer.daimler.iparts.model.structure.iPart
 import de.docware.apps.etk.plugins.customer.daimler.iparts.model.structure.iPartsStructureId;
 import de.docware.apps.etk.plugins.customer.daimler.iparts.model.structure.iPartsStructureNode;
 import de.docware.framework.modules.gui.dialogs.messagedialog.MessageDialog;
+import de.docware.framework.modules.gui.misc.logger.LogChannels;
+import de.docware.framework.modules.gui.misc.logger.LogType;
+import de.docware.framework.modules.gui.misc.logger.Logger;
 import de.docware.framework.modules.gui.misc.translation.TranslationHandler;
 import de.docware.framework.modules.gui.session.Session;
 import de.docware.util.CanceledException;
@@ -510,6 +513,7 @@ public class iPartsSearchDataset extends EtkPartsSearchDataset {
      */
     @Override
     public boolean next() throws CanceledException {
+//        Logger.log(LogChannels.APPLICATION, LogType.INFO, "iPartsSearchDataset.next");
         while ((datasetIterator < 0) || !datasets.get(datasetIterator).next()) {
             // wir beginnen mit der Suche, oder das zuletzt durchsuchte dataset ist am Ende
             // schalte auf das nächste dataset

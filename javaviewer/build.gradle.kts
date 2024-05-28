@@ -23,6 +23,9 @@ sourceSets {
     main {
         java {
             setSrcDirs(listOf("src/app"))
+            include("de/docware/util/sql/**")
+            include("de/docware/framework/modules/db/**")
+            include("de/docware/apps/etk/base/**")
             include("de/docware/apps/etk/plugins/customer/daimler/**")
             exclude("de/docware/apps/etk/plugins/customer/daimler/iparts/tests/**")
             exclude("de/docware/apps/etk/plugins/customer/daimler/**/Test*.java")

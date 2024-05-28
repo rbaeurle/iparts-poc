@@ -47,6 +47,7 @@ import de.docware.apps.etk.viewer.JavaViewerApplication;
 import de.docware.framework.modules.config.db.VirtualFieldsUtils;
 import de.docware.framework.modules.db.DBActionOrigin;
 import de.docware.framework.modules.gui.misc.Constants;
+import de.docware.framework.modules.gui.misc.logger.LogChannels;
 import de.docware.framework.modules.gui.misc.logger.LogType;
 import de.docware.framework.modules.gui.misc.logger.Logger;
 import de.docware.framework.modules.gui.misc.translation.TranslationHandler;
@@ -1372,6 +1373,7 @@ public class iPartsFilter {
      * @return {@code true}, falls keine Filterung durchgeführt wurde; {@code false}, wenn der Datensatz ausgefiltert wurde
      */
     public boolean checkFilter(EtkDataObject etkDataObject) {
+        Logger.log(LogChannels.APPLICATION, LogType.INFO, "> iPartsFilter.checkFilter: " + etkDataObject.getTableName());
         setMultiLayerFiltering(isAggModelsFilterActive()); // mehrstufige Filterung über den Aggregate-Filter aktivieren
 
         if (etkDataObject instanceof iPartsDataPartListEntry) {

@@ -1,0 +1,4 @@
+src/app/de/docware/util/sql/
+# Ausschluss aller anderen Dateien im Verzeichnis, außer der gewünschten Datei
+#src/app/de/docware/framework/modules/db/
+#!src/app/de/docware/framework/modules/db/DBDatabaseWithConnectionPool.java
