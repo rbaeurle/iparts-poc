@@ -492,6 +492,8 @@ public class iPartsDataCardRetrievalHelper {
         }
     }
 
+    public static boolean useVISMockService = true;
+
     private static String createClientAndExecuteRequest(String dataCardServiceURL, String requestParameter, String basisURIAddon,
                                                         DatacardType datacardType, String token, String language) throws DataCardRetrievalException {
         final HttpClient client = new HttpClient(dataCardServiceURL);
@@ -524,6 +526,10 @@ public class iPartsDataCardRetrievalHelper {
             client.setRequestProperty(HttpConstants.HEADER_FIELD_ACCEPT_LANGUAGE, language.toUpperCase());
             client.setRequestMethod(HttpConstants.METHOD_GET);
 
+            // test
+            if (useVISMockService) {
+                return VisService.getDataCard(requestParameter);
+            }
             // ResponseString bzw. ResponseMessage empfangen
             int httpResponseCode = client.getResponseCode();
             if (httpResponseCode == HttpConstants.HTTP_STATUS_OK) {

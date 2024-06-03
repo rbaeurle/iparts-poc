@@ -23,6 +23,7 @@ sourceSets {
     main {
         java {
             setSrcDirs(listOf("src/app"))
+            include("de/docware/VIS.java")
             include("de/docware/util/sql/**")
             include("de/docware/framework/modules/db/**")
             include("de/docware/apps/etk/base/**")
@@ -31,9 +32,10 @@ sourceSets {
             exclude("de/docware/apps/etk/plugins/customer/daimler/**/Test*.java")
         }
         resources {
-            setSrcDirs(listOf("src/app"))
+            setSrcDirs(listOf("src/app", "testcases"))
             include("de/docware/apps/etk/plugins/customer/daimler/**/*.sql")
             include("de/docware/apps/etk/plugins/customer/daimler/**/*.png")
+            include("de_docware_apps_etk_plugins_customer_daimler_iparts_webservice_iPartsWebservicePlugin_V1/DataCards/v2/vehicledatacards/*.json")
         }
     }
 }
@@ -114,6 +116,7 @@ dependencies {
     implementation("com.quanos:h2quanos:1.2.144_DOCWARE_SVN3022_BUILD_24")
     implementation("com.sun.media:jai-codec:1.1.3")
     implementation("com.sun.media:jai_core:1.1.3")
+//    implementation("org.springframework:spring-core:5.3.17")
 
     // JAX-WS
     implementation("com.sun.xml.ws:jaxws-tools:2.3.1")
