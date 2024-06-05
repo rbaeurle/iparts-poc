@@ -3269,6 +3269,7 @@ public class iPartsPlugin extends AbstractJavaViewerSimpleEndpointPlugin impleme
      */
     public void warmUpCaches(boolean globalCachesCleared) {
         if (isWarmUpCaches()) {
+            Logger.log(LogChannels.APPLICATION, LogType.INFO, "iPartsPlugin.warmUpCaches");
             final String userName = iPartsUserAdminDb.getUserNameForLogging(getProject());
 
             if (globalCachesCleared) {
